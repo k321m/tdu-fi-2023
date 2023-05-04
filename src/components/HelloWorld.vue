@@ -40,14 +40,16 @@ export default {
   mounted() {
     this.vantaEffect = NET({
       el: "#background",
-      mouseControls: true,
-      touchControls: true,
+      mouseControls: false,
+      touchControls: false,
       gyroControls: false,
       minHeight: 500.0,
       scale: 1.0,
       scaleMobile: 1.0,
-      backgroundColor: 0x9a82c5,
-      color: 0xffffff,
+      color: 0x360a73,
+      backgroundColor: 0xd3d1ff,
+      maxDistance: 23.0,
+      spacing: 20.0,
     });
   },
 };
