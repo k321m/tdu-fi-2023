@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import { useHead } from "@vueuse/head";
 
 defineProps({
   msg: String,
@@ -8,10 +7,31 @@ defineProps({
 
 const count = ref(0);
 </script>
-
 <template>
-  <p>HelloWorld</p>
-  <div id="background"></div>
+  <div id="background">
+    <div class="m-6">
+      <VueTyper
+        class="vueTyper-sub"
+        text=">2023"
+        type-delay="100"
+        :repeat="0"
+      /><br />
+      <VueTyper
+        class="vueTyper-sub"
+        text=">TOKYO DENKI UNIVERSITY"
+        type-delay="100"
+        pre-type-delay="1000"
+        :repeat="0"
+      /><br />
+      <VueTyper
+        class="vueTyper-h1"
+        text="OPEN CAMPUS"
+        type-delay="100"
+        pre-type-delay="3500"
+        :repeat="0"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -24,9 +44,9 @@ export default {
       touchControls: true,
       gyroControls: false,
       minHeight: 500.0,
-      minWidth: 500.0,
       scale: 1.0,
       scaleMobile: 1.0,
+      backgroundColor: 0x9a82c5,
       color: 0xffffff,
     });
   },
