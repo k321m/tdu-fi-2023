@@ -1,40 +1,71 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from "vue";
 
 defineProps({
   msg: String,
-})
+});
 
-const count = ref(0)
+const count = ref(0);
 </script>
-
 <template>
-  <h1>{{ msg }}</h1>
-
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
+  <div id="background">
+    <div class="pa-6">
+      <div class="mb-n2">
+        <VueTyper
+          class="vueTyper-sub"
+          text=">2023"
+          type-delay="100"
+          :repeat="0"
+        />
+      </div>
+      <div class="mt-n2">
+        <VueTyper
+          class="vueTyper-sub"
+          text=">TOKYO DENKI UNIVERSITY"
+          type-delay="100"
+          pre-type-delay="1000"
+          :repeat="0"
+        />
+      </div>
+      <div>
+        <VueTyper
+          class="vueTyper-h1"
+          text="OPEN CAMPUS"
+          type-delay="100"
+          pre-type-delay="3500"
+          :repeat="0"
+        />
+      </div>
+      <div>
+        <VueTyper
+          class="vueTyper-h1"
+          text="6.11"
+          type-delay="100"
+          pre-type-delay="4500"
+          :repeat="0"
+        />
+      </div>
+    </div>
   </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>
+<script>
+import NET from "vanta/dist/vanta.net.min";
+export default {
+  mounted() {
+    this.vantaEffect = NET({
+      el: "#background",
+      mouseControls: false,
+      touchControls: false,
+      gyroControls: false,
+      minHeight: 400.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x360a73,
+      backgroundColor: 0xd3d1ff,
+      maxDistance: 23.0,
+      spacing: 20.0,
+    });
+  },
+};
+</script>
