@@ -8,7 +8,10 @@ defineProps({
 const count = ref(0);
 </script>
 <template>
-  <div id="background">
+  <!-- background -->
+  <div id="particles-js"></div>
+  <div id="wrapper">
+    <!-- mainTitle -->
     <div class="pa-6">
       <div class="mb-n2">
         <VueTyper
@@ -49,24 +52,3 @@ const count = ref(0);
     </div>
   </div>
 </template>
-
-<script>
-import NET from "vanta/dist/vanta.net.min";
-export default {
-  mounted() {
-    this.vantaEffect = NET({
-      el: "#background",
-      mouseControls: false,
-      touchControls: false,
-      gyroControls: false,
-      minHeight: 400.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: 0xa571d9,
-      backgroundColor: 0xf2f2f2,
-      maxDistance: 23.0,
-      spacing: 20.0,
-    });
-  },
-};
-</script>

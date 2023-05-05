@@ -1,6 +1,6 @@
 import { createApp } from "vue";
-import "./style.css";
-import App from "./App.vue";
+import "/src/style.css";
+import App from "/src/App.vue";
 
 //Vue3 Typer
 import VueTyper from "vue3-typer";
