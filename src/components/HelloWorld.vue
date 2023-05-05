@@ -29,12 +29,13 @@ const count = ref(0);
       </div>
       <div>
         <VueTyper
-          class="vueTyper-h1"
+          class="vueTyper-h1 custom"
           text="OPEN CAMPUS"
           type-delay="100"
           pre-type-delay="3500"
           :repeat="0"
-        />
+          ><span class="custom"></span
+        ></VueTyper>
       </div>
       <div>
         <VueTyper
@@ -61,8 +62,8 @@ export default {
       minHeight: 400.0,
       scale: 1.0,
       scaleMobile: 1.0,
-      color: 0x360a73,
-      backgroundColor: 0xd3d1ff,
+      color: 0xa571d9,
+      backgroundColor: 0xf2f2f2,
       maxDistance: 23.0,
       spacing: 20.0,
     });
