@@ -29,7 +29,7 @@ const count = ref(0);
       </div>
       <div>
         <VueTyper
-          class="vueTyper-h1"
+          class="vueTyper-h1 custom"
           text="OPEN CAMPUS"
           type-delay="100"
           pre-type-delay="3500"
@@ -58,13 +58,14 @@ export default {
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
-      minHeight: 400.0,
-      scale: 2.0,
-      scaleMobile: 2.0,
-      color2: 0xe345e6,
-      size: 1.3,
-      backgroundColor: 0xd3d1ff,
-      points: 0,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0xa571d9,
+      color2: 0x90f0f0,
+      size: 1.2,
+      backgroundColor: 0xf2f2f2,
     });
   },
 };
