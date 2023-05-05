@@ -50,21 +50,21 @@ const count = ref(0);
 </template>
 
 <script>
-import NET from "vanta/dist/vanta.net.min";
+import GLOBE from "vanta/dist/vanta.globe.min";
 export default {
   mounted() {
-    this.vantaEffect = NET({
+    this.vantaEffect = GLOBE({
       el: "#background",
-      mouseControls: false,
-      touchControls: false,
+      mouseControls: true,
+      touchControls: true,
       gyroControls: false,
       minHeight: 400.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      color: 0x360a73,
+      scale: 2.0,
+      scaleMobile: 2.0,
+      color2: 0xe345e6,
+      size: 1.3,
       backgroundColor: 0xd3d1ff,
-      maxDistance: 23.0,
-      spacing: 20.0,
+      points: 0,
     });
   },
 };
