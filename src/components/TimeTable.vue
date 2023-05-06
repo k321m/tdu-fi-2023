@@ -16,11 +16,32 @@
             <template v-slot:opposite> <span>11:35</span> </template>
           </v-timeline-item>
           <v-timeline-item size="xx-small">
-            <span>11:50</span>
+            <span>12:15</span>
+          </v-timeline-item>
+          <v-timeline-item size="xx-small">
+            <template v-slot:opposite> <span>12:35</span> </template>
+          </v-timeline-item>
+
+          <v-timeline-item size="xx-small" class="pa-0">
+            <span>13:15</span>
+          </v-timeline-item>
+
+          <v-timeline-item size="xx-small">
+            <template v-slot:opposite> <span>13:35</span> </template>
+          </v-timeline-item>
+          <v-timeline-item size="xx-small">
+            <span>14:15</span>
           </v-timeline-item>
         </v-timeline>
       </v-col>
       <v-col>
+        <div class="mt-8">
+          <Carousel :itemsToShow="2.5" snapAlign="start" :transition="1500">
+            <Slide v-for="slide in 10" :key="slide">
+              <div class="carousel__item">{{ slide }}</div>
+            </Slide>
+          </Carousel>
+        </div>
         <div class="mt-8">
           <Carousel :itemsToShow="2.5" snapAlign="start" :transition="1500">
             <Slide v-for="slide in 10" :key="slide">

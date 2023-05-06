@@ -2,6 +2,7 @@
   <p>Topページです.</p>
   <TopCarousel />
   <TimeTable class="mt-10" />
+  <MyNoteIcon />
 </template>
 
 <script>
