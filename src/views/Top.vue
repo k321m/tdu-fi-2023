@@ -1,18 +1,20 @@
 <template>
   <p>Topページです.</p>
   <TopCarousel />
-  <br />
+  <TimeTable class="mt-10" />
 </template>
 
 <script>
+import MyNoteIcon from "../components/MyNoteIcon.vue";
+import TimeTable from "../components/TimeTable.vue";
 import TopCarousel from "../components/TopCarousel.vue";
-import MyNoteManual from "../components/MyNoteManual.vue";
 
 export default {
   name: "Top",
   components: {
     TopCarousel,
-    MyNoteManual,
+    TimeTable,
+    MyNoteIcon,
   },
 };
 </script>
