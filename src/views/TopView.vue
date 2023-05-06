@@ -1,5 +1,5 @@
 <template>
-  <p>Topページです.</p>
+  <TopTitle />
   <TopCarousel />
   <TimeTable class="mt-10" />
   <MyNoteIcon />
@@ -9,6 +9,7 @@
 import MyNoteIcon from "../components/MyNoteIcon.vue";
 import TimeTable from "../components/TimeTable.vue";
 import TopCarousel from "../components/TopCarousel.vue";
+import TopTitle from "../components/TopTitle.vue";
 
 export default {
   name: "Top",
@@ -16,6 +17,7 @@ export default {
     TopCarousel,
     TimeTable,
     MyNoteIcon,
+    TopTitle,
   },
 };
 </script>
