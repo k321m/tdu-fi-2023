@@ -30,6 +30,7 @@ export default {
   left: -20%;
   width: 40px;
   height: 100%;
+  clip-path: my-note-icon;
   transform: scale(2) rotate(20deg);
   background-image: linear-gradient(
     100deg,
