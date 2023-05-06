@@ -11,13 +11,13 @@ const count = ref(0);
   <!-- background -->
   <div id="particles-js"></div>
   <div id="wrapper">
-    <!-- mainTitle -->
+    mainTitle
     <div class="pa-6">
       <div class="mb-n2">
         <VueTyper
           class="vueTyper-sub"
           text=">2023"
-          type-delay="100"
+          type-delay="50"
           :repeat="0"
         />
       </div>
@@ -25,8 +25,8 @@ const count = ref(0);
         <VueTyper
           class="vueTyper-sub"
           text=">TOKYO DENKI UNIVERSITY"
-          type-delay="100"
-          pre-type-delay="1000"
+          type-delay="50"
+          pre-type-delay="500"
           :repeat="0"
         />
       </div>
@@ -34,18 +34,17 @@ const count = ref(0);
         <VueTyper
           class="vueTyper-h1 custom"
           text="OPEN CAMPUS"
-          type-delay="100"
-          pre-type-delay="3500"
+          type-delay="50"
+          pre-type-delay="1900"
           :repeat="0"
-          ><span class="custom"></span
         ></VueTyper>
       </div>
       <div>
         <VueTyper
           class="vueTyper-h1"
           text="6.11"
-          type-delay="100"
-          pre-type-delay="4500"
+          type-delay="50"
+          pre-type-delay="2500"
           :repeat="0"
         />
       </div>
