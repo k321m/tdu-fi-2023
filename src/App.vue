@@ -1,18 +1,13 @@
-<script setup></script>
-
 <template>
-  <h1>Appです</h1>
   <router-view />
 </template>
 
 <script>
+import NavBar from "./components/NavBar.vue";
 export default {
   name: "App",
+  components: {
+    NavBar,
+  },
 };
 </script>
-
-<style>
-body {
-  margin: 0px;
-}
-</style>

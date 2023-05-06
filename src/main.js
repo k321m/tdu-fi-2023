@@ -14,9 +14,14 @@ const vuetify = createVuetify({
   directives,
 });
 
+// Vue3 Typer
+import VueTyper from "vue3-typer";
+import "vue3-typer/dist/vue-typer.css";
+
 const app = createApp(App);
 
 app.use(router);
 app.use(store);
 app.use(vuetify);
+app.use(VueTyper);
 app.mount("#app");

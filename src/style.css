@@ -1,3 +1,26 @@
+body {
+  margin: 0px;
+}
+
+.vueTyper-sub {
+  font-family: "hack", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: x-large;
+}
+.vueTyper-h1 {
+  font-family: "hack", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 3em;
+}
+
+/* 選択されている風 */
+.vue-typer.custom .char.typed {
+  color: #f2f2f2;
+  background-color: #010326;
+}
+
 .v-timeline-item__body {
   padding-inline-end: 5px !important;
 }
