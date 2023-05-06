@@ -15,17 +15,21 @@ body {
   width: 100%;
   height: 100%;
 }
-.vueTyper-sub {
+
+/* フォント */
+.hack-h4 {
   font-family: "hack", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: x-large;
+  line-height: 1;
 }
-.vueTyper-h1 {
+.hack-h1 {
   font-family: "hack", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 3em;
+  line-height: 1;
 }
 
 /* 選択されている風 */
@@ -34,10 +38,13 @@ body {
   background-color: #010326;
 }
 
+/* Vuetify 微調整*/
 .v-timeline-item__body {
   padding-inline-end: 5px !important;
 }
-
 .v-timeline-item__opposite {
   padding-inline-end: 5px !important;
+}
+.v-application__wrap {
+  min-height: 50px !important;
 }
