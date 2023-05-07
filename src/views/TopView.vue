@@ -1,7 +1,6 @@
 <template>
   <!-- background -->
-  <div id="particles-js"></div>
-  <p>テスト</p>
+  <BackgroundWhite />
 
   <!-- <HeaderNavBar />
   <TopTitle />
@@ -16,6 +15,7 @@ import TimeTable from "../components/TimeTable.vue";
 import TopCarousel from "../components/TopCarousel.vue";
 import TopTitle from "../components/TopTitle.vue";
 import HeaderNavBar from "../components/HeaderNavBar.vue";
+import BackgroundWhite from "../components/BackgroundWhite.vue";
 
 export default {
   name: "Top",
@@ -25,6 +25,7 @@ export default {
     MyNoteIcon,
     TopTitle,
     HeaderNavBar,
+    BackgroundWhite,
   },
 };
 </script>
