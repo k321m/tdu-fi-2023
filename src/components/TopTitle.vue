@@ -1,6 +1,4 @@
 <template>
-  <!-- background -->
-  <div id="particles-js"></div>
   <div id="wrapper">
     <!-- mainTitle -->
     <div class="pa-6">

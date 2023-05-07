@@ -1,4 +1,7 @@
 <template>
+  <!-- background -->
+  <div id="particles-js"></div>
+
   <HeaderNavBar />
   <TopTitle />
   <TopCarousel />
