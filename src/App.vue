@@ -17,11 +17,10 @@
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
     </v-app-bar>
-
-    <v-main>
-      <router-view />
-    </v-main>
   </v-app>
+  <div class="mt-16">
+    <router-view />
+  </div>
 </template>
 
 <script>

@@ -1,7 +1,6 @@
 <template>
   <div id="wrapper">
-    <!-- mainTitle -->
-    <div class="pa-6">
+    <div class="px-4 py-8">
       <div>
         <VueTyper class="hack-h4" text=">2023" type-delay="50" :repeat="0" />
       </div>

@@ -1,15 +1,15 @@
 <template>
   <!-- background -->
   <BackgroundWhite />
-  <TopTitle />
+  <TopTitle class="pt-2" />
   <TopCarousel />
-  <TimeTable class="mt-10" />
+  <TimeSchedule />
   <MyNoteIcon />
 </template>
 
 <script>
 import MyNoteIcon from "../components/MyNoteIcon.vue";
-import TimeTable from "../components/TimeTable.vue";
+import TimeSchedule from "../components/TimeSchedule.vue";
 import TopCarousel from "../components/TopCarousel.vue";
 import TopTitle from "../components/TopTitle.vue";
 import BackgroundWhite from "../components/BackgroundWhite.vue";
@@ -18,7 +18,7 @@ export default {
   name: "Top",
   components: {
     TopCarousel,
-    TimeTable,
+    TimeSchedule,
     MyNoteIcon,
     TopTitle,
     BackgroundWhite,
