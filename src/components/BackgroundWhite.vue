@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import "../js/particles/top-particle";
 export default {
   name: "BackgroundWhite",
 };

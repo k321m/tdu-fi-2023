@@ -1,12 +1,10 @@
 <template>
-  <!-- background -->
   <BackgroundWhite />
-
-  <!-- <HeaderNavBar />
+  <HeaderNavBar />
   <TopTitle />
   <TopCarousel />
   <TimeTable class="mt-10" />
-  <MyNoteIcon /> -->
+  <MyNoteIcon />
 </template>
 
 <script>
