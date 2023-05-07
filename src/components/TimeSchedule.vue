@@ -1,6 +1,6 @@
 <template>
   <div class="py-8">
-    <div class="background">
+    <div class="py-3 background">
       <div class="time-schedule">
         <div class="py-4 pl-4">
           <p class="zen-kaku-h5 pl-5 pb-2">タイムスケジュール</p>
@@ -139,15 +139,9 @@ span {
   line-height: 0;
 }
 .background {
-  position: relative;
-  overflow: visible;
   background-color: white;
-  background-size: cover;
   z-index: -1; /*描画を一番下に*/
-  width: 100%;
-  height: 100%;
   width: calc(100% - 24px);
-  height: calc(100% + 195px);
   border-radius: 0px 30px 30px 0px;
 }
 .time-schedule {
