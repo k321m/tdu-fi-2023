@@ -4,6 +4,7 @@
   <TopTitle class="pt-2" />
   <TopCarousel />
   <TimeSchedule />
+  <Map />
   <MyNoteIcon />
 </template>
 
@@ -13,6 +14,7 @@ import TimeSchedule from "../components/TimeSchedule.vue";
 import TopCarousel from "../components/TopCarousel.vue";
 import TopTitle from "../components/TopTitle.vue";
 import BackgroundWhite from "../components/BackgroundWhite.vue";
+import Map from "../components/Map.vue";
 
 export default {
   name: "Top",
@@ -22,6 +24,7 @@ export default {
     MyNoteIcon,
     TopTitle,
     BackgroundWhite,
+    Map,
   },
 };
 </script>
