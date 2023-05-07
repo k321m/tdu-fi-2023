@@ -1,6 +1,6 @@
 <template>
+  <!-- background -->
   <BackgroundWhite />
-  <HeaderNavBar />
   <TopTitle />
   <TopCarousel />
   <TimeTable class="mt-10" />
@@ -12,7 +12,6 @@ import MyNoteIcon from "../components/MyNoteIcon.vue";
 import TimeTable from "../components/TimeTable.vue";
 import TopCarousel from "../components/TopCarousel.vue";
 import TopTitle from "../components/TopTitle.vue";
-import HeaderNavBar from "../components/HeaderNavBar.vue";
 import BackgroundWhite from "../components/BackgroundWhite.vue";
 
 export default {
@@ -22,7 +21,6 @@ export default {
     TimeTable,
     MyNoteIcon,
     TopTitle,
-    HeaderNavBar,
     BackgroundWhite,
   },
 };

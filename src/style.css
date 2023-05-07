@@ -4,7 +4,7 @@ body {
 }
 #particles-js {
   position: fixed; /*描画固定*/
-  z-index: -1000; /*描画を一番下に*/
+  z-index: 0; /*描画を一番下に*/
   width: 100%;
   height: 100%;
   background-color: #f3f3f3; /*背景色*/
@@ -12,8 +12,6 @@ body {
 #wrapper {
   position: relative; /*描画を#particles-jsよりも上にするためposition:relative;を指定*/
   z-index: 1; /*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
-  width: 100%;
-  height: 100%;
 }
 
 /* フォント */
@@ -31,6 +29,11 @@ body {
   font-size: 3em;
   line-height: 1;
 }
+.zen-kaku-h5 {
+  font-family: zen-kaku-gothic-new, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 /* 選択されている風 */
 .vue-typer.custom .char.typed {
@@ -46,5 +49,5 @@ body {
   padding-inline-end: 5px !important;
 }
 .v-application__wrap {
-  min-height: 50px !important;
+  min-height: 0px !important;
 }

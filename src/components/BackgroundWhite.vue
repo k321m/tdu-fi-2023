@@ -1,6 +1,5 @@
 <template>
   <div id="particles-js"></div>
-  <p>テスト</p>
 </template>
 
 <script>
