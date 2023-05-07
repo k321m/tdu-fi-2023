@@ -1,10 +1,6 @@
 <template>
-  <!-- background -->
-  <BackgroundWhite />
-  <TopTitle class="pt-2" />
-  <TopCarousel />
-  <TimeSchedule />
-  <MyNoteIcon />
+  サンプルページです
+  <router-link to="/labs">Go to labs</router-link>
 </template>
 
 <script>
