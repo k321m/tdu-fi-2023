@@ -1,12 +1,13 @@
 <template>
   <!-- background -->
   <div id="particles-js"></div>
+  <p>テスト</p>
 
-  <HeaderNavBar />
+  <!-- <HeaderNavBar />
   <TopTitle />
   <TopCarousel />
   <TimeTable class="mt-10" />
-  <MyNoteIcon />
+  <MyNoteIcon /> -->
 </template>
 
 <script>
