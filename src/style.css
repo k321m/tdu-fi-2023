@@ -45,6 +45,14 @@ body {
   font-size: 1.1em;
   line-height: 1;
 }
+
+p.hack {
+  font-family: hack, sans-serif;
+  font-weight: 400;
+  font-size: 0.8em;
+  font-style: normal;
+}
+
 .zen-kaku-h5 {
   font-family: zen-kaku-gothic-new, sans-serif;
   font-weight: 700;
@@ -76,4 +84,5 @@ body {
 }
 .v-footer {
   z-index: 1 !important;
+  text-align: center;
 }

@@ -23,9 +23,11 @@
     <v-main>
       <router-view />
     </v-main>
-    <div>
-      <v-footer absolute app color="black" height="56px">
-        <p>Created by inue研</p>
+    <div class="pt-2">
+      <v-footer color="black" height="56px" absolute app>
+        <div class="w-100">
+          <p class="text-center hack">inue研</p>
+        </div>
       </v-footer>
     </div>
   </v-app>
@@ -48,3 +50,5 @@ export default {
   },
 };
 </script>
+
+<style scoped></style>
