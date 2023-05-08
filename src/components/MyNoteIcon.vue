@@ -11,6 +11,7 @@ export default {
 <style scoped>
 .my-note-icon {
   position: fixed;
+  z-index: 100;
   right: 20px;
   bottom: 20px;
   width: 100px;

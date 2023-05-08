@@ -1,5 +1,5 @@
 <template>
-  <div class="py-4">
+  <div class="py-8">
     <div class="background py-3">
       <div class="map">
         <div class="py-4 pl-4">
@@ -54,15 +54,13 @@ export default {
 
 <style scoped>
 .background {
-  position: absolute;
-  overflow: visible;
+  position: relative;
   background-color: white;
   background-size: cover;
-  background-position-x: right;
   z-index: -1; /*描画を一番下に*/
   width: calc(100% - 24px);
   border-radius: 30px 0px 0px 30px;
-  right: 0;
+  left: 24px;
 }
 .map {
   margin: 0 0 0 -24px;

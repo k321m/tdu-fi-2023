@@ -1,11 +1,12 @@
 <template>
-  <!-- background -->
   <BackgroundWhite />
-  <TopTitle class="pt-2" />
-  <TopCarousel />
-  <TimeSchedule />
-  <Map />
-  <MyNoteIcon />
+  <div id="contents">
+    <TopTitle />
+    <TopCarousel />
+    <TimeSchedule />
+    <Map />
+    <MyNoteIcon />
+  </div>
 </template>
 
 <script>
