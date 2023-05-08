@@ -38,6 +38,13 @@ body {
   font-size: x-large;
   line-height: 1;
 }
+.hack-h5 {
+  font-family: "hack", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.1em;
+  line-height: 1;
+}
 .zen-kaku-h5 {
   font-family: zen-kaku-gothic-new, sans-serif;
   font-weight: 700;

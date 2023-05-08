@@ -1,6 +1,6 @@
 <template>
   <div class="py-8">
-    <div class="py-3 background">
+    <div class="background">
       <div class="time-schedule">
         <div class="py-4 pl-4">
           <p class="zen-kaku-h5 pl-5 pb-2">タイムスケジュール</p>
@@ -22,40 +22,60 @@
             <v-col cols="2">
               <v-timeline line-color="black" side="end">
                 <v-timeline-item height="56px" size="xx-small">
-                  <template v-slot:opposite> <span>10:00</span> </template>
+                  <template v-slot:opposite>
+                    <span class="hack-h5">10:00</span>
+                  </template>
                 </v-timeline-item>
 
                 <v-timeline-item height="32px" size="xx-small">
-                  <template v-slot:opposite> <span>11:15</span> </template>
+                  <template v-slot:opposite>
+                    <span class="hack-h5">11:15</span>
+                  </template>
                 </v-timeline-item>
                 <v-timeline-item height="32px" size="xx-small">
-                  <template v-slot:opposite> <span>11:35</span> </template>
-                </v-timeline-item>
-
-                <v-timeline-item height="32px" size="xx-small">
-                  <template v-slot:opposite> <span>12:15</span> </template>
-                </v-timeline-item>
-
-                <v-timeline-item height="32px" size="xx-small">
-                  <template v-slot:opposite> <span>12:35</span> </template>
+                  <template v-slot:opposite>
+                    <span class="hack-h5">11:35</span>
+                  </template>
                 </v-timeline-item>
 
                 <v-timeline-item height="32px" size="xx-small">
-                  <template v-slot:opposite> <span>13:15</span> </template>
+                  <template v-slot:opposite>
+                    <span class="hack-h5">12:15</span>
+                  </template>
+                </v-timeline-item>
+
+                <v-timeline-item height="32px" size="xx-small">
+                  <template v-slot:opposite>
+                    <span class="hack-h5">12:35</span>
+                  </template>
+                </v-timeline-item>
+
+                <v-timeline-item height="32px" size="xx-small">
+                  <template v-slot:opposite>
+                    <span class="hack-h5">13:15</span>
+                  </template>
                 </v-timeline-item>
 
                 <v-timeline-item height="32px" size="xx-small" class="pa-0">
-                  <template v-slot:opposite> <span>13:35</span> </template>
+                  <template v-slot:opposite>
+                    <span class="hack-h5">13:35</span>
+                  </template>
                 </v-timeline-item>
 
                 <v-timeline-item height="32px" size="xx-small">
-                  <template v-slot:opposite> <span>14:15</span> </template>
+                  <template v-slot:opposite>
+                    <span class="hack-h5">14:15</span>
+                  </template>
                 </v-timeline-item>
                 <v-timeline-item height="32px" size="xx-small">
-                  <template v-slot:opposite> <span>14:35</span> </template>
+                  <template v-slot:opposite>
+                    <span class="hack-h5">14:35</span>
+                  </template>
                 </v-timeline-item>
                 <v-timeline-item height="56px" size="xx-small">
-                  <template v-slot:opposite> <span>16:00</span> </template>
+                  <template v-slot:opposite>
+                    <span class="hack-h5">16:00</span>
+                  </template>
                 </v-timeline-item>
               </v-timeline>
             </v-col>
@@ -131,14 +151,8 @@ export default {
 </script>
 
 <style scoped>
-span {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1em;
-  line-height: 0;
-}
 .background {
+  overflow: visible;
   background-color: white;
   z-index: -1; /*描画を一番下に*/
   width: calc(100% - 24px);
