@@ -1,5 +1,7 @@
 <template>
-  <p>Labsページです</p>
+  <div id="contents">
+    <p>Labsページです</p>
+  </div>
 </template>
 
 <script>

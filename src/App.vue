@@ -21,6 +21,7 @@
     </div>
 
     <v-main>
+      <div id="particles-js"></div>
       <router-view />
     </v-main>
     <div class="pt-2">
@@ -42,7 +43,7 @@ export default {
       drawer: false,
       menus: [
         { title: "Index", icon: "mdi-web", url: "/" },
-        { title: "Home", icon: "mdi-home", url: "/home" },
+        { title: "Home", icon: "mdi-home", url: "/my-note" },
         { title: "Favorites", icon: "mdi-heart", url: "/favorites" },
         { title: "About", icon: "mdi-information-variant", url: "/about" },
       ],

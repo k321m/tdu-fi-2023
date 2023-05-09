@@ -6,7 +6,9 @@
       </p>
     </div>
   </div>
-  <img class="my-note-icon" src="../assets/MyNote.svg" />
+  <router-link to="/my-note">
+    <img class="my-note-icon" src="../assets/MyNote.svg" />
+  </router-link>
 </template>
 
 <script>
