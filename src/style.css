@@ -22,7 +22,7 @@ body {
   font-weight: 700;
   font-style: normal;
   font-size: 3em;
-  line-height: 1;
+  line-height: 1.3;
 }
 .hack-h2 {
   font-family: "hack", sans-serif;
@@ -59,6 +59,12 @@ p.hack {
   font-size: 1.1em;
   font-style: normal;
   line-height: 1;
+}
+.zen-kaku-h5-bold {
+  font-family: zen-kaku-gothic-new, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.3;
 }
 
 /* 選択されている風 */

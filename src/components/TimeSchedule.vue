@@ -79,7 +79,7 @@
                 </v-timeline-item>
               </v-timeline>
             </v-col>
-            <v-col>
+            <v-col class="pl-5">
               <div class="pt-6">
                 <p class="zen-kaku-h5 pt-2">入場開始</p>
               </div>

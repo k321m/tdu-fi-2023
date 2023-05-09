@@ -1,35 +1,53 @@
 <template>
-  <div id="top-title">
-    <div class="px-4 py-8">
+  <div id="top-title" style="min-height: 225px">
+    <div class="px-4 pt-8 pb-4">
       <div>
-        <VueTyper class="hack-h4" text=">2023" type-delay="50" :repeat="0" />
+        <VueTyper
+          class="hack-h4"
+          text=">2023"
+          type-delay="50"
+          :repeat="0"
+          @typed="isfirstTypeDone = true"
+        />
       </div>
-      <div>
+      <div v-show="isfirstTypeDone">
         <VueTyper
           class="hack-h4"
           text=">TOKYO DENKI UNIVERSITY"
           type-delay="50"
           pre-type-delay="500"
           :repeat="0"
+          @typed="isSecondTypeDone = true"
         />
       </div>
-      <div>
+      <div v-show="isSecondTypeDone">
         <VueTyper
           class="hack-h1 custom"
           text="OPEN CAMPUS"
-          type-delay="50"
-          pre-type-delay="1900"
+          type-delay="55"
+          pre-type-delay="2000"
           :repeat="0"
+          @typed="isThirdTypeDone = true"
         ></VueTyper>
       </div>
-      <div>
+      <div v-show="isThirdTypeDone">
         <VueTyper
           class="hack-h1"
           text="6.11"
-          type-delay="50"
-          pre-type-delay="2500"
+          type-delay="55"
+          pre-type-delay="2800"
           :repeat="0"
+          @typed="isForthTypeDone = true"
         />
+        <span v-show="isForthTypeDone">
+          <VueTyper
+            class="pl-1 hack-h4"
+            text="sun"
+            type-delay="55"
+            pre-type-delay="3100"
+            :repeat="0"
+          />
+        </span>
       </div>
     </div>
   </div>
@@ -38,5 +56,13 @@
 <script>
 export default {
   name: "TopTitle",
+  data() {
+    return {
+      isfirstTypeDone: false,
+      isSecondTypeDone: false,
+      isThirdTypeDone: false,
+      isForthTypeDone: false,
+    };
+  },
 };
 </script>
