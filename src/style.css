@@ -30,6 +30,7 @@ body {
   font-style: normal;
   font-size: 2em;
   line-height: 1;
+  letter-spacing: -0.03em;
 }
 .hack-h4 {
   font-family: "hack", sans-serif;
@@ -42,7 +43,7 @@ body {
   font-family: "hack", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   line-height: 1;
 }
 
