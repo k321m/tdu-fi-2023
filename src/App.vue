@@ -27,7 +27,7 @@
     <div class="pt-2">
       <v-footer color="black" height="56px" absolute app>
         <div class="w-100">
-          <p class="text-center hack">inue研</p>
+          <p class="text-center hack">Created by inue研</p>
         </div>
       </v-footer>
     </div>

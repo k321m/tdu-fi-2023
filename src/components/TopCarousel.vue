@@ -51,6 +51,7 @@ export default {
   right: 0;
   bottom: 0;
   text-align: right;
+  transform: scale(0.9, 1);
 }
 p.jp-text {
   font-family: zen-kaku-gothic-new, sans-serif;
