@@ -4,7 +4,13 @@
       <div class="time-schedule">
         <div class="py-4 pl-4">
           <p class="zen-kaku-h5 pl-5 pb-2">タイムスケジュール</p>
-          <p class="hack-h2">>Time Schedule</p>
+          <VueTyper
+            class="pl-1 hack-h2"
+            text=">Time Schedule"
+            type-delay="55"
+            :repeat="0"
+          >
+          </VueTyper>
         </div>
         <div class="py-4">
           <p class="zen-kaku-h5 pl-4 pb-3">終日開催</p>
