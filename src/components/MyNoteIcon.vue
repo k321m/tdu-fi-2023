@@ -86,6 +86,7 @@ export default {
   bottom: 20px;
   width: 70px;
   height: 80px;
+  filter: drop-shadow(1px 4px 3px #7c7c7c);
   animation: poyopoyo 3s ease-out infinite;
 }
 
