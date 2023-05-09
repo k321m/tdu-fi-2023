@@ -8,7 +8,7 @@
         </div>
         <div class="py-4">
           <p class="zen-kaku-h5 pl-4 pb-3">終日開催</p>
-          <div>
+          <div class="pl-4">
             <Carousel :itemsToShow="2.9" snapAlign="start" :transition="1500">
               <Slide v-for="slide in 10" :key="slide">
                 <div class="carousel__item">{{ slide }}</div>
