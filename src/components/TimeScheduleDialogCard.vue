@@ -1,19 +1,19 @@
 <template>
   <div class="background-dialog pa-4">
-    <div class="right" @click="dialogClose()">
+    <div class="right" @click="$emit('close-dialog')">
       <v-icon>mdi-close</v-icon>
     </div>
     <div class="pb-10">
-      <p class="zen-kaku-bold py-4">{{ data.event }}</p>
-      <p class="zen-kaku-h2">{{ data.title }}</p>
+      <p class="zen-kaku-bold py-4">{{ eventData.event }}</p>
+      <p class="zen-kaku-h2">{{ eventData.title }}</p>
     </div>
     <div class="pt-10">
       <img class="icon-map" src="../assets/icon-map.svg" />
-      <span class="zen-kaku-regular pl-1">{{ data.place }}</span>
+      <span class="zen-kaku-regular pl-1">{{ eventData.place }}</span>
     </div>
     <div class="py-4">
       <p class="zen-kaku-medium info">
-        {{ data.info }}
+        {{ eventData.info }}
       </p>
     </div>
     <div class="py-2">
@@ -22,7 +22,7 @@
         width="100%"
         height="60px"
         elevation="2"
-        @click="addMyNote()"
+        @click="$store.commit('addMyNote', this.eventKey)"
         >MyNoteに追加</v-btn
       >
     </div>
@@ -32,27 +32,29 @@
         width="100%"
         height="60px"
         elevation="2"
-        @click="getMyNote()"
+        @click="$store.commit('getMyNote')"
         >地図を確認</v-btn
       >
     </div>
   </div>
+  <!-- <v-btn
+    rounded="xs"
+    width="100%"
+    height="60px"
+    elevation="2"
+    @click="$store.commit('removeMyNote')"
+    >データ削除</v-btn
+  > -->
 </template>
 
 <script>
 export default {
   name: "DialogCard",
-  props: ["data"],
+  props: ["eventData", "eventKey"],
+  emits: ["close-dialog"],
   methods: {
-    dialogClose() {
-      this.$emit("close-dialog");
-    },
     addMyNote() {
-      console.log(this.data);
-      this.$store.commit("addMyNote", this.data);
-    },
-    getMyNote() {
-      console.log(this.$store.commit("getMyNote"));
+      this.$store.commit("addMyNote", this.eventKey);
     },
   },
 };

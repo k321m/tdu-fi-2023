@@ -24,6 +24,7 @@
       <div id="particles-js"></div>
       <router-view />
     </v-main>
+
     <div class="pt-2">
       <v-footer color="black" height="56px" absolute app>
         <div class="w-100">
