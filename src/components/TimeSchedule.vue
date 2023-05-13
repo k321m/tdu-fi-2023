@@ -1,5 +1,8 @@
 <template>
   <div class="py-8">
+    <v-dialog v-model="dialog">
+      <DialogCard :data="clickedData" @close-dialog="dialog = false" />
+    </v-dialog>
     <div class="background">
       <div class="time-schedule">
         <div class="py-4 pl-4">
@@ -16,8 +19,12 @@
           <p class="zen-kaku-h5 pl-4 pb-3">終日開催</p>
           <div class="pl-4">
             <Carousel :itemsToShow="2.9" snapAlign="start" :transition="1500">
-              <Slide v-for="slide in 10" :key="slide">
-                <div class="carousel__item">{{ slide }}</div>
+              <Slide v-for="data in dialogData.allDayEvent" :key="data">
+                <div class="carousel__item" @click="openDialog(data)">
+                  <span class="zen-kaku-medium" style="font-size: 0.6em">
+                    {{ data.title }}
+                  </span>
+                </div>
               </Slide>
             </Carousel>
           </div>
@@ -145,13 +152,61 @@
 </template>
 
 <script>
+import DialogCard from "./TimeScheduleDialogCard.vue";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 export default {
   name: "TimeTable",
+  data() {
+    return {
+      dialog: false,
+      clickedData: Array,
+      dialogData: {
+        allDayEvent: [
+          {
+            event: "終日開催",
+            title: "資料配布コーナー",
+            place: "2号館丹羽ホール前",
+            info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+          },
+          {
+            event: "終日開催",
+            title: "施設見学ツアー",
+            place: "5号館2階受付",
+            info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+          },
+          {
+            event: "終日開催",
+            title: "クラブ・サークル紹介",
+            place: "？？",
+            info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+          },
+          {
+            event: "終日開催",
+            title: "学科展示室",
+            place: "1号館4階演習室",
+            info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+          },
+          {
+            event: "終日開催",
+            title: "研究室公開",
+            place: "1号館4階演習室／5階メディアラボ",
+            info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+          },
+        ],
+      },
+    };
+  },
   components: {
+    DialogCard,
     Carousel,
     Slide,
+  },
+  methods: {
+    openDialog(data) {
+      this.dialog = true;
+      this.clickedData = data;
+    },
   },
 };
 </script>
