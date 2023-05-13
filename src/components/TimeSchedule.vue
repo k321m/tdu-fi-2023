@@ -179,7 +179,6 @@ export default {
   },
   methods: {
     openDialog(value, key) {
-      console.log("key:" + key);
       this.dialog = true;
       this.clickedData = value;
       this.clickedKey = key;

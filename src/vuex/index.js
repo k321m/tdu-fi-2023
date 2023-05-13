@@ -8,14 +8,18 @@ export const store = createStore({
   },
   mutations: {
     addMyNote(state, key) {
+      console.log("key:" + key);
       if (this.state.myNote.length == 0) {
         this.state.myNote.push({ id: key, memo: "", done: false });
         return;
       }
       for (var index in this.state.myNote) {
-        if (this.state.myNote[index].id == key) return;
-        this.state.myNote.push({ id: key, memo: "", done: false });
+        console.log("mynote:" + this.state.myNote[index].id);
+        if (this.state.myNote[index].id == key) {
+          return;
+        }
       }
+      this.state.myNote.push({ id: key, memo: "", done: false });
     },
     removeMyNote(state) {
       this.state.myNote.splice(0);

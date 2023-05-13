@@ -56,6 +56,7 @@
           </v-expansion-panels>
         </div>
       </div>
+      <v-btn @click="$store.commit('removeMyNote')">MyNote削除</v-btn>
     </div>
   </div>
 </template>
