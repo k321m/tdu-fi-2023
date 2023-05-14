@@ -23,7 +23,7 @@
       </div>
     </div>
     <transition name="open">
-      <div class="accordion-content" v-if="isOpen">
+      <div class="accordion-content pa-4" v-if="isOpen">
         <div name="content">
           <div>
             <p class="zen-kaku-medium py-1" style="color: #360a73">
@@ -47,9 +47,13 @@
               <p class="zen-kaku-bold py-3">メモ</p>
               <textarea @blur="saveMemo()" v-model="memo"></textarea>
             </div>
-            <div>
-              <v-btn>地図を確認</v-btn>
-              <v-btn>リストから削除</v-btn>
+            <div class="py-4" style="display: flex">
+              <v-btn rounded="xs" width="50%" height="60px" elevation="2"
+                >地図を確認</v-btn
+              >
+              <v-btn rounded="xs" width="50%" height="60px" elevation="2"
+                >リストから削除</v-btn
+              >
             </div>
           </div>
         </div>

@@ -4,9 +4,9 @@
       <v-navigation-drawer app v-model="drawer">
         <v-list nav>
           <v-list-item v-for="menu in menus" :key="menu.title" :to="menu.url">
-            <v-list-item-icon>
+            <!-- <v-list-item-icon>
               <v-icon>{{ menu.icon }}</v-icon>
-            </v-list-item-icon>
+            </v-list-item-icon> -->
             <v-list-item-content>
               <v-list-item-title>{{ menu.title }}</v-list-item-title>
             </v-list-item-content>
@@ -28,7 +28,9 @@
     <div class="pt-2">
       <v-footer color="black" height="56px" absolute app>
         <div class="w-100">
-          <p class="text-center hack">Created by inue研</p>
+          <p class="text-center hack" @click="$store.commit('removeMyNote')">
+            Created by inue研
+          </p>
         </div>
       </v-footer>
     </div>
@@ -43,10 +45,11 @@ export default {
     return {
       drawer: false,
       menus: [
-        { title: "Index", icon: "mdi-web", url: "/" },
-        { title: "Home", icon: "mdi-home", url: "/my-note" },
-        { title: "Favorites", icon: "mdi-heart", url: "/favorites" },
-        { title: "About", icon: "mdi-information-variant", url: "/about" },
+        { title: "トップ", icon: "mdi-web", url: "/" },
+        { title: "MyNote", icon: "mdi-home", url: "/my-note" },
+        { title: "研究室公開", icon: "mdi-heart", url: "/labs" },
+        { title: "講義動画", icon: "mdi-information-variant", url: "" },
+        { title: "具体的な質問例", icon: "mdi-information-variant", url: "" },
       ],
     };
   },

@@ -56,7 +56,7 @@
           <v-expansion-panels>
             <v-expansion-panel
               class="my-1"
-              v-for="i in this.myNoteData.length"
+              v-for="i in 0"
               :key="i"
               title="item"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -64,7 +64,7 @@
           </v-expansion-panels>
         </div>
       </div>
-      <v-btn @click="$store.commit('removeMyNote')">MyNote削除</v-btn>
+      <!-- <v-btn @click="$store.commit('removeMyNote')">MyNote削除</v-btn> -->
     </div>
   </div>
 </template>
