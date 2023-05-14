@@ -21,15 +21,19 @@
           </VueTyper>
         </div>
         <div class="py-4">
-          <p class="zen-kaku-h5 pl-4 pb-3">終日開催</p>
+          <p class="zen-kaku-bold pl-4 pb-3">終日開催</p>
           <div class="pl-4">
             <Carousel :itemsToShow="2.9" snapAlign="start" :transition="1500">
-              <Slide
+              <!-- <Slide
                 v-for="(value, key) in $store.state.dialogStore.allDayEvent"
+                :key="value"
+              > -->
+              <Slide
+                v-for="(value, key) in $store.state.allDayEvent"
                 :key="value"
               >
                 <div class="carousel__item" @click="openDialog(value, key)">
-                  <span class="zen-kaku-medium" style="font-size: 0.6em">
+                  <span class="zen-kaku-medium" style="font-size: 0.65em">
                     {{ value.title }}
                   </span>
                 </div>
@@ -38,7 +42,7 @@
           </div>
         </div>
         <div class="py-4">
-          <p class="zen-kaku-h5 pl-4 pb-3">限定プログラム</p>
+          <p class="zen-kaku-bold pl-4 pb-3">限定プログラム</p>
           <v-row class="pl-4">
             <v-col cols="2">
               <v-timeline line-color="black" side="end">
@@ -102,7 +106,7 @@
             </v-col>
             <v-col class="pl-5">
               <div class="pt-6">
-                <p class="zen-kaku-h5 pt-2">入場開始</p>
+                <p class="zen-kaku-regular pt-2">入場開始</p>
               </div>
               <div class="pt-11">
                 <Carousel
@@ -110,8 +114,12 @@
                   snapAlign="start"
                   :transition="1500"
                 >
-                  <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
+                  <Slide v-for="slide in data" :key="slide">
+                    <div class="carousel__item">
+                      <p class="zen-kaku-medium" style="font-size: 0.7em">
+                        {{ slide }}
+                      </p>
+                    </div>
                   </Slide>
                 </Carousel>
               </div>
@@ -121,8 +129,12 @@
                   snapAlign="start"
                   :transition="1500"
                 >
-                  <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
+                  <Slide v-for="slide in data" :key="slide">
+                    <div class="carousel__item">
+                      <p class="zen-kaku-medium" style="font-size: 0.7em">
+                        {{ slide }}
+                      </p>
+                    </div>
                   </Slide>
                 </Carousel>
               </div>
@@ -132,8 +144,12 @@
                   snapAlign="start"
                   :transition="1500"
                 >
-                  <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
+                  <Slide v-for="slide in data" :key="slide">
+                    <div class="carousel__item">
+                      <p class="zen-kaku-medium" style="font-size: 0.7em">
+                        {{ slide }}
+                      </p>
+                    </div>
                   </Slide>
                 </Carousel>
               </div>
@@ -143,13 +159,17 @@
                   snapAlign="start"
                   :transition="1500"
                 >
-                  <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
+                  <Slide v-for="slide in data" :key="slide">
+                    <div class="carousel__item">
+                      <p class="zen-kaku-medium" style="font-size: 0.7em">
+                        {{ slide }}
+                      </p>
+                    </div>
                   </Slide>
                 </Carousel>
               </div>
               <div class="pt-10">
-                <p class="zen-kaku-h5">オープンキャンパス終了</p>
+                <p class="zen-kaku-regular">オープンキャンパス終了</p>
               </div>
             </v-col>
           </v-row>
@@ -170,6 +190,7 @@ export default {
       dialog: false,
       clickedValue: Array,
       clickedKey: String,
+      data: ["学科説明会", "電大ガイダンス", "入試ガイダンス"],
     };
   },
   components: {
