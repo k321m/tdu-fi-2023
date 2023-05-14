@@ -1,0 +1,14 @@
+<svg id="checkbox" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eb57ed"/>
+      <stop offset="0.768" stop-color="#8f9eed"/>
+      <stop offset="1" stop-color="#29eded"/>
+    </linearGradient>
+  </defs>
+  <rect id="長方形_1537" data-name="長方形 1537" width="30" height="30" fill="url(#linear-gradient)"/>
+  <g id="icon-check" transform="translate(7 7)">
+    <rect id="長方形_460" data-name="長方形 460" width="16" height="16" transform="translate(0 0)" fill="none"/>
+    <path id="Checkbox-2" data-name="Checkbox" d="M6.345,11.034,0,4.69,1.287,3.4,6.345,8.368,14.713,0,16,1.287Z" transform="translate(0 2)" fill="#fff"/>
+  </g>
+</svg>

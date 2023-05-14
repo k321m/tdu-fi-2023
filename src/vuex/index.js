@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 import createPersistedstate from "vuex-persistedstate";
-import dialogStore from "./dialogStore.js";
+import dialogstore from "./dialogstore";
 
 export const store = createStore({
   state: {
@@ -14,31 +14,48 @@ export const store = createStore({
         return;
       }
       for (var index in this.state.myNote) {
-        console.log("mynote:" + this.state.myNote[index].id);
         if (this.state.myNote[index].id == key) {
           return;
         }
       }
       this.state.myNote.push({ id: key, memo: "", done: false });
     },
+    changeDone(state, id) {
+      console.log("Save:" + id);
+      for (var index in this.state.myNote) {
+        if (this.state.myNote[index].id == id) {
+          this.state.myNote[index].done = !this.state.myNote[index].done;
+          console.log("Savedoneis:" + this.state.myNote[index].done);
+          return;
+        }
+      }
+      return;
+    },
+    saveMemo(state, obj) {
+      for (var index in this.state.myNote) {
+        if (this.state.myNote[index].id == obj.id) {
+          this.state.myNote[index].memo = obj.memo;
+          return;
+        }
+      }
+      return;
+    },
     removeMyNote(state) {
       this.state.myNote.splice(0);
     },
   },
   getters: {
-    getMyNote(state) {
-      console.log("MyNoteLength:" + this.state.myNote.length);
-      for (var k in this.state.myNote) {
-        console.log("MyNoteID:" + this.state.myNote[k].id);
-        console.log("MyNoteMemo:" + this.state.myNote[k].memo);
-      }
-      console.log("return:" + this.state.myNote);
-      return this.state.myNote;
+    getMyNote(state, getters) {
+      return state.myNote;
     },
-    getDataSet(state, getters) {
+    getAllDayEvents() {
+      return state.dialogStore.allDayEvent;
+    },
+
+    getMyNoteDataSet(state, getters) {
       var dataSet = [];
-      for (var k in state.myNote) {
-        var key = state.myNote[k].id;
+      for (var index in state.myNote) {
+        var key = state.myNote[index].id;
         var parentKey = String(key).slice(0, String(key).indexOf("_"));
         var parentData = {};
         if (parentKey == "allDayEvent") {
@@ -50,7 +67,7 @@ export const store = createStore({
     },
   },
   modules: {
-    dialogStore: dialogStore,
+    dialogstore: dialogstore,
   },
   plugins: [createPersistedstate()],
 });
