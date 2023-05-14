@@ -33,7 +33,7 @@
                 :key="value"
               >
                 <div class="carousel__item" @click="openDialog(value, key)">
-                  <span class="zen-kaku-medium" style="font-size: 0.65em">
+                  <span class="zen-kaku-medium" style="font-size: 0.62em">
                     {{ value.title }}
                   </span>
                 </div>
