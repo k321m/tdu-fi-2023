@@ -21,7 +21,7 @@
           </VueTyper>
         </div>
         <div class="py-4">
-          <p class="zen-kaku-h5 pl-4 pb-3">終日開催</p>
+          <p class="zen-kaku-bold pl-4 pb-3">終日開催</p>
           <div class="pl-4">
             <Carousel :itemsToShow="2.9" snapAlign="start" :transition="1500">
               <Slide
@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="py-4">
-          <p class="zen-kaku-h5 pl-4 pb-3">限定プログラム</p>
+          <p class="zen-kaku-bold pl-4 pb-3">限定プログラム</p>
           <v-row class="pl-4">
             <v-col cols="2">
               <v-timeline line-color="black" side="end">
