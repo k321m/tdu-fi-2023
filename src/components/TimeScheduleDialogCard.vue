@@ -27,12 +27,7 @@
       >
     </div>
     <div class="py-2">
-      <v-btn
-        rounded="xs"
-        width="100%"
-        height="60px"
-        elevation="2"
-        @click="$store.commit('getMyNote')"
+      <v-btn rounded="xs" width="100%" height="60px" elevation="2"
         >地図を確認</v-btn
       >
     </div>
