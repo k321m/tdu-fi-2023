@@ -1,10 +1,11 @@
 <template>
   <div class="py-8">
-    <v-dialog v-model="dialog">
+    <v-dialog v-model="isDialogVisible">
       <TimeScheduleDialog
-        :eventData="clickedData"
-        :eventKey="clickedKey"
-        @close-dialog="dialog = false"
+        :eventData="clickedEventData"
+        :eventKey="clickedEventKey"
+        :eventTime="clickedEventTime"
+        @close-dialog="isDialogVisible = false"
       />
     </v-dialog>
 
@@ -101,14 +102,36 @@
               <div class="pt-6">
                 <p class="zen-kaku-h5 pt-2">入場開始</p>
               </div>
-              <div class="pt-11">
+              <div class="pt-11" id="timeSchedule">
                 <Carousel
                   :itemsToShow="2.3"
                   snapAlign="start"
                   :transition="1500"
                 >
-                  <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
+                  <Slide
+                    v-for="(value, key) in this.timeScheduleData.timeSchedule_1"
+                    :key="value"
+                  >
+                    <div
+                      class="carousel__item"
+                      @click="
+                        openDialog(this.limitedEventsData[key], key, value.time)
+                      "
+                      :style="value.carousel_height"
+                    >
+                      <div>
+                        <p
+                          class="zen-kaku-medium"
+                          style="font-size: 0.6em"
+                          v-if="this.limitedEventsData[key].subTitle"
+                        >
+                          {{ this.limitedEventsData[key].subTitle }}
+                        </p>
+                        <p class="zen-kaku-medium" style="font-size: 0.9em">
+                          {{ this.limitedEventsData[key].title }}
+                        </p>
+                      </div>
+                    </div>
                   </Slide>
                 </Carousel>
               </div>
@@ -118,8 +141,30 @@
                   snapAlign="start"
                   :transition="1500"
                 >
-                  <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
+                  <Slide
+                    v-for="(value, key) in this.timeScheduleData.timeSchedule_2"
+                    :key="value"
+                  >
+                    <div
+                      class="carousel__item"
+                      @click="
+                        openDialog(this.limitedEventsData[key], key, value.time)
+                      "
+                      :style="value.carousel_height"
+                    >
+                      <div>
+                        <p
+                          class="zen-kaku-medium"
+                          style="font-size: 0.6em"
+                          v-if="this.limitedEventsData[key].subTitle"
+                        >
+                          {{ this.limitedEventsData[key].subTitle }}
+                        </p>
+                        <p class="zen-kaku-medium" style="font-size: 0.9em">
+                          {{ this.limitedEventsData[key].title }}
+                        </p>
+                      </div>
+                    </div>
                   </Slide>
                 </Carousel>
               </div>
@@ -129,8 +174,30 @@
                   snapAlign="start"
                   :transition="1500"
                 >
-                  <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
+                  <Slide
+                    v-for="(value, key) in this.timeScheduleData.timeSchedule_3"
+                    :key="value"
+                  >
+                    <div
+                      class="carousel__item"
+                      @click="
+                        openDialog(this.limitedEventsData[key], key, value.time)
+                      "
+                      :style="value.carousel_height"
+                    >
+                      <div>
+                        <p
+                          class="zen-kaku-medium"
+                          style="font-size: 0.6em"
+                          v-if="this.limitedEventsData[key].subTitle"
+                        >
+                          {{ this.limitedEventsData[key].subTitle }}
+                        </p>
+                        <p class="zen-kaku-medium" style="font-size: 0.9em">
+                          {{ this.limitedEventsData[key].title }}
+                        </p>
+                      </div>
+                    </div>
                   </Slide>
                 </Carousel>
               </div>
@@ -140,8 +207,30 @@
                   snapAlign="start"
                   :transition="1500"
                 >
-                  <Slide v-for="slide in 10" :key="slide">
-                    <div class="carousel__item">{{ slide }}</div>
+                  <Slide
+                    v-for="(value, key) in this.timeScheduleData.timeSchedule_4"
+                    :key="value"
+                  >
+                    <div
+                      class="carousel__item"
+                      @click="
+                        openDialog(this.limitedEventsData[key], key, value.time)
+                      "
+                      :style="value.carousel_height"
+                    >
+                      <div>
+                        <p
+                          class="zen-kaku-medium"
+                          style="font-size: 0.6em"
+                          v-if="this.limitedEventsData[key].subTitle"
+                        >
+                          {{ this.limitedEventsData[key].subTitle }}
+                        </p>
+                        <p class="zen-kaku-medium" style="font-size: 0.9em">
+                          {{ this.limitedEventsData[key].title }}
+                        </p>
+                      </div>
+                    </div>
                   </Slide>
                 </Carousel>
               </div>
@@ -164,10 +253,13 @@ export default {
   name: "TimeTable",
   data() {
     return {
-      dialog: false,
+      isDialogVisible: false,
       allDayEventsData: {},
-      clickedValue: Array,
-      clickedKey: String,
+      limitedEventsData: {},
+      timeScheduleData: {},
+      clickedEventData: Array,
+      clickedEventKey: String,
+      clickedEventTime: String,
     };
   },
   components: {
@@ -176,14 +268,19 @@ export default {
     Slide,
   },
   methods: {
-    openDialog(value, key) {
-      this.dialog = true;
-      this.clickedData = value;
-      this.clickedKey = key;
+    openDialog(value, key, time = null) {
+      this.isDialogVisible = true;
+      this.clickedEventData = value;
+      this.clickedEventKey = key;
+      this.clickedEventTime = time;
     },
   },
   mounted() {
-    this.allDayEventsData = this.$store.getters["dialogStore/getAllDayEvents"];
+    this.allDayEventsData = this.$store.getters["eventsStore/getAllDayEvents"];
+    this.limitedEventsData =
+      this.$store.getters["eventsStore/getLimitedEvents"];
+    this.timeScheduleData = this.$store.getters["eventsStore/getTimeSchedule"];
+    console.log(JSON.stringify(this.timeScheduleData));
   },
 };
 </script>
@@ -205,14 +302,15 @@ export default {
   width: 100%;
   background-color: gainsboro;
   color: black;
-  font-size: 20px;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
+  vertical-align: top;
 }
 
 .carousel__slide {
   padding: 3px;
+  align-items: baseline;
 }
 </style>

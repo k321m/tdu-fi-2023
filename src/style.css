@@ -81,6 +81,58 @@ p.hack {
   line-height: 1.3;
 }
 
+/* ボタン　*/
+.myNote-btn {
+  min-height: 52px;
+  background: linear-gradient(
+    270deg,
+    #29eded 0%,
+    #8f9eed 25%,
+    #eb57ed 50%,
+    #eb57ed 100%
+  );
+  color: white;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-btn {
+  min-height: 52px;
+  background-color: #010440;
+  color: white;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ボタンクリックアニメーション　*/
+.btn-animation {
+  position: relative;
+  overflow: hidden;
+}
+.btn-animation::after {
+  content: "";
+  /*絶対配置で波紋位置を決める*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /*波紋の形状*/
+  background: radial-gradient(circle, #fff 10%, transparent 10%) no-repeat 50%;
+  transform: scale(10, 10);
+  /*はじめは透過0に*/
+  opacity: 0;
+  /*アニメーションの設定*/
+  transition: transform 0.2s, opacity 0.5s;
+}
+.btn-animation:active::after {
+  transform: scale(0, 0);
+  transition: 0s;
+  opacity: 0.3;
+}
+
 /* 選択されている風 */
 .vue-typer.custom .char.typed {
   color: #f2f2f2;
@@ -102,6 +154,7 @@ p.hack {
 #top-carousel .carousel__pagination {
   margin: 0;
 }
+
 .v-footer {
   z-index: 1 !important;
   text-align: center;

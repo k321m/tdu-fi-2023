@@ -13,7 +13,7 @@
         <div v-for="(value, key) in myNoteDetailData.events" :key="value">
           <MyNoteEventAcordion :eventKey="key">
             <template v-slot:title>{{ value.title }}</template>
-            <template v-slot:event>{{ value.event }}</template>
+            <template v-slot:eventType>{{ value.eventType }}</template>
             <template v-slot:place>{{ value.place }}</template>
           </MyNoteEventAcordion>
         </div>

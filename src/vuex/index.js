@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 import createPersistedstate from "vuex-persistedstate";
-import dialogStore from "./dialogStore";
+import eventsStore from "./eventsStore";
 
 export const store = createStore({
   state: {
@@ -57,7 +57,7 @@ export const store = createStore({
           String(eventKey).indexOf("_")
         );
         detailData.events = Object.assign(detailData.events, {
-          [eventKey]: state.dialogStore[eventType][eventKey],
+          [eventKey]: state.eventsStore[eventType][eventKey],
         });
       });
       questionKeys.forEach(function (questionKey) {});
@@ -65,7 +65,7 @@ export const store = createStore({
     },
   },
   modules: {
-    dialogStore,
+    eventsStore,
   },
   plugins: [createPersistedstate({ key: "tdu-fi-2023oc", paths: ["myNote"] })],
 });

@@ -23,7 +23,7 @@
         <div name="content">
           <div>
             <p class="zen-kaku-medium py-1" style="color: #360a73">
-              <slot name="event"></slot>
+              <slot name="eventType"></slot>
             </p>
             <div class="contents">
               <!-- <div>
@@ -182,6 +182,7 @@ img {
 .contents {
   display: flex;
 }
+
 textarea {
   font-size: 0.8rem;
   letter-spacing: 1px;
