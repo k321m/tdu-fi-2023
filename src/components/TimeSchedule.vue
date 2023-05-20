@@ -1,7 +1,7 @@
 <template>
   <div class="py-8">
     <v-dialog v-model="dialog">
-      <DialogCard
+      <TimeScheduleDialog
         :eventData="clickedData"
         :eventKey="clickedKey"
         @close-dialog="dialog = false"
@@ -157,7 +157,7 @@
 </template>
 
 <script>
-import DialogCard from "./TimeScheduleDialogCard.vue";
+import TimeScheduleDialog from "./TimeScheduleDialog.vue";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 export default {
@@ -171,7 +171,7 @@ export default {
     };
   },
   components: {
-    DialogCard,
+    TimeScheduleDialog,
     Carousel,
     Slide,
   },
