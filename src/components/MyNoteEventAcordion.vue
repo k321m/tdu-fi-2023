@@ -12,14 +12,10 @@
       </div>
 
       <div class="pulldown-button py-1" @click="isOpen = !isOpen">
-        <transition-group name="rotate" mode="out-in">
-          <img
-            src="../assets/pulldown-button-down.svg"
-            v-if="isOpen"
-            key="rotate1"
-          />
-          <img src="../assets/pulldown-button-up.svg" v-else key="rotate2" />
-        </transition-group>
+        <img
+          :class="openAcordionStyleSet()"
+          src="../assets/pulldown-button-down.svg"
+        />
       </div>
     </div>
     <transition name="open">
@@ -64,7 +60,7 @@
 
 <script>
 export default {
-  name: "MyNoteAcordion",
+  name: "MyNoteEventAcordion",
   props: ["eventKey"],
   data() {
     return {
@@ -98,6 +94,12 @@ export default {
       return {
         checkedbox: this.isChecked,
         checkbox: !this.isChecked,
+      };
+    },
+    openAcordionStyleSet() {
+      return {
+        openAcordionbutton: this.isOpen,
+        closeAcordionbutton: !this.isOpen,
       };
     },
   },
@@ -170,15 +172,11 @@ img {
   animation: open 0.2s;
 }
 .open-leave-active {
-  animation: open 0.2s reverse;
+  animation: open 0.1s reverse;
 }
-@keyframes rotate {
-  0% {
-    transform: rotate(180deg);
-  }
-}
-.rotate-enter-active {
-  animation: rotate 0.2s linear;
+
+.openAcordionbutton {
+  transform: scaleY(-1);
 }
 
 .contents {

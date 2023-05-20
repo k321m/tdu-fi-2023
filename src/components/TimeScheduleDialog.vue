@@ -1,7 +1,9 @@
 <template>
   <div class="background-dialog pa-4">
-    <div class="right" @click="$emit('close-dialog')">
-      <v-icon>mdi-close</v-icon>
+    <div style="display: flex" @click="$emit('close-dialog')">
+      <div style="margin: 0 0 0 auto">
+        <v-icon style="">mdi-close</v-icon>
+      </div>
     </div>
     <div class="pb-10">
       <p class="zen-kaku-bold py-4">{{ eventData.event }}</p>
@@ -38,7 +40,7 @@
 
 <script>
 export default {
-  name: "DialogCard",
+  name: "TimeScheduleDialog",
   props: ["eventData", "eventKey"],
   emits: ["close-dialog"],
   data() {

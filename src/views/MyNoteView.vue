@@ -11,11 +11,11 @@
       <div class="pt-6">
         <p class="zen-kaku-bold">訪問リスト</p>
         <div v-for="(value, key) in myNoteDetailData.events" :key="value">
-          <MyNoteAcordion :eventKey="key">
+          <MyNoteEventAcordion :eventKey="key">
             <template v-slot:title>{{ value.title }}</template>
             <template v-slot:event>{{ value.event }}</template>
             <template v-slot:place>{{ value.place }}</template>
-          </MyNoteAcordion>
+          </MyNoteEventAcordion>
         </div>
 
         <div class="py-4">
@@ -26,11 +26,11 @@
       <div class="pt-6">
         <p class="zen-kaku-bold">質問リスト</p>
         <div v-for="(value, key) in myNoteDetailData.questions" :key="value">
-          <MyNoteAcordion :key="key">
+          <MyNoteEventAcordion :key="key">
             <template v-slot:title>{{ value.title }}</template>
             <template v-slot:event>{{ value.event }}</template>
             <template v-slot:place>{{ value.place }}</template>
-          </MyNoteAcordion>
+          </MyNoteEventAcordion>
         </div>
       </div>
       <!-- <v-btn @click="$store.commit('removeMyNote')">MyNote削除</v-btn> -->
@@ -40,13 +40,13 @@
 
 <script>
 import ContentTitle from "../components/ContentTitle.vue";
-import MyNoteAcordion from "../components/MyNoteAcordion.vue";
+import MyNoteEventAcordion from "../components/MyNoteEventAcordion.vue";
 import "../js/particles/top-particle";
 export default {
   name: "MyNote",
   components: {
     ContentTitle,
-    MyNoteAcordion,
+    MyNoteEventAcordion,
   },
   data() {
     return {
