@@ -13,8 +13,22 @@
         <div v-for="(value, key) in myNoteDetailData.events" :key="value">
           <MyNoteEventAcordion :eventKey="key">
             <template v-slot:title>{{ value.title }}</template>
+            <template v-slot:subTitle v-if="value.subTitle">
+              <span class="zen-kaku-medium pr-2">{{ value.subTitle }}</span>
+            </template>
             <template v-slot:eventType>{{ value.eventType }}</template>
-            <template v-slot:place>{{ value.place }}</template>
+            <template v-slot:time v-if="getEventTime(key)">
+              <img class="pr-1" src="../assets/icon-time.svg" />
+              <span class="zen-kaku-regular pr-2">{{ getEventTime(key) }}</span>
+            </template>
+            <template v-slot:place>
+              <img class="pr-1" src="../assets/icon-map.svg" />
+              <span class="zen-kaku-regular pr-2">{{ value.place }}</span>
+            </template>
+            <template v-slot:people v-if="value.peopleNum">
+              <img class="pr-1" src="../assets/icon-people.svg" />
+              <span class="zen-kaku-regular">{{ value.peopleNum }}</span>
+            </template>
           </MyNoteEventAcordion>
         </div>
 
@@ -33,7 +47,6 @@
           </MyNoteEventAcordion>
         </div>
       </div>
-      <!-- <v-btn @click="$store.commit('removeMyNote')">MyNote削除</v-btn> -->
     </div>
   </div>
 </template>
@@ -51,10 +64,30 @@ export default {
   data() {
     return {
       myNoteDetailData: {},
+      timeScheduleData: {},
     };
+  },
+  methods: {
+    getEventTime(key) {
+      var keySplit = String(key).split("_");
+      if (keySplit.length < 3) {
+        return null;
+      }
+      var timeScheduleType = keySplit[2] + "_" + keySplit[3];
+      return this.timeScheduleData[timeScheduleType][key].time;
+    },
   },
   mounted() {
     this.myNoteDetailData = this.$store.getters.getMyNoteDetailData;
+    this.timeScheduleData = this.$store.getters["eventsStore/getTimeSchedule"];
   },
 };
 </script>
+
+<style scoped>
+.contents > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>

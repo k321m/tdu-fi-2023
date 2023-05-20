@@ -60,7 +60,11 @@ export default {
   },
   methods: {
     myNoteBtnClicked() {
-      this.$store.commit("addMyNote", { type: this.type, key: this.eventKey });
+      this.$store.commit("addMyNote", {
+        type: this.type,
+        key: this.eventKey,
+        time: this.eventTime,
+      });
     },
   },
 };

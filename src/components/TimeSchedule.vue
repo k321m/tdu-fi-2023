@@ -115,7 +115,11 @@
                     <div
                       class="carousel__item"
                       @click="
-                        openDialog(this.limitedEventsData[key], key, value.time)
+                        openDialog(
+                          this.limitedEventsData[value.eventDetailKey],
+                          key,
+                          value.time
+                        )
                       "
                       :style="value.carousel_height"
                     >
@@ -123,12 +127,20 @@
                         <p
                           class="zen-kaku-medium"
                           style="font-size: 0.6em"
-                          v-if="this.limitedEventsData[key].subTitle"
+                          v-if="
+                            this.limitedEventsData[value.eventDetailKey]
+                              .subTitle
+                          "
                         >
-                          {{ this.limitedEventsData[key].subTitle }}
+                          {{
+                            this.limitedEventsData[value.eventDetailKey]
+                              .subTitle
+                          }}
                         </p>
                         <p class="zen-kaku-medium" style="font-size: 0.9em">
-                          {{ this.limitedEventsData[key].title }}
+                          {{
+                            this.limitedEventsData[value.eventDetailKey].title
+                          }}
                         </p>
                       </div>
                     </div>
@@ -148,7 +160,11 @@
                     <div
                       class="carousel__item"
                       @click="
-                        openDialog(this.limitedEventsData[key], key, value.time)
+                        openDialog(
+                          this.limitedEventsData[value.eventDetailKey],
+                          key,
+                          value.time
+                        )
                       "
                       :style="value.carousel_height"
                     >
@@ -156,12 +172,20 @@
                         <p
                           class="zen-kaku-medium"
                           style="font-size: 0.6em"
-                          v-if="this.limitedEventsData[key].subTitle"
+                          v-if="
+                            this.limitedEventsData[value.eventDetailKey]
+                              .subTitle
+                          "
                         >
-                          {{ this.limitedEventsData[key].subTitle }}
+                          {{
+                            this.limitedEventsData[value.eventDetailKey]
+                              .subTitle
+                          }}
                         </p>
                         <p class="zen-kaku-medium" style="font-size: 0.9em">
-                          {{ this.limitedEventsData[key].title }}
+                          {{
+                            this.limitedEventsData[value.eventDetailKey].title
+                          }}
                         </p>
                       </div>
                     </div>
@@ -181,7 +205,11 @@
                     <div
                       class="carousel__item"
                       @click="
-                        openDialog(this.limitedEventsData[key], key, value.time)
+                        openDialog(
+                          this.limitedEventsData[value.eventDetailKey],
+                          key,
+                          value.time
+                        )
                       "
                       :style="value.carousel_height"
                     >
@@ -189,12 +217,20 @@
                         <p
                           class="zen-kaku-medium"
                           style="font-size: 0.6em"
-                          v-if="this.limitedEventsData[key].subTitle"
+                          v-if="
+                            this.limitedEventsData[value.eventDetailKey]
+                              .subTitle
+                          "
                         >
-                          {{ this.limitedEventsData[key].subTitle }}
+                          {{
+                            this.limitedEventsData[value.eventDetailKey]
+                              .subTitle
+                          }}
                         </p>
                         <p class="zen-kaku-medium" style="font-size: 0.9em">
-                          {{ this.limitedEventsData[key].title }}
+                          {{
+                            this.limitedEventsData[value.eventDetailKey].title
+                          }}
                         </p>
                       </div>
                     </div>
@@ -214,7 +250,11 @@
                     <div
                       class="carousel__item"
                       @click="
-                        openDialog(this.limitedEventsData[key], key, value.time)
+                        openDialog(
+                          this.limitedEventsData[value.eventDetailKey],
+                          key,
+                          value.time
+                        )
                       "
                       :style="value.carousel_height"
                     >
@@ -222,12 +262,20 @@
                         <p
                           class="zen-kaku-medium"
                           style="font-size: 0.6em"
-                          v-if="this.limitedEventsData[key].subTitle"
+                          v-if="
+                            this.limitedEventsData[value.eventDetailKey]
+                              .subTitle
+                          "
                         >
-                          {{ this.limitedEventsData[key].subTitle }}
+                          {{
+                            this.limitedEventsData[value.eventDetailKey]
+                              .subTitle
+                          }}
                         </p>
                         <p class="zen-kaku-medium" style="font-size: 0.9em">
-                          {{ this.limitedEventsData[key].title }}
+                          {{
+                            this.limitedEventsData[value.eventDetailKey].title
+                          }}
                         </p>
                       </div>
                     </div>

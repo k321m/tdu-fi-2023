@@ -87,76 +87,95 @@ export default {
     },
     timeSchedule: {
       timeSchedule_1: {
-        limitedEvent_1: {
+        limitedEvent_1_timeSchedule_1: {
+          eventDetailKey: "limitedEvent_1",
           time: "11:15-11:35",
         },
-        limitedEvent_2: {
+        limitedEvent_2_timeSchedule_1: {
+          eventDetailKey: "limitedEvent_2",
           time: "11:15-11:35",
         },
-        limitedEvent_4: {
+        limitedEvent_4_timeSchedule_1: {
+          eventDetailKey: "limitedEvent_4",
           time: "11:15-11:45",
           carousel_height: "height: 70px",
         },
-        limitedEvent_6: {
+        limitedEvent_6_timeSchedule_1: {
+          eventDetailKey: "limitedEvent_6",
           time: "11:15-11:45",
           carousel_height: "height: 70px",
         },
       },
       timeSchedule_2: {
-        limitedEvent_1: {
+        limitedEvent_1_timeSchedule_2: {
+          eventDetailKey: "limitedEvent_1",
           time: "12:15-12:35",
         },
-        limitedEvent_3: {
+        limitedEvent_3_timeSchedule_2: {
+          eventDetailKey: "limitedEvent_3",
           time: "12:15-12:35",
         },
-        limitedEvent_4: {
+        limitedEvent_4_timeSchedule_2: {
+          eventDetailKey: "limitedEvent_4",
           time: "12:15-12:45",
           carousel_height: "height: 70px",
         },
-        limitedEvent_5: {
+        limitedEvent_5_timeSchedule_2: {
+          eventDetailKey: "limitedEvent_5",
           time: "12:15-12:45",
           carousel_height: "height: 70px",
         },
       },
       timeSchedule_3: {
-        limitedEvent_2: {
+        limitedEvent_2_timeSchedule_3: {
+          eventDetailKey: "limitedEvent_2",
           time: "13:15-13:35",
         },
-        limitedEvent_3: {
+        limitedEvent_3_timeSchedule_3: {
+          eventDetailKey: "limitedEvent_3",
           time: "13:15-13:35",
         },
-        limitedEvent_4: {
+        limitedEvent_4_timeSchedule_3: {
+          eventDetailKey: "limitedEvent_4",
           time: "13:15-13:45",
           carousel_height: "height: 70px",
         },
-        limitedEvent_5: {
+        limitedEvent_5_timeSchedule_3: {
+          eventDetailKey: "limitedEvent_5",
           time: "13:15-13:45",
           carousel_height: "height: 70px",
         },
-        limitedEvent_6: {
+        limitedEvent_6_timeSchedule_3: {
+          eventDetailKey: "limitedEvent_6",
           time: "13:15-13:45",
           carousel_height: "height: 70px",
         },
       },
       timeSchedule_4: {
-        limitedEvent_1: {
+        limitedEvent_1_timeSchedule_4: {
+          eventDetailKey: "limitedEvent_1",
           time: "14:15-14:35",
         },
-        limitedEvent_2: {
+        limitedEvent_2_timeSchedule_4: {
+          eventDetailKey: "limitedEvent_2",
           time: "14:15-14:35",
         },
-        limitedEvent_3: {
+        limitedEvent_3_timeSchedule_4: {
+          eventDetailKey: "limitedEvent_3",
           time: "14:15-14:35",
         },
-        limitedEvent_4: {
+        limitedEvent_4_timeSchedule_4: {
+          eventDetailKey: "limitedEvent_4",
           time: "14:15-14:45",
           carousel_height: "height: 70px",
         },
-        limitedEvent_5: {
+        limitedEvent_5_timeSchedule_4: {
+          eventDetailKey: "limitedEvent_5",
           time: "14:15-14:45",
           carousel_height: "height: 70px",
         },
-        limitedEvent_6: {
+        limitedEvent_6_timeSchedule_4: {
+          eventDetailKey: "limitedEvent_6",
           time: "14:15-14:45",
           carousel_height: "height: 70px",
         },

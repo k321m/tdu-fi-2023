@@ -8,7 +8,8 @@
       </div>
 
       <div class="pl-3 py-1">
-        <p class="zen-kaku-medium"><slot name="title"></slot></p>
+        <slot name="subTitle"></slot>
+        <span class="zen-kaku-medium"><slot name="title"></slot></span>
       </div>
 
       <div class="pulldown-button py-1" @click="isOpen = !isOpen">
@@ -26,18 +27,15 @@
               <slot name="eventType"></slot>
             </p>
             <div class="contents">
-              <!-- <div>
-                <img class="icon-map" src="../assets/icon-map.svg" />
-                <span>時間</span>
-              </div> -->
               <div>
-                <img class="icon-map" src="../assets/icon-map.svg" />
-                <span class="zen-kaku-regular"><slot name="place"></slot></span>
+                <slot name="time"></slot>
               </div>
-              <!-- <div>
-                <img class="icon-map" src="../assets/icon-map.svg" />
-                <span>人数</span>
-              </div> -->
+              <div>
+                <slot name="place"></slot>
+              </div>
+              <div>
+                <slot name="people"></slot>
+              </div>
             </div>
             <div>
               <p class="zen-kaku-bold py-3">メモ</p>
@@ -47,7 +45,12 @@
               <v-btn rounded="xs" width="50%" height="60px" elevation="2"
                 >地図を確認</v-btn
               >
-              <v-btn rounded="xs" width="50%" height="60px" elevation="2"
+              <v-btn
+                rounded="xs"
+                width="50%"
+                height="60px"
+                elevation="2"
+                @click="deleteEventMyNote()"
                 >リストから削除</v-btn
               >
             </div>
@@ -72,8 +75,6 @@ export default {
   methods: {
     updateIsChecked() {
       var eventsMyNote = this.$store.getters.getMyNoteEvents;
-      console.log(this.eventKey);
-      console.log(JSON.stringify(eventsMyNote));
       this.isChecked = eventsMyNote[this.eventKey].done;
     },
     updateMemo() {
@@ -89,6 +90,9 @@ export default {
         key: this.eventKey,
         memo: this.memo,
       });
+    },
+    deleteEventMyNote() {
+      this.$store.commit("deleteEventMyNote", this.eventKey);
     },
     checkboxStyleSet() {
       return {
@@ -181,6 +185,12 @@ img {
 
 .contents {
   display: flex;
+}
+
+.contents > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 textarea {

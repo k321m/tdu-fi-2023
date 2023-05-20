@@ -11,17 +11,12 @@ export const store = createStore({
   },
   mutations: {
     addMyNote(state, obj) {
-      // myNoteに同じデータがないか確認
-      if (this.state.myNote[obj.type][obj.key]) {
-        return;
-      }
-      // myNoteにデータ追加
       this.state.myNote[obj.type] = Object.assign(this.state.myNote[obj.type], {
         [obj.key]: { memo: "", done: false },
       });
+      console.log("mynote:" + JSON.stringify(this.state.myNote[obj.type]));
     },
     updateEventDone(state, key) {
-      console.log("Save:" + key);
       this.state.myNote.events[key].done = !this.state.myNote.events[key].done;
     },
     saveEventMemo(state, obj) {
@@ -30,7 +25,13 @@ export const store = createStore({
     saveQuestionMemo(state, obj) {
       this.state.myNote.questions[obj.key].memo = obj.memo;
     },
-    removeMyNote(state) {
+    deleteEventMyNote(state, key) {
+      delete this.state.myNote.events[key];
+    },
+    deleteQuestionMyNote(state, key) {
+      delete this.state.myNote.questions[key];
+    },
+    deleteAllMyNote(state) {
       this.state.myNote.events = {};
     },
   },
@@ -48,16 +49,16 @@ export const store = createStore({
     },
 
     getMyNoteDetailData(state, getters) {
-      var detailData = { events: {}, questions: {} };
+      var detailData = { events: {}, questions: {} }; // MyNoteに保存されてるイベントの詳細情報を格納する
       var eventKeys = Object.keys(state.myNote.events);
       var questionKeys = Object.keys(state.myNote.questions);
+      // MyNoteに保存したeventKeyを使ってmoduleからデータを取得
       eventKeys.forEach(function (eventKey) {
-        var eventType = String(eventKey).slice(
-          0,
-          String(eventKey).indexOf("_")
-        );
+        var eventKeySplit = String(eventKey).split("_");
+        var eventType = eventKeySplit[0];
+        var eventDetailKey = eventKeySplit[0] + "_" + eventKeySplit[1];
         detailData.events = Object.assign(detailData.events, {
-          [eventKey]: state.eventsStore[eventType][eventKey],
+          [eventKey]: state.eventsStore[eventType][eventDetailKey],
         });
       });
       questionKeys.forEach(function (questionKey) {});
