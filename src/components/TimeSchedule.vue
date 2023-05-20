@@ -24,10 +24,7 @@
           <p class="zen-kaku-bold pl-4 pb-3">終日開催</p>
           <div class="pl-4">
             <Carousel :itemsToShow="2.9" snapAlign="start" :transition="1500">
-              <Slide
-                v-for="(value, key) in $store.state.dialogStore.allDayEvent"
-                :key="value"
-              >
+              <Slide v-for="(value, key) in this.allDayEventsData" :key="value">
                 <div class="carousel__item" @click="openDialog(value, key)">
                   <span class="zen-kaku-medium" style="font-size: 0.6em">
                     {{ value.title }}
@@ -168,6 +165,7 @@ export default {
   data() {
     return {
       dialog: false,
+      allDayEventsData: {},
       clickedValue: Array,
       clickedKey: String,
     };
@@ -183,6 +181,9 @@ export default {
       this.clickedData = value;
       this.clickedKey = key;
     },
+  },
+  mounted() {
+    this.allDayEventsData = this.$store.getters["dialogStore/getAllDayEvents"];
   },
 };
 </script>

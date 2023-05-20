@@ -10,7 +10,7 @@
       </ContentTitle>
       <div class="pt-6">
         <p class="zen-kaku-bold">訪問リスト</p>
-        <div v-for="data in myNoteData" :key="data">
+        <div v-for="data in myNoteDetailData.events" :key="data">
           <MyNoteAcordion :id="data.id">
             <template v-slot:title>{{ data.title }}</template>
             <template v-slot:event>{{ data.event }}</template>
@@ -54,11 +54,11 @@ export default {
   },
   data() {
     return {
-      myNoteData: [],
+      myNoteDetailData: {},
     };
   },
   mounted() {
-    this.myNoteData = this.$store.getters.getMyNoteDataSet;
+    this.myNoteDetailData = this.$store.getters.getMyNoteDetailData;
   },
 };
 </script>

@@ -1,24 +1,24 @@
 import { createStore } from "vuex";
 import createPersistedstate from "vuex-persistedstate";
-import dialogstore from "./dialogstore";
+import dialogStore from "./dialogStore";
 
 export const store = createStore({
   state: {
-    myNote: [],
+    myNote: {
+      events: {},
+      questions: {},
+    },
   },
   mutations: {
-    addMyNote(state, key) {
-      console.log("key:" + key);
-      if (this.state.myNote.length == 0) {
-        this.state.myNote.push({ id: key, memo: "", done: false });
+    addMyNote(state, obj) {
+      // myNoteに同じデータがないか確認
+      if (this.state.myNote[obj.type][obj.key]) {
         return;
       }
-      for (var index in this.state.myNote) {
-        if (this.state.myNote[index].id == key) {
-          return;
-        }
-      }
-      this.state.myNote.push({ id: key, memo: "", done: false });
+      // myNoteにデータ追加
+      this.state.myNote[obj.type] = Object.assign(this.state.myNote[obj.type], {
+        [obj.key]: { memo: "", done: false },
+      });
     },
     changeDone(state, id) {
       console.log("Save:" + id);
@@ -41,33 +41,41 @@ export const store = createStore({
       return;
     },
     removeMyNote(state) {
-      this.state.myNote.splice(0);
+      this.state.myNote.events = {};
     },
   },
   getters: {
     getMyNote(state, getters) {
       return state.myNote;
     },
-    getAllDayEvents() {
-      return state.dialogStore.allDayEvent;
+
+    getMyNoteEvents(state, getters) {
+      return state.myNote.events;
     },
 
-    getMyNoteDataSet(state, getters) {
-      var dataSet = [];
-      for (var index in state.myNote) {
-        var key = state.myNote[index].id;
-        var parentKey = String(key).slice(0, String(key).indexOf("_"));
-        var parentData = {};
-        if (parentKey == "allDayEvent") {
-          parentData = state.dialogStore.allDayEvent;
-        }
-        dataSet.push(parentData[key]);
-      }
-      return dataSet;
+    getMyNoteQuestions(state, getters) {
+      return state.myNote.questions;
+    },
+
+    getMyNoteDetailData(state, getters) {
+      var detailData = { events: {}, questions: {} };
+      var eventKeys = Object.keys(state.myNote.events);
+      var questionKeys = Object.keys(state.myNote.questions);
+      eventKeys.forEach(function (eventKey) {
+        var eventType = String(eventKey).slice(
+          0,
+          String(eventKey).indexOf("_")
+        );
+        detailData.events = Object.assign(detailData.events, {
+          [eventKey]: state.dialogStore[eventType][eventKey],
+        });
+      });
+      questionKeys.forEach(function (questionKey) {});
+      return detailData;
     },
   },
   modules: {
-    dialogstore: dialogstore,
+    dialogStore,
   },
-  plugins: [createPersistedstate()],
+  plugins: [createPersistedstate({ key: "tdu-fi-2023oc", paths: ["myNote"] })],
 });

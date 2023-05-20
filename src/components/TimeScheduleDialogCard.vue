@@ -22,7 +22,9 @@
         width="100%"
         height="60px"
         elevation="2"
-        @click="$store.commit('addMyNote', this.eventKey)"
+        @click="
+          $store.commit('addMyNote', { type: this.type, key: this.eventKey })
+        "
         >MyNoteに追加</v-btn
       >
     </div>
@@ -32,14 +34,6 @@
       >
     </div>
   </div>
-  <!-- <v-btn
-    rounded="xs"
-    width="100%"
-    height="60px"
-    elevation="2"
-    @click="$store.commit('removeMyNote')"
-    >データ削除</v-btn
-  > -->
 </template>
 
 <script>
@@ -47,10 +41,10 @@ export default {
   name: "DialogCard",
   props: ["eventData", "eventKey"],
   emits: ["close-dialog"],
-  methods: {
-    addMyNote() {
-      this.$store.commit("addMyNote", this.eventKey);
-    },
+  data() {
+    return {
+      type: "events",
+    };
   },
 };
 </script>
