@@ -65,40 +65,34 @@
 <script>
 export default {
   name: "MyNoteAcordion",
-  props: ["id"],
+  props: ["eventKey"],
   data() {
     return {
-      myNote: Array,
       isOpen: false,
       isChecked: false,
-      chckedStyle: String,
       memo: "",
     };
   },
   methods: {
+    updateIsChecked() {
+      var eventsMyNote = this.$store.getters.getMyNoteEvents;
+      console.log(this.eventKey);
+      console.log(JSON.stringify(eventsMyNote));
+      this.isChecked = eventsMyNote[this.eventKey].done;
+    },
+    updateMemo() {
+      var eventsMyNote = this.$store.getters.getMyNoteEvents;
+      this.memo = eventsMyNote[this.eventKey].memo;
+    },
     checked() {
-      this.$store.commit("changeDone", this.id);
-      this.changeIsChecked();
+      this.$store.commit("updateEventDone", this.eventKey);
+      this.updateIsChecked();
     },
-    changeIsChecked() {
-      this.myNote = this.$store.getters.getMyNote;
-      for (var index in this.myNote) {
-        if (this.myNote[index].id == this.id) {
-          this.isChecked = this.myNote[index].done;
-          return;
-        }
-      }
-      this.isChecked = false;
-    },
-    changeMemo() {
-      this.myNote = this.$store.getters.getMyNote;
-      for (var index in this.myNote) {
-        if (this.myNote[index].id == this.id) {
-          this.memo = this.myNote[index].memo;
-          return;
-        }
-      }
-      this.isChecked = false;
+    saveMemo() {
+      this.$store.commit("saveEventMemo", {
+        key: this.eventKey,
+        memo: this.memo,
+      });
     },
     checkboxStyleSet() {
       return {
@@ -106,13 +100,10 @@ export default {
         checkbox: !this.isChecked,
       };
     },
-    saveMemo() {
-      this.$store.commit("saveMemo", { id: this.id, memo: this.memo });
-    },
   },
   mounted() {
-    this.changeIsChecked();
-    this.changeMemo();
+    this.updateIsChecked();
+    this.updateMemo();
   },
 };
 </script>

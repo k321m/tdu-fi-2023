@@ -10,11 +10,11 @@
       </ContentTitle>
       <div class="pt-6">
         <p class="zen-kaku-bold">訪問リスト</p>
-        <div v-for="data in myNoteDetailData.events" :key="data">
-          <MyNoteAcordion :id="data.id">
-            <template v-slot:title>{{ data.title }}</template>
-            <template v-slot:event>{{ data.event }}</template>
-            <template v-slot:place>{{ data.place }}</template>
+        <div v-for="(value, key) in myNoteDetailData.events" :key="value">
+          <MyNoteAcordion :eventKey="key">
+            <template v-slot:title>{{ value.title }}</template>
+            <template v-slot:event>{{ value.event }}</template>
+            <template v-slot:place>{{ value.place }}</template>
           </MyNoteAcordion>
         </div>
 
@@ -25,16 +25,12 @@
       </div>
       <div class="pt-6">
         <p class="zen-kaku-bold">質問リスト</p>
-        <div>
-          <v-expansion-panels>
-            <v-expansion-panel
-              class="my-1"
-              v-for="i in 0"
-              :key="i"
-              title="item"
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-            ></v-expansion-panel>
-          </v-expansion-panels>
+        <div v-for="(value, key) in myNoteDetailData.questions" :key="value">
+          <MyNoteAcordion :key="key">
+            <template v-slot:title>{{ value.title }}</template>
+            <template v-slot:event>{{ value.event }}</template>
+            <template v-slot:place>{{ value.place }}</template>
+          </MyNoteAcordion>
         </div>
       </div>
       <!-- <v-btn @click="$store.commit('removeMyNote')">MyNote削除</v-btn> -->

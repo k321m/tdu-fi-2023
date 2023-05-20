@@ -20,25 +20,15 @@ export const store = createStore({
         [obj.key]: { memo: "", done: false },
       });
     },
-    changeDone(state, id) {
-      console.log("Save:" + id);
-      for (var index in this.state.myNote) {
-        if (this.state.myNote[index].id == id) {
-          this.state.myNote[index].done = !this.state.myNote[index].done;
-          console.log("Savedoneis:" + this.state.myNote[index].done);
-          return;
-        }
-      }
-      return;
+    updateEventDone(state, key) {
+      console.log("Save:" + key);
+      this.state.myNote.events[key].done = !this.state.myNote.events[key].done;
     },
-    saveMemo(state, obj) {
-      for (var index in this.state.myNote) {
-        if (this.state.myNote[index].id == obj.id) {
-          this.state.myNote[index].memo = obj.memo;
-          return;
-        }
-      }
-      return;
+    saveEventMemo(state, obj) {
+      this.state.myNote.events[obj.key].memo = obj.memo;
+    },
+    saveQuestionMemo(state, obj) {
+      this.state.myNote.questions[obj.key].memo = obj.memo;
     },
     removeMyNote(state) {
       this.state.myNote.events = {};
