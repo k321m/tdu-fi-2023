@@ -1,4 +1,14 @@
 <template>
+  <v-dialog v-model="isDeleteDialogVisible">
+    <MyNoteDeleteDialog
+      @close-delete-dialog="isDeleteDialogVisible = false"
+      @delete-data="deleteEvent"
+    >
+      <template v-slot:title
+        >{{ eventValue.subTitle }} {{ eventValue.title }}</template
+      >
+    </MyNoteDeleteDialog>
+  </v-dialog>
   <div class="accordion">
     <div class="title-box">
       <div @click="checked()">
@@ -6,12 +16,10 @@
           <div :class="checkboxStyleSet()"></div>
         </transition-group>
       </div>
-
       <div class="pl-3 py-1">
-        <slot name="subTitle"></slot>
-        <span class="zen-kaku-medium"><slot name="title"></slot></span>
+        <span class="zen-kaku-medium pr-2">{{ eventValue.subTitle }}</span>
+        <span class="zen-kaku-medium">{{ eventValue.title }}</span>
       </div>
-
       <div class="pulldown-button py-1" @click="isOpen = !isOpen">
         <img
           :class="openAcordionStyleSet()"
@@ -24,35 +32,48 @@
         <div name="content">
           <div>
             <p class="zen-kaku-medium py-1" style="color: #360a73">
-              <slot name="eventType"></slot>
+              {{ eventValue.eventType }}
             </p>
             <div class="contents">
-              <div>
-                <slot name="time"></slot>
+              <div v-if="getEventTime()">
+                <img class="pr-1" src="../assets/icon-time.svg" />
+                <span class="zen-kaku-regular pr-2">{{ getEventTime() }}</span>
               </div>
               <div>
-                <slot name="place"></slot>
+                <img class="pr-1" src="../assets/icon-map.svg" />
+                <span class="zen-kaku-regular pr-2">{{
+                  eventValue.place
+                }}</span>
               </div>
-              <div>
-                <slot name="people"></slot>
+              <div v-if="eventValue.peopleNum">
+                <img class="pr-1" src="../assets/icon-people.svg" />
+                <span class="zen-kaku-regular">{{ eventValue.peopleNum }}</span>
               </div>
             </div>
-            <div>
+            <div class="pt-2">
               <p class="zen-kaku-bold py-3">メモ</p>
-              <textarea @blur="saveMemo()" v-model="memo"></textarea>
+              <textarea
+                @blur="saveMemo()"
+                placeholder="重要なことはメモに残そう！"
+                v-model="memo"
+              ></textarea>
             </div>
-            <div class="py-4" style="display: flex">
-              <v-btn rounded="xs" width="50%" height="60px" elevation="2"
-                >地図を確認</v-btn
-              >
-              <v-btn
-                rounded="xs"
-                width="50%"
-                height="60px"
-                elevation="2"
-                @click="deleteEventMyNote()"
-                >リストから削除</v-btn
-              >
+            <div class="py-5">
+              <v-row class="px-2">
+                <v-col class="pa-1">
+                  <div class="default-btn btn-animation">
+                    <p class="zen-kaku-bold">地図を確認</p>
+                  </div>
+                </v-col>
+                <v-col class="pa-1">
+                  <div
+                    class="default-sub-btn btn-animation"
+                    @click="openDeleteDialog"
+                  >
+                    <p class="zen-kaku-bold">リストから削除</p>
+                  </div>
+                </v-col>
+              </v-row>
             </div>
           </div>
         </div>
@@ -62,17 +83,31 @@
 </template>
 
 <script>
+import MyNoteDeleteDialog from "./MyNoteDeleteDialog.vue";
 export default {
   name: "MyNoteEventAcordion",
-  props: ["eventKey"],
+  props: ["eventValue", "eventKey"],
+  components: {
+    MyNoteDeleteDialog,
+  },
   data() {
     return {
       isOpen: false,
       isChecked: false,
       memo: "",
+      isDeleteDialogVisible: false,
+      timeScheduleData: {},
     };
   },
   methods: {
+    getEventTime() {
+      var keySplit = String(this.eventKey).split("_");
+      if (keySplit.length < 3) {
+        return null;
+      }
+      var timeScheduleType = keySplit[2] + "_" + keySplit[3];
+      return this.timeScheduleData[timeScheduleType][this.eventKey].time;
+    },
     updateIsChecked() {
       var eventsMyNote = this.$store.getters.getMyNoteEvents;
       this.isChecked = eventsMyNote[this.eventKey].done;
@@ -91,7 +126,11 @@ export default {
         memo: this.memo,
       });
     },
-    deleteEventMyNote() {
+    openDeleteDialog() {
+      this.isDeleteDialogVisible = !this.isDeleteDialogVisible;
+    },
+    deleteEvent() {
+      console.log("delete:" + this.eventKey);
       this.$store.commit("deleteEventMyNote", this.eventKey);
     },
     checkboxStyleSet() {
@@ -110,6 +149,7 @@ export default {
   mounted() {
     this.updateIsChecked();
     this.updateMemo();
+    this.timeScheduleData = this.$store.getters["eventsStore/getTimeSchedule"];
   },
 };
 </script>
@@ -153,9 +193,6 @@ export default {
 
 .pulldown-button {
   margin-left: auto;
-}
-img {
-  width: 12px;
 }
 .accordion-content {
   background-color: #ffffff;
@@ -204,5 +241,14 @@ textarea {
   min-height: 200px;
   border: 1px solid #acaaf2;
   overflow: scroll;
+}
+
+::placeholder {
+  font-family: zen-kaku-gothic-new, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.3;
+  font-size: 14px;
+  color: #d3d1ff;
 }
 </style>

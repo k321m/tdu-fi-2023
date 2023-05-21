@@ -97,9 +97,27 @@ p.hack {
   align-items: center;
   justify-content: center;
 }
-.map-btn {
+.default-btn {
   min-height: 52px;
   background-color: #010440;
+  color: white;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.default-sub-btn {
+  min-height: 52px;
+  border: 2px solid #010440;
+  color: #010440;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.delete-btn {
+  min-height: 52px;
+  background-color: #e345e6;
   color: white;
   border-radius: 3px;
   display: flex;

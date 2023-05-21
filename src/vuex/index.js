@@ -4,17 +4,20 @@ import eventsStore from "./eventsStore";
 
 export const store = createStore({
   state: {
+    doneMyNoteTutorial: false,
     myNote: {
       events: {},
       questions: {},
     },
   },
   mutations: {
+    updateDoneMyNoteTutorial(state) {
+      this.state.doneMyNoteTutorial = true;
+    },
     addMyNote(state, obj) {
       this.state.myNote[obj.type] = Object.assign(this.state.myNote[obj.type], {
         [obj.key]: { memo: "", done: false },
       });
-      console.log("mynote:" + JSON.stringify(this.state.myNote[obj.type]));
     },
     updateEventDone(state, key) {
       this.state.myNote.events[key].done = !this.state.myNote.events[key].done;
@@ -32,10 +35,15 @@ export const store = createStore({
       delete this.state.myNote.questions[key];
     },
     deleteAllMyNote(state) {
+      this.state.doneMyNoteTutorial = false;
       this.state.myNote.events = {};
+      this.state.myNote.qestions = {};
     },
   },
   getters: {
+    getDoneMyNoteTutorial(state) {
+      return state.doneMyNoteTutorial;
+    },
     getMyNote(state, getters) {
       return state.myNote;
     },
@@ -68,5 +76,10 @@ export const store = createStore({
   modules: {
     eventsStore,
   },
-  plugins: [createPersistedstate({ key: "tdu-fi-2023oc", paths: ["myNote"] })],
+  plugins: [
+    createPersistedstate({
+      key: "tdu-fi-2023oc",
+      paths: ["doneMyNoteTutorial", "myNote"],
+    }),
+  ],
 });

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="222.93" height="137.299" viewBox="0 0 222.93 137.299">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eb57ed"/>
+      <stop offset="0.501" stop-color="#8f9eed"/>
+      <stop offset="1" stop-color="#29eded"/>
+    </linearGradient>
+    <filter id="長方形_1090" x="2.818" y="59.277" width="211" height="66" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="グループ_1010" data-name="グループ 1010" transform="translate(-79.182 -221.723)">
+    <g id="button-addMyNote" transform="translate(91 288)">
+      <g transform="matrix(1, 0, 0, 1, -11.82, -66.28)" filter="url(#長方形_1090)">
+        <rect id="長方形_1090-2" data-name="長方形 1090" width="193" height="48" rx="4" transform="translate(11.82 66.28)" fill="url(#linear-gradient)"/>
+      </g>
+      <text id="MyNoteに追加" transform="translate(96 28)" fill="#fff" font-size="12" font-family="ZenKakuGothicNew-Bold, Zen Kaku Gothic New" font-weight="700"><tspan x="-38.508" y="0">MyNoteに追加</tspan></text>
+    </g>
+    <g id="グループ_978" data-name="グループ 978" transform="translate(0 33)">
+      <path id="Icon_awesome-hand-point-up" data-name="Icon awesome-hand-point-up" d="M9.538,0A3.171,3.171,0,0,1,12.62,3.15v7.021a3.458,3.458,0,0,1,4.988.443,3.221,3.221,0,0,1,4.382,1.157c3.455-.631,5.011,1.543,5.011,5.1,0,.193-.014.933-.014,1.125.012,4.357-2.184,5.407-2.694,8.7a1.686,1.686,0,0,1-1.667,1.425H10.565a3.375,3.375,0,0,1-3.083-2c-.914-2.031-3.448-6.709-5.437-7.561A3,3,0,0,1,0,15.75a3.377,3.377,0,0,1,4.7-3.1,9.557,9.557,0,0,1,1.752,1V3.15A3.222,3.222,0,0,1,9.538,0Zm.024,29.25h13.5a1.687,1.687,0,0,1,1.688,1.688v3.375A1.687,1.687,0,0,1,23.063,36H9.563a1.687,1.687,0,0,1-1.687-1.687V30.938A1.687,1.687,0,0,1,9.563,29.25Zm11.813,1.969a1.406,1.406,0,1,0,1.406,1.406A1.406,1.406,0,0,0,21.375,31.219Z" transform="translate(234.809 294.162) rotate(-30)" fill="#fff" stroke="#010326" stroke-width="1"/>
+      <line id="線_7" data-name="線 7" x2="1" y2="3" transform="translate(243.5 282.5)" fill="none" stroke="#010326" stroke-width="1"/>
+      <line id="線_8" data-name="線 8" x1="1" y2="3.162" transform="translate(246.5 282.5)" fill="none" stroke="#010326" stroke-width="1"/>
+      <line id="線_9" data-name="線 9" x1="3" y2="1.162" transform="translate(247.5 285.5)" fill="none" stroke="#010326" stroke-width="1"/>
+    </g>
+    <text id="_研究室" data-name="○×研究室" transform="matrix(0.978, 0.208, -0.208, 0.978, 269.856, 263.88)" fill="#010326" font-size="12" font-family="ZenKakuGothicNew-Medium, Zen Kaku Gothic New" font-weight="500"><tspan x="-29.298" y="0">○×研究室</tspan></text>
+    <text id="_学科説明会" data-name="○○学科説明会" transform="matrix(0.985, -0.174, 0.174, 0.985, 122.975, 242.803)" fill="#010326" font-size="12" font-family="ZenKakuGothicNew-Medium, Zen Kaku Gothic New" font-weight="500"><tspan x="-42" y="0">○○学科説明会</tspan></text>
+    <text id="研究室" transform="matrix(0.999, -0.035, 0.035, 0.999, 187.692, 269.217)" fill="#010326" font-size="12" font-family="ZenKakuGothicNew-Medium, Zen Kaku Gothic New" font-weight="500"><tspan x="-18" y="0">研究室</tspan></text>
+  </g>
+</svg>

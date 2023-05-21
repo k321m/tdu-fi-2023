@@ -40,7 +40,7 @@ export default {
   components: {},
   data() {
     return {
-      open: false,
+      drawer: false,
       menus: [
         { title: "トップ", icon: "mdi-web", url: "/" },
         { title: "MyNote", icon: "mdi-home", url: "/my-note" },

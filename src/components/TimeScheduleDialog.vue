@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="py-2">
-        <div class="map-btn btn-animation">
+        <div class="default-btn btn-animation">
           <p class="zen-kaku-bold">地図を確認</p>
         </div>
       </div>
