@@ -4,9 +4,6 @@
       <v-navigation-drawer app v-model="drawer">
         <v-list nav>
           <v-list-item v-for="menu in menus" :key="menu.title" :to="menu.url">
-            <!-- <v-list-item-icon>
-              <v-icon>{{ menu.icon }}</v-icon>
-            </v-list-item-icon> -->
             <v-list-item-content>
               <v-list-item-title>{{ menu.title }}</v-list-item-title>
             </v-list-item-content>
@@ -43,7 +40,7 @@ export default {
   components: {},
   data() {
     return {
-      drawer: false,
+      open: false,
       menus: [
         { title: "トップ", icon: "mdi-web", url: "/" },
         { title: "MyNote", icon: "mdi-home", url: "/my-note" },

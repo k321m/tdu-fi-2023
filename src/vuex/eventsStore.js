@@ -10,30 +10,40 @@ export default {
         title: "資料配布コーナー",
         place: "2号館丹羽ホール前",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        fontsize: "font-size: 0.85em",
+        img: "background-image: url(src/assets/資料配布コーナー.svg)",
       },
       allDayEvent_2: {
         eventType: "終日開催",
         title: "施設見学ツアー",
         place: "5号館2階受付",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        fontsize: "font-size: 0.85em",
+        img: "background-image: url(src/assets/施設見学ツアー.svg)",
       },
       allDayEvent_3: {
         eventType: "終日開催",
         title: "クラブ・サークル紹介",
         place: "？？",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        fontsize: "font-size: 0.65em",
+        img: "background-image: url(src/assets/クラブ・サークル紹介.svg)",
       },
       allDayEvent_4: {
         eventType: "終日開催",
         title: "学科展示室",
         place: "1号館4階演習室",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        fontsize: "font-size: 0.85em",
+        img: "background-image: url(src/assets/学科展示室.svg)",
       },
       allDayEvent_5: {
         eventType: "終日開催",
         title: "研究室公開",
         place: "1号館4階演習室／5階メディアラボ",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        fontsize: "font-size: 0.85em",
+        img: "background-image: url(src/assets/研究室公開.svg)",
       },
     },
     limitedEvent: {
@@ -44,6 +54,8 @@ export default {
         place: "2501／2505教室",
         peopleNum: "360名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        subTitleStyle: "color: #ff9d00",
+        img: "background-image: url(src/assets/情報メディア学科.svg)",
       },
       limitedEvent_2: {
         eventType: "限定プログラム",
@@ -52,6 +64,8 @@ export default {
         place: "2503教室",
         peopleNum: "252名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        subTitleStyle: "color: #FF9CFD",
+        img: "background-image: url(src/assets/情報システム工学科.svg)",
       },
       limitedEvent_3: {
         eventType: "限定プログラム",
@@ -60,6 +74,8 @@ export default {
         place: "2601教室",
         peopleNum: "180名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        subTitleStyle: "color: #45CBE6",
+        img: "background-image: url(src/assets/情報通信工学科.svg)",
       },
       limitedEvent_4: {
         eventType: "限定プログラム",
@@ -67,6 +83,9 @@ export default {
         place: "2号館丹羽ホール",
         peopleNum: "500名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        img: "background-image: url(src/assets/電大ガイダンス.svg)",
+        carousel_height: "height: 60px",
+        img_height: "background-size: 190px;",
       },
       limitedEvent_5: {
         eventType: "限定プログラム",
@@ -75,6 +94,9 @@ export default {
         place: "5301教室",
         peopleNum: "99名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        img: "background-image: url(src/assets/一般・共通テスト入試ガイダンス.svg)",
+        carousel_height: "height: 60px",
+        img_height: "background-size: 190px;",
       },
       limitedEvent_6: {
         eventType: "限定プログラム",
@@ -83,6 +105,9 @@ export default {
         place: "5203／5204教室",
         peopleNum: "297名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
+        img: "background-image: url(src/assets/推薦・AO入試ガイダンス.svg)",
+        carousel_height: "height: 60px",
+        img_height: "background-size: 190px;",
       },
     },
     timeSchedule: {
@@ -98,12 +123,10 @@ export default {
         limitedEvent_4_timeSchedule_1: {
           eventDetailKey: "limitedEvent_4",
           time: "11:15-11:45",
-          carousel_height: "height: 70px",
         },
         limitedEvent_6_timeSchedule_1: {
           eventDetailKey: "limitedEvent_6",
           time: "11:15-11:45",
-          carousel_height: "height: 70px",
         },
       },
       timeSchedule_2: {
@@ -118,12 +141,10 @@ export default {
         limitedEvent_4_timeSchedule_2: {
           eventDetailKey: "limitedEvent_4",
           time: "12:15-12:45",
-          carousel_height: "height: 70px",
         },
         limitedEvent_5_timeSchedule_2: {
           eventDetailKey: "limitedEvent_5",
           time: "12:15-12:45",
-          carousel_height: "height: 70px",
         },
       },
       timeSchedule_3: {
@@ -138,17 +159,14 @@ export default {
         limitedEvent_4_timeSchedule_3: {
           eventDetailKey: "limitedEvent_4",
           time: "13:15-13:45",
-          carousel_height: "height: 70px",
         },
         limitedEvent_5_timeSchedule_3: {
           eventDetailKey: "limitedEvent_5",
           time: "13:15-13:45",
-          carousel_height: "height: 70px",
         },
         limitedEvent_6_timeSchedule_3: {
           eventDetailKey: "limitedEvent_6",
           time: "13:15-13:45",
-          carousel_height: "height: 70px",
         },
       },
       timeSchedule_4: {
@@ -167,17 +185,14 @@ export default {
         limitedEvent_4_timeSchedule_4: {
           eventDetailKey: "limitedEvent_4",
           time: "14:15-14:45",
-          carousel_height: "height: 70px",
         },
         limitedEvent_5_timeSchedule_4: {
           eventDetailKey: "limitedEvent_5",
           time: "14:15-14:45",
-          carousel_height: "height: 70px",
         },
         limitedEvent_6_timeSchedule_4: {
           eventDetailKey: "limitedEvent_6",
           time: "14:15-14:45",
-          carousel_height: "height: 70px",
         },
       },
     },

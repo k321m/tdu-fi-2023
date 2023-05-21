@@ -6,7 +6,16 @@
       </div>
     </div>
     <div class="pb-10">
-      <p class="zen-kaku-bold py-4">{{ eventData.eventType }}</p>
+      <p
+        class="zen-kaku-bold py-4"
+        style="color: #e345e6"
+        v-if="eventData.eventType == '限定プログラム'"
+      >
+        {{ eventData.eventType }}
+      </p>
+      <p class="zen-kaku-bold py-4" style="color: #360a73" v-else>
+        {{ eventData.eventType }}
+      </p>
       <p class="zen-kaku-h2 pb-1" v-if="eventData.subTitle">
         {{ eventData.subTitle }}
       </p>
