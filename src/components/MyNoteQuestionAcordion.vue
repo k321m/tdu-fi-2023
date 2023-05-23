@@ -10,7 +10,7 @@
     </MyNoteDeleteDialog>
   </v-dialog>
   <div class="accordion">
-    <div class="title-box">
+    <!-- <div class="title-box">
       <div @click="checked()">
         <transition-group name="check" mode="out-in">
           <div :class="checkboxStyleSet()"></div>
@@ -85,7 +85,7 @@
           </div>
         </div>
       </div>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
@@ -154,9 +154,9 @@ export default {
     },
   },
   mounted() {
-    this.updateIsChecked();
-    this.updateMemo();
-    this.timeScheduleData = this.$store.getters["eventsStore/getTimeSchedule"];
+    // this.updateIsChecked();
+    // this.updateMemo();
+    // this.timeScheduleData = this.$store.getters["eventsStore/getTimeSchedule"];
   },
 };
 </script>

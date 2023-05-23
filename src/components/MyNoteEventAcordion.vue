@@ -60,7 +60,7 @@
             <div class="pt-2">
               <p class="zen-kaku-bold py-3">メモ</p>
               <textarea
-                @blur="saveMemo()"
+                @blur="addMemo()"
                 placeholder="重要なことはメモに残そう！"
                 v-model="memo"
               ></textarea>
@@ -75,7 +75,9 @@
                 <v-col class="pa-1">
                   <div
                     class="default-sub-btn btn-animation"
-                    @click="openDeleteDialog"
+                    @click="
+                      this.isDeleteDialogVisible = !this.isDeleteDialogVisible
+                    "
                   >
                     <p class="zen-kaku-bold">リストから削除</p>
                   </div>
@@ -128,15 +130,12 @@ export default {
       this.$store.commit("updateEventDone", this.eventKey);
       this.updateIsChecked();
     },
-    saveMemo() {
+    addMemo() {
       this.$store.commit("saveMemo", {
         type: this.type,
         key: this.eventKey,
         memo: this.memo,
       });
-    },
-    openDeleteDialog() {
-      this.isDeleteDialogVisible = !this.isDeleteDialogVisible;
     },
     deleteEvent() {
       console.log("delete:" + this.eventKey);
