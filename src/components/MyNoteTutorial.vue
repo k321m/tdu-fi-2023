@@ -40,6 +40,10 @@
 <script>
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
+import tutorial1 from "../assets/myNote-tutorial-1.svg";
+import tutorial2 from "../assets/myNote-tutorial-2.svg";
+import tutorial3 from "../assets/myNote-tutorial-2.jpg";
+import tutorial4 from "../assets/myNote-tutorial-1.svg";
 export default {
   name: "MyNoteTutorial",
   emits: ["close-tutorial"],
@@ -48,19 +52,19 @@ export default {
       isLastCarouse: false,
       tutorialData: [
         {
-          src: "../assets/myNote-tutorial-1.svg",
+          src: tutorial1,
           text: "今日のオープンキャンパスで<br>東京電機大学をもっとよく知るために<br>自分だけのノートを作ろう",
         },
         {
-          src: "/src/assets/myNote-tutorial-2.svg",
+          src: tutorial2,
           text: "訪問したい場所やイベント<br>先輩や先生に聞きたいことを<br>MyNoteに追加",
         },
         {
-          src: "/src/assets/myNote-tutorial-2.jpg",
+          src: tutorial3,
           text: "今日のオープンキャンパスで<br>東京電機大学をもっとよく知るために<br>自分だけのノートを作ろう",
         },
         {
-          src: "/src/assets/myNote-tutorial-1.svg",
+          src: tutorial4,
           text: "今日のオープンキャンパスで<br>東京電機大学をもっとよく知るために<br>自分だけのノートを作ろう",
         },
       ],

@@ -31,7 +31,14 @@
       <div class="accordion-content pa-4" v-if="isOpen">
         <div name="content">
           <div>
-            <p class="zen-kaku-medium py-1" style="color: #360a73">
+            <p
+              class="zen-kaku-bold py-4"
+              style="color: #e345e6"
+              v-if="eventValue.eventType == '限定プログラム'"
+            >
+              {{ eventValue.eventType }}
+            </p>
+            <p class="zen-kaku-bold py-4" style="color: #360a73" v-else>
               {{ eventValue.eventType }}
             </p>
             <div class="contents">

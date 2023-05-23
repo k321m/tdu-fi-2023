@@ -1,5 +1,17 @@
 import { store } from "./index";
 
+import allDayEventImg1 from "../assets/資料配布コーナー.svg";
+import allDayEventImg2 from "../assets/施設見学ツアー.svg";
+import allDayEventImg3 from "../assets/クラブ・サークル紹介.svg";
+import allDayEventImg4 from "../assets/学科展示室.svg";
+import allDayEventImg5 from "../assets/研究室公開.svg";
+import limitedEventImg1 from "../assets/情報メディア学科.svg";
+import limitedEventImg2 from "../assets/情報システム工学科.svg";
+import limitedEventImg3 from "../assets/情報通信工学科.svg";
+import limitedEventImg4 from "../assets/電大ガイダンス.svg";
+import limitedEventImg5 from "../assets/一般・共通テスト入試ガイダンス.svg";
+import limitedEventImg6 from "../assets/推薦・AO入試ガイダンス.svg";
+
 export default {
   namespaced: true,
 
@@ -11,7 +23,8 @@ export default {
         place: "2号館丹羽ホール前",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
-        img: "background-image: url(./src/assets/資料配布コーナー.svg)",
+        // TODO: 変数だけでの反映
+        img: "background-image: url(" + allDayEventImg1 + ")",
       },
       allDayEvent_2: {
         eventType: "終日開催",
@@ -19,7 +32,7 @@ export default {
         place: "5号館2階受付",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
-        img: "background-image: url(./src/assets/施設見学ツアー.svg)",
+        img: "background-image: url(" + allDayEventImg2 + ")",
       },
       allDayEvent_3: {
         eventType: "終日開催",
@@ -27,7 +40,7 @@ export default {
         place: "？？",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.65em",
-        img: "background-image: url(./src/assets/クラブ・サークル紹介.svg)",
+        img: "background-image: url(" + allDayEventImg3 + ")",
       },
       allDayEvent_4: {
         eventType: "終日開催",
@@ -35,7 +48,7 @@ export default {
         place: "1号館4階演習室",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
-        img: "background-image: url(./src/assets/学科展示室.svg)",
+        img: "background-image: url(" + allDayEventImg4 + ")",
       },
       allDayEvent_5: {
         eventType: "終日開催",
@@ -43,7 +56,7 @@ export default {
         place: "1号館4階演習室／5階メディアラボ",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
-        img: "background-image: url(./src/assets/研究室公開.svg)",
+        img: "background-image: url(" + allDayEventImg5 + ")",
       },
     },
     limitedEvent: {
@@ -55,7 +68,7 @@ export default {
         peopleNum: "360名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #ff9d00",
-        img: "background-image: url(./src/assets/情報メディア学科.svg)",
+        img: "background-image: url(" + limitedEventImg2 + ")",
       },
       limitedEvent_2: {
         eventType: "限定プログラム",
@@ -65,7 +78,7 @@ export default {
         peopleNum: "252名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #FF9CFD",
-        img: "background-image: url(./src/assets/情報システム工学科.svg)",
+        img: "background-image: url(" + limitedEventImg3 + ")",
       },
       limitedEvent_3: {
         eventType: "限定プログラム",
@@ -75,7 +88,7 @@ export default {
         peopleNum: "180名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #45CBE6",
-        img: "background-image: url(./src/assets/情報通信工学科.svg)",
+        img: "background-image: url(" + limitedEventImg4 + ")",
       },
       limitedEvent_4: {
         eventType: "限定プログラム",
@@ -83,7 +96,7 @@ export default {
         place: "2号館丹羽ホール",
         peopleNum: "500名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
-        img: "background-image: url(./src/assets/電大ガイダンス.svg)",
+        img: "background-image: url(" + limitedEventImg1 + ")",
         carousel_height: "height: 60px",
         img_height: "background-size: 190px;",
       },
@@ -94,7 +107,7 @@ export default {
         place: "5301教室",
         peopleNum: "99名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
-        img: "background-image: url(./src/assets/一般・共通テスト入試ガイダンス.svg)",
+        img: "background-image: url(" + limitedEventImg5 + ")",
         carousel_height: "height: 60px",
         img_height: "background-size: 190px;",
       },
@@ -105,7 +118,7 @@ export default {
         place: "5203／5204教室",
         peopleNum: "297名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
-        img: "background-image: url(./src/assets/推薦・AO入試ガイダンス.svg)",
+        img: "background-image: url(" + limitedEventImg6 + ")",
         carousel_height: "height: 60px",
         img_height: "background-size: 190px;",
       },
