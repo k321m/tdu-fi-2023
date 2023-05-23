@@ -60,7 +60,7 @@
 <script>
 export default {
   name: "TimeScheduleDialog",
-  props: ["eventData", "eventKey", "eventTime"],
+  props: ["eventData", "eventKey"],
   emits: ["close-dialog"],
   data() {
     return {
@@ -72,7 +72,6 @@ export default {
       this.$store.commit("addMyNote", {
         type: this.type,
         key: this.eventKey,
-        time: this.eventTime,
       });
     },
   },
