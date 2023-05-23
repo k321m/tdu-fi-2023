@@ -22,6 +22,10 @@
       <div class="pt-2">
         <MyNoteAnythingMemo />
       </div>
+      <div class="pt-10">
+        <MyNoteDownloadButton />
+        <MyNoteAllDeleteButton />
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +35,8 @@ import ContentTitle from "../components/ContentTitle.vue";
 import MyNoteVisitList from "../components/MyNoteVisitList.vue";
 import MyNoteQuestionList from "../components/MyNoteQuestionList.vue";
 import MyNoteAnythingMemo from "../components/MyNoteAnythingMemo.vue";
+import MyNoteAllDeleteButton from "../components/MyNoteAllDeleteButton.vue";
+import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
 export default {
   name: "MyNote",
@@ -39,6 +45,8 @@ export default {
     MyNoteVisitList,
     MyNoteQuestionList,
     MyNoteAnythingMemo,
+    MyNoteDownloadButton,
+    MyNoteAllDeleteButton,
     MyNoteTutorial,
   },
   data() {

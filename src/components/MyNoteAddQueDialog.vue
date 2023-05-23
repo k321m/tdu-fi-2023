@@ -11,7 +11,7 @@
     <div class="pt-4">
       <v-row class="pa-2">
         <v-col class="pa-1">
-          <div class="default-sub-btn" @click="closeAddDialog">
+          <div class="default-border-btn" @click="closeAddDialog">
             <p class="zen-kaku-bold">キャンセル</p>
           </div>
         </v-col>

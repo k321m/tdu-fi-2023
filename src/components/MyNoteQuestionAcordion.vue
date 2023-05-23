@@ -2,9 +2,9 @@
   <v-dialog v-model="isDeleteDialogVisible">
     <MyNoteDeleteDialog
       @close-delete-dialog="isDeleteDialogVisible = false"
-      @delete-data="deleteEvent"
+      @delete-data="deleteQuestion"
     >
-      <template v-slot:type>質問</template>
+      <template v-slot:type>質問項目</template>
       <template v-slot:title>{{ questionValue.question }}</template>
       <template v-slot:message-caution>メモの内容が失われます</template>
     </MyNoteDeleteDialog>
@@ -34,7 +34,7 @@
           </div>
           <div class="py-5">
             <div
-              class="default-sub-btn btn-animation"
+              class="default-border-btn btn-animation"
               @click="openDeleteDialog"
             >
               <p class="zen-kaku-bold">リストから削除</p>
@@ -82,7 +82,7 @@ export default {
     openDeleteDialog() {
       this.isDeleteDialogVisible = !this.isDeleteDialogVisible;
     },
-    deleteEvent() {
+    deleteQuestion() {
       console.log("delete:" + this.questionKey);
       this.$store.commit("deleteMyNote", {
         type: this.type,

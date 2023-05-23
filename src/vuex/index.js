@@ -49,7 +49,6 @@ export const store = createStore({
       console.log(JSON.stringify(this.state.myNote.qestions));
       if (obj.type == "all") {
         // TODO: 初期値を代入することで初期化処理を行うように修正
-        this.state.doneMyNoteTutorial = false;
         this.state.addQueCounter = 0;
         this.state.myNote.events = {};
         this.state.myNote.questions = {};

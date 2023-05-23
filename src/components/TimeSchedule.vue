@@ -183,7 +183,6 @@ export default {
     this.limitedEventsData =
       this.$store.getters["eventsStore/getLimitedEvents"];
     this.timeScheduleData = this.$store.getters["eventsStore/getTimeSchedule"];
-    console.log(JSON.stringify(this.timeScheduleData));
   },
 };
 </script>

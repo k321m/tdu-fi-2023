@@ -106,8 +106,9 @@ p.hack {
   align-items: center;
   justify-content: center;
 }
-.default-sub-btn {
+.default-border-btn {
   min-height: 52px;
+  background-color: white;
   border: 2px solid #010440;
   color: #010440;
   border-radius: 3px;
@@ -115,10 +116,20 @@ p.hack {
   align-items: center;
   justify-content: center;
 }
-.delete-btn {
+.pink-btn {
   min-height: 52px;
   background-color: #e345e6;
   color: white;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pink-border-btn {
+  min-height: 52px;
+  background-color: white;
+  border: 2px solid #e345e6;
+  color: #e345e6;
   border-radius: 3px;
   display: flex;
   align-items: center;

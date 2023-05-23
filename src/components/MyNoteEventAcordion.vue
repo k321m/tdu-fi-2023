@@ -4,7 +4,7 @@
       @close-delete-dialog="isDeleteDialogVisible = false"
       @delete-data="deleteEvent"
     >
-      <template v-slot:type>訪問</template>
+      <template v-slot:type>訪問項目</template>
       <template v-slot:title
         >{{ eventValue.subTitle }} {{ eventValue.title }}</template
       >
@@ -76,7 +76,7 @@
                 </v-col>
                 <v-col class="pa-1">
                   <div
-                    class="default-sub-btn btn-animation"
+                    class="default-border-btn btn-animation"
                     @click="
                       this.isDeleteDialogVisible = !this.isDeleteDialogVisible
                     "

@@ -1,7 +1,7 @@
 <template>
   <div class="background-dialog pa-7">
     <p class="zen-kaku-bold" style="font-size: 1.8em">
-      <slot name="type"></slot>項目を削除する
+      <slot name="type"></slot>を削除する
     </p>
     <div class="pt-10">
       <p class="zen-kaku-medium">
@@ -12,18 +12,21 @@
         >。
       </p>
     </div>
-    <div class="delete-data-box py-10">
+    <div class="delete-data-box">
       <p class="zen-kaku-bold"><slot name="title"></slot></p>
     </div>
     <div>
       <v-row class="pa-2">
         <v-col class="pa-1">
-          <div class="default-sub-btn btn-animation" @click="closeDeleteDialog">
+          <div
+            class="default-border-btn btn-animation"
+            @click="closeDeleteDialog"
+          >
             <p class="zen-kaku-bold">キャンセル</p>
           </div>
         </v-col>
         <v-col class="pa-1">
-          <div class="delete-btn btn-animation" @click="deleteData">
+          <div class="pink-btn btn-animation" @click="deleteData">
             <p class="zen-kaku-bold">削除</p>
           </div>
         </v-col>
@@ -55,7 +58,7 @@ export default {
   border-radius: 10px;
 }
 .delete-data-box {
-  min-height: 150px;
+  min-height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
