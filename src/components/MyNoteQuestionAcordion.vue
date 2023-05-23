@@ -99,7 +99,6 @@ export default {
   },
   data() {
     return {
-      type: "events",
       isOpen: false,
       isChecked: false,
       memo: "",
@@ -129,8 +128,7 @@ export default {
       this.updateIsChecked();
     },
     saveMemo() {
-      this.$store.commit("saveMemo", {
-        type: this.type,
+      this.$store.commit("saveEventMemo", {
         key: this.eventKey,
         memo: this.memo,
       });
@@ -140,10 +138,7 @@ export default {
     },
     deleteEvent() {
       console.log("delete:" + this.eventKey);
-      this.$store.commit("deleteMyNote", {
-        type: this.type,
-        key: this.eventKey,
-      });
+      this.$store.commit("deleteEventMyNote", this.eventKey);
     },
     checkboxStyleSet() {
       return {
@@ -240,22 +235,5 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-textarea {
-  padding: 10px;
-  width: 100%;
-  min-height: 200px;
-  border: 1px solid #acaaf2;
-  overflow: scroll;
-}
-
-::placeholder {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-  font-size: 14px;
-  color: #d3d1ff;
 }
 </style>

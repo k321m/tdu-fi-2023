@@ -8,6 +8,7 @@ export const store = createStore({
     myNote: {
       events: {},
       questions: {},
+      anything: { memo: "" },
     },
   },
   mutations: {
@@ -22,22 +23,23 @@ export const store = createStore({
     updateEventDone(state, key) {
       this.state.myNote.events[key].done = !this.state.myNote.events[key].done;
     },
-    saveEventMemo(state, obj) {
-      this.state.myNote.events[obj.key].memo = obj.memo;
+    saveMemo(state, obj) {
+      if (obj.type == "anything") {
+        this.state.myNote[obj.type].memo = obj.memo;
+        return;
+      }
+      this.state.myNote[obj.type][obj.key].memo = obj.memo;
     },
-    saveQuestionMemo(state, obj) {
-      this.state.myNote.questions[obj.key].memo = obj.memo;
-    },
-    deleteEventMyNote(state, key) {
-      delete this.state.myNote.events[key];
-    },
-    deleteQuestionMyNote(state, key) {
-      delete this.state.myNote.questions[key];
-    },
-    deleteAllMyNote(state) {
-      this.state.doneMyNoteTutorial = false;
-      this.state.myNote.events = {};
-      this.state.myNote.qestions = {};
+    deleteMyNote(state, obj) {
+      if (obj.type == "all") {
+        // TODO: 初期値を代入することで初期化処理を行うように修正
+        this.state.doneMyNoteTutorial = false;
+        this.state.myNote.events = {};
+        this.state.myNote.qestions = {};
+        this.state.myNote.anything = {};
+        return;
+      }
+      delete this.state.myNote[obj.type][obj.key];
     },
   },
   getters: {
@@ -54,6 +56,10 @@ export const store = createStore({
 
     getMyNoteQuestions(state, getters) {
       return state.myNote.questions;
+    },
+
+    getMyNoteAnything(state, getters) {
+      return state.myNote.anything;
     },
 
     getMyNoteDetailData(state, getters) {

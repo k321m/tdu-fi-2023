@@ -14,26 +14,13 @@
         </template>
       </ContentTitle>
       <div class="pt-6">
-        <p class="zen-kaku-bold">訪問リスト</p>
-        <div v-for="(value, key) in myNoteDetailData.events" :key="value">
-          <MyNoteEventAcordion :eventValue="value" :eventKey="key">
-          </MyNoteEventAcordion>
-        </div>
-
-        <div class="py-4">
-          <p class="zen-kaku-regular">▶︎ タイムスケジュール</p>
-          <p class="zen-kaku-regular">▶︎ 研究室公開</p>
-        </div>
+        <MyNoteVisitList :eventDetailData="myNoteDetailData.events" />
       </div>
       <div class="pt-6">
-        <p class="zen-kaku-bold">質問リスト</p>
-        <div v-for="(value, key) in myNoteDetailData.questions" :key="value">
-          <MyNoteEventAcordion :key="key">
-            <template v-slot:title>{{ value.title }}</template>
-            <template v-slot:event>{{ value.event }}</template>
-            <template v-slot:place>{{ value.place }}</template>
-          </MyNoteEventAcordion>
-        </div>
+        <MyNoteQuestionList :questionDetailData="myNoteDetailData.questions" />
+      </div>
+      <div class="pt-2">
+        <MyNoteAnythingMemo />
       </div>
     </div>
   </div>
@@ -41,13 +28,17 @@
 
 <script>
 import ContentTitle from "../components/ContentTitle.vue";
-import MyNoteEventAcordion from "../components/MyNoteEventAcordion.vue";
+import MyNoteVisitList from "../components/MyNoteVisitList.vue";
+import MyNoteQuestionList from "../components/MyNoteQuestionList.vue";
+import MyNoteAnythingMemo from "../components/MyNoteAnythingMemo.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
 export default {
   name: "MyNote",
   components: {
     ContentTitle,
-    MyNoteEventAcordion,
+    MyNoteVisitList,
+    MyNoteQuestionList,
+    MyNoteAnythingMemo,
     MyNoteTutorial,
   },
   data() {
@@ -61,11 +52,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.contents > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-</style>
