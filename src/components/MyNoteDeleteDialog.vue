@@ -1,10 +1,14 @@
 <template>
   <div class="background-dialog pa-7">
-    <p class="zen-kaku-bold" style="font-size: 1.8em">訪問項目を削除する</p>
+    <p class="zen-kaku-bold" style="font-size: 1.8em">
+      <slot name="type"></slot>項目を削除する
+    </p>
     <div class="pt-10">
       <p class="zen-kaku-medium">
-        この操作は取り消せません。 <br />削除すると<span style="color: #e345e6"
-          >メモの内容が失われます</span
+        この操作は取り消せません。 <br />削除すると<slot
+          name="message-plane"
+        ></slot
+        ><span style="color: #e345e6"><slot name="message-caution"></slot></span
         >。
       </p>
     </div>

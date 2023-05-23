@@ -3,9 +3,9 @@
     <p class="zen-kaku-bold" style="font-size: 1.8em">質問項目を追加する</p>
     <div class="pt-7">
       <textarea
-        @blur="saveMemo()"
+        @blur="addQuestion()"
         placeholder="何を聞く？"
-        v-model="memo"
+        v-model="question"
       ></textarea>
     </div>
     <div class="pt-4">
@@ -30,12 +30,26 @@ export default {
   emits: ["close-add-dialog"],
   data() {
     return {
-      memo: "",
+      type: "questions",
+      question: "",
     };
   },
   methods: {
     closeAddDialog() {
       this.$emit("close-add-dialog");
+    },
+    addQuestion() {
+      var counter = this.$store.getters.getAddQueCounter;
+      console.log("counter:" + counter);
+      var key = "addself-question-" + (counter + 1);
+      console.log(key);
+      this.$store.commit("countAddQuestion");
+      this.$store.commit("addMyNote", {
+        type: this.type,
+        key: key,
+        question: this.question,
+      });
+      window.location.reload();
     },
   },
 };

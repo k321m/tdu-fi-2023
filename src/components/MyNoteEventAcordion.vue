@@ -4,9 +4,11 @@
       @close-delete-dialog="isDeleteDialogVisible = false"
       @delete-data="deleteEvent"
     >
+      <template v-slot:type>訪問</template>
       <template v-slot:title
         >{{ eventValue.subTitle }} {{ eventValue.title }}</template
       >
+      <template v-slot:message-caution>メモの内容が失われます</template>
     </MyNoteDeleteDialog>
   </v-dialog>
   <div class="accordion">
@@ -28,7 +30,7 @@
       </div>
     </div>
     <transition name="open">
-      <div class="accordion-content pa-4" v-if="isOpen">
+      <div class="accordion-content pb-4" v-if="isOpen">
         <div name="content">
           <div>
             <p
@@ -60,7 +62,7 @@
             <div class="pt-2">
               <p class="zen-kaku-bold py-3">メモ</p>
               <textarea
-                @blur="addMemo()"
+                @blur="saveMemo()"
                 placeholder="重要なことはメモに残そう！"
                 v-model="memo"
               ></textarea>
@@ -130,7 +132,7 @@ export default {
       this.$store.commit("updateEventDone", this.eventKey);
       this.updateIsChecked();
     },
-    addMemo() {
+    saveMemo() {
       this.$store.commit("saveMemo", {
         type: this.type,
         key: this.eventKey,
@@ -138,7 +140,6 @@ export default {
       });
     },
     deleteEvent() {
-      console.log("delete:" + this.eventKey);
       this.$store.commit("deleteMyNote", {
         type: this.type,
         key: this.eventKey,

@@ -6,13 +6,10 @@
   </v-dialog>
   <div>
     <p class="zen-kaku-bold">質問リスト</p>
-    <!-- <div v-for="(value, key) in questionDetailData" :key="value">
-      <MyNoteQuestionAcordion :key="key">
-        <template v-slot:title>{{ value.title }}</template>
-        <template v-slot:event>{{ value.event }}</template>
-        <template v-slot:place>{{ value.place }}</template>
+    <div v-for="(value, key) in questionDetailData" :key="value">
+      <MyNoteQuestionAcordion :questionValue="value" :questionKey="key">
       </MyNoteQuestionAcordion>
-    </div> -->
+    </div>
     <div class="py-2">
       <div style="text-align: center" @click="openAddDialog">
         <img src="../assets/icon-add.svg" />
@@ -43,7 +40,6 @@ export default {
   },
   methods: {
     openAddDialog() {
-      console.log("おされた");
       this.isAddQueDialogVisible = !this.isAddQueDialogVisible;
     },
   },

@@ -1,10 +1,12 @@
 import { createStore } from "vuex";
 import createPersistedstate from "vuex-persistedstate";
 import eventsStore from "./eventsStore";
+import { compileScript } from "vue/compiler-sfc";
 
 export const store = createStore({
   state: {
     doneMyNoteTutorial: false,
+    addQueCounter: 0,
     myNote: {
       events: {},
       questions: {},
@@ -15,10 +17,22 @@ export const store = createStore({
     updateDoneMyNoteTutorial(state) {
       this.state.doneMyNoteTutorial = true;
     },
+    countAddQuestion() {
+      console.log("よばれた" + this.state.addQueCounter);
+      this.state.addQueCounter++;
+      console.log(this.state.addQueCounter);
+    },
+    // TODO: Type与えなくても処理する方法に修正
     addMyNote(state, obj) {
+      // objの中身は[ type("events" or "questions"), key ,(questionのみquestion)]を想定
+      var addDataTemplate = { memo: "", done: false };
+      if (obj.type == "questions")
+        addDataTemplate = { question: obj.question, memo: "" };
       this.state.myNote[obj.type] = Object.assign(this.state.myNote[obj.type], {
-        [obj.key]: { memo: "", done: false },
+        [obj.key]: addDataTemplate,
       });
+      console.log(obj.type);
+      console.log(JSON.stringify(this.state.myNote[obj.type]));
     },
     updateEventDone(state, key) {
       this.state.myNote.events[key].done = !this.state.myNote.events[key].done;
@@ -28,14 +42,17 @@ export const store = createStore({
         this.state.myNote[obj.type].memo = obj.memo;
         return;
       }
+      console.log(obj.type + obj.key);
       this.state.myNote[obj.type][obj.key].memo = obj.memo;
     },
     deleteMyNote(state, obj) {
+      console.log(JSON.stringify(this.state.myNote.qestions));
       if (obj.type == "all") {
         // TODO: 初期値を代入することで初期化処理を行うように修正
         this.state.doneMyNoteTutorial = false;
+        this.state.addQueCounter = 0;
         this.state.myNote.events = {};
-        this.state.myNote.qestions = {};
+        this.state.myNote.questions = {};
         this.state.myNote.anything = {};
         return;
       }
@@ -45,6 +62,10 @@ export const store = createStore({
   getters: {
     getDoneMyNoteTutorial(state) {
       return state.doneMyNoteTutorial;
+    },
+    getAddQueCounter(state) {
+      console.log(state.addQueCounter);
+      return state.addQueCounter;
     },
     getMyNote(state, getters) {
       return state.myNote;
@@ -75,7 +96,11 @@ export const store = createStore({
           [eventKey]: state.eventsStore[eventType][eventDetailKey],
         });
       });
-      questionKeys.forEach(function (questionKey) {});
+      questionKeys.forEach(function (questionKey) {
+        detailData.questions = Object.assign(detailData.questions, {
+          [questionKey]: state.myNote.questions[questionKey],
+        });
+      });
       return detailData;
     },
   },
@@ -85,7 +110,7 @@ export const store = createStore({
   plugins: [
     createPersistedstate({
       key: "tdu-fi-2023oc",
-      paths: ["doneMyNoteTutorial", "myNote"],
+      paths: ["doneMyNoteTutorial", "addQueCounter", "myNote"],
     }),
   ],
 });
