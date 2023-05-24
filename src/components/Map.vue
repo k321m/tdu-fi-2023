@@ -1,6 +1,6 @@
 <template>
   <div class="py-8">
-    <div class="background py-3">
+    <div id="map" class="background py-3">
       <div class="map">
         <div class="py-4 pl-4">
           <p class="zen-kaku-h5 pl-5 pb-2">地図</p>

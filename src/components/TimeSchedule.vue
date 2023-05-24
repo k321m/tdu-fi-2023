@@ -8,7 +8,7 @@
       />
     </v-dialog>
 
-    <div class="background">
+    <div id="time-schedule" class="background">
       <div class="time-schedule">
         <div class="py-4 pl-4">
           <p class="zen-kaku-bold pl-5 pb-2">タイムスケジュール</p>

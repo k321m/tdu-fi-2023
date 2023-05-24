@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div>
-      <v-navigation-drawer app v-model="drawer">
+      <!-- <v-navigation-drawer app v-model="drawer">
         <v-list nav>
           <v-list-item v-for="menu in menus" :key="menu.title" :to="menu.url">
             <v-list-item-content>
@@ -9,11 +9,15 @@
             </v-list-item-content>
           </v-list-item>
         </v-list>
-      </v-navigation-drawer>
+      </v-navigation-drawer> -->
+      <HamburgerMenu
+        v-if="hamburgerMenu"
+        @close-hamburger-menu="hamburgerMenu = !hamburgerMenu"
+      ></HamburgerMenu>
 
       <v-app-bar elevation="0" app>
         <v-spacer></v-spacer>
-        <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+        <v-app-bar-nav-icon @click.stop="hamburgerMenu = !hamburgerMenu" />
       </v-app-bar>
     </div>
 
@@ -33,12 +37,15 @@
 </template>
 
 <script>
+import HamburgerMenu from "./components/HamburgerMenu.vue";
 export default {
   name: "App",
-  components: {},
+  components: {
+    HamburgerMenu,
+  },
   data() {
     return {
-      drawer: false,
+      hamburgerMenu: false,
       menus: [
         { title: "トップ", icon: "mdi-web", url: "/" },
         { title: "MyNote", icon: "mdi-home", url: "/my-note" },
