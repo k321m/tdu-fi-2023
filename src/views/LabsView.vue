@@ -1,4 +1,11 @@
 <template>
+  <v-dialog v-model="isDialogVisible">
+    <LabViewDialog
+      :labData="clickedLabData"
+      :labKey="clickedLabKey"
+      @close-dialog="isDialogVisible = false"
+    />
+  </v-dialog>
   <div id="contents">
     <div class="pa-4">
       <!-- ページタイトル -->
@@ -46,7 +53,12 @@
         </div>
         <!-- 研究室カード -->
         <div v-for="(lab, key) in this.allLabsData">
-          <div id="card" class="mb-2 align-end">
+          <div
+            id="card"
+            class="mb-2 align-end"
+            :key="key"
+            @click="openDialog(key)"
+          >
             <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
             <div class="card-img" :style="lab.img"></div>
             <div
@@ -68,6 +80,7 @@
 </template>
 
 <script>
+import LabViewDialog from "../components/LabViewDialog.vue";
 import MyNoteIcon from "../components/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 export default {
@@ -75,20 +88,37 @@ export default {
   data() {
     return {
       allLabsData: {},
+      isDialogVisible: false,
+      clickedLabData: Array,
+      clickedLabKey: String,
     };
   },
   components: {
+    LabViewDialog,
     ContentTitle,
     MyNoteIcon,
   },
+  methods: {
+    openDialog(key) {
+      this.isDialogVisible = true;
+      this.clickedLabData = this.allLabsData[key];
+      // console.log(this.clickedLabData.display);
+      this.clickedLabKey = key;
+    },
+  },
   mounted() {
     this.allLabsData = this.$store.getters["labsStore/getAllLabsData"];
-    console.log(JSON.stringify(this.allLabsData));
+    // console.log(JSON.stringify(this.allLabsData));
   },
 };
 </script>
 
 <style scoped>
+/* .background-dialog {
+  height: 688px;
+  background-color: white;
+  border-radius: 10px;
+} */
 .filter_button {
   display: block;
   font-size: 0.8rem;
@@ -136,5 +166,6 @@ export default {
   min-width: 0;
   padding: 0.8rem 1rem;
   text-align: right;
+  white-space: pre-wrap;
 }
 </style>

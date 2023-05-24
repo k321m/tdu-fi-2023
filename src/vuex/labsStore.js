@@ -7,11 +7,11 @@ export default {
     allLabs: {
       labo_1: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "情報セキュリティ研究室",
         mordalTitle: "情報セキュリティ研究室",
         professor: {
-          name: "寺田&nbsp;真敏",
+          name: "寺田 真敏 ",
           type: "教授",
         },
         tags: ["ネットワークセキュリティ", "暗号応用", "機械学習"],
@@ -42,11 +42,11 @@ export default {
       },
       labo_2: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "計算言語学研究室",
         mordalTitle: "計算言語学研究室",
         professor: {
-          name: "大野&nbsp;誠寛",
+          name: "大野 誠寛 ",
           type: "教授",
         },
         tags: ["自然言語処理", "話し言葉処理", "人工知能"],
@@ -74,11 +74,11 @@ export default {
       },
       labo_3: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "ビジュアルコンピューティング\n研究室",
         mordalTitle: "ビジュアルコンピューティング研究室",
         professor: {
-          name: "高橋&nbsp;時市郎",
+          name: "高橋 時市郎 ",
           type: "教授",
         },
         tags: ["コンピュータグラフィックス", "VR", "AR"],
@@ -109,11 +109,11 @@ export default {
       },
       labo_4: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "ビジュアルコンピューティング\n研究室",
         mordalTitle: "ビジュアルコンピューティング研究室",
         professor: {
-          name: "小玉&nbsp;周平",
+          name: "小玉 周平 ",
           type: "助教",
         },
         tags: ["コンピュータグラフィックス", "ユーザインタフェース"],
@@ -138,11 +138,11 @@ export default {
       },
       labo_5: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "メディア応用研究室",
         mordalTitle: "メディア応用研究室",
         professor: {
-          name: "鉄谷&nbsp;信二",
+          name: "鉄谷 信二 ",
           type: "教授",
         },
         tags: ["映像表現", "視覚心理"],
@@ -173,11 +173,11 @@ export default {
       },
       labo_6: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "メディア応用研究室",
         mordalTitle: "メディア応用研究室",
         professor: {
-          name: "井ノ上&nbsp;寛人",
+          name: "井ノ上 寛人 ",
           type: "助教",
         },
         tags: ["感性工学", "ゲームUI／UXデザイン"],
@@ -208,11 +208,11 @@ export default {
       },
       labo_7: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "音響コミュニケーション研究室",
         mordalTitle: "音響コミュニケーション研究室",
         professor: {
-          name: "池田&nbsp;雄介",
+          name: "池田 雄介 ",
           type: "教授",
         },
         tags: ["音響工学", "MR", "信号処理"],
@@ -237,11 +237,11 @@ export default {
       },
       labo_8: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "インタラクティブグラフィックス\n研究室",
         mordalTitle: "インタラクティブグラフィックス研究室",
         professor: {
-          name: "森谷&nbsp;友昭",
+          name: "森谷 友昭 ",
           type: "准教授",
         },
         tags: ["コンピュータアニメーション", "ゲームグラフィックス", "VR"],
@@ -272,15 +272,15 @@ export default {
       },
       labo_9: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "実空間コンピューティング研究室",
         mordalTitle: "実空間コンピューティング研究室",
         professor: {
-          name: "岩井&nbsp;将行",
+          name: "岩井 将行 ",
           type: "教授",
         },
         tags: ["IoT", "ウエラブルシステム"],
-        place: "",
+        place: "1号館4階演習室／5階メディアラボ",
         info: "環境情報や生体情報を取得活用するIoTを始め、ビッグデータ、画像処理、xR、機械学習システムの応用の研究を行っています。無線センサを用いた防災・環境・生体モニタリング、ウェアラブル技術、高精細位置情報、空間スキャン、人間行動解析、映像解析、ブラウザ技術、可視化技術など。",
         theme: [
           "水難事故被害抑止を目的とした水位による河川の危険エリア侵入の検知と通知システム",
@@ -307,11 +307,11 @@ export default {
       },
       labo_10: {
         eventType: "終日開催",
-        display: "展示なし",
+        display: false,
         cardTitle: "Web工学研究室",
         mordalTitle: "Web工学研究室",
         professor: {
-          name: "増田&nbsp;英孝",
+          name: "増田 英孝 ",
           type: "教授",
         },
         tags: ["インターネット", "情報推薦"],
@@ -342,11 +342,11 @@ export default {
       },
       labo_11: {
         eventType: "終日開催",
-        display: "展示なし",
+        display: false,
         cardTitle: "知的メディア研究グループ",
         mordalTitle: "知的メディア研究グループ",
         professor: {
-          name: "山田&nbsp;剛一",
+          name: "山田 剛一 ",
           type: "講師",
         },
         tags: ["自然言語処理", "人工知能"],
@@ -371,11 +371,11 @@ export default {
       },
       labo_12: {
         eventType: "終日開催",
-        display: "展示あり",
+        display: true,
         cardTitle: "知的計算システム研究室",
         mordalTitle: "知的計算システム研究室",
         professor: {
-          name: "中島&nbsp;克人",
+          name: "中島 克人 ",
           type: "教授",
         },
         tags: ["映像・画像認識", "画像処理"],
