@@ -18,9 +18,7 @@ export const store = createStore({
       this.state.doneMyNoteTutorial = true;
     },
     countAddQuestion() {
-      console.log("よばれた" + this.state.addQueCounter);
       this.state.addQueCounter++;
-      console.log(this.state.addQueCounter);
     },
     // TODO: Type与えなくても処理する方法に修正
     addMyNote(state, obj) {
@@ -31,8 +29,6 @@ export const store = createStore({
       this.state.myNote[obj.type] = Object.assign(this.state.myNote[obj.type], {
         [obj.key]: addDataTemplate,
       });
-      console.log(obj.type);
-      console.log(JSON.stringify(this.state.myNote[obj.type]));
     },
     updateEventDone(state, key) {
       this.state.myNote.events[key].done = !this.state.myNote.events[key].done;
@@ -42,11 +38,10 @@ export const store = createStore({
         this.state.myNote[obj.type].memo = obj.memo;
         return;
       }
-      console.log(obj.type + obj.key);
+
       this.state.myNote[obj.type][obj.key].memo = obj.memo;
     },
     deleteMyNote(state, obj) {
-      console.log(JSON.stringify(this.state.myNote.qestions));
       if (obj.type == "all") {
         // TODO: 初期値を代入することで初期化処理を行うように修正
         this.state.addQueCounter = 0;
@@ -63,7 +58,6 @@ export const store = createStore({
       return state.doneMyNoteTutorial;
     },
     getAddQueCounter(state) {
-      console.log(state.addQueCounter);
       return state.addQueCounter;
     },
     getMyNote(state, getters) {

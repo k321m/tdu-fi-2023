@@ -11,10 +11,20 @@
   </v-dialog>
   <div class="accordion">
     <div class="title-box">
-      <div class="pl-3 py-1">
-        <span class="zen-kaku-medium">{{ questionValue.question }}</span>
+      <div style="display: flex">
+        <p
+          class="zen-kaku-medium pb-1"
+          style="font-size: 1.5em; line-height: 0"
+        >
+          Q
+        </p>
       </div>
-      <div class="pulldown-button py-1" @click="isOpen = !isOpen">
+      <div class="question-box pl-3">
+        <span class="zen-kaku-medium question">
+          {{ questionValue.question }}
+        </span>
+      </div>
+      <div class="pulldown-button pa-1" @click="isOpen = !isOpen">
         <img
           :class="openAcordionStyleSet()"
           src="../assets/pulldown-button-down.svg"
@@ -65,14 +75,9 @@ export default {
   methods: {
     updateMemo() {
       var quesMyNote = this.$store.getters.getMyNoteQuestions;
-      console.log(this.questionKey);
-      console.log(quesMyNote[this.questionKey]);
       this.memo = quesMyNote[this.questionKey].memo;
     },
     saveMemo() {
-      console.log("save");
-      console.log("questionkey" + this.questionKey);
-      console.log(this.memo);
       this.$store.commit("saveMemo", {
         type: this.type,
         key: this.questionKey,
@@ -83,7 +88,6 @@ export default {
       this.isDeleteDialogVisible = !this.isDeleteDialogVisible;
     },
     deleteQuestion() {
-      console.log("delete:" + this.questionKey);
       this.$store.commit("deleteMyNote", {
         type: this.type,
         key: this.questionKey,
@@ -114,7 +118,8 @@ export default {
   padding: 16px;
   background-color: #ffffff;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
 .pulldown-button {
@@ -146,6 +151,16 @@ export default {
   transform: scaleY(-1);
 }
 
+/* .question-box {
+  width: 100%;
+}
+
+.question {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
+
 textarea {
   padding: 10px;
   width: 100%;
@@ -154,7 +169,11 @@ textarea {
   background-color: white;
   overflow: scroll;
 }
-
+.contents > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 ::placeholder {
   font-family: zen-kaku-gothic-new, sans-serif;
   font-weight: 400;

@@ -2,11 +2,7 @@
   <div class="background-dialog pa-7">
     <p class="zen-kaku-bold" style="font-size: 1.8em">質問項目を追加する</p>
     <div class="pt-7">
-      <textarea
-        @blur="addQuestion()"
-        placeholder="何を聞く？"
-        v-model="question"
-      ></textarea>
+      <textarea placeholder="何を聞く？" v-model="question"></textarea>
     </div>
     <div class="pt-4">
       <v-row class="pa-2">
@@ -16,7 +12,7 @@
           </div>
         </v-col>
         <v-col class="pa-1">
-          <div class="myNote-btn btn-animation" @click="deleteData">
+          <div class="myNote-btn btn-animation" @click="addQuestion">
             <p class="zen-kaku-bold">追加</p>
           </div>
         </v-col>
@@ -39,10 +35,11 @@ export default {
       this.$emit("close-add-dialog");
     },
     addQuestion() {
+      if (this.question == "") {
+        return;
+      }
       var counter = this.$store.getters.getAddQueCounter;
-      console.log("counter:" + counter);
       var key = "addself-question-" + (counter + 1);
-      console.log(key);
       this.$store.commit("countAddQuestion");
       this.$store.commit("addMyNote", {
         type: this.type,
