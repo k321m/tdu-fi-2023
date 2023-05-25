@@ -1,11 +1,18 @@
 <template>
-  <v-dialog v-model="isDialogVisible">
+  <v-dialog v-model="isViewDialogVisible">
     <LabViewDialog
       :labData="clickedLabData"
       :labKey="clickedLabKey"
-      @close-dialog="isDialogVisible = false"
+      @close-dialog="isViewDialogVisible = false"
     />
   </v-dialog>
+  <v-dialog v-model="isFilterDialogVisible">
+    <LabFilterDialog
+      :tagData="allTagData"
+      @close-dialog="isFilterDialogVisible = false"
+    />
+  </v-dialog>
+
   <div id="contents">
     <div class="pa-4">
       <!-- ページタイトル -->
@@ -21,7 +28,7 @@
       <section class="pt-6">
         <p class="zen-kaku-bold pb-4">研究室一覧</p>
         <!-- 絞り込みボタン -->
-        <p class="filter_button zen-kaku-bold pb-2">
+        <p class="filter_button zen-kaku-bold pb-2" @click="openFilterDialog()">
           <span class="mdi mdi-filter-menu pr-1"></span>
           絞り込む
           <span class="pl-2">13件</span>
@@ -57,7 +64,7 @@
             id="card"
             class="mb-2 align-end"
             :key="key"
-            @click="openDialog(key)"
+            @click="openViewDialog(key)"
           >
             <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
             <div class="card-img" :style="lab.img"></div>
@@ -81,34 +88,54 @@
 
 <script>
 import LabViewDialog from "../components/LabViewDialog.vue";
+import LabFilterDialog from "../components/LabFilterDialog.vue";
 import MyNoteIcon from "../components/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 export default {
   name: "Labs",
   data() {
     return {
-      allLabsData: {},
-      isDialogVisible: false,
-      clickedLabData: Array,
-      clickedLabKey: String,
+      allLabsData: {}, //全研究室のデータ
+      isViewDialogVisible: false, //研究室詳細モーダルの可視状態
+      clickedLabData: Array, //選択された研究室のデータ
+      clickedLabKey: String, //選択された研究室のデータのkey
+      allTagData: {}, //タグと
+      isFilterDialogVisible: false,
     };
   },
   components: {
     LabViewDialog,
+    LabFilterDialog,
     ContentTitle,
     MyNoteIcon,
   },
   methods: {
-    openDialog(key) {
-      this.isDialogVisible = true;
+    openViewDialog(key) {
+      this.isViewDialogVisible = true;
       this.clickedLabData = this.allLabsData[key];
       // console.log(this.clickedLabData.display);
       this.clickedLabKey = key;
     },
+    openFilterDialog() {
+      this.isFilterDialogVisible = true;
+    },
   },
   mounted() {
+    // jsonから全研究室のデータを取得して変数に格納
     this.allLabsData = this.$store.getters["labsStore/getAllLabsData"];
-    // console.log(JSON.stringify(this.allLabsData));
+    // 全研究室のデータからタグの辞書を作成
+    for (const item of Object.keys(this.allLabsData)) {
+      for (const tag of this.allLabsData[item].tags) {
+        if (!this.allTagData[tag]) {
+          this.allTagData[tag] = [item];
+        } else {
+          let labItem = this.allTagData[tag];
+          labItem.push(item);
+          this.allTagData[tag] = labItem;
+        }
+      }
+    }
+    // console.log(this.allTagData);
   },
 };
 </script>
