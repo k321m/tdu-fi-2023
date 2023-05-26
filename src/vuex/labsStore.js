@@ -4,7 +4,7 @@ import img01 from "/src/assets/labs/情報セキュリティ.svg?url";
 export default {
   namespaced: true,
   state: {
-    allLabs: {
+    labo: {
       labo_1: {
         eventType: "終日開催",
         display: true,
