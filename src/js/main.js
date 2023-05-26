@@ -3,6 +3,7 @@ import "../style.css";
 import App from "../App.vue";
 import { router } from "../router";
 import { store } from "../vuex";
+import VueGtag from "vue-gtag";
 
 // Vuetify
 import "vuetify/styles";
@@ -28,4 +29,5 @@ app.use(router);
 app.use(store);
 app.use(vuetify);
 app.use(VueTyper);
+app.use(VueGtag, { config: { id: "G-LQWV4ZFYNZ" } });
 app.mount("#app");
