@@ -66,7 +66,7 @@
             <img src="../assets/icon-twitter.svg" />
           </div>
           <div class="px-6">
-            <img src="../assets/icon-youtube.svg" />
+            <img src="../assets/icon-you-tube.svg" />
           </div>
         </div>
       </div>
