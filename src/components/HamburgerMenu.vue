@@ -66,7 +66,7 @@
             <img src="../assets/icon-twitter.svg" />
           </div>
           <div class="px-6">
-            <!-- <img :src="youtube" /> -->
+            <img src="../assets/icon-mov.svg" />
           </div>
         </div>
       </div>
