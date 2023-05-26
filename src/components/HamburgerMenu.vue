@@ -66,7 +66,7 @@
             <img :src="twitter" />
           </div>
           <div class="px-6">
-            <img :src="youtube" />
+            <!-- <img :src="youtube" /> -->
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@
 import iconWeb from "../assets/icon-web.svg";
 import iconFacebook from "../assets/icon-facebook.svg";
 import iconTwitter from "../assets/icon-twitter.svg";
-import iconYoutube from "../assets/icon-youtube.svg";
+// import iconYoutube from "../assets/icon-youtube.svg";
 export default {
   name: "HamburgerMenu",
   emti: ["close-hamburger-menu"],
@@ -87,7 +87,7 @@ export default {
       web: iconWeb,
       facebook: iconFacebook,
       twitter: iconTwitter,
-      youtube: iconYoutube,
+      // youtube: iconYoutube,
     };
   },
   methods: {
