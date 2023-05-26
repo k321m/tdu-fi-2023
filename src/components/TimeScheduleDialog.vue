@@ -23,8 +23,9 @@
     </div>
     <div class="pt-10">
       <div class="contents">
+        <!-- TODO:表示されないため修正 -->
         <div class="pr-2" v-if="eventTime">
-          <img src="../assets/icon-time.svg" />
+          <!-- <img src="../assets/icon-time.svg" /> -->
           <span class="zen-kaku-regular pl-1">{{ eventTime }}</span>
         </div>
         <div class="pr-2">
