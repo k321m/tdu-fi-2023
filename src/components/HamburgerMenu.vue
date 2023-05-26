@@ -65,9 +65,9 @@
           <div class="px-6">
             <img src="../assets/icon-twitter.svg" />
           </div>
-          <!-- <div class="px-6">
+          <div class="px-6">
             <img src="../assets/icon-youtube.svg" />
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
