@@ -66,7 +66,7 @@
             <img src="../assets/icon-twitter.svg" />
           </div>
           <div class="px-6">
-            <img src="../assets/icon-you-tube.svg" />
+            <img :src="youtube" />
           </div>
         </div>
       </div>
@@ -74,12 +74,14 @@
   </div>
 </template>
 <script>
+import youtubeIcon from "../assets/icon-you-tube.svg";
 export default {
   name: "HamburgerMenu",
   emti: ["close-hamburger-menu"],
   data() {
     return {
       isOpen: false,
+      youtube: youtubeIcon,
     };
   },
   methods: {
