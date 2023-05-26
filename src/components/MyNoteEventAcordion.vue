@@ -45,7 +45,7 @@
             </p>
             <div class="contents">
               <div v-if="getEventTime()">
-                <img class="pr-1" src="../assets/icon-time.svg" />
+                <!-- <img class="pr-1" src="../assets/icon-time.svg" /> -->
                 <span class="zen-kaku-regular pr-2">{{ getEventTime() }}</span>
               </div>
               <div>
