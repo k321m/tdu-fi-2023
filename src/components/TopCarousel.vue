@@ -34,6 +34,18 @@ export default {
           text: "Laboratory",
           jptext: "研究室展示",
         },
+        {
+          text: "Lecture",
+          jptext: "講義動画",
+        },
+        {
+          text: "MyNote",
+          jptext: "マイノート",
+        },
+        {
+          text: "Questions",
+          jptext: "具体的な質問例",
+        },
       ],
     };
   },
@@ -79,7 +91,6 @@ p.text {
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0px 4px 3px #a5a5a5);
 }
 .carousel__slide {
   padding: 4px;
@@ -119,6 +130,7 @@ p.text {
 .carousel__slide--active {
   opacity: 1;
   transform-origin: bottom;
+  filter: drop-shadow(0px 4px 3px #a5a5a5);
   transform: rotateY(0) scale(1.1, 1);
 }
 </style>
