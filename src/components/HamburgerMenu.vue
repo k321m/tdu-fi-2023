@@ -57,16 +57,16 @@
         <h2 class="hack-h4">OFFICIAL SITE AND SNS:</h2>
         <div style="display: flex" class="py-5">
           <div class="pr-6">
-            <img src="../assets/icon-web.svg" />
+            <img :src="web" />
           </div>
           <div class="px-6">
-            <img src="../assets/icon-facebook.svg" />
+            <img :src="facebook" />
           </div>
           <div class="px-6">
-            <img src="../assets/icon-twitter.svg" />
+            <img :src="twitter" />
           </div>
           <div class="px-6">
-            <img src="../assets/icon-youtube.svg" />
+            <img :src="youtube" />
           </div>
         </div>
       </div>
@@ -74,12 +74,20 @@
   </div>
 </template>
 <script>
+import iconWeb from "../assets/icon-web.svg";
+import iconFacebook from "../assets/icon-facebook.svg";
+import iconTwitter from "../assets/icon-twitter.svg";
+import iconYoutube from "../assets/icon-youtube.svg";
 export default {
   name: "HamburgerMenu",
   emti: ["close-hamburger-menu"],
   data() {
     return {
       isOpen: false,
+      web: iconWeb,
+      facebook: iconFacebook,
+      twitter: iconTwitter,
+      youtube: iconYoutube,
     };
   },
   methods: {
