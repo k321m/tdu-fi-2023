@@ -14,36 +14,44 @@ export const store = createStore({
     },
   },
   mutations: {
+    // MyNoteチュートリアル終了判定更新
     updateDoneMyNoteTutorial(state) {
       this.state.doneMyNoteTutorial = true;
     },
+    // ユーザが追加する質問のkey番号として使用するためのカウンター
     countAddQuestion() {
       this.state.addQueCounter++;
     },
     // TODO: Type与えなくても処理する方法に修正
     addMyNote(state, obj) {
-      // objの中身は[ type("events" or "questions"), key ,(questionのみquestion)]を想定
+      // objの中身は{ type:value("events" or "questions"), key:value ,(questionのみ)question:value]を想定
       var addDataTemplate = { memo: "", done: false };
+      // [questions]の場合はkeyをquestionとした質問内容を格納(現時点でユーザが質問を追加した場合のみの対応であるため，具体的な質問例を実装する場合にはmodule(Store)のKeyを入れるなどの対応が必要)
       if (obj.type == "questions")
         addDataTemplate = { question: obj.question, memo: "" };
+      // MyNoteにデータを追加
       this.state.myNote[obj.type] = Object.assign(this.state.myNote[obj.type], {
         [obj.key]: addDataTemplate,
       });
     },
+    // eventのdoneを更新する
     updateEventDone(state, key) {
       this.state.myNote.events[key].done = !this.state.myNote.events[key].done;
     },
+    // event. questionそれぞれのメモを保存する
     saveMemo(state, obj) {
+      // objの中身は{ type:value("events" or "questions" or "anything"), key:value }を想定
       if (obj.type == "anything") {
         this.state.myNote[obj.type].memo = obj.memo;
         return;
       }
-
       this.state.myNote[obj.type][obj.key].memo = obj.memo;
     },
+    // MyNoteのデータを削除する
     deleteMyNote(state, obj) {
       if (obj.type == "all") {
         // TODO: 初期値を代入することで初期化処理を行うように修正
+        // 全初期化(「MyNoteのデータを削除」ボタンで発火想定)
         this.state.doneMyNoteTutorial = false;
         this.state.addQueCounter = 0;
         this.state.myNote.events = {};
@@ -51,6 +59,7 @@ export const store = createStore({
         this.state.myNote.anything = {};
         return;
       }
+      // 項目ごとの削除
       delete this.state.myNote[obj.type][obj.key];
     },
   },
@@ -77,20 +86,29 @@ export const store = createStore({
       return state.myNote.anything;
     },
 
+    // MyNoteに格納されているデータをもとに，module(Store)から詳細データを取得してObject型で返す
     getMyNoteDetailData(state, getters) {
-      var detailData = { events: {}, questions: {} }; // MyNoteに保存されてるイベントの詳細情報を格納する
-      var eventKeys = Object.keys(state.myNote.events);
-      var questionKeys = Object.keys(state.myNote.questions);
-      // MyNoteに保存したeventKeyを使ってmoduleからデータを取得
+      var detailData = { events: {}, questions: {} }; // MyNoteに保存されてるイベントの詳細情報を格納するリスト作成
+      var eventKeys = Object.keys(state.myNote.events); // MyNoteのevents内のデータのKeyを取得
+      var questionKeys = Object.keys(state.myNote.questions); // MyNoteのquestions内のデータのKeyを取得
+
+      // MyNoteに保存したeventKey(ex. **_1)を使ってmodule(Store)からデータを取得
       eventKeys.forEach(function (eventKey) {
-        var eventKeySplit = String(eventKey).split("_");
-        var eventType = eventKeySplit[0];
-        var eventDetailKey = eventKeySplit[0] + "_" + eventKeySplit[1];
+        var eventKeySplit = String(eventKey).split("_"); // eventKey(ex. **_1)を_でスプリット
+        var eventType = eventKeySplit[0]; // スプリットした配列の一番最初がデータのtype(親キー)を示すため変数に代入(ex. allDayEvent)
+        var eventDetailKey = eventKeySplit[0] + "_" + eventKeySplit[1]; // 例えばlimitedEvent_1_timeSchedule_1から詳細情報をとるためのkey(この場合limitedEvent_1)[0]と[1]を足している
+        var detailData = { events: {}, questions: {} }; // MyNoteに保存されてるイベントの詳細情報を格納するリスト作成
+        // 取得したデータをdetailDataに格納
         detailData.events = Object.assign(detailData.events, {
           [eventKey]: state.eventsStore[eventType][eventDetailKey],
         });
       });
+
+      // MyNoteに保存したquestionKey(ex. **_**)を使ってMyNoteからデータを取得
+      // (下記のコードは現状ではそのままMyNoteを格納すれば良いだけの処理だが，今後具体的な質問例から追加されることを想定して以下の書き方にしてある)
+      // 取得したデータをdetailDataに格納
       questionKeys.forEach(function (questionKey) {
+        // ユーザが質問を自分で追加した場合のデータ取得であり，その場合データはMyNoteに全て格納されているためそのまま渡しているのと同義
         detailData.questions = Object.assign(detailData.questions, {
           [questionKey]: state.myNote.questions[questionKey],
         });
@@ -105,6 +123,7 @@ export const store = createStore({
   plugins: [
     createPersistedstate({
       key: "tdu-fi-2023oc",
+      // localStorageに格納するもの指定
       paths: ["doneMyNoteTutorial", "addQueCounter", "myNote"],
     }),
   ],
