@@ -99,7 +99,9 @@ export default {
       isViewDialogVisible: false, //研究室詳細モーダルの可視状態
       clickedLabData: Array, //選択された研究室のデータ
       clickedLabKey: String, //選択された研究室のデータのkey
-      allTagData: {}, //タグと
+      allTagData: {}, //タグと研究室key
+      displayLabs: [], //現在表示している研究室
+      filteredTags: ["all"], //現在指定されている条件
       isFilterDialogVisible: false,
     };
   },
@@ -125,6 +127,13 @@ export default {
     this.allLabsData = this.$store.getters["labsStore/getAllLabsData"];
     // 全研究室のデータからタグの辞書を作成
     for (const item of Object.keys(this.allLabsData)) {
+      if (!this.allTagData["all"]) {
+        this.allTagData["all"] = [item];
+      } else {
+        let labItem = this.allTagData["all"];
+        labItem.push(item);
+        this.allTagData["all"] = labItem;
+      }
       for (const tag of this.allLabsData[item].tags) {
         if (!this.allTagData[tag]) {
           this.allTagData[tag] = [item];
@@ -135,7 +144,7 @@ export default {
         }
       }
     }
-    // console.log(this.allTagData);
+    console.log(this.allTagData);
   },
 };
 </script>

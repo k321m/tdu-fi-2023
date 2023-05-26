@@ -17,7 +17,7 @@
       {{ labData.mordalTitle }}
     </p>
     <!-- 先生名と展示場所 -->
-    <div class="pb-2" style="font-size: 0.9em">
+    <div class="pb-1" style="font-size: 0.9em">
       <p class="lab-professor-place">
       <img src="../assets/icon-person.svg" class="pr-1" />
       <div class="flex-end">

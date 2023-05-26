@@ -1,64 +1,69 @@
 <template>
   <div class="background-dialog px-5 pt-5">
     <!-- ×ボタン -->
-    <div style="display: flex" @click="$emit('close-dialog')">
+    <div class="pb-1" style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
         <v-icon>mdi-close</v-icon>
       </div>
     </div>
-    <!-- 展示情報 -->
-    <!-- <div class="pb-2">
-      <p class="zen-kaku-bold" style="color: #e345e6" v-if="labData.display">
-        展示あり
-      </p>
-      <p class="zen-kaku-bold" style="color: #360a73" v-else>展示なし</p>
-    </div>
-    <p class="zen-kaku-bold lab-title pb-2" style="color: #010326">
-      {{ labData.mordalTitle }}
-    </p> -->
-    <!-- 先生名と展示場所 -->
-    <!-- <div class="pb-2">
-      <p class="lab-professor-place">
-      <img src="../assets/icon-person.svg" class="pr-1" />
-      <div class="flex-end">
-        {{ labData.professor["name"] }}
-      <span class="pl-1" style="font-size: 0.8em">{{ labData.professor["type"] }}</span>
-      </div>
+    <p class="zen-kaku-bold lab-title pb-5" style="color: #010326">
+      絞り込み条件
     </p>
-    <p class="lab-professor-place">
-      <img src="../assets/icon-map.svg" class="pr-1" />
-      {{ labData.place }}
-    </p>
-    </div> -->
-    <!-- タグ -->
-    <!-- <div class="pb-4">
-      <p v-for="tag in labData.tags" class="tag-item zen-kaku-medium">{{tag}}</p>
-    </div> -->
-    <!-- スクロールエリア -->
-    <!-- <div class="pb-4 scroll-contents"> -->
-    <!-- info -->
-    <!-- <p class="pb-3">{{ labData.info }}</p> -->
-    <!-- theme -->
-    <!-- <div class="pb-3">
-        <p class="zen-kaku-bold pb-1">論文テーマ例</p>
-        <li v-for="theme in labData.theme">{{ theme }}</li>
-      </div>
+
+    <div class="pb-4 scroll-contents">
+      <div>Checked names: {{ checkedTags }}</div>
       <div class="pb-3">
-        <p class="zen-kaku-bold pb-1">就職先例</p>
-        <p>{{ labData.placeOfEmployment.join("、") }}</p>
+        <p class="zen-kaku-bold pb-2" style="color: #010326">展示の有無</p>
+
+        <div class="pb-4">
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              value="display-true"
+              id="display-true"
+              v-model="checkedTags"
+            />
+            <label for="display-true" class="checkbox-label">あり</label>
+          </div>
+
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              value="display-false"
+              id="display-false"
+              v-model="checkedTags"
+            /><label for="display-false" class="checkbox-label">なし</label>
+          </div>
+        </div>
+
+        <p class="zen-kaku-bold pb-2" style="color: #010326">キーワード</p>
+        <div class="checkbox">
+          <input
+            type="checkbox"
+            value="ex03"
+            id="orange"
+            v-model="checkedTags"
+          />
+          <label for="orange" class="checkbox-label"
+            >ああああああああああああ</label
+          >
+        </div>
+
+        <!-- <li v-for="theme in labData.theme">{{ theme }}</li> -->
       </div>
-    </div> -->
+    </div>
   </div>
   <!-- ボタン -->
-  <!-- <div class="footer px-5">
+  <div class="footer px-5">
     <div class="button-group pb-2">
-      <button class="default-btn btn-animation zen-kaku-bold">地図を確認</button>
-      <button class="myNote-btn btn-animation zen-kaku-bold">MyNoteに追加</button>
+      <button class="default-sub-btn btn-animation zen-kaku-bold clear-button">
+        クリア
+      </button>
+      <button class="default-btn btn-animation zen-kaku-bold filter-button">
+        この条件で絞り込む
+      </button>
     </div>
-    <div v-for="linkData in labData.links" class="links">
-      <a style="font-size: 0.8em;" :href="linkData['url']">{{ linkData['name'] }}</a>
-    </div>
-  </div> -->
+  </div>
 </template>
 
 <script>
@@ -69,6 +74,7 @@ export default {
   data() {
     return {
       type: "events",
+      checkedTags: [],
     };
   },
   methods: {},
@@ -76,6 +82,57 @@ export default {
 </script>
 
 <style scoped>
+input[type="checkbox"] {
+  display: none; /* checkboxを非表示にする */
+}
+
+.checkbox {
+  display: inline-block;
+  margin-right: 0.8em;
+  margin-bottom: 0.2em;
+}
+/* チェックボックス＋ラベル */
+.checkbox-label {
+  position: relative;
+  display: inline-flex; /* ブロックレベル要素化する */
+  align-items: center;
+  color: #010326; /* フォントの色を指定 */
+  padding-left: 1.4em;
+}
+
+/* チェックボックス共通 */
+.checkbox-label::before,
+.checkbox-label::after {
+  content: "";
+  position: absolute; /* ボックスの位置を指定する */
+  left: 0;
+  display: block; /* ブロックレベル要素化する */
+  width: 1em;
+  height: 1em;
+}
+/* チェックボックス（チェックなし） */
+.checkbox-label::before {
+  border: 1px solid #d3d1ff; /* ボックスの境界線を実線で指定する */
+}
+/* チェックマーク */
+.checkbox-label::after {
+  background-image: url(../assets/icon-check.svg);
+  background-size: 80%;
+  background-position: center center;
+  opacity: 0;
+}
+input[type="checkbox"]:checked + .checkbox-label:after {
+  /* チェックされたらチェックマークを表示する */
+  opacity: 1;
+}
+/* チェックされた時ボックスの色を変更する */
+input[type="checkbox"]:checked + .checkbox-label:before {
+  background: transparent
+    linear-gradient(153deg, #eb57ed 0%, #8f9eed 77%, #29eded 100%) 0% 0%
+    no-repeat padding-box;
+  border: none;
+}
+
 .background-dialog {
   display: flex;
   flex-direction: column;
@@ -95,21 +152,6 @@ export default {
   color: #010326;
   margin-right: 0.8rem;
 }
-/* 名前と役職で下揃え */
-.flex-end {
-  display: inline-flex;
-  align-items: flex-end;
-}
-.tag-item {
-  display: inline-block;
-  font-size: 0.4rem;
-  color: #360a73;
-  background-color: #ecebff;
-  padding: 0.35rem 0.8rem;
-  border-radius: 100vh;
-  margin-right: 0.2rem;
-  margin-bottom: 0.3rem;
-}
 .scroll-contents {
   flex-grow: 1;
   overflow-y: scroll;
@@ -128,7 +170,12 @@ export default {
 }
 .button-group > button {
   font-size: 0.8em;
-  width: 49%;
+}
+.button-group .clear-button {
+  width: 39%;
+}
+.button-group .filter-button {
+  width: 59%;
 }
 
 a {
