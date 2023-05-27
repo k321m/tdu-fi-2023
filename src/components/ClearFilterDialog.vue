@@ -1,99 +1,64 @@
 <template>
-  <v-dialog v-model="isClearFilterDialogVisible">
-    <ClearFilterDialog
-      @close-dialog="isClearFilterDialogVisible = false"
-      :currentFilteredTags="checkedTags"
-    />
-  </v-dialog>
   <div class="background-dialog px-5 pt-5">
     <!-- ×ボタン -->
-    <div class="pb-1" style="display: flex" @click="$emit('close-dialog')">
+    <!-- <div class="pb-1" style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
         <v-icon>mdi-close</v-icon>
       </div>
-    </div>
-    <p class="zen-kaku-bold lab-title pb-5" style="color: #010326">
-      絞り込み条件
+    </div> -->
+    <p class="zen-kaku-bold lab-title pb-7" style="color: #010326">
+      全ての絞り込み条件を解除する
     </p>
 
-    <div class="pb-4 scroll-contents">
-      <!-- <div>CheckedTags: {{ checkedTags }}</div> -->
-      <div class="pb-3">
-        <p class="zen-kaku-bold pb-2" style="color: #010326">展示の有無</p>
-
-        <div class="pb-4">
-          <div class="checkbox">
-            <input
-              type="checkbox"
-              value="display"
-              id="display-true"
-              v-model="checkedTags"
-            />
-            <label for="display-true" class="checkbox-label">あり</label>
-          </div>
-
-          <div class="checkbox">
-            <input
-              type="checkbox"
-              value="not-display"
-              id="display-false"
-              v-model="checkedTags"
-            /><label for="display-false" class="checkbox-label">なし</label>
-          </div>
-        </div>
-
-        <p class="zen-kaku-bold pb-2" style="color: #010326">キーワード</p>
-        <template v-for="(data, tag) in allTagData">
-          <div
-            class="checkbox"
-            v-if="tag != 'all' && tag != 'display' && tag != 'not-display'"
-          >
-            <input
-              type="checkbox"
-              :value="tag"
-              :id="tag"
-              v-model="checkedTags"
-            />
-            <label :for="tag" class="checkbox-label">{{ tag }}</label>
-          </div>
-        </template>
-      </div>
+    <!-- <div>CheckedTags: {{ checkedTags }}</div> -->
+    <div class="pb-2">
+      <p class="zen-kaku-bold pb-2" style="color: #010326">
+        現在選択中の絞り込み条件
+      </p>
+    </div>
+    <div class="scroll-contents">
+      <ul>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+        <li class="pb-1">・あいあい</li>
+      </ul>
     </div>
   </div>
   <!-- ボタン -->
   <div class="footer px-5">
     <div class="button-group pb-2">
       <button
-        class="default-border-btn btn-animation zen-kaku-bold clear-button"
-        @click="isClearFilterDialogVisible = true"
+        class="default-border-btn btn-animation zen-kaku-bold"
+        @click="$emit('close-dialog')"
       >
-        クリア
+        キャンセル
       </button>
       <button
-        class="default-btn btn-animation zen-kaku-bold filter-button"
+        class="default-btn btn-animation zen-kaku-bold"
         @click="onFilteredButton"
       >
-        この条件で絞り込む
+        解除
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import ClearFilterDialog from "./ClearFilterDialog.vue";
 export default {
-  name: "LabFilterDialog",
-  props: ["allTagData", "filteredTags"], // allだったら何もしないfilteredTagsならチェック状態にする
+  name: "ClearFilterDialog",
+  props: ["currentFilteredTags"],
   emits: ["close-dialog", "update-filtered"],
   data() {
     return {
       type: "events",
-      checkedTags: [],
-      isClearFilterDialogVisible: false,
     };
-  },
-  components: {
-    ClearFilterDialog,
   },
   methods: {
     // 絞り込みボタンを押すと親のメソッドを動かす。｢現在指定されている条件｣を子の｢選択中の条件｣にする。
@@ -101,12 +66,9 @@ export default {
       this.$emit("close-dialog");
       this.$emit("update-filtered", this.checkedTags);
     },
-    clearCheckedTags() {
-      this.checkedTags = [];
-    },
   },
   mounted() {
-    if (this.filteredTags[0] != "all") this.checkedTags = this.filteredTags;
+    console.log(this.currentFilteredTags);
   },
 };
 </script>
@@ -166,11 +128,11 @@ input[type="checkbox"]:checked + .checkbox-label:before {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  height: 90vh;
-  max-height: 688px;
+  height: 90%;
+  max-height: 400px;
   background-color: white;
   border-radius: 10px;
-  padding-bottom: 8rem;
+  padding-bottom: 7rem;
 }
 .lab-title {
   font-size: 1.8em;
@@ -200,12 +162,7 @@ input[type="checkbox"]:checked + .checkbox-label:before {
 }
 .button-group > button {
   font-size: 0.8em;
-}
-.button-group .clear-button {
-  width: 39%;
-}
-.button-group .filter-button {
-  width: 59%;
+  width: 49%;
 }
 
 a {
