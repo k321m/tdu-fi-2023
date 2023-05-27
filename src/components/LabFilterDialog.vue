@@ -31,7 +31,7 @@
             />
             <label
               for="display-true"
-              class="checkbox-label"
+              class="checkbox-label zen-kaku-regular"
               :class="{ 'zen-kaku-bold': checkedTags.includes('display') }"
               >あり</label
             >
@@ -45,7 +45,7 @@
               v-model="checkedTags"
             /><label
               for="display-false"
-              class="checkbox-label"
+              class="checkbox-label zen-kaku-regular"
               :class="{ 'zen-kaku-bold': checkedTags.includes('not-display') }"
               >なし</label
             >
@@ -66,7 +66,7 @@
             />
             <label
               :for="tag"
-              class="checkbox-label"
+              class="checkbox-label zen-kaku-regular"
               :class="{ 'zen-kaku-bold': checkedTags.includes(tag) }"
               >{{ tag }}</label
             >
