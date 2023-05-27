@@ -1,8 +1,9 @@
 <template>
-  <v-dialog v-model="isClearFilterDialogVisible">
+  <v-dialog v-model="isClearFilterDialogVisible" :transition="false">
     <ClearFilterDialog
       @close-dialog="isClearFilterDialogVisible = false"
-      :currentFilteredTags="checkedTags"
+      @update-filtered="clearFilterTags"
+      :currentFilteredTags="filteredTags"
     />
   </v-dialog>
   <div class="background-dialog px-5 pt-5">
@@ -32,7 +33,7 @@
             <label
               for="display-true"
               class="checkbox-label zen-kaku-regular"
-              :class="{ 'zen-kaku-bold': checkedTags.includes('display') }"
+              :class="{ 'zen-kaku-medium': checkedTags.includes('display') }"
               >あり</label
             >
           </div>
@@ -46,7 +47,9 @@
             /><label
               for="display-false"
               class="checkbox-label zen-kaku-regular"
-              :class="{ 'zen-kaku-bold': checkedTags.includes('not-display') }"
+              :class="{
+                'zen-kaku-medium': checkedTags.includes('not-display'),
+              }"
               >なし</label
             >
           </div>
@@ -67,7 +70,7 @@
             <label
               :for="tag"
               class="checkbox-label zen-kaku-regular"
-              :class="{ 'zen-kaku-bold': checkedTags.includes(tag) }"
+              :class="{ 'zen-kaku-medium': checkedTags.includes(tag) }"
               >{{ tag }}</label
             >
           </div>
@@ -113,11 +116,14 @@ export default {
   methods: {
     // 絞り込みボタンを押すと親のメソッドを動かす。｢現在指定されている条件｣を子の｢選択中の条件｣にする。
     onFilteredButton() {
+      // console.log("onFilteredButton()");
       this.$emit("close-dialog");
       this.$emit("update-filtered", this.checkedTags);
     },
-    clearCheckedTags() {
+    clearFilterTags() {
+      // console.log("clearFilterTags()");
       this.checkedTags = [];
+      this.onFilteredButton();
     },
   },
   mounted() {

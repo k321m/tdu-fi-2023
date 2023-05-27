@@ -33,10 +33,12 @@
         </p>
         <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
         <!-- 絞り込みボタン -->
-        <p class="filter_button zen-kaku-bold pb-2" @click="openFilterDialog()">
-          <span class="mdi mdi-filter-menu pr-1"></span>
-          絞り込み条件
-        </p>
+        <div class="pb-2">
+          <p class="filter_button zen-kaku-bold" @click="openFilterDialog()">
+            <span class="mdi mdi-filter-menu pr-1"></span>
+            絞り込み条件
+          </p>
+        </div>
         <!-- 適用中の絞り込み条件（タグ） -->
         <div class="pb-2">
           <ul>
@@ -131,7 +133,7 @@ export default {
       if (this.filteredTags.length == 0) {
         this.filteredTags = ["all"];
       }
-      console.log(`computed: filteredLabs() : ${this.filteredTags}`);
+      // console.log(`computed: filteredLabs() : ${this.filteredTags}`);
       for (let tag of this.filteredTags) {
         let keyArray = this.allTagData[tag] || [];
         for (let key of keyArray) {
@@ -161,20 +163,20 @@ export default {
       this.isFilterDialogVisible = true;
     },
     onUpdateFilteredTags(e) {
-      console.log(`onUpdateFilteredTags(): ${this.filteredTags}`);
+      // console.log(`onUpdateFilteredTags(): ${this.filteredTags}`);
       this.filteredTags = e;
     },
     removeFilteredTag(removeTag) {
       this.filteredTags = this.filteredTags.filter(
         (item) => item !== removeTag
       );
-      console.log(this.filteredTags);
+      // console.log(this.filteredTags);
     },
   },
   mounted() {
     // jsonから全研究室のデータを取得して変数に格納
     this.allLabsData = this.$store.getters["labsStore/getAllLabsData"];
-    console.log(this.allLabsData);
+    // console.log(this.allLabsData);
     // 全研究室のデータから{タグ:[研究室のkey]}からなる辞書を作成
     for (const item of Object.keys(this.allLabsData)) {
       this.updateTagData("all", item);
