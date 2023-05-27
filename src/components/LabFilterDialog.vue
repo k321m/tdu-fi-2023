@@ -29,7 +29,12 @@
               id="display-true"
               v-model="checkedTags"
             />
-            <label for="display-true" class="checkbox-label">あり</label>
+            <label
+              for="display-true"
+              class="checkbox-label"
+              :class="{ 'zen-kaku-bold': checkedTags.includes('display') }"
+              >あり</label
+            >
           </div>
 
           <div class="checkbox">
@@ -38,7 +43,12 @@
               value="not-display"
               id="display-false"
               v-model="checkedTags"
-            /><label for="display-false" class="checkbox-label">なし</label>
+            /><label
+              for="display-false"
+              class="checkbox-label"
+              :class="{ 'zen-kaku-bold': checkedTags.includes('not-display') }"
+              >なし</label
+            >
           </div>
         </div>
 
@@ -54,7 +64,12 @@
               :id="tag"
               v-model="checkedTags"
             />
-            <label :for="tag" class="checkbox-label">{{ tag }}</label>
+            <label
+              :for="tag"
+              class="checkbox-label"
+              :class="{ 'zen-kaku-bold': checkedTags.includes(tag) }"
+              >{{ tag }}</label
+            >
           </div>
         </template>
       </div>
