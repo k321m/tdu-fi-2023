@@ -29,7 +29,7 @@
       <!-- 研究室一覧 -->
       <section class="pt-6">
         <p class="zen-kaku-bold pb-4">
-          研究室一覧<span class="pl-3">{{ filteredLabsKey.size }}件</span>
+          研究室一覧<span class="pl-3">{{ this.filteredLabs.size }}件</span>
         </p>
         <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
         <!-- 絞り込みボタン -->
@@ -46,22 +46,33 @@
                 class="tag-item zen-kaku-bold mr-2"
                 v-else-if="tag == 'display'"
               >
-                展示あり<span class="mdi mdi-close-thick pl-1"></span>
+                展示あり<span
+                  class="mdi mdi-close-thick pl-1"
+                  @click="removeFilteredTag('display')"
+                ></span>
               </li>
               <li
                 class="tag-item zen-kaku-bold mr-2"
                 v-else-if="tag == 'not-display'"
               >
-                展示なし<span class="mdi mdi-close-thick pl-1"></span>
+                展示なし<span
+                  class="mdi mdi-close-thick pl-1"
+                  @click="removeFilteredTag('not-display')"
+                ></span>
               </li>
               <li class="tag-item zen-kaku-bold mr-2" v-else>
-                {{ tag }}<span class="mdi mdi-close-thick pl-1"></span>
+                {{ tag
+                }}<span
+                  class="mdi mdi-close-thick pl-1"
+                  @click="removeFilteredTag(tag)"
+                ></span>
               </li>
             </template>
           </ul>
         </div>
         <!-- 研究室カード -->
-        <div v-for="key in this.filteredLabsKey" :key="key">
+        <!-- ここ -->
+        <div v-for="key in this.filteredLabs" :key="key">
           <div
             id="card"
             class="mb-2 align-end"
@@ -115,16 +126,19 @@ export default {
   },
   computed: {
     // 指定される条件が変わると、表示する研究室も変わる
-    filteredTags() {
-      this.filteredLabsKey = new Set();
+    filteredLabs() {
+      const filteredLabsKey = new Set();
+      if (this.filteredTags.length == 0) {
+        this.filteredTags = ["all"];
+      }
+      console.log(`computed: filteredLabs() : ${this.filteredTags}`);
       for (let tag of this.filteredTags) {
-        console.log(tag);
         let keyArray = this.allTagData[tag] || [];
         for (let key of keyArray) {
-          this.filteredLabsKey.add(key);
+          filteredLabsKey.add(key);
         }
       }
-      return this.filteredTags;
+      return filteredLabsKey;
     },
   },
   // 選択中の条件　→ 辞書を使って表示する研究室を決める
@@ -141,33 +155,20 @@ export default {
     openViewDialog(key) {
       this.isViewDialogVisible = true;
       this.clickedLabData = this.allLabsData[key];
-      // console.log(this.clickedLabData.display);
       this.clickedLabKey = key;
     },
     openFilterDialog() {
       this.isFilterDialogVisible = true;
     },
     onUpdateFilteredTags(e) {
-      // this.filteredTags = [];
-      for (let item of e) {
-        // switch (item) {
-        //   case "展示あり":
-        //     this.filteredTags.push("display");
-        //     break;
-        //   case "展示なし":
-        //     this.filteredTags.push("not-display");
-        //     break;
-        //   default:
-        //     this.filteredTags.push(item);
-        //     break;
-        // }
-      }
-      if (e.length == 0) {
-        this.filteredTags = ["all"];
-      }
+      console.log(`onUpdateFilteredTags(): ${this.filteredTags}`);
       this.filteredTags = e;
+    },
+    removeFilteredTag(removeTag) {
+      this.filteredTags = this.filteredTags.filter(
+        (item) => item !== removeTag
+      );
       console.log(this.filteredTags);
-      // console.log("onUpdateFilteredTags動いてるで");
     },
   },
   mounted() {
