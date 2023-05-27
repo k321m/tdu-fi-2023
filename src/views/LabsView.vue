@@ -8,8 +8,10 @@
   </v-dialog>
   <v-dialog v-model="isFilterDialogVisible">
     <LabFilterDialog
-      :tagData="allTagData"
+      :allTagData="allTagData"
+      :filteredTags="filteredTags"
       @close-dialog="isFilterDialogVisible = false"
+      @update-filtered="onUpdateFilteredTags"
     />
   </v-dialog>
 
@@ -26,40 +28,40 @@
       <!-- end ページタイトル -->
       <!-- 研究室一覧 -->
       <section class="pt-6">
-        <p class="zen-kaku-bold pb-4">研究室一覧</p>
+        <p class="zen-kaku-bold pb-4">
+          研究室一覧<span class="pl-3">{{ filteredLabsKey.size }}件</span>
+        </p>
+        <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
         <!-- 絞り込みボタン -->
         <p class="filter_button zen-kaku-bold pb-2" @click="openFilterDialog()">
           <span class="mdi mdi-filter-menu pr-1"></span>
-          絞り込む
-          <span class="pl-2">13件</span>
+          絞り込み条件
         </p>
         <!-- 適用中の絞り込み条件（タグ） -->
         <div id="tags" class="pb-2">
           <ul>
-            <li class="tag-item zen-kaku-bold mr-2">
-              コンピュータグラフィックス<span
-                class="mdi mdi-close-thick pl-1"
-              ></span>
-            </li>
-            <li class="tag-item zen-kaku-bold mr-2">
-              タグ00<span class="mdi mdi-close-thick pl-1"></span>
-            </li>
-            <li class="tag-item zen-kaku-bold mr-2">
-              タグ00<span class="mdi mdi-close-thick pl-1"></span>
-            </li>
-            <li class="tag-item zen-kaku-bold mr-2">
-              タグ00<span class="mdi mdi-close-thick pl-1"></span>
-            </li>
-            <li class="tag-item zen-kaku-bold mr-2">
-              タグ00<span class="mdi mdi-close-thick pl-1"></span>
-            </li>
-            <li class="tag-item zen-kaku-bold mr-2">
-              タグ00<span class="mdi mdi-close-thick pl-1"></span>
-            </li>
+            <template v-for="tag in this.filteredTags">
+              <li class="zen-kaku-bold" v-if="tag == 'all'">なし</li>
+              <li
+                class="tag-item zen-kaku-bold mr-2"
+                v-else-if="tag == 'display'"
+              >
+                展示あり<span class="mdi mdi-close-thick pl-1"></span>
+              </li>
+              <li
+                class="tag-item zen-kaku-bold mr-2"
+                v-else-if="tag == 'not-display'"
+              >
+                展示なし<span class="mdi mdi-close-thick pl-1"></span>
+              </li>
+              <li class="tag-item zen-kaku-bold mr-2" v-else>
+                {{ tag }}<span class="mdi mdi-close-thick pl-1"></span>
+              </li>
+            </template>
           </ul>
         </div>
         <!-- 研究室カード -->
-        <div v-for="(lab, key) in this.allLabsData">
+        <div v-for="key in this.filteredLabsKey" :key="key">
           <div
             id="card"
             class="mb-2 align-end"
@@ -67,7 +69,7 @@
             @click="openViewDialog(key)"
           >
             <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
-            <div class="card-img" :style="lab.img"></div>
+            <div class="card-img" :style="this.allLabsData[key].img"></div>
             <div
               class="card-img"
               style="background-color: rgba(36, 7, 77, 0.5)"
@@ -75,7 +77,7 @@
             <p
               class="card-title zen-kaku-bold text-white v-responsive__sizer v-responsive__content"
             >
-              {{ lab.cardTitle }}
+              {{ this.allLabsData[key].cardTitle }}
             </p>
           </div>
         </div>
@@ -95,14 +97,14 @@ export default {
   name: "Labs",
   data() {
     return {
-      allLabsData: {}, //全研究室のデータ
+      allLabsData: {}, //全研究室のデータ辞書
+      allTagData: {}, //タグと研究室key辞書
       isViewDialogVisible: false, //研究室詳細モーダルの可視状態
       clickedLabData: Array, //選択された研究室のデータ
       clickedLabKey: String, //選択された研究室のデータのkey
-      allTagData: {}, //タグと研究室key
-      displayLabs: [], //現在表示している研究室
-      filteredTags: ["all"], //現在指定されている条件
       isFilterDialogVisible: false,
+      filteredLabsKey: Set, //現在表示している研究室のkey
+      filteredTags: ["all"], //現在指定されている条件配列
     };
   },
   components: {
@@ -111,7 +113,31 @@ export default {
     ContentTitle,
     MyNoteIcon,
   },
+  computed: {
+    // 指定される条件が変わると、表示する研究室も変わる
+    filteredTags() {
+      this.filteredLabsKey = new Set();
+      for (let tag of this.filteredTags) {
+        console.log(tag);
+        let keyArray = this.allTagData[tag] || [];
+        for (let key of keyArray) {
+          this.filteredLabsKey.add(key);
+        }
+      }
+      return this.filteredTags;
+    },
+  },
+  // 選択中の条件　→ 辞書を使って表示する研究室を決める
   methods: {
+    addTagData(key, data) {
+      if (!this.allTagData[key]) {
+        this.allTagData[key] = new Array(data);
+      } else {
+        let labsData = this.allTagData[key];
+        labsData.push(data);
+        this.allTagData[key] = labsData;
+      }
+    },
     openViewDialog(key) {
       this.isViewDialogVisible = true;
       this.clickedLabData = this.allLabsData[key];
@@ -121,54 +147,70 @@ export default {
     openFilterDialog() {
       this.isFilterDialogVisible = true;
     },
+    onUpdateFilteredTags(e) {
+      // this.filteredTags = [];
+      for (let item of e) {
+        // switch (item) {
+        //   case "展示あり":
+        //     this.filteredTags.push("display");
+        //     break;
+        //   case "展示なし":
+        //     this.filteredTags.push("not-display");
+        //     break;
+        //   default:
+        //     this.filteredTags.push(item);
+        //     break;
+        // }
+      }
+      if (e.length == 0) {
+        this.filteredTags = ["all"];
+      }
+      this.filteredTags = e;
+      console.log(this.filteredTags);
+      // console.log("onUpdateFilteredTags動いてるで");
+    },
   },
   mounted() {
     // jsonから全研究室のデータを取得して変数に格納
     this.allLabsData = this.$store.getters["labsStore/getAllLabsData"];
-    // 全研究室のデータからタグの辞書を作成
+    // 全研究室のデータから{タグ:[研究室のkey]}からなる辞書を作成
     for (const item of Object.keys(this.allLabsData)) {
-      if (!this.allTagData["all"]) {
-        this.allTagData["all"] = [item];
-      } else {
-        let labItem = this.allTagData["all"];
-        labItem.push(item);
-        this.allTagData["all"] = labItem;
-      }
+      this.addTagData("all", item);
       for (const tag of this.allLabsData[item].tags) {
-        if (!this.allTagData[tag]) {
-          this.allTagData[tag] = [item];
-        } else {
-          let labItem = this.allTagData[tag];
-          labItem.push(item);
-          this.allTagData[tag] = labItem;
-        }
+        this.addTagData(tag, item);
+      }
+      // 展示有無もタグとして情報を登録
+      if (this.allLabsData[item].display) {
+        this.addTagData("display", item);
+      } else {
+        this.addTagData("not-display", item);
       }
     }
-    console.log(this.allTagData);
+    this.filteredLabsKey = new Set(this.allTagData["all"]);
+    // console.log(this.filteredLabsKey);
+    // console.log(this.allTagData);
   },
 };
 </script>
 
 <style scoped>
-/* .background-dialog {
-  height: 688px;
-  background-color: white;
-  border-radius: 10px;
-} */
 .filter_button {
   display: block;
   font-size: 0.8rem;
   color: #010440;
 }
-.tag-item {
+
+li {
   display: inline-block;
   font-size: 0.6rem;
   list-style: none;
   color: #360a73;
+  margin-bottom: 0.1rem;
+}
+li.tag-item {
   background-color: #d3d1ff;
   padding: 0.35rem 0.4rem;
   border-radius: 100vh;
-  margin-bottom: 0.1rem;
 }
 
 #card {

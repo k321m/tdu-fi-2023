@@ -110,8 +110,8 @@ export default {
       labo_4: {
         eventType: "終日開催",
         display: true,
-        cardTitle: "ビジュアルコンピューティング\n研究室",
-        mordalTitle: "ビジュアルコンピューティング研究室",
+        cardTitle: "（ビジュアルコンピューティング\n研究室）",
+        mordalTitle: "（ビジュアルコンピューティング研究室）",
         professor: {
           name: "小玉 周平 ",
           type: "助教",
@@ -123,7 +123,7 @@ export default {
           "ランダムな半径の円を敷き詰める高速サンプリング法とその絵画風画像生成への応用",
           "アイラインの厚さによる二重瞼の目の大きさ錯視効果",
         ],
-        placeOfEmployment: [],
+        placeOfEmployment: ["-"],
         links: [
           {
             name: "▶︎ 小玉周平助教（情報メディア学科公式HP）",
@@ -174,8 +174,8 @@ export default {
       labo_6: {
         eventType: "終日開催",
         display: true,
-        cardTitle: "メディア応用研究室",
-        mordalTitle: "メディア応用研究室",
+        cardTitle: "（メディア応用研究室）",
+        mordalTitle: "（メディア応用研究室）",
         professor: {
           name: "井ノ上 寛人 ",
           type: "助教",
@@ -356,7 +356,7 @@ export default {
           "レビューテキストを用いた宿泊施設比較のための依存構造解析を用いたアスペクト階層の構築",
           "大規模イベントにおける現地ツイートを用いた混雑状況可視化システムの提案",
         ],
-        placeOfEmployment: [],
+        placeOfEmployment: ["-"],
         links: [
           {
             name: "▶︎ 山田剛一講師（情報メディア学科公式HP）",

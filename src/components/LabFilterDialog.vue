@@ -11,7 +11,7 @@
     </p>
 
     <div class="pb-4 scroll-contents">
-      <div>Checked names: {{ checkedTags }}</div>
+      <!-- <div>CheckedTags: {{ checkedTags }}</div> -->
       <div class="pb-3">
         <p class="zen-kaku-bold pb-2" style="color: #010326">展示の有無</p>
 
@@ -19,7 +19,7 @@
           <div class="checkbox">
             <input
               type="checkbox"
-              value="display-true"
+              value="display"
               id="display-true"
               v-model="checkedTags"
             />
@@ -29,7 +29,7 @@
           <div class="checkbox">
             <input
               type="checkbox"
-              value="display-false"
+              value="not-display"
               id="display-false"
               v-model="checkedTags"
             /><label for="display-false" class="checkbox-label">なし</label>
@@ -37,19 +37,20 @@
         </div>
 
         <p class="zen-kaku-bold pb-2" style="color: #010326">キーワード</p>
-        <div class="checkbox">
-          <input
-            type="checkbox"
-            value="ex03"
-            id="orange"
-            v-model="checkedTags"
-          />
-          <label for="orange" class="checkbox-label"
-            >ああああああああああああ</label
+        <template v-for="(data, tag) in allTagData">
+          <div
+            class="checkbox"
+            v-if="tag != 'all' && tag != 'display' && tag != 'not-display'"
           >
-        </div>
-
-        <!-- <li v-for="theme in labData.theme">{{ theme }}</li> -->
+            <input
+              type="checkbox"
+              :value="tag"
+              :id="tag"
+              v-model="checkedTags"
+            />
+            <label :for="tag" class="checkbox-label">{{ tag }}</label>
+          </div>
+        </template>
       </div>
     </div>
   </div>
@@ -59,7 +60,10 @@
       <button class="default-sub-btn btn-animation zen-kaku-bold clear-button">
         クリア
       </button>
-      <button class="default-btn btn-animation zen-kaku-bold filter-button">
+      <button
+        class="default-btn btn-animation zen-kaku-bold filter-button"
+        @click="onFilteredButton"
+      >
         この条件で絞り込む
       </button>
     </div>
@@ -69,15 +73,24 @@
 <script>
 export default {
   name: "LabFilterDialog",
-  props: ["tagData"],
-  emits: ["close-dialog"],
+  props: ["allTagData", "filteredTags"], // allだったら何もしないfilteredTagsならチェック状態にする
+  emits: ["close-dialog", "update-filtered"],
   data() {
     return {
       type: "events",
       checkedTags: [],
     };
   },
-  methods: {},
+  methods: {
+    // 絞り込みボタンを押すと親のメソッドを動かす。｢現在指定されている条件｣を子の｢選択中の条件｣にする。
+    onFilteredButton() {
+      this.$emit("close-dialog");
+      this.$emit("update-filtered", this.checkedTags);
+    },
+  },
+  mounted() {
+    if (this.filteredTags[0] != "all") this.checkedTags = this.filteredTags;
+  },
 };
 </script>
 
@@ -140,7 +153,7 @@ input[type="checkbox"]:checked + .checkbox-label:before {
   max-height: 688px;
   background-color: white;
   border-radius: 10px;
-  padding-bottom: 10rem;
+  padding-bottom: 8rem;
 }
 .lab-title {
   font-size: 1.8em;
