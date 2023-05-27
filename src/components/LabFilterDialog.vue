@@ -57,7 +57,9 @@
   <!-- ボタン -->
   <div class="footer px-5">
     <div class="button-group pb-2">
-      <button class="default-sub-btn btn-animation zen-kaku-bold clear-button">
+      <button
+        class="default-border-btn btn-animation zen-kaku-bold clear-button"
+      >
         クリア
       </button>
       <button

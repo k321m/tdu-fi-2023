@@ -29,7 +29,7 @@
       <!-- 研究室一覧 -->
       <section class="pt-6">
         <p class="zen-kaku-bold pb-4">
-          研究室一覧<span class="pl-3">{{ this.filteredLabs.size }}件</span>
+          研究室一覧<span class="pl-3">{{ filteredLabs.size }}件</span>
         </p>
         <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
         <!-- 絞り込みボタン -->
@@ -38,9 +38,9 @@
           絞り込み条件
         </p>
         <!-- 適用中の絞り込み条件（タグ） -->
-        <div id="tags" class="pb-2">
+        <div class="pb-2">
           <ul>
-            <template v-for="tag in this.filteredTags">
+            <template v-for="tag in filteredTags">
               <li class="zen-kaku-bold" v-if="tag == 'all'">なし</li>
               <li
                 class="tag-item zen-kaku-bold mr-2"
@@ -72,7 +72,7 @@
         </div>
         <!-- 研究室カード -->
         <!-- ここ -->
-        <div v-for="key in this.filteredLabs" :key="key">
+        <div v-for="key in filteredLabs" :key="key">
           <div
             id="card"
             class="mb-2 align-end"
@@ -80,7 +80,7 @@
             @click="openViewDialog(key)"
           >
             <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
-            <div class="card-img" :style="this.allLabsData[key].img"></div>
+            <div class="card-img" :style="allLabsData[key].img"></div>
             <div
               class="card-img"
               style="background-color: rgba(36, 7, 77, 0.5)"
@@ -88,14 +88,14 @@
             <p
               class="card-title zen-kaku-bold text-white v-responsive__sizer v-responsive__content"
             >
-              {{ this.allLabsData[key].cardTitle }}
+              {{ allLabsData[key].cardTitle }}
             </p>
           </div>
         </div>
       </section>
       <!-- end 研究室一覧 -->
     </div>
-    <!-- <MyNoteIcon /> -->
+    <MyNoteIcon />
   </div>
 </template>
 
@@ -143,7 +143,7 @@ export default {
   },
   // 選択中の条件　→ 辞書を使って表示する研究室を決める
   methods: {
-    addTagData(key, data) {
+    updateTagData(key, data) {
       if (!this.allTagData[key]) {
         this.allTagData[key] = new Array(data);
       } else {
@@ -177,15 +177,15 @@ export default {
     console.log(this.allLabsData);
     // 全研究室のデータから{タグ:[研究室のkey]}からなる辞書を作成
     for (const item of Object.keys(this.allLabsData)) {
-      this.addTagData("all", item);
+      this.updateTagData("all", item);
       for (const tag of this.allLabsData[item].tags) {
-        this.addTagData(tag, item);
+        this.updateTagData(tag, item);
       }
       // 展示有無もタグとして情報を登録
       if (this.allLabsData[item].display) {
-        this.addTagData("display", item);
+        this.updateTagData("display", item);
       } else {
-        this.addTagData("not-display", item);
+        this.updateTagData("not-display", item);
       }
     }
     this.filteredLabsKey = new Set(this.allTagData["all"]);
