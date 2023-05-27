@@ -173,6 +173,7 @@ export default {
   mounted() {
     // jsonから全研究室のデータを取得して変数に格納
     this.allLabsData = this.$store.getters["labsStore/getAllLabsData"];
+    console.log(this.allLabsData);
     // 全研究室のデータから{タグ:[研究室のkey]}からなる辞書を作成
     for (const item of Object.keys(this.allLabsData)) {
       this.addTagData("all", item);

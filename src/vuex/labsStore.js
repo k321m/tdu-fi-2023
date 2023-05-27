@@ -110,8 +110,8 @@ export default {
       labo_4: {
         eventType: "終日開催",
         display: true,
-        cardTitle: "（ビジュアルコンピューティング\n研究室）",
-        mordalTitle: "（ビジュアルコンピューティング研究室）",
+        cardTitle: "(ビジュアルコンピューティング\n研究室)",
+        mordalTitle: "(ビジュアルコンピューティング研究室)",
         professor: {
           name: "小玉 周平 ",
           type: "助教",
@@ -174,8 +174,8 @@ export default {
       labo_6: {
         eventType: "終日開催",
         display: true,
-        cardTitle: "（メディア応用研究室）",
-        mordalTitle: "（メディア応用研究室）",
+        cardTitle: "(メディア応用研究室)",
+        mordalTitle: "(メディア応用研究室)",
         professor: {
           name: "井ノ上 寛人 ",
           type: "助教",
@@ -405,7 +405,7 @@ export default {
   },
   getters: {
     getAllLabsData(state) {
-      return state.allLabs;
+      return state.labo;
     },
   },
 };
