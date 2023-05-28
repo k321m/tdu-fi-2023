@@ -12,11 +12,11 @@
         {{ lectureData.year_of_enrollment }}
       </p>
     </div>
-    <p class="zen-kaku-bold lab-title pb-3" style="color: #010326">
+    <p class="zen-kaku-bold lab-title pb-2" style="color: #010326">
       {{ lectureData.mordalTitle }}
     </p>
     <!-- 先生名と展示場所 -->
-    <div class="pb-3" style="font-size: 0.9em">
+    <div class="pb-4" style="font-size: 0.9em">
       <p class="lab-professor-place">
       <img src="../assets/icon-person.svg" class="pr-1" />
       <div style="display: inline-block;">
