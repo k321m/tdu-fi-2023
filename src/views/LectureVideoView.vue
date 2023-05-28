@@ -1,11 +1,10 @@
 <template>
-  <!-- <v-dialog v-model="isViewDialogVisible">
-    <LabViewDialog
-      :labData="clickedLabData"
-      :labKey="clickedLabKey"
+  <v-dialog v-model="isViewDialogVisible">
+    <LectureVideoViewDialog
+      :lectureData="clickedLectureData"
       @close-dialog="isViewDialogVisible = false"
     />
-  </v-dialog> -->
+  </v-dialog>
 
   <div id="contents">
     <div class="pa-4">
@@ -18,18 +17,21 @@
         </template>
       </ContentTitle>
       <!-- end ページタイトル -->
-      <!-- 研究室一覧 -->
+      <!-- 講義動画一覧 -->
       <section class="pt-6">
         <p class="zen-kaku-bold pb-4">
           講義動画一覧<span class="pl-3"
-            >{{ Object.keys(allLabsData).length }}件</span
+            >{{ Object.keys(allLecturesData).length }}件</span
           >
         </p>
-        <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
-
-        <!-- 研究室カード -->
-        <div v-for="(data, key) in allLabsData" :key="key">
-          <div id="card" class="mb-2 align-end" :key="key">
+        <!-- 講義動画カード -->
+        <div v-for="(data, key) in allLecturesData" :key="key">
+          <div
+            id="card"
+            class="mb-2 align-end"
+            :key="key"
+            @click="openViewDialog(key)"
+          >
             <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
             <div class="card-img" :style="data.img"></div>
             <div
@@ -43,59 +45,45 @@
             </p>
           </div>
         </div>
-
-        <!-- <div id="card" class="mb-2 align-end" :key="key">
-          <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
-          <div class="card-img"></div>
-          <div
-            class="card-img"
-            style="background-color: rgba(36, 7, 77, 0.5)"
-          ></div>
-          <p
-            class="card-title zen-kaku-bold text-white v-responsive__sizer v-responsive__content"
-          >
-            あいあい
-          </p>
-        </div> -->
+        <!-- end 講義動画カード -->
       </section>
-      <!-- end 研究室一覧 -->
+      <!-- end 講義動画一覧 -->
     </div>
-    <!-- <MyNoteIcon /> -->
+    <MyNoteIcon />
   </div>
 </template>
 
 <script>
-import LabViewDialog from "../components/LabViewDialog.vue";
+import LectureVideoViewDialog from "../components/LectureVideoViewDialog.vue";
 import MyNoteIcon from "../components/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 export default {
   name: "LectureVideo",
   data() {
     return {
-      allLabsData: {}, //全研究室のデータ辞書
-      isViewDialogVisible: false, //研究室詳細モーダルの可視状態
-      clickedLabData: Array, //選択された研究室のデータ
-      clickedLabKey: String, //選択された研究室のデータのkey
+      allLecturesData: {}, //全講義動画のデータ辞書
+      isViewDialogVisible: false, //講義動画詳細モーダルの可視状態
+      clickedLectureData: Array, //選択された講義動画のデータ
+      clickedLectureKey: String, //選択された講義動画のデータのkey
     };
   },
   components: {
-    LabViewDialog,
+    LectureVideoViewDialog,
     ContentTitle,
     MyNoteIcon,
   },
-
-  // 選択中の条件　→ 辞書を使って表示する研究室を決める
   methods: {
     openViewDialog(key) {
       this.isViewDialogVisible = true;
-      this.clickedLabData = this.allLabsData[key];
-      this.clickedLabKey = key;
+      this.clickedLectureData = this.allLecturesData[key];
+      this.clickedLectureKey = key;
     },
   },
   mounted() {
-    // jsonから全研究室のデータを取得して変数に格納
-    this.allLabsData = this.$store.getters["lectureStore/getAllLecturesData"];
-    // console.log(this.allLabsData);
+    // jsonから全講義動画のデータを取得して変数に格納
+    this.allLecturesData =
+      this.$store.getters["lectureStore/getAllLecturesData"];
+    // console.log(this.allLecturesData);
   },
 };
 </script>
@@ -124,7 +112,6 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  /* background-image: url(/src/assets/labs/情報セキュリティ.svg); */
 }
 .card-title {
   display: block;

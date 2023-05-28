@@ -7,7 +7,7 @@ export default {
       lecture_1: {
         cardTitle: "情報メディア学基礎",
         mordalTitle: "情報メディア学基礎",
-        year_of_enrollment: "学部1年",
+        year_of_enrollment: "学部1年次科目",
         professor: [
           {
             name: "複数",
@@ -27,7 +27,7 @@ export default {
       lecture_2: {
         cardTitle: "インタラクティブメディア\nとデザイン",
         mordalTitle: "インタラクティブメディアとデザイン",
-        year_of_enrollment: "学部3年",
+        year_of_enrollment: "学部3年次科目",
         professor: [
           {
             name: "井ノ上 寛人 ",
@@ -47,7 +47,7 @@ export default {
       lecture_3: {
         cardTitle: "データペースプログラミング演習",
         mordalTitle: "データペースプログラミング演習",
-        year_of_enrollment: "学部3年",
+        year_of_enrollment: "学部3年次科目",
         professor: [
           {
             name: "増田 英孝 ",
@@ -67,7 +67,7 @@ export default {
       lecture_4: {
         cardTitle: "コンピュータプログラミングⅠ・II",
         mordalTitle: "コンピュータプログラミングⅠ・II",
-        year_of_enrollment: "学部1年",
+        year_of_enrollment: "学部1年次科目",
         professor: [
           {
             name: "複数",
@@ -87,7 +87,7 @@ export default {
       lecture_5: {
         cardTitle: "CGモデリングおよび演習",
         mordalTitle: "CGモデリングおよび演習",
-        year_of_enrollment: "学部3年次",
+        year_of_enrollment: "学部3年次科目",
         professor: [
           {
             name: "池田 雄介 ",
@@ -115,7 +115,7 @@ export default {
       lecture_6: {
         cardTitle: "CGレンダリングおよび演習",
         mordalTitle: "CGレンダリングおよび演習",
-        year_of_enrollment: "学部3年次",
+        year_of_enrollment: "学部3年次科目",
         professor: [
           {
             name: "高橋 時市郎 ",
