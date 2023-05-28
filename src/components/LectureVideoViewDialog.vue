@@ -31,8 +31,9 @@
     <!-- スクロールエリア -->
     <div class="scroll-contents" style="font-size: 0.9em">
       <!-- info -->
-      <p class="pb-3">{{ lectureData.info }}</p>
+      <p class="pb-4">{{ lectureData.info }}</p>
       <!-- Video pb-2 -->
+      <iframe width="auto" height="auto" :src="lectureData.video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <!-- Link -->
       <div v-for="linkData in lectureData.links" class="links">
       <a style="font-size: 0.9em;" :href="linkData['url']">{{ linkData['name'] }}</a>
@@ -51,15 +52,17 @@ export default {
       type: "events",
     };
   },
-  methods: {},
+  components:{
+  },
 };
+
 </script>
 
 <style scoped>
 .background-dialog {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 60vh;
   max-height: 688px;
   background-color: white;
   border-radius: 10px;

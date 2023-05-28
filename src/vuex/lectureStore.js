@@ -110,7 +110,7 @@ export default {
           },
         ],
         img: "background-image: url(/src/assets/lectures/CGモデリングおよび演習.svg)",
-        video: "",
+        video: "https://youtu.be/zQoGV9dGmac",
       },
       lecture_6: {
         cardTitle: "CGレンダリングおよび演習",
