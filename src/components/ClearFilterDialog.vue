@@ -76,10 +76,6 @@ export default {
 </script>
 
 <style scoped>
-input[type="checkbox"] {
-  display: none; /* checkboxを非表示にする */
-}
-
 .background-dialog {
   display: flex;
   flex-direction: column;

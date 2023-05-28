@@ -38,7 +38,7 @@
           <h1 class="zen-kaku-bold">研究室公開</h1>
         </div>
       </router-link>
-      <router-link class="routerLink" to="/">
+      <router-link class="routerLink" to="/lecture-video">
         <div class="py-5">
           <h1 class="zen-kaku-bold">講義動画</h1>
         </div>

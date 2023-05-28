@@ -73,7 +73,6 @@
           </ul>
         </div>
         <!-- 研究室カード -->
-        <!-- ここ -->
         <div v-for="key in filteredLabs" :key="key">
           <div
             id="card"

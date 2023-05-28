@@ -1,5 +1,4 @@
 import { store } from "./index";
-import img01 from "/src/assets/labs/情報セキュリティ.svg?url";
 
 export default {
   namespaced: true,
