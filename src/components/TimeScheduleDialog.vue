@@ -61,7 +61,7 @@
 <script>
 export default {
   name: "TimeScheduleDialog",
-  props: ["eventData", "eventKey"],
+  props: ["eventData", "eventKey", "eventTime"],
   emits: ["close-dialog"],
   data() {
     return {

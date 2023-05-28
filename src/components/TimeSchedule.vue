@@ -4,6 +4,7 @@
       <TimeScheduleDialog
         :eventData="clickedEventData"
         :eventKey="clickedEventKey"
+        :eventTime="clickedEventTime"
         @close-dialog="isDialogVisible = false"
       />
     </v-dialog>
