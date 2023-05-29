@@ -5,13 +5,12 @@ import allDayEventImg2 from "../assets/施設見学ツアー.svg";
 import allDayEventImg3 from "../assets/クラブ・サークル紹介.svg";
 import allDayEventImg4 from "../assets/学科展示室.svg";
 import allDayEventImg5 from "../assets/研究室公開.svg";
-import limitedEventImg1 from "../assets/情報メディア学科.svg";
-import limitedEventImg2 from "../assets/情報システム工学科.svg";
-import limitedEventImg3 from "../assets/情報通信工学科.svg";
-import limitedEventImg4 from "../assets/電大ガイダンス.svg";
+import limitedEventImg1 from "../assets/電大ガイダンス.svg";
+import limitedEventImg2 from "../assets/情報メディア学科.svg";
+import limitedEventImg3 from "../assets/情報システム工学科.svg";
+import limitedEventImg4 from "../assets/情報通信工学科.svg";
 import limitedEventImg5 from "../assets/一般・共通テスト入試ガイダンス.svg";
 import limitedEventImg6 from "../assets/推薦・AO入試ガイダンス.svg";
-
 export default {
   namespaced: true,
 
@@ -97,8 +96,8 @@ export default {
         peopleNum: "500名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         img: "background-image: url(" + limitedEventImg1 + ")",
-        carousel_height: "height: 60px",
-        img_height: "background-size: 190px;",
+        carousel_height: "min-height: 60px",
+        img_height: "background-size: cover;",
       },
       limitedEvent_5: {
         eventType: "限定プログラム",
@@ -108,8 +107,8 @@ export default {
         peopleNum: "99名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         img: "background-image: url(" + limitedEventImg5 + ")",
-        carousel_height: "height: 60px",
-        img_height: "background-size: 190px;",
+        carousel_height: "min-height: 60px",
+        img_height: "background-size: cover;",
       },
       limitedEvent_6: {
         eventType: "限定プログラム",
@@ -119,8 +118,8 @@ export default {
         peopleNum: "297名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         img: "background-image: url(" + limitedEventImg6 + ")",
-        carousel_height: "height: 60px",
-        img_height: "background-size: 190px;",
+        carousel_height: "min-height: 60px",
+        img_height: "background-size: cover;",
       },
     },
     timeSchedule: {

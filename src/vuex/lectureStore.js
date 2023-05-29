@@ -22,7 +22,8 @@ export default {
           },
         ],
         img: "background-image: url(/src/assets/lectures/情報メディア学基礎.svg)",
-        video: "https://youtu.be/O9LH8l20j0Q",
+        video:
+          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/O9LH8l20j0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_2: {
         cardTitle: "インタラクティブメディア\nとデザイン",
@@ -42,7 +43,8 @@ export default {
           },
         ],
         img: "background-image: url(/src/assets/lectures/インタラクティブメディアとデザイン.svg)",
-        video: "https://youtu.be/Ez9wRBnN8U0",
+        video:
+          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/Ez9wRBnN8U0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_3: {
         cardTitle: "データペースプログラミング演習",
@@ -62,7 +64,8 @@ export default {
           },
         ],
         img: "background-image: url(/src/assets/lectures/データペースプログラミング演習.svg)",
-        video: "https://youtu.be/CVE7cIjXaFU",
+        video:
+          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/CVE7cIjXaFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_4: {
         cardTitle: "コンピュータプログラミングⅠ・II",
@@ -82,7 +85,8 @@ export default {
           },
         ],
         img: "background-image: url(/src/assets/lectures/コンピュータプログラミングⅠ・II.svg)",
-        video: "https://youtu.be/ahl2cBoKmp8",
+        video:
+          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/ahl2cBoKmp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_5: {
         cardTitle: "CGモデリングおよび演習",
@@ -110,7 +114,8 @@ export default {
           },
         ],
         img: "background-image: url(/src/assets/lectures/CGモデリングおよび演習.svg)",
-        video: "",
+        video:
+          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/zQoGV9dGmac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_6: {
         cardTitle: "CGレンダリングおよび演習",
@@ -138,7 +143,8 @@ export default {
           },
         ],
         img: "background-image: url(/src/assets/lectures/CGレンダリングおよび演習.svg)",
-        video: "https://youtu.be/U0LuPqCInJk",
+        video:
+          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/U0LuPqCInJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
     },
   },

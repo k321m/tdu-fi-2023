@@ -1,5 +1,5 @@
 <template>
-  <div class="background-dialog px-5 py-5">
+  <div class="background-dialog px-5 pt-5">
     <!-- ×ボタン -->
     <div style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
@@ -12,11 +12,11 @@
         {{ lectureData.year_of_enrollment }}
       </p>
     </div>
-    <p class="zen-kaku-bold lab-title pb-3" style="color: #010326">
+    <p class="zen-kaku-bold lab-title pb-2" style="color: #010326">
       {{ lectureData.mordalTitle }}
     </p>
     <!-- 先生名と展示場所 -->
-    <div class="pb-1" style="font-size: 0.9em">
+    <div class="pb-4" style="font-size: 0.9em">
       <p class="lab-professor-place">
       <img src="../assets/icon-person.svg" class="pr-1" />
       <div style="display: inline-block;">
@@ -31,8 +31,9 @@
     <!-- スクロールエリア -->
     <div class="scroll-contents" style="font-size: 0.9em">
       <!-- info -->
-      <p class="pb-3">{{ lectureData.info }}</p>
-      <!-- Video pb-2 -->
+      <p class="pb-7">{{ lectureData.info }}</p>
+      <!-- Video -->
+      <div class="pb-3" v-html="lectureData.video"></div>
       <!-- Link -->
       <div v-for="linkData in lectureData.links" class="links">
       <a style="font-size: 0.9em;" :href="linkData['url']">{{ linkData['name'] }}</a>
@@ -51,19 +52,21 @@ export default {
       type: "events",
     };
   },
-  methods: {},
+  components:{
+  },
 };
+
 </script>
 
 <style scoped>
 .background-dialog {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: auto;
   max-height: 688px;
   background-color: white;
   border-radius: 10px;
-  /* padding-bottom: 10rem; */
+  padding-bottom: 3rem;
 }
 .lab-title {
   font-size: 1.8em;
