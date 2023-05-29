@@ -219,7 +219,7 @@ export default {
 }
 
 .carousel__slide {
-  margin: 3px;
+  margin: 0 0.1em;
 }
 
 #timeline .carousel__slide {

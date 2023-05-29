@@ -85,11 +85,11 @@ p.hack {
 .myNote-btn {
   min-height: 52px;
   background: linear-gradient(
-    270deg,
-    #29eded 0%,
-    #8f9eed 25%,
-    #eb57ed 50%,
-    #eb57ed 100%
+    108deg,
+    rgba(235, 87, 237, 1) 0%,
+    rgba(235, 87, 237, 1) 0% 50%,
+    rgba(143, 158, 237, 1) 75%,
+    rgba(41, 237, 237, 1)
   );
   color: white;
   border-radius: 3px;

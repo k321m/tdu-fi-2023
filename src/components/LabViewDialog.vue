@@ -55,7 +55,7 @@
       <button class="default-btn btn-animation zen-kaku-bold">地図を確認</button>
       <button class="myNote-btn btn-animation zen-kaku-bold">MyNoteに追加</button>
     </div>
-    <div v-for="linkData in labData.links" class="links">
+    <div v-for="linkData in labData.links">
       <a style="font-size: 0.8em;" :href="linkData['url']">{{ linkData['name'] }}</a>
     </div>
   </div>

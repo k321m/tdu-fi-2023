@@ -24,6 +24,7 @@ export default {
         fontsize: "font-size: 0.85em",
         // TODO: 変数だけでの反映
         img: "background-image: url(" + allDayEventImg1 + ")",
+        links: [],
       },
       allDayEvent_2: {
         eventType: "終日開催",
@@ -32,6 +33,7 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg2 + ")",
+        links: [],
       },
       allDayEvent_3: {
         eventType: "終日開催",
@@ -40,6 +42,7 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.65em",
         img: "background-image: url(" + allDayEventImg3 + ")",
+        links: [],
       },
       allDayEvent_4: {
         eventType: "終日開催",
@@ -48,6 +51,7 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg4 + ")",
+        links: [],
       },
       allDayEvent_5: {
         eventType: "終日開催",
@@ -56,6 +60,7 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg5 + ")",
+        links: [],
       },
     },
     limitedEvent: {
@@ -68,6 +73,12 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #ff9d00",
         img: "background-image: url(" + limitedEventImg2 + ")",
+        links: [
+          {
+            name: "▶︎ 情報メディア学科公式HP",
+            url: "https://www.im.dendai.ac.jp",
+          },
+        ],
       },
       limitedEvent_2: {
         eventType: "限定プログラム",
@@ -78,6 +89,12 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #FF9CFD",
         img: "background-image: url(" + limitedEventImg3 + ")",
+        links: [
+          {
+            name: "▶︎ 情報システム工学科公式HP",
+            url: "https://www.aj.dendai.ac.jp",
+          },
+        ],
       },
       limitedEvent_3: {
         eventType: "限定プログラム",
@@ -88,6 +105,12 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #45CBE6",
         img: "background-image: url(" + limitedEventImg4 + ")",
+        links: [
+          {
+            name: "▶︎ 情報通信工学科公式HP",
+            url: "http://www.c.dendai.ac.jp",
+          },
+        ],
       },
       limitedEvent_4: {
         eventType: "限定プログラム",
@@ -98,6 +121,12 @@ export default {
         img: "background-image: url(" + limitedEventImg1 + ")",
         carousel_height: "min-height: 60px",
         img_height: "background-size: cover;",
+        links: [
+          {
+            name: "▶︎ 東京電機大学公式HP",
+            url: "https://www.dendai.ac.jp",
+          },
+        ],
       },
       limitedEvent_5: {
         eventType: "限定プログラム",
@@ -109,6 +138,12 @@ export default {
         img: "background-image: url(" + limitedEventImg5 + ")",
         carousel_height: "min-height: 60px",
         img_height: "background-size: cover;",
+        links: [
+          {
+            name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",
+            url: "https://www.dendai.ac.jp/prospective-students/",
+          },
+        ],
       },
       limitedEvent_6: {
         eventType: "限定プログラム",
@@ -120,6 +155,12 @@ export default {
         img: "background-image: url(" + limitedEventImg6 + ")",
         carousel_height: "min-height: 60px",
         img_height: "background-size: cover;",
+        links: [
+          {
+            name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",
+            url: "https://www.dendai.ac.jp/prospective-students/",
+          },
+        ],
       },
     },
     timeSchedule: {
