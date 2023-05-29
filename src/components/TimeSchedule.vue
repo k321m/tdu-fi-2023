@@ -4,6 +4,7 @@
       <TimeScheduleDialog
         :eventData="clickedEventData"
         :eventKey="clickedEventKey"
+        :eventTime="clickedEventTime"
         @close-dialog="isDialogVisible = false"
       />
     </v-dialog>
@@ -217,13 +218,10 @@ export default {
   /* border-radius: 3px; */
 }
 
-/* .carousel__slide > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-} */
+.carousel__slide {
+  margin: 3px;
+}
+
 #timeline .carousel__slide {
   align-items: baseline;
 }
