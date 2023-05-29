@@ -30,6 +30,7 @@
                   :style="value.img"
                   @click="openDialog(value, key)"
                 >
+                  <div></div>
                   <span class="zen-kaku-medium" :style="value.fontsize">
                     {{ value.title }}
                   </span>
@@ -199,24 +200,30 @@ export default {
   width: 100vw;
 }
 
+.carousel__slide {
+  margin: 3px;
+}
+
 .carousel__item {
+  background-size: cover;
+  background-position: center center;
   min-height: 52px;
   width: 100%;
-  background-color: gainsboro;
   color: white;
-  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
   vertical-align: top;
-
-  background-size: 144px;
-  background-position: center center;
+  /* border-radius: 3px; */
 }
 
-.carousel__slide {
-  padding: 3px;
-}
+/* .carousel__slide > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
 #timeline .carousel__slide {
   align-items: baseline;
 }
