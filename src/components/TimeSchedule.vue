@@ -216,8 +216,9 @@ export default {
 }
 
 .carousel__slide {
-  padding: 3px;
+  margin: 3px;
 }
+
 #timeline .carousel__slide {
   align-items: baseline;
 }
