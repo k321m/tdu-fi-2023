@@ -29,7 +29,12 @@ export default {
       faq_1: {
         ques: "この学科で取得できる資格はなんですか？",
         ans: "しるか",
-        links: [],
+        links: [
+          {
+            name: "▶︎ 井ノ上寛人助教（情報メディア学科公式HP）",
+            url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
+          },
+        ],
       },
       faq_2: {
         ques: "この資格の合格率はどのくらいですか？",

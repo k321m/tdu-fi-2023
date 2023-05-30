@@ -14,9 +14,18 @@
           <p class="zen-kaku-bold mb-4" style="font-size: 1.1em">
             おすすめ質問
           </p>
-          <QuestionAccordion />
-          <QuestionAccordion />
-          <QuestionAccordion />
+          <div v-for="(value, key) in allRecommendQuestionsData">
+            <QuestionAccordion :questionValue="value" :questionKey="key" />
+          </div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <!-- おすすめ質問 -->
+        <div class="mb-8">
+          <p class="zen-kaku-bold mb-4" style="font-size: 1.1em">FAQ</p>
+          <div v-for="(value, key) in allFAQData">
+            <QuestionAccordion :questionValue="value" :questionKey="key" />
+          </div>
         </div>
       </div>
     </div>
@@ -34,11 +43,18 @@ export default {
   },
   data() {
     return {
-      isOpen: false,
+      allRecommendQuestionsData: {},
+      allFAQData: {},
     };
   },
   methods: {},
-  mounted() {},
+  mounted() {
+    this.allRecommendQuestionsData =
+      this.$store.getters["questionsStore/getAllRecommendQuestionsData"];
+    this.allFAQData = this.$store.getters["questionsStore/getAllFAQData"];
+    console.log(this.allRecommendQuestionsData);
+    console.log(this.allFAQData);
+  },
 };
 </script>
 

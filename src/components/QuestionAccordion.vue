@@ -20,7 +20,7 @@
             style="line-height: 1.3em; padding-top: 0.2em"
             :class="{ 'text-ellipsis': !isOpen }"
           >
-            質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問
+            {{ questionValue.ques }}
           </p>
         </div>
         <div class="pulldown-button">
@@ -30,10 +30,11 @@
           />
         </div>
       </div>
-      <!-- 回答エリア -->
+      <!-- アコーディオン -->
       <transition name="open">
         <div class="accordion-content" v-if="isOpen">
-          <div class="answer-box">
+          <!-- 回答 -->
+          <div class="answer-box" v-if="questionValue.ans != ''">
             <div class="text-area">
               <p
                 class="zen-kaku-medium pb-1"
@@ -42,17 +43,21 @@
                 A
               </p>
               <div style="display: flex; flex-direction: column" class="pb-2">
-                <!-- 回答 -->
                 <p
                   class="pl-3 pr-3 zen-kaku-medium pb-2"
                   style="line-height: 1.3em; padding-top: 0.2em"
                 >
-                  回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答
+                  {{ questionValue.ans }}
                 </p>
                 <!-- リンク -->
-                <a class="pl-3" style="font-size: 0.8em" href=""
-                  >▶︎ リンクがあればここに貼る</a
-                >
+                <div v-for="linkData in questionValue.links">
+                  <a
+                    class="pl-3"
+                    style="font-size: 0.8em"
+                    :href="linkData['url']"
+                    >{{ linkData["name"] }}</a
+                  >
+                </div>
               </div>
             </div>
             <!-- 透明ボタン -->
