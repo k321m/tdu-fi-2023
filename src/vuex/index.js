@@ -99,11 +99,14 @@ export const store = createStore({
         var eventKeySplit = String(eventKey).split("_"); // eventKey(ex. **_1)を_でスプリット
         var eventType = eventKeySplit[0]; // スプリットした配列の一番最初がデータのtype(親キー)を示すため変数に代入(ex. allDayEvent)
         var eventDetailKey = eventKeySplit[0] + "_" + eventKeySplit[1]; // 例えばlimitedEvent_1_timeSchedule_1から詳細情報をとるためのkey(この場合limitedEvent_1)[0]と[1]を足している
-        var detailData = { events: {}, questions: {} }; // MyNoteに保存されてるイベントの詳細情報を格納するリスト作成
         // 取得したデータをdetailDataに格納
-        detailData.events = Object.assign(detailData.events, {
-          [eventKey]: state.eventsStore[eventType][eventDetailKey],
-        });
+        var eventData = {};
+        if (eventType == "labo") {
+          eventData = { ...state.labsStore[eventType][eventDetailKey] };
+        } else {
+          eventData = { ...state.eventsStore[eventType][eventDetailKey] };
+        }
+        detailData.events[eventKey] = eventData;
       });
 
       // MyNoteに保存したquestionKey(ex. **_**)を使ってMyNoteからデータを取得
@@ -115,6 +118,7 @@ export const store = createStore({
           [questionKey]: state.myNote.questions[questionKey],
         });
       });
+      console.log(detailData);
       return detailData;
     },
   },

@@ -57,6 +57,7 @@ export default {
   },
   mounted() {
     this.myNoteDetailData = this.$store.getters.getMyNoteDetailData;
+    console.log(this.myNoteDetailData);
   },
 };
 </script>

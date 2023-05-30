@@ -8,7 +8,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "情報セキュリティ研究室",
-        mordalTitle: "情報セキュリティ研究室",
+        title: "情報セキュリティ研究室",
         professor: {
           name: "寺田 真敏 ",
           type: "教授",
@@ -43,7 +43,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "計算言語学研究室",
-        mordalTitle: "計算言語学研究室",
+        title: "計算言語学研究室",
         professor: {
           name: "大野 誠寛 ",
           type: "教授",
@@ -75,7 +75,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "ビジュアルコンピューティング\n研究室",
-        mordalTitle: "ビジュアルコンピューティング研究室",
+        title: "ビジュアルコンピューティング研究室",
         professor: {
           name: "高橋 時市郎 ",
           type: "教授",
@@ -110,7 +110,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "(ビジュアルコンピューティング\n研究室)",
-        mordalTitle: "(ビジュアルコンピューティング研究室)",
+        title: "(ビジュアルコンピューティング研究室)",
         professor: {
           name: "小玉 周平 ",
           type: "助教",
@@ -139,7 +139,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "メディア応用研究室",
-        mordalTitle: "メディア応用研究室",
+        title: "メディア応用研究室",
         professor: {
           name: "鉄谷 信二 ",
           type: "教授",
@@ -174,7 +174,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "(メディア応用研究室)",
-        mordalTitle: "(メディア応用研究室)",
+        title: "(メディア応用研究室)",
         professor: {
           name: "井ノ上 寛人 ",
           type: "助教",
@@ -209,7 +209,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "音響コミュニケーション研究室",
-        mordalTitle: "音響コミュニケーション研究室",
+        title: "音響コミュニケーション研究室",
         professor: {
           name: "池田 雄介 ",
           type: "教授",
@@ -238,7 +238,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "インタラクティブグラフィックス\n研究室",
-        mordalTitle: "インタラクティブグラフィックス研究室",
+        title: "インタラクティブグラフィックス研究室",
         professor: {
           name: "森谷 友昭 ",
           type: "准教授",
@@ -273,7 +273,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "実空間コンピューティング研究室",
-        mordalTitle: "実空間コンピューティング研究室",
+        title: "実空間コンピューティング研究室",
         professor: {
           name: "岩井 将行 ",
           type: "教授",
@@ -308,7 +308,7 @@ export default {
         eventType: "終日開催",
         display: false,
         cardTitle: "Web工学研究室",
-        mordalTitle: "Web工学研究室",
+        title: "Web工学研究室",
         professor: {
           name: "増田 英孝 ",
           type: "教授",
@@ -343,7 +343,7 @@ export default {
         eventType: "終日開催",
         display: false,
         cardTitle: "知的メディア研究グループ",
-        mordalTitle: "知的メディア研究グループ",
+        title: "知的メディア研究グループ",
         professor: {
           name: "山田 剛一 ",
           type: "講師",
@@ -372,7 +372,7 @@ export default {
         eventType: "終日開催",
         display: true,
         cardTitle: "知的計算システム研究室",
-        mordalTitle: "知的計算システム研究室",
+        title: "知的計算システム研究室",
         professor: {
           name: "中島 克人 ",
           type: "教授",

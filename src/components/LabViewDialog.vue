@@ -14,7 +14,7 @@
       <p class="zen-kaku-bold" style="color: #360a73" v-else>展示なし</p>
     </div>
     <p class="zen-kaku-bold lab-title pb-2" style="color: #010326">
-      {{ labData.mordalTitle }}
+      {{ labData.title }}
     </p>
     <!-- 先生名と展示場所 -->
     <div class="pb-1" style="font-size: 0.9em">
@@ -53,7 +53,7 @@
   <div class="footer px-5">
     <div class="button-group pb-2">
       <button class="default-btn btn-animation zen-kaku-bold">地図を確認</button>
-      <button class="myNote-btn btn-animation zen-kaku-bold">MyNoteに追加</button>
+      <button class="myNote-btn btn-animation zen-kaku-bold" @click="myNoteBtnClicked">MyNoteに追加</button>
     </div>
     <div v-for="linkData in labData.links">
       <a style="font-size: 0.8em;" :href="linkData['url']">{{ linkData['name'] }}</a>
@@ -77,7 +77,7 @@ export default {
     myNoteBtnClicked() {
       this.$store.commit("addMyNote", {
         type: this.type,
-        key: this.eventKey,
+        key: this.labKey,
         time: "終日開催",
       });
     },

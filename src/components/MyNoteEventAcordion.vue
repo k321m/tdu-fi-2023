@@ -15,7 +15,7 @@
     <div class="title-box">
       <div @click="checked()">
         <transition-group name="check" mode="out-in">
-          <div :class="checkboxStyleSet()"></div>
+          <div :class="checkboxStyleSet()" :key="eventKey"></div>
         </transition-group>
       </div>
       <div class="pl-3 py-1">
