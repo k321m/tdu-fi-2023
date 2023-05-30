@@ -70,7 +70,10 @@
             </div>
           </div>
           <!-- MyNoteに追加ボタン -->
-          <button class="myNote-btn btn-animation zen-kaku-bold">
+          <button
+            class="myNote-btn btn-animation zen-kaku-bold"
+            @click="addQuestion"
+          >
             MyNoteに追加
           </button>
         </div>
@@ -89,7 +92,17 @@ export default {
       isOpen: false,
     };
   },
-  methods: {},
+  methods: {
+    addQuestion() {
+      this.$store.commit("countAddQuestion");
+      this.$store.commit("addMyNote", {
+        type: this.type,
+        key: this.questionKey,
+        question: this.questionValue.ques,
+      });
+      window.location.reload();
+    },
+  },
 };
 </script>
 <style scoped>
