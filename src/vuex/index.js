@@ -3,6 +3,7 @@ import createPersistedstate from "vuex-persistedstate";
 import eventsStore from "./eventsStore";
 import labsStore from "./labsStore";
 import lectureStore from "./lectureStore";
+import questionsStore from "./questionsStore";
 
 export const store = createStore({
   state: {
@@ -121,6 +122,7 @@ export const store = createStore({
     eventsStore,
     labsStore,
     lectureStore,
+    questionsStore,
   },
   plugins: [
     createPersistedstate({

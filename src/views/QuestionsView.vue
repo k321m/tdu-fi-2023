@@ -15,11 +15,12 @@
             おすすめ質問
           </p>
           <div class="mb-4">
-            <p class="zen-kaku-bold">〜〜〜編</p>
             <div class="accordion">
+              <!-- 質問エリア -->
               <div
                 class="title-box"
                 :class="{ 'opened-border-radius': isOpen }"
+                @click="isOpen = !isOpen"
               >
                 <div class="text-area">
                   <p
@@ -29,131 +30,58 @@
                     Q
                   </p>
                   <p
-                    class="pl-3 pr-1 zen-kaku-medium"
+                    class="pl-3 pr-3 zen-kaku-medium"
                     style="line-height: 1.3em; padding-top: 0.2em"
                     :class="{ 'text-ellipsis': !isOpen }"
                   >
                     質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問
                   </p>
                 </div>
-                <div class="pulldown-button" @click="isOpen = !isOpen">
+                <div class="pulldown-button">
                   <img
                     :class="{ openAcordionbutton: isOpen }"
                     src="../assets/pulldown-button-down.svg"
                   />
                 </div>
               </div>
+              <!-- 回答エリア -->
               <transition name="open">
                 <div class="accordion-content" v-if="isOpen">
-                  <button class="myNote-btn btn-animation zen-kaku-bold">
-                    MyNoteに追加
-                  </button>
-                </div>
-              </transition>
-            </div>
-            <div class="accordion">
-              <div
-                class="title-box"
-                :class="{ 'opened-border-radius': isOpen }"
-              >
-                <div class="text-area">
-                  <p
-                    class="zen-kaku-medium pb-1"
-                    style="font-size: 1.5em; line-height: 1em"
-                  >
-                    Q
-                  </p>
-                  <p
-                    class="pl-3 pr-1 zen-kaku-medium"
-                    style="line-height: 1.3em; padding-top: 0.2em"
-                    :class="{ 'text-ellipsis': !isOpen }"
-                  >
-                    質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問
-                  </p>
-                </div>
-                <div class="pulldown-button" @click="isOpen = !isOpen">
-                  <img
-                    :class="{ openAcordionbutton: isOpen }"
-                    src="../assets/pulldown-button-down.svg"
-                  />
-                </div>
-              </div>
-              <transition name="open">
-                <div class="accordion-content" v-if="isOpen">
-                  <button class="myNote-btn btn-animation zen-kaku-bold">
-                    MyNoteに追加
-                  </button>
-                </div>
-              </transition>
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <p class="zen-kaku-bold">〜〜〜編</p>
-            <div class="accordion">
-              <div
-                class="title-box"
-                :class="{ 'opened-border-radius': isOpen }"
-              >
-                <div class="text-area">
-                  <p
-                    class="zen-kaku-medium pb-1"
-                    style="font-size: 1.5em; line-height: 1em"
-                  >
-                    Q
-                  </p>
-                  <p
-                    class="pl-3 pr-1 zen-kaku-medium"
-                    style="line-height: 1.3em; padding-top: 0.2em"
-                    :class="{ 'text-ellipsis': !isOpen }"
-                  >
-                    質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問
-                  </p>
-                </div>
-                <div class="pulldown-button" @click="isOpen = !isOpen">
-                  <img
-                    :class="{ openAcordionbutton: isOpen }"
-                    src="../assets/pulldown-button-down.svg"
-                  />
-                </div>
-              </div>
-              <transition name="open">
-                <div class="accordion-content" v-if="isOpen">
-                  <button class="myNote-btn btn-animation zen-kaku-bold">
-                    MyNoteに追加
-                  </button>
-                </div>
-              </transition>
-            </div>
-            <div class="accordion">
-              <div
-                class="title-box"
-                :class="{ 'opened-border-radius': isOpen }"
-              >
-                <div class="text-area">
-                  <p
-                    class="zen-kaku-medium pb-1"
-                    style="font-size: 1.5em; line-height: 1em"
-                  >
-                    Q
-                  </p>
-                  <p
-                    class="pl-3 pr-1 zen-kaku-medium"
-                    style="line-height: 1.3em; padding-top: 0.2em"
-                    :class="{ 'text-ellipsis': !isOpen }"
-                  >
-                    質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問質問
-                  </p>
-                </div>
-                <div class="pulldown-button" @click="isOpen = !isOpen">
-                  <img
-                    :class="{ openAcordionbutton: isOpen }"
-                    src="../assets/pulldown-button-down.svg"
-                  />
-                </div>
-              </div>
-              <transition name="open">
-                <div class="accordion-content" v-if="isOpen">
+                  <div class="answer-box">
+                    <div class="text-area">
+                      <p
+                        class="zen-kaku-medium pb-1"
+                        style="font-size: 1.5em; line-height: 1em"
+                      >
+                        A
+                      </p>
+                      <div
+                        style="display: flex; flex-direction: column"
+                        class="pb-2"
+                      >
+                        <!-- 回答 -->
+                        <p
+                          class="pl-3 pr-3 zen-kaku-medium pb-2"
+                          style="line-height: 1.3em; padding-top: 0.2em"
+                        >
+                          回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答回答
+                        </p>
+                        <!-- リンク -->
+                        <a class="pl-3" style="font-size: 0.8em" href=""
+                          >▶︎ リンクがあればここに貼る</a
+                        >
+                      </div>
+                    </div>
+                    <!-- 透明ボタン -->
+                    <div class="pulldown-button">
+                      <img
+                        :class="{ openAcordionbutton: isOpen }"
+                        src="../assets/pulldown-button-down.svg"
+                        style="opacity: 0"
+                      />
+                    </div>
+                  </div>
+                  <!-- MyNoteに追加ボタン -->
                   <button class="myNote-btn btn-animation zen-kaku-bold">
                     MyNoteに追加
                   </button>
@@ -169,16 +97,11 @@
 
 <script>
 import ContentTitle from "../components/ContentTitle.vue";
-import MyNoteVisitList from "../components/MyNoteVisitList.vue";
 import MyNoteQuestionList from "../components/MyNoteQuestionList.vue";
-import MyNoteAnythingMemo from "../components/MyNoteAnythingMemo.vue";
-import MyNoteAllDeleteButton from "../components/MyNoteAllDeleteButton.vue";
-import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 export default {
   name: "QuestionsView",
   components: {
     ContentTitle,
-    MyNoteVisitList,
     MyNoteQuestionList,
   },
   data() {
@@ -195,6 +118,9 @@ export default {
 </script>
 
 <style scoped>
+p {
+  color: #010326;
+}
 .accordion {
   max-width: 100%;
   margin: 0.5em auto;
@@ -252,11 +178,23 @@ export default {
 
 .accordion-content {
   background-color: #ffffff;
-  padding: 0.5em 1em 1.8em 1em;
+  padding: 0.5em 1em 1.4em 1em;
   border-radius: 0 0 0.3em 0.3em;
+}
+
+.answer-box {
+  padding: 0em;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1em;
 }
 
 .myNote-btn {
   width: 100%;
+  font-size: 0.8em;
+}
+a {
+  text-decoration: none;
+  color: #010326;
 }
 </style>
