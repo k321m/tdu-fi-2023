@@ -74,7 +74,7 @@
                   v-for="timeSchedule in this.timeScheduleData"
                   :key="timeSchedule"
                 >
-                  <div style="padding-bottom: 46px">
+                  <div style="padding-bottom: 53px">
                     <Carousel
                       :itemsToShow="2.4"
                       snapAlign="start"

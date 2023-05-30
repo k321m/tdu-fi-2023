@@ -13,7 +13,7 @@
       >
         {{ eventData.eventType }}
       </p>
-      <p class="zen-kaku-bold pb-1" style="color: #360a73" v-else>
+      <p class="zen-kaku-bold pb-2" style="color: #360a73" v-else>
         {{ eventData.eventType }}
       </p>
       <p class="zen-kaku-h2 pb-1" v-if="eventData.subTitle">
@@ -46,7 +46,10 @@
       <button class="default-btn btn-animation zen-kaku-bold">
         地図を確認
       </button>
-      <button class="myNote-btn btn-animation zen-kaku-bold">
+      <button
+        class="myNote-btn btn-animation zen-kaku-bold"
+        @click="myNoteBtnClicked"
+      >
         MyNoteに追加
       </button>
     </div>
