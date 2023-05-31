@@ -4,6 +4,7 @@ import eventsStore from "./eventsStore";
 import labsStore from "./labsStore";
 import lectureStore from "./lectureStore";
 import questionsStore from "./questionsStore";
+import mapStore from "./mapStore";
 
 export const store = createStore({
   state: {
@@ -127,6 +128,7 @@ export const store = createStore({
     labsStore,
     lectureStore,
     questionsStore,
+    mapStore,
   },
   plugins: [
     createPersistedstate({
