@@ -7,7 +7,7 @@
       </div>
     </div>
     <!-- 展示情報 -->
-    <div class="pb-2">
+    <div class="pb-1">
       <p class="zen-kaku-bold" style="color: #360a73">
         {{ lectureData.year_of_enrollment }}
       </p>
@@ -55,8 +55,8 @@ export default {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  height: auto;
-  max-height: 688px;
+  height: 60dvh;
+  max-height: calc(90dvh - 9em);
   background-color: white;
   border-radius: 10px;
   padding-bottom: 3rem;

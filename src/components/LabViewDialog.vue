@@ -89,8 +89,8 @@ export default {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  height: 90vh;
-  max-height: 688px;
+  height: 90dvh;
+  max-height: calc(90dvh - 9em);
   background-color: white;
   border-radius: 10px;
   padding-bottom: 10rem;

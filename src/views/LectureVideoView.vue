@@ -91,7 +91,7 @@ export default {
 <style scoped>
 #card {
   z-index: 0;
-  height: 12.5em;
+  height: 15em;
   display: flex;
   max-height: 100%;
   max-width: 100%;

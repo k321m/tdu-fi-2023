@@ -25,8 +25,8 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 50vh;
-  max-height: 688px;
+  height: 50dvh;
+  max-height: calc(90dvh - 9em);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
