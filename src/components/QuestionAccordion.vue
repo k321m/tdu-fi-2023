@@ -23,7 +23,7 @@
             {{ questionValue.ques }}
           </p>
         </div>
-        <div class="pulldown-button">
+        <div class="pulldown-button py-1">
           <img
             :class="{ openAcordionbutton: isOpen }"
             src="../assets/pulldown-button-down.svg"
