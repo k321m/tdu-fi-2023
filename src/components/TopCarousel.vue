@@ -5,9 +5,13 @@
       :itemsToShow="1.4"
       :wrapAround="true"
       :transition="2500"
+      :autoplay="5000"
     >
-      <!-- :autoplay="5000" -->
-      <Slide v-for="slide in contents" :key="slide">
+      <Slide
+        v-for="slide in contents"
+        :key="slide"
+        @click="clickedEvent(slide.to)"
+      >
         <div class="carousel__item carousel_image" :style="slide.img">
           <div class="text-box pr-3 pb-2">
             <p class="jp-text">{{ slide.jptext }}</p>
@@ -34,21 +38,25 @@ export default {
           text: "Laboratory",
           jptext: "研究室展示",
           img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+          to: "/labs",
         },
         {
           text: "Lecture",
           jptext: "講義動画",
           img: "background-image: url(/src/assets/lectures/インタラクティブメディアとデザイン.svg)",
-        },
-        {
-          text: "MyNote",
-          jptext: "マイノート",
-          img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+          to: "/lecture-video",
         },
         {
           text: "Questions",
           jptext: "具体的な質問例",
           img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+          to: "/questions",
+        },
+        {
+          text: "MyNote",
+          jptext: "マイノート",
+          img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+          to: "/my-note",
         },
       ],
     };
@@ -57,6 +65,11 @@ export default {
     Carousel,
     Slide,
     Pagination,
+  },
+  methods: {
+    clickedEvent(to) {
+      this.$router.push(to);
+    },
   },
 };
 </script>
