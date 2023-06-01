@@ -28,7 +28,7 @@ export default {
     faq: {
       faq_1: {
         ques: "この学科で取得できる資格はなんですか？",
-        ans: "しるか",
+        ans: "",
         links: [
           {
             name: "▶︎ 井ノ上寛人助教（情報メディア学科公式HP）",
@@ -38,7 +38,7 @@ export default {
       },
       faq_2: {
         ques: "この資格の合格率はどのくらいですか？",
-        ans: "しるか",
+        ans: "",
         links: [],
       },
     },

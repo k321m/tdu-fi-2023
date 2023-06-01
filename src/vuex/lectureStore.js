@@ -1,5 +1,10 @@
 import { store } from "./index";
-
+import lectureImg1 from "/src/assets/lectures/情報メディア学基礎.svg";
+import lectureImg2 from "/src/assets/lectures/インタラクティブメディアとデザイン.svg";
+import lectureImg3 from "/src/assets/lectures/データペースプログラミング演習.svg";
+import lectureImg4 from "/src/assets/lectures/コンピュータプログラミングⅠ・II.svg";
+import lectureImg5 from "/src/assets/lectures/CGモデリングおよび演習.svg";
+import lectureImg6 from "/src/assets/lectures/CGレンダリングおよび演習.svg";
 export default {
   namespaced: true,
   state: {
@@ -21,7 +26,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cdl/",
           },
         ],
-        img: "background-image: url(/src/assets/lectures/情報メディア学基礎.svg)",
+        img: "background-image: url(" + lectureImg1 + ")",
         video:
           '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/O9LH8l20j0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -42,7 +47,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
           },
         ],
-        img: "background-image: url(/src/assets/lectures/インタラクティブメディアとデザイン.svg)",
+        img: "background-image: url(" + lectureImg2 + ")",
         video:
           '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/Ez9wRBnN8U0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -63,7 +68,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cdl/",
           },
         ],
-        img: "background-image: url(/src/assets/lectures/データペースプログラミング演習.svg)",
+        img: "background-image: url(" + lectureImg3 + ")",
         video:
           '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/CVE7cIjXaFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -84,7 +89,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
           },
         ],
-        img: "background-image: url(/src/assets/lectures/コンピュータプログラミングⅠ・II.svg)",
+        img: "background-image: url(" + lectureImg4 + ")",
         video:
           '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/ahl2cBoKmp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -113,7 +118,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/igl/",
           },
         ],
-        img: "background-image: url(/src/assets/lectures/CGモデリングおよび演習.svg)",
+        img: "background-image: url(" + lectureImg5 + ")",
         video:
           '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/zQoGV9dGmac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -142,7 +147,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/igl/",
           },
         ],
-        img: "background-image: url(/src/assets/lectures/CGレンダリングおよび演習.svg)",
+        img: "background-image: url(" + lectureImg6 + ")",
         video:
           '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/U0LuPqCInJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
