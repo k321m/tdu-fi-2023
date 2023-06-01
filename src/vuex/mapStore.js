@@ -7,17 +7,20 @@ export default {
       map_1: {
         title: "キャンパスマップ",
         site: "",
-        img: "",
+        img: "background-image: url(/src/assets/maps/testMap.svg)",
+        src: "/src/assets/maps/testMap.svg",
       },
       map_2: {
         title: "学科展示室/研究室公開",
         site: "1号館4階 演習室",
-        img: "",
+        img: "background-image: url(/src/assets/labs/メディア応用.svg)",
+        src: "/src/assets/labs/メディア応用.svg",
       },
       map_3: {
         title: "研究室公開",
         site: "1号館5階 メディアラボ",
-        img: "",
+        img: "background-image: url(/src/assets/maps/testMap.svg)",
+        src: "/src/assets/maps/testMap.svg",
       },
     },
   },

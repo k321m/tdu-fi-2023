@@ -61,11 +61,7 @@ export default {
   name: "ClearFilterDialog",
   props: ["currentFilteredTags"],
   emits: ["close-dialog", "update-filtered"],
-  data() {
-    return {
-      type: "events",
-    };
-  },
+  data() {},
   methods: {
     clearFilterTags() {
       this.$emit("close-dialog");

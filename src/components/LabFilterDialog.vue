@@ -105,7 +105,6 @@ export default {
   emits: ["close-dialog", "update-filtered"],
   data() {
     return {
-      type: "events",
       checkedTags: [],
       isClearFilterDialogVisible: false,
     };

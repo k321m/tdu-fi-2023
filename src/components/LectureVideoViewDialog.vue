@@ -47,13 +47,6 @@ export default {
   name: "LectureVideoViewDialog",
   props: ["lectureData"],
   emits: ["close-dialog"],
-  data() {
-    return {
-      type: "events",
-    };
-  },
-  components:{
-  },
 };
 
 </script>
