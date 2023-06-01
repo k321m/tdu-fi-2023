@@ -35,7 +35,19 @@
       <div class="accordion-content pb-4" v-if="isOpen">
         <div name="content">
           <div>
-            <p class="zen-kaku-bold py-3">メモ</p>
+            <div class="pb-1" style="display: flex; align-items: flex-end">
+              <p class="zen-kaku-bold py-3">メモ</p>
+              <v-icon
+                style="
+                  margin: 0 0 0 auto;
+                  padding-right: 0.4rem;
+                  font-size: 1rem;
+                  color: #010326;
+                "
+                @click="copyMemoToClipboard"
+                >mdi-clipboard-multiple</v-icon
+              >
+            </div>
             <textarea
               @blur="saveMemo()"
               placeholder="重要なことはメモに残そう！"
@@ -93,12 +105,14 @@ export default {
         key: this.questionKey,
       });
     },
-
     openAcordionStyleSet() {
       return {
         openAcordionbutton: this.isOpen,
         closeAcordionbutton: !this.isOpen,
       };
+    },
+    copyMemoToClipboard() {
+      navigator.clipboard.writeText(this.memo);
     },
   },
   mounted() {
