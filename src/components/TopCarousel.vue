@@ -28,6 +28,11 @@
 
 <script>
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import MenuImg01 from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import MenuImg02 from "/src/assets/lectures/インタラクティブメディアとデザイン.svg";
+import MenuImg03 from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import MenuImg04 from "/src/assets/labs/ビジュアルコンピューティング.svg";
+
 import "vue3-carousel/dist/carousel.css";
 export default {
   name: "TopCarousel",
@@ -37,25 +42,25 @@ export default {
         {
           text: "Laboratory",
           jptext: "研究室展示",
-          img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+          img: "background-image: url(" + MenuImg01 + ")",
           to: "/labs",
         },
         {
           text: "Lecture",
           jptext: "講義動画",
-          img: "background-image: url(/src/assets/lectures/インタラクティブメディアとデザイン.svg)",
+          img: "background-image: url(" + MenuImg02 + ")",
           to: "/lecture-video",
         },
         {
           text: "Questions",
           jptext: "具体的な質問例",
-          img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+          img: "background-image: url(" + MenuImg03 + ")",
           to: "/questions",
         },
         {
           text: "MyNote",
           jptext: "マイノート",
-          img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+          img: "background-image: url(" + MenuImg04 + ")",
           to: "/my-note",
         },
       ],

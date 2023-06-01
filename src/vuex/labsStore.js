@@ -1,4 +1,16 @@
 import { store } from "./index";
+import labo01Img from "/src/assets/labs/情報セキュリティ.svg";
+import labo02Img from "/src/assets/labs/計算言語学.svg";
+import labo03Img from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import labo04Img from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import labo05Img from "/src/assets/labs/メディア応用.svg";
+import labo06Img from "/src/assets/labs/メディア応用.svg";
+import labo07Img from "/src/assets/labs/音響コミュニケーション.svg";
+import labo08Img from "/src/assets/labs/インタラクティブグラフィックス.svg";
+import labo09Img from "/src/assets/labs/実空間コンピューティング.svg";
+import labo10Img from "/src/assets/labs/Web工学.svg";
+import labo11Img from "/src/assets/labs/知的メディア.svg";
+import labo12Img from "/src/assets/labs/知的計算システム.svg";
 
 export default {
   namespaced: true,
@@ -37,7 +49,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/情報セキュリティ.svg)",
+        img: "background-image: url(" + labo01Img + ")",
       },
       labo_2: {
         eventType: "終日開催",
@@ -69,7 +81,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/計算言語学.svg)",
+        img: "background-image: url(" + labo02Img + ")",
       },
       labo_3: {
         eventType: "終日開催",
@@ -104,7 +116,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+        img: "background-image: url(" + labo03Img + ")",
       },
       labo_4: {
         eventType: "終日開催",
@@ -133,7 +145,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/ビジュアルコンピューティング.svg)",
+        img: "background-image: url(" + labo04Img + ")",
       },
       labo_5: {
         eventType: "終日開催",
@@ -168,7 +180,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/メディア応用.svg)",
+        img: "background-image: url(" + labo05Img + ")",
       },
       labo_6: {
         eventType: "終日開催",
@@ -203,7 +215,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/メディア応用.svg)",
+        img: "background-image: url(" + labo06Img + ")",
       },
       labo_7: {
         eventType: "終日開催",
@@ -232,7 +244,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/音響コミュニケーション.svg)",
+        img: "background-image: url(" + labo07Img + ")",
       },
       labo_8: {
         eventType: "終日開催",
@@ -267,7 +279,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/インタラクティブグラフィックス.svg)",
+        img: "background-image: url(" + labo08Img + ")",
       },
       labo_9: {
         eventType: "終日開催",
@@ -302,7 +314,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/実空間コンピューティング.svg)",
+        img: "background-image: url(" + labo09Img + ")",
       },
       labo_10: {
         eventType: "終日開催",
@@ -337,7 +349,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/Web工学.svg)",
+        img: "background-image: url(" + labo10Img + ")",
       },
       labo_11: {
         eventType: "終日開催",
@@ -366,7 +378,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/知的メディア.svg)",
+        img: "background-image: url(" + labo11Img + ")",
       },
       labo_12: {
         eventType: "終日開催",
@@ -398,7 +410,7 @@ export default {
             url: "",
           },
         ],
-        img: "background-image: url(/src/assets/labs/知的計算システム.svg)",
+        img: "background-image: url(" + labo12Img + ")",
       },
     },
   },
