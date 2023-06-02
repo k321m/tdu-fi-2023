@@ -5,7 +5,7 @@
         <img src="../assets/close-button.svg" />
       </div>
     </div>
-    <div class="pa-5">
+    <div class="pa-5 scroll-contents">
       <div class="py-5">
         <div class="top-box">
           <router-link class="routerLink" to="/">
@@ -53,21 +53,24 @@
           <h1 class="zen-kaku-bold">MyNote</h1>
         </div>
       </router-link>
-      <div class="social pt-15">
+      <div class="social py-15">
         <h2 class="hack-h4">OFFICIAL SITE AND SNS:</h2>
         <div style="display: flex" class="py-5">
-          <div class="pr-6">
-            <img :src="web" />
-          </div>
-          <div class="px-6">
-            <img :src="facebook" />
-          </div>
-          <div class="px-6">
-            <img :src="twitter" />
-          </div>
-          <div class="px-6">
+          <a class="pr-4" href="https://www.dendai.ac.jp">
+            <img src="../assets/icon-web.svg" />
+          </a>
+          <a class="px-4" href="https://www.facebook.com/TDUwebmaster/">
+            <img src="../assets/icon-facebook.svg" />
+          </a>
+          <a class="px-4" href="https://twitter.com/TDU_webmaster">
+            <img src="../assets/icon-twitter.svg" />
+          </a>
+          <a
+            class="px-4"
+            href="https://www.youtube.com/channel/UCKnPsmCuIyXioKofQa217JQ"
+          >
             <img src="../assets/icon-mov.svg" />
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -92,7 +95,7 @@ export default {
   },
   methods: {
     closeHamburgerMenu() {
-      console.log("入ったよ");
+      // console.log("入ったよ");
       this.$emit("close-hamburger-menu");
     },
     openAcordionStyleSet() {
@@ -122,11 +125,21 @@ export default {
   background-color: #010326;
 }
 .header {
-  padding: 3% 0% 10% 0;
+  padding: 1em 0 1.8em 0;
   display: flex;
 }
 h1 {
-  font-size: 2.2em;
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.scroll-contents {
+  flex-grow: 1;
+  overflow-y: scroll;
+  height: 100%; /* 適切な高さを指定する */
 }
 
 .routerLink {
@@ -162,14 +175,12 @@ h1 {
 .openAcordionbutton {
   transform: scaleY(-1);
 }
-
-.social {
-  position: fixed;
-  bottom: 3%;
+.openAcordionbutton {
+  transform: scaleY(-1);
 }
 
 .social img {
-  width: 30px;
-  height: 30px;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 </style>

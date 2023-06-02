@@ -1,7 +1,8 @@
 <template>
   <v-app>
     <div>
-      <!-- <v-navigation-drawer app v-model="drawer">
+      <transition name="fade">
+        <!-- <v-navigation-drawer app v-model="drawer">
         <v-list nav>
           <v-list-item v-for="menu in menus" :key="menu.title" :to="menu.url">
             <v-list-item-content>
@@ -10,10 +11,11 @@
           </v-list-item>
         </v-list>
       </v-navigation-drawer> -->
-      <HamburgerMenu
-        v-if="hamburgerMenu"
-        @close-hamburger-menu="hamburgerMenu = !hamburgerMenu"
-      ></HamburgerMenu>
+        <HamburgerMenu
+          v-if="hamburgerMenu"
+          @close-hamburger-menu="hamburgerMenu = !hamburgerMenu"
+        ></HamburgerMenu>
+      </transition>
 
       <v-app-bar elevation="0" app>
         <v-spacer></v-spacer>
@@ -21,7 +23,7 @@
       </v-app-bar>
     </div>
 
-    <v-main>
+    <v-main :class="{ 'position-fixed': hamburgerMenu }">
       <div id="particles-js"></div>
       <router-view />
     </v-main>
@@ -58,4 +60,38 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.position-fixed {
+  position: fixed;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+
+.fade-enter-active {
+  animation: fade-in 0.2s;
+}
+
+.fade-leave-active {
+  animation: fade-out 0.1s;
+}
+</style>

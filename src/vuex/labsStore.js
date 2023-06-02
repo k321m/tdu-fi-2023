@@ -46,7 +46,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo01Img + ")",
@@ -78,7 +78,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo02Img + ")",
@@ -113,7 +113,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo03Img + ")",
@@ -142,7 +142,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo04Img + ")",
@@ -177,7 +177,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo05Img + ")",
@@ -212,7 +212,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo06Img + ")",
@@ -241,7 +241,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo07Img + ")",
@@ -276,7 +276,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo08Img + ")",
@@ -311,7 +311,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo09Img + ")",
@@ -346,7 +346,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo10Img + ")",
@@ -375,7 +375,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo11Img + ")",
@@ -407,7 +407,7 @@ export default {
           },
           {
             name: "▶︎ 具体的な質問例",
-            url: "",
+            url: "/questions",
           },
         ],
         img: "background-image: url(" + labo12Img + ")",
