@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     closeHamburgerMenu() {
-      console.log("入ったよ");
+      // console.log("入ったよ");
       this.$emit("close-hamburger-menu");
     },
     openAcordionStyleSet() {
@@ -167,11 +167,9 @@ h2 {
 .openAcordionbutton {
   transform: scaleY(-1);
 }
-
-/* .social {
-  position: fixed;
-  bottom: 3%;
-} */
+.openAcordionbutton {
+  transform: scaleY(-1);
+}
 
 .social img {
   width: 1.6rem;
