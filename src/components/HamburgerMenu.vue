@@ -56,17 +56,17 @@
       <div class="social py-15">
         <h2 class="hack-h4">OFFICIAL SITE AND SNS:</h2>
         <div style="display: flex" class="py-5">
-          <a class="pr-6" href="https://www.dendai.ac.jp">
+          <a class="pr-4" href="https://www.dendai.ac.jp">
             <img src="../assets/icon-web.svg" />
           </a>
-          <a class="px-6" href="https://www.facebook.com/TDUwebmaster/">
+          <a class="px-4" href="https://www.facebook.com/TDUwebmaster/">
             <img src="../assets/icon-facebook.svg" />
           </a>
-          <a class="px-6" href="https://twitter.com/TDU_webmaster">
+          <a class="px-4" href="https://twitter.com/TDU_webmaster">
             <img src="../assets/icon-twitter.svg" />
           </a>
           <a
-            class="px-6"
+            class="px-4"
             href="https://www.youtube.com/channel/UCKnPsmCuIyXioKofQa217JQ"
           >
             <img src="../assets/icon-mov.svg" />
@@ -174,7 +174,7 @@ h2 {
 } */
 
 .social img {
-  width: 30px;
-  height: 30px;
+  width: 1.6rem;
+  height: 1.6rem;
 }
 </style>
