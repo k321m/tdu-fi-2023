@@ -53,6 +53,15 @@
           <h1 class="zen-kaku-bold">MyNote</h1>
         </div>
       </router-link>
+      <div class="py-5">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSeQ5ru-Mzc-gULHow6ZkxNjnRPP6I7i6aUTtTJitU7GpdYWWQ/viewform"
+          style="text-decoration: none; color: white"
+        >
+          <h1 class="zen-kaku-bold">アンケート</h1>
+        </a>
+      </div>
+
       <div class="social py-15">
         <h2 class="hack-h4">OFFICIAL SITE AND SNS:</h2>
         <div style="display: flex" class="py-5">

@@ -63,6 +63,12 @@ export default {
           img: "background-image: url(" + MenuImg04 + ")",
           to: "/my-note",
         },
+        {
+          text: "Survey",
+          jptext: "アンケート",
+          img: "background-image: url(" + MenuImg04 + ")",
+          to: "https://docs.google.com/forms/d/e/1FAIpQLSeQ5ru-Mzc-gULHow6ZkxNjnRPP6I7i6aUTtTJitU7GpdYWWQ/viewform",
+        },
       ],
     };
   },
@@ -73,7 +79,12 @@ export default {
   },
   methods: {
     clickedEvent(to) {
-      this.$router.push(to);
+      console.log();
+      if (to[0] == "/") {
+        this.$router.push(to);
+      } else {
+        window.location.href = to;
+      }
     },
   },
 };
@@ -106,8 +117,7 @@ p.text {
 #top-carousel .carousel__viewport {
   min-height: 245px;
 }
-/* min-height: 220px; */
-/* min-height: 30vh; */
+
 .carousel__item,
 .carousel__item.carousel_image {
   position: relative;
