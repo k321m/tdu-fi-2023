@@ -46,7 +46,7 @@ export default {
         key: key,
         question: this.question,
       });
-      window.location.reload();
+      this.closeAddDialog();
     },
   },
 };
