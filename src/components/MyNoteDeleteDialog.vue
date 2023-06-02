@@ -45,7 +45,7 @@ export default {
     },
     deleteData() {
       this.$emit("delete-data");
-      window.location.reload();
+      this.closeDeleteDialog();
     },
   },
 };

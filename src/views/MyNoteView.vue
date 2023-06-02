@@ -14,10 +14,14 @@
         </template>
       </ContentTitle>
       <div class="pt-6">
-        <MyNoteVisitList :eventDetailData="myNoteDetailData.events" />
+        <!-- <MyNoteVisitList :eventDetailData="myNoteDetailData.events" /> -->
+        <MyNoteVisitList :eventDetailData="changedMyNoteDetailData.events" />
       </div>
       <div class="pt-6">
-        <MyNoteQuestionList :questionDetailData="myNoteDetailData.questions" />
+        <!-- <MyNoteQuestionList :questionDetailData="myNoteDetailData.questions" /> -->
+        <MyNoteQuestionList
+          :questionDetailData="changedMyNoteDetailData.questions"
+        />
       </div>
       <div class="pt-2">
         <MyNoteAnythingMemo />
@@ -54,6 +58,14 @@ export default {
       myNoteDetailData: {},
       isTutorialVisible: !this.$store.getters.getDoneMyNoteTutorial,
     };
+  },
+  computed: {
+    // myNoteのデータが更新されると、表示するデータも変わる
+    changedMyNoteDetailData() {
+      let myNoteDetailData = {};
+      myNoteDetailData = this.$store.getters.getMyNoteDetailData;
+      return myNoteDetailData;
+    },
   },
   mounted() {
     this.myNoteDetailData = this.$store.getters.getMyNoteDetailData;

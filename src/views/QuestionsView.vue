@@ -29,17 +29,21 @@
         </div>
       </div>
     </div>
+    <MyNoteIcon />
   </div>
 </template>
 
 <script>
 import ContentTitle from "../components/ContentTitle.vue";
 import QuestionAccordion from "../components/QuestionAccordion.vue";
+import MyNoteIcon from "../components/MyNoteIcon.vue";
+
 export default {
   name: "QuestionsView",
   components: {
     ContentTitle,
     QuestionAccordion,
+    MyNoteIcon,
   },
   data() {
     return {

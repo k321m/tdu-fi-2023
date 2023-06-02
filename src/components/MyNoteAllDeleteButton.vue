@@ -10,7 +10,10 @@
     </MyNoteDeleteDialog>
   </v-dialog>
   <div class="py-2">
-    <div class="pink-btn" @click="openDeleteDialog">
+    <div
+      class="pink-btn"
+      @click="isDeleteDialogVisible = !isDeleteDialogVisible"
+    >
       <p class="zen-kaku-bold">MyNoteのデータを削除</p>
     </div>
   </div>
@@ -31,9 +34,6 @@ export default {
     };
   },
   methods: {
-    openDeleteDialog() {
-      this.isDeleteDialogVisible = !this.isDeleteDialogVisible;
-    },
     deleteAll() {
       this.$store.commit("deleteMyNote", {
         type: this.type,
