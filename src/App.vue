@@ -21,7 +21,7 @@
       </v-app-bar>
     </div>
 
-    <v-main>
+    <v-main :class="{ 'position-fixed': hamburgerMenu }">
       <div id="particles-js"></div>
       <router-view />
     </v-main>
@@ -58,4 +58,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.position-fixed {
+  position: fixed;
+}
+</style>
