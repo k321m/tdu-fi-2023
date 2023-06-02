@@ -1,19 +1,19 @@
 <template>
-  <div class="background-dialog pa-5">
+  <div class="background-dialog px-5 pt-5">
     <div style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
         <v-icon>mdi-close</v-icon>
       </div>
     </div>
-    <div class="pb-10">
+    <div class="pb-4">
       <p
-        class="zen-kaku-bold py-4"
+        class="zen-kaku-bold pb-2"
         style="color: #e345e6"
         v-if="eventData.eventType == '限定プログラム'"
       >
         {{ eventData.eventType }}
       </p>
-      <p class="zen-kaku-bold py-4" style="color: #360a73" v-else>
+      <p class="zen-kaku-bold pb-2" style="color: #360a73" v-else>
         {{ eventData.eventType }}
       </p>
       <p class="zen-kaku-h2 pb-1" v-if="eventData.subTitle">
@@ -21,38 +21,42 @@
       </p>
       <p class="zen-kaku-h2">{{ eventData.title }}</p>
     </div>
-    <div class="pt-10">
-      <div class="contents">
-        <div class="pr-2" v-if="eventTime">
-          <img src="../assets/icon-time.svg" />
-          <span class="zen-kaku-regular pl-1">{{ eventTime }}</span>
-        </div>
-        <div class="pr-2">
-          <img src="../assets/icon-map.svg" />
-          <span class="zen-kaku-regular pl-1">{{ eventData.place }}</span>
-        </div>
-        <div v-if="eventData.peopleNum">
-          <img src="../assets/icon-people.svg" />
-          <span class="zen-kaku-regular pl-1">{{ eventData.peopleNum }}</span>
-        </div>
+
+    <div class="contents pb-4">
+      <!-- TODO:表示されないため修正 -->
+      <div v-if="eventTime">
+        <img src="../assets/icon-clock.svg" />
+        <span class="zen-kaku-regular pl-1">{{ eventTime }}</span>
+      </div>
+      <div>
+        <img src="../assets/icon-map.svg" />
+        <span class="zen-kaku-regular pl-1">{{ eventData.place }}</span>
+      </div>
+      <div v-if="eventData.peopleNum">
+        <img src="../assets/icon-people.svg" />
+        <span class="zen-kaku-regular pl-1">{{ eventData.peopleNum }}</span>
       </div>
     </div>
-    <div class="py-4">
-      <p class="zen-kaku-medium info">
-        {{ eventData.info }}
-      </p>
+    <div class="scroll-contents" style="font-size: 0.9em">
+      <p>{{ eventData.info }}</p>
     </div>
-    <div class="py-10">
-      <div class="py-2">
-        <div class="myNote-btn btn-animation" @click="myNoteBtnClicked()">
-          <p class="zen-kaku-bold">MyNoteに追加</p>
-        </div>
-      </div>
-      <div class="py-2">
-        <div class="default-btn btn-animation">
-          <p class="zen-kaku-bold">地図を確認</p>
-        </div>
-      </div>
+  </div>
+  <div class="footer px-5">
+    <div class="button-group pb-2">
+      <button class="default-btn btn-animation zen-kaku-bold">
+        地図を確認
+      </button>
+      <button
+        class="myNote-btn btn-animation zen-kaku-bold"
+        @click="myNoteBtnClicked"
+      >
+        MyNoteに追加
+      </button>
+    </div>
+    <div v-for="linkData in eventData.links">
+      <a style="font-size: 0.8em" :href="linkData['url']">{{
+        linkData["name"]
+      }}</a>
     </div>
   </div>
 </template>
@@ -60,7 +64,7 @@
 <script>
 export default {
   name: "TimeScheduleDialog",
-  props: ["eventData", "eventKey"],
+  props: ["eventData", "eventKey", "eventTime"],
   emits: ["close-dialog"],
   data() {
     return {
@@ -80,17 +84,44 @@ export default {
 
 <style scoped>
 .background-dialog {
-  height: 688px;
+  display: flex;
+  flex-direction: column;
+  height: 85dvh;
+  max-height: calc(90dvh - 9em);
   background-color: white;
   border-radius: 10px;
+  padding-bottom: 10rem;
 }
 
-.contents {
-  display: flex;
-}
 .contents > div {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  margin-right: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+.scroll-contents {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.button-group > button {
+  font-size: 0.8em;
+  width: 49%;
+}
+a {
+  text-decoration: none;
+  color: #010326;
 }
 </style>

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import Top from "./views/TopView.vue";
 import MyNote from "./views/MyNoteView.vue";
 import Labs from "./views/LabsView.vue";
+import LectureVideo from "./views/LectureVideoView.vue";
+import Questions from "./views/QuestionsView.vue";
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -15,6 +17,16 @@ export const router = createRouter({
       path: "/labs",
       name: "labs",
       component: Labs,
+    },
+    {
+      path: "/lecture-video",
+      name: "lecture-video",
+      component: LectureVideo,
+    },
+    {
+      path: "/questions",
+      name: "questions",
+      component: Questions,
     },
     {
       path: "/my-note",

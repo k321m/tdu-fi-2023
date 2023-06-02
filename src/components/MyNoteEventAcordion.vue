@@ -12,16 +12,26 @@
     </MyNoteDeleteDialog>
   </v-dialog>
   <div class="accordion">
-    <div class="title-box">
-      <div @click="checked()">
-        <transition-group name="check" mode="out-in">
-          <div :class="checkboxStyleSet()"></div>
-        </transition-group>
+    <div class="title-box" :class="{ 'opened-border-radius': isOpen }">
+      <div class="text-area">
+        <div @click="checked()">
+          <transition-group name="check" mode="out-in">
+            <div :class="checkboxStyleSet()" :key="eventKey"></div>
+          </transition-group>
+        </div>
+        <div
+          class="pl-3 pr-3 zen-kaku-medium"
+          style="line-height: 1.3em; padding-top: 0.3em"
+          @click="isOpen = !isOpen"
+          :class="{ 'text-ellipsis': !isOpen }"
+        >
+          <span v-if="eventValue.subTitle != null" class="pr-2">{{
+            eventValue.subTitle
+          }}</span>
+          <span>{{ eventValue.title }}</span>
+        </div>
       </div>
-      <div class="pl-3 py-1">
-        <span class="zen-kaku-medium pr-2">{{ eventValue.subTitle }}</span>
-        <span class="zen-kaku-medium">{{ eventValue.title }}</span>
-      </div>
+
       <div class="pulldown-button py-1" @click="isOpen = !isOpen">
         <img
           :class="openAcordionStyleSet()"
@@ -34,7 +44,7 @@
         <div name="content">
           <div>
             <p
-              class="zen-kaku-bold py-4"
+              class="zen-kaku-bold pt-4 pb-2"
               style="color: #e345e6"
               v-if="eventValue.eventType == '限定プログラム'"
             >
@@ -45,7 +55,7 @@
             </p>
             <div class="contents">
               <div v-if="getEventTime()">
-                <img class="pr-1" src="../assets/icon-time.svg" />
+                <img class="pr-1" src="../assets/icon-clock.svg" />
                 <span class="zen-kaku-regular pr-2">{{ getEventTime() }}</span>
               </div>
               <div>
@@ -60,7 +70,19 @@
               </div>
             </div>
             <div class="pt-2">
-              <p class="zen-kaku-bold py-3">メモ</p>
+              <div class="pb-1" style="display: flex; align-items: flex-end">
+                <p class="zen-kaku-bold py-3">メモ</p>
+                <v-icon
+                  style="
+                    margin: 0 0 0 auto;
+                    padding-right: 0.4rem;
+                    font-size: 1rem;
+                    color: #010326;
+                  "
+                  @click="copyMemoToClipboard"
+                  >mdi-clipboard-multiple</v-icon
+                >
+              </div>
               <textarea
                 @blur="saveMemo()"
                 placeholder="重要なことはメモに残そう！"
@@ -157,6 +179,9 @@ export default {
         closeAcordionbutton: !this.isOpen,
       };
     },
+    copyMemoToClipboard() {
+      navigator.clipboard.writeText(this.memo);
+    },
   },
   mounted() {
     this.updateIsChecked();
@@ -169,15 +194,32 @@ export default {
 <style scoped>
 .accordion {
   max-width: 100%;
-  margin: 10px auto;
+  margin: 0.5em auto;
+}
+
+.text-area {
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.text-ellipsis {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .title-box {
-  min-height: 64px;
-  padding: 16px;
+  min-height: 1em;
+  padding: 1em;
   background-color: #ffffff;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.3em;
+}
+.opened-border-radius {
+  border-radius: 0.3em 0.3em 0 0 !important;
 }
 .checkbox {
   width: 30px;
@@ -208,8 +250,8 @@ export default {
 }
 .accordion-content {
   background-color: #ffffff;
-  padding: 0 15px;
-  margin-bottom: 10px;
+  padding: 0.5em 1em 1.4em 1em;
+  border-radius: 0 0 0.3em 0.3em;
 }
 @keyframes open {
   0% {

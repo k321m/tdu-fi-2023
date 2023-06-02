@@ -5,13 +5,12 @@ import allDayEventImg2 from "../assets/施設見学ツアー.svg";
 import allDayEventImg3 from "../assets/クラブ・サークル紹介.svg";
 import allDayEventImg4 from "../assets/学科展示室.svg";
 import allDayEventImg5 from "../assets/研究室公開.svg";
-import limitedEventImg1 from "../assets/情報メディア学科.svg";
-import limitedEventImg2 from "../assets/情報システム工学科.svg";
-import limitedEventImg3 from "../assets/情報通信工学科.svg";
-import limitedEventImg4 from "../assets/電大ガイダンス.svg";
+import limitedEventImg1 from "../assets/電大ガイダンス.svg";
+import limitedEventImg2 from "../assets/情報メディア学科.svg";
+import limitedEventImg3 from "../assets/情報システム工学科.svg";
+import limitedEventImg4 from "../assets/情報通信工学科.svg";
 import limitedEventImg5 from "../assets/一般・共通テスト入試ガイダンス.svg";
 import limitedEventImg6 from "../assets/推薦・AO入試ガイダンス.svg";
-
 export default {
   namespaced: true,
 
@@ -25,6 +24,7 @@ export default {
         fontsize: "font-size: 0.85em",
         // TODO: 変数だけでの反映
         img: "background-image: url(" + allDayEventImg1 + ")",
+        links: [],
       },
       allDayEvent_2: {
         eventType: "終日開催",
@@ -33,6 +33,7 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg2 + ")",
+        links: [],
       },
       allDayEvent_3: {
         eventType: "終日開催",
@@ -41,6 +42,7 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.65em",
         img: "background-image: url(" + allDayEventImg3 + ")",
+        links: [],
       },
       allDayEvent_4: {
         eventType: "終日開催",
@@ -49,6 +51,7 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg4 + ")",
+        links: [],
       },
       allDayEvent_5: {
         eventType: "終日開催",
@@ -57,6 +60,7 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg5 + ")",
+        links: [],
       },
     },
     limitedEvent: {
@@ -69,6 +73,12 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #ff9d00",
         img: "background-image: url(" + limitedEventImg2 + ")",
+        links: [
+          {
+            name: "▶︎ 情報メディア学科公式HP",
+            url: "https://www.im.dendai.ac.jp",
+          },
+        ],
       },
       limitedEvent_2: {
         eventType: "限定プログラム",
@@ -79,6 +89,12 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #FF9CFD",
         img: "background-image: url(" + limitedEventImg3 + ")",
+        links: [
+          {
+            name: "▶︎ 情報システム工学科公式HP",
+            url: "https://www.aj.dendai.ac.jp",
+          },
+        ],
       },
       limitedEvent_3: {
         eventType: "限定プログラム",
@@ -89,6 +105,12 @@ export default {
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         subTitleStyle: "color: #45CBE6",
         img: "background-image: url(" + limitedEventImg4 + ")",
+        links: [
+          {
+            name: "▶︎ 情報通信工学科公式HP",
+            url: "http://www.c.dendai.ac.jp",
+          },
+        ],
       },
       limitedEvent_4: {
         eventType: "限定プログラム",
@@ -97,8 +119,14 @@ export default {
         peopleNum: "500名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         img: "background-image: url(" + limitedEventImg1 + ")",
-        carousel_height: "height: 60px",
-        img_height: "background-size: 190px;",
+        carousel_height: "min-height: 60px",
+        img_height: "background-size: cover;",
+        links: [
+          {
+            name: "▶︎ 東京電機大学公式HP",
+            url: "https://www.dendai.ac.jp",
+          },
+        ],
       },
       limitedEvent_5: {
         eventType: "限定プログラム",
@@ -108,8 +136,14 @@ export default {
         peopleNum: "99名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         img: "background-image: url(" + limitedEventImg5 + ")",
-        carousel_height: "height: 60px",
-        img_height: "background-size: 190px;",
+        carousel_height: "min-height: 60px",
+        img_height: "background-size: cover;",
+        links: [
+          {
+            name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",
+            url: "https://www.dendai.ac.jp/prospective-students/",
+          },
+        ],
       },
       limitedEvent_6: {
         eventType: "限定プログラム",
@@ -119,8 +153,14 @@ export default {
         peopleNum: "297名",
         info: "説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明",
         img: "background-image: url(" + limitedEventImg6 + ")",
-        carousel_height: "height: 60px",
-        img_height: "background-size: 190px;",
+        carousel_height: "min-height: 60px",
+        img_height: "background-size: cover;",
+        links: [
+          {
+            name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",
+            url: "https://www.dendai.ac.jp/prospective-students/",
+          },
+        ],
       },
     },
     timeSchedule: {

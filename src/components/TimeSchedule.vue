@@ -4,6 +4,7 @@
       <TimeScheduleDialog
         :eventData="clickedEventData"
         :eventKey="clickedEventKey"
+        :eventTime="clickedEventTime"
         @close-dialog="isDialogVisible = false"
       />
     </v-dialog>
@@ -30,6 +31,7 @@
                   :style="value.img"
                   @click="openDialog(value, key)"
                 >
+                  <div></div>
                   <span class="zen-kaku-medium" :style="value.fontsize">
                     {{ value.title }}
                   </span>
@@ -72,7 +74,7 @@
                   v-for="timeSchedule in this.timeScheduleData"
                   :key="timeSchedule"
                 >
-                  <div style="padding-bottom: 46px">
+                  <div style="padding-bottom: 53px">
                     <Carousel
                       :itemsToShow="2.4"
                       snapAlign="start"
@@ -199,24 +201,27 @@ export default {
   width: 100vw;
 }
 
+.carousel__slide {
+  margin: 3px;
+}
+
 .carousel__item {
+  background-size: cover;
+  background-position: center center;
   min-height: 52px;
   width: 100%;
-  background-color: gainsboro;
   color: white;
-  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
   vertical-align: top;
-
-  background-size: 144px;
-  background-position: center center;
+  /* border-radius: 3px; */
 }
 
 .carousel__slide {
-  padding: 3px;
+  margin: 0 0.1em;
 }
+
 #timeline .carousel__slide {
   align-items: baseline;
 }

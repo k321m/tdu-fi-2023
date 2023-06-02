@@ -7,9 +7,13 @@
       :transition="2500"
       :autoplay="5000"
     >
-      <Slide v-for="slide in contents" :key="slide">
-        <div class="carousel__item">
-          <div class="text-box pa-2">
+      <Slide
+        v-for="slide in contents"
+        :key="slide"
+        @click="clickedEvent(slide.to)"
+      >
+        <div class="carousel__item carousel_image" :style="slide.img">
+          <div class="text-box pr-3 pb-2">
             <p class="jp-text">{{ slide.jptext }}</p>
             <p class="text py-1">{{ slide.text }}</p>
           </div>
@@ -24,6 +28,11 @@
 
 <script>
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import MenuImg01 from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import MenuImg02 from "/src/assets/lectures/インタラクティブメディアとデザイン.svg";
+import MenuImg03 from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import MenuImg04 from "/src/assets/labs/ビジュアルコンピューティング.svg";
+
 import "vue3-carousel/dist/carousel.css";
 export default {
   name: "TopCarousel",
@@ -33,6 +42,26 @@ export default {
         {
           text: "Laboratory",
           jptext: "研究室展示",
+          img: "background-image: url(" + MenuImg01 + ")",
+          to: "/labs",
+        },
+        {
+          text: "Lecture",
+          jptext: "講義動画",
+          img: "background-image: url(" + MenuImg02 + ")",
+          to: "/lecture-video",
+        },
+        {
+          text: "Questions",
+          jptext: "具体的な質問例",
+          img: "background-image: url(" + MenuImg03 + ")",
+          to: "/questions",
+        },
+        {
+          text: "MyNote",
+          jptext: "マイノート",
+          img: "background-image: url(" + MenuImg04 + ")",
+          to: "/my-note",
         },
       ],
     };
@@ -41,6 +70,11 @@ export default {
     Carousel,
     Slide,
     Pagination,
+  },
+  methods: {
+    clickedEvent(to) {
+      this.$router.push(to);
+    },
   },
 };
 </script>
@@ -69,20 +103,45 @@ p.text {
   letter-spacing: -0.03em;
 }
 
-.carousel__item {
-  min-height: 220px;
+#top-carousel .carousel__viewport {
+  min-height: 245px;
+}
+/* min-height: 220px; */
+/* min-height: 30vh; */
+.carousel__item,
+.carousel__item.carousel_image {
+  position: relative;
+  height: auto;
   width: 100%;
-  background-color: gainsboro;
-  color: black;
+  color: white;
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0px 4px 3px #a5a5a5);
+}
+.carousel__item.carousel_image,
+.carousel__item.carousel_image::after {
+  z-index: -1;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.carousel__item.carousel_image::after {
+  content: "";
+  background: transparent
+    linear-gradient(0deg, #010326 0%, #a571d92f 100%, #55566e4e 100%) 0% 0%
+    no-repeat padding-box;
+  opacity: 0.8;
 }
 .carousel__slide {
-  padding: 4px;
+  padding: 6.5em;
 }
 
 .carousel__prev,
@@ -119,6 +178,7 @@ p.text {
 .carousel__slide--active {
   opacity: 1;
   transform-origin: bottom;
+  filter: drop-shadow(0px 4px 3px #a5a5a5);
   transform: rotateY(0) scale(1.1, 1);
 }
 </style>

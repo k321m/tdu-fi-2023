@@ -10,21 +10,27 @@
     </MyNoteDeleteDialog>
   </v-dialog>
   <div class="accordion">
-    <div class="title-box">
-      <div style="display: flex">
+    <div
+      class="title-box"
+      :class="{ 'opened-border-radius': isOpen }"
+      @click="isOpen = !isOpen"
+    >
+      <div class="text-area">
         <p
           class="zen-kaku-medium pb-1"
-          style="font-size: 1.5em; line-height: 0"
+          style="font-size: 1.5em; line-height: 1em"
         >
           Q
         </p>
-      </div>
-      <div class="question-box pl-3">
-        <span class="zen-kaku-medium question">
+        <p
+          class="pl-3 pr-3 zen-kaku-medium"
+          style="line-height: 1.3em; padding-top: 0.2em"
+          :class="{ 'text-ellipsis': !isOpen }"
+        >
           {{ questionValue.question }}
-        </span>
+        </p>
       </div>
-      <div class="pulldown-button pa-1" @click="isOpen = !isOpen">
+      <div class="pulldown-button py-1">
         <img
           :class="openAcordionStyleSet()"
           src="../assets/pulldown-button-down.svg"
@@ -35,14 +41,26 @@
       <div class="accordion-content pb-4" v-if="isOpen">
         <div name="content">
           <div>
-            <p class="zen-kaku-bold py-3">メモ</p>
+            <div class="pb-1" style="display: flex; align-items: flex-end">
+              <p class="zen-kaku-bold py-3">メモ</p>
+              <v-icon
+                style="
+                  margin: 0 0 0 auto;
+                  padding-right: 0.4rem;
+                  font-size: 1rem;
+                  color: #010326;
+                "
+                @click="copyMemoToClipboard"
+                >mdi-clipboard-multiple</v-icon
+              >
+            </div>
             <textarea
               @blur="saveMemo()"
               placeholder="重要なことはメモに残そう！"
               v-model="memo"
             ></textarea>
           </div>
-          <div class="py-5">
+          <div class="pt-5">
             <div
               class="default-border-btn btn-animation"
               @click="openDeleteDialog"
@@ -93,12 +111,14 @@ export default {
         key: this.questionKey,
       });
     },
-
     openAcordionStyleSet() {
       return {
         openAcordionbutton: this.isOpen,
         closeAcordionbutton: !this.isOpen,
       };
+    },
+    copyMemoToClipboard() {
+      navigator.clipboard.writeText(this.memo);
     },
   },
   mounted() {
@@ -110,16 +130,31 @@ export default {
 <style scoped>
 .accordion {
   max-width: 100%;
-  margin: 10px auto;
+  margin: 0.5em auto;
+}
+.text-area {
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.text-ellipsis {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .title-box {
-  min-height: 64px;
-  padding: 16px;
+  min-height: 1em;
+  padding: 1em;
   background-color: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: center;
+  border-radius: 0.3em;
+}
+.opened-border-radius {
+  border-radius: 0.3em 0.3em 0 0 !important;
 }
 
 .pulldown-button {
@@ -127,8 +162,8 @@ export default {
 }
 .accordion-content {
   background-color: #ffffff;
-  padding: 0 15px;
-  margin-bottom: 10px;
+  padding: 0.5em 1em 1.4em 1em;
+  border-radius: 0 0 0.3em 0.3em;
 }
 @keyframes open {
   0% {
@@ -150,17 +185,6 @@ export default {
 .openAcordionbutton {
   transform: scaleY(-1);
 }
-
-/* .question-box {
-  width: 100%;
-}
-
-.question {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-} */
-
 textarea {
   padding: 10px;
   width: 100%;

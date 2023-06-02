@@ -38,12 +38,12 @@
           <h1 class="zen-kaku-bold">研究室公開</h1>
         </div>
       </router-link>
-      <router-link class="routerLink" to="/">
+      <router-link class="routerLink" to="/lecture-video">
         <div class="py-5">
           <h1 class="zen-kaku-bold">講義動画</h1>
         </div>
       </router-link>
-      <router-link class="routerLink" to="/">
+      <router-link class="routerLink" to="/questions">
         <div class="py-5">
           <h1 class="zen-kaku-bold">具体的な質問例</h1>
         </div>
@@ -66,7 +66,7 @@
             <img :src="twitter" />
           </div>
           <div class="px-6">
-            <!-- <img :src="youtube" /> -->
+            <img src="../assets/icon-mov.svg" />
           </div>
         </div>
       </div>
