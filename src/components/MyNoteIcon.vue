@@ -2,7 +2,7 @@
   <transition :name="doneMyNoteTutorial ? 'fade' : ''">
     <div class="arrow_box" v-if="isArrowVisible">
       <div class="text-box">
-        <p class="zen-kaku-h5-bold">
+        <p class="zen-kaku-h5-bold" style="text-align: center">
           やりたいことや聞いたことは<br />MyNoteに保存しよう！
         </p>
       </div>
@@ -88,7 +88,7 @@ export default {
 
 .text-box {
   position: absolute;
-  width: 170%;
+  width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
