@@ -17,6 +17,10 @@ body {
 }
 
 /* フォント */
+p {
+  text-align: justify;
+  word-break: break-all;
+}
 .hack-h1 {
   font-family: "hack", sans-serif;
   font-weight: 700;

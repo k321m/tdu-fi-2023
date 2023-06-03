@@ -63,6 +63,7 @@ export default {
 }
 .lecture-title {
   font-size: 1.6em;
+  text-align: start;
 }
 /* アイコンと要素を上下中央揃えかつinline-blockで改行 */
 .lab-professor-place {

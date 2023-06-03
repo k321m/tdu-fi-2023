@@ -91,6 +91,7 @@ export default {
 }
 .lab-title {
   font-size: 1.8em;
+  text-align: start;
 }
 
 .scroll-contents {
