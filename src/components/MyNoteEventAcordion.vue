@@ -21,11 +21,11 @@
         </div>
         <div
           class="pl-3 pr-3 zen-kaku-medium"
-          style="line-height: 1.3em; padding-top: 0.3em"
+          style="line-height: 1.3em; padding-top: 0.2em"
           @click="isOpen = !isOpen"
           :class="{ 'text-ellipsis': !isOpen }"
         >
-          <span v-if="eventValue.subTitle != null" class="pr-2">{{
+          <span v-if="eventValue.subTitle != null" class="pr-1">{{
             eventValue.subTitle
           }}</span>
           <span>{{ eventValue.title }}</span>
@@ -222,13 +222,13 @@ export default {
   border-radius: 0.3em 0.3em 0 0 !important;
 }
 .checkbox {
-  width: 30px;
-  height: 30px;
+  width: 1.8em;
+  height: 1.8em;
   border: solid 1px #d3d1ff;
 }
 .checkedbox {
-  width: 30px;
-  height: 30px;
+  width: 1.8em;
+  height: 1.8em;
   background-image: url(../assets/checkbox.svg);
 }
 
@@ -291,7 +291,11 @@ textarea {
   border: 1px solid #acaaf2;
   overflow: scroll;
 }
-
+textarea:focus {
+  border: 1px solid #010440;
+  background-color: white;
+  outline: none;
+}
 ::placeholder {
   font-family: zen-kaku-gothic-new, sans-serif;
   font-weight: 400;

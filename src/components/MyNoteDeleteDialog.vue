@@ -1,9 +1,9 @@
 <template>
   <div class="background-dialog pa-7">
-    <p class="zen-kaku-bold" style="font-size: 1.8em">
+    <p class="zen-kaku-bold" style="font-size: 1.6em">
       <slot name="type"></slot>を削除する
     </p>
-    <div class="pt-10">
+    <div class="pt-8">
       <p class="zen-kaku-medium">
         この操作は取り消せません。 <br />削除すると<slot
           name="message-plane"
@@ -53,12 +53,12 @@ export default {
 
 <style scoped>
 .background-dialog {
-  min-height: 350px;
+  max-height: 90dvh;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.8rem;
 }
 .delete-data-box {
-  min-height: 110px;
+  min-height: 8rem;
   display: flex;
   align-items: center;
   justify-content: center;

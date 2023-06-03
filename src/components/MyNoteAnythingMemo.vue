@@ -40,10 +40,16 @@ export default {
 textarea {
   padding: 10px;
   width: 100%;
-  min-height: 200px;
+  min-height: 12em;
   border: 1px solid #acaaf2;
   background-color: white;
   overflow: scroll;
+}
+
+textarea:focus {
+  border: 1px solid #010440;
+  background-color: white;
+  outline: none;
 }
 
 ::placeholder {

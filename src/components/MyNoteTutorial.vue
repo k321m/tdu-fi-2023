@@ -1,23 +1,28 @@
 <template>
   <div class="background-dialog pa-5">
     <div style="display: flex">
-      <div style="margin: 0 0 0 auto" @click="closeTutorial">
+      <div class="pa-2" style="margin: 0 0 0 auto" @click="closeTutorial">
         <p class="zen-kaku-bold">スキップ</p>
       </div>
     </div>
-    <div class="py-5">
+    <div style="display: flex; flex-grow: 1; align-items: center">
       <Carousel
         ref="carousel"
         snapAlign="start"
         @slide-start="handleSlideStart"
+        style="width: 100%; height: 100%"
       >
         <Slide v-for="tutolial in tutorialData" :key="tutolial">
           <div class="carousel__item">
             <div class="img">
               <img :src="tutolial.src" />
             </div>
-            <div class="pt-10">
-              <span class="zen-kaku-medium" v-html="tutolial.text"></span>
+            <div class="mb-5">
+              <span
+                class="zen-kaku-medium"
+                style="font-size: 0.9rem"
+                v-html="tutolial.text"
+              ></span>
             </div>
           </div>
         </Slide>
@@ -28,9 +33,12 @@
         </template>
       </Carousel>
     </div>
-    <div class="pt-5">
-      <div class="default-btn" @click="nextCarousel()">
-        <p class="zen-kaku-bold" v-if="isLastCarouse">とじる</p>
+    <div class="py-5">
+      <div
+        :class="isLastCarouse ? 'myNote-btn' : 'default-btn'"
+        @click="nextCarousel()"
+      >
+        <p class="zen-kaku-bold" v-if="isLastCarouse">MyNoteをはじめる</p>
         <p class="zen-kaku-bold" v-else>次へ</p>
       </div>
     </div>
@@ -102,20 +110,28 @@ export default {
 
 <style scoped>
 .background-dialog {
-  height: 688px;
+  min-height: 88dvh;
+  max-height: 90dvh;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
 }
 .carousel__item {
-  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 90%;
   background-color: white;
-  border-radius: 10px;
 }
 
 .img {
-  padding-top: 100px;
-  width: 100%;
-  min-height: 270px;
+  height: 30dvh;
+  margin: 2rem 0;
+}
+img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
 }
 </style>

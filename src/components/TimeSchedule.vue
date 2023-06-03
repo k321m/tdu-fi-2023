@@ -194,8 +194,8 @@ export default {
   overflow: visible;
   background-color: white;
   z-index: -1; /*描画を一番下に*/
-  width: calc(100% - 24px);
-  border-radius: 0px 30px 30px 0px;
+  width: calc(100% - 1.4em);
+  border-radius: 0 0.8rem 0.8rem 0;
 }
 .time-schedule {
   width: 100vw;

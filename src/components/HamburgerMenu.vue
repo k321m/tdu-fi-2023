@@ -89,7 +89,6 @@
 import iconWeb from "../assets/icon-web.svg";
 import iconFacebook from "../assets/icon-facebook.svg";
 import iconTwitter from "../assets/icon-twitter.svg";
-// import iconYoutube from "../assets/icon-youtube.svg";
 export default {
   name: "HamburgerMenu",
   emti: ["close-hamburger-menu"],
@@ -99,7 +98,6 @@ export default {
       web: iconWeb,
       facebook: iconFacebook,
       twitter: iconTwitter,
-      // youtube: iconYoutube,
     };
   },
   methods: {

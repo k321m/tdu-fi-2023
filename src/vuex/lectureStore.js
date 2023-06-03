@@ -28,7 +28,7 @@ export default {
         ],
         img: "background-image: url(" + lectureImg1 + ")",
         video:
-          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/O9LH8l20j0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+          '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/O9LH8l20j0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_2: {
         cardTitle: "インタラクティブメディア\nとデザイン",
@@ -49,7 +49,7 @@ export default {
         ],
         img: "background-image: url(" + lectureImg2 + ")",
         video:
-          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/Ez9wRBnN8U0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+          '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/Ez9wRBnN8U0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_3: {
         cardTitle: "データペースプログラミング演習",
@@ -70,7 +70,7 @@ export default {
         ],
         img: "background-image: url(" + lectureImg3 + ")",
         video:
-          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/CVE7cIjXaFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+          '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/CVE7cIjXaFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_4: {
         cardTitle: "コンピュータプログラミングⅠ・II",
@@ -91,7 +91,7 @@ export default {
         ],
         img: "background-image: url(" + lectureImg4 + ")",
         video:
-          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/ahl2cBoKmp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+          '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/ahl2cBoKmp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_5: {
         cardTitle: "CGモデリングおよび演習",
@@ -120,7 +120,7 @@ export default {
         ],
         img: "background-image: url(" + lectureImg5 + ")",
         video:
-          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/zQoGV9dGmac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+          '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/zQoGV9dGmac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_6: {
         cardTitle: "CGレンダリングおよび演習",
@@ -149,7 +149,7 @@ export default {
         ],
         img: "background-image: url(" + lectureImg6 + ")",
         video:
-          '<iframe width="auto" height="auto" src="https://www.youtube-nocookie.com/embed/U0LuPqCInJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+          '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/U0LuPqCInJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
     },
   },

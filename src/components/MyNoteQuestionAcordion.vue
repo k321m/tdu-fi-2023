@@ -186,12 +186,17 @@ export default {
   transform: scaleY(-1);
 }
 textarea {
-  padding: 10px;
+  padding: 1rem;
   width: 100%;
-  min-height: 200px;
+  min-height: 12em;
   border: 1px solid #acaaf2;
   background-color: white;
   overflow: scroll;
+}
+textarea:focus {
+  border: 1px solid #010440;
+  background-color: white;
+  outline: none;
 }
 .contents > div {
   display: flex;
@@ -203,7 +208,7 @@ textarea {
   font-weight: 400;
   font-style: normal;
   line-height: 1.3;
-  font-size: 14px;
+  font-size: 1rem;
   color: #d3d1ff;
 }
 </style>

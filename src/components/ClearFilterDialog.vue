@@ -75,19 +75,19 @@ export default {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  max-height: 42dvh;
+  max-height: 60dvh;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.8rem;
   padding-bottom: 6rem;
 }
 
 .background-dialog.message {
-  height: 40vh;
+  height: 40dvh;
   flex-direction: column;
   justify-content: center;
 }
 .background-dialog.clear {
-  height: 60vh;
+  height: 60dvh;
 }
 .lab-title {
   font-size: 1.8em;

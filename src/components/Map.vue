@@ -77,9 +77,9 @@ export default {
   background-color: white;
   background-size: cover;
   z-index: 0;
-  width: calc(100% - 24px);
-  border-radius: 30px 0px 0px 30px;
-  left: 24px;
+  width: calc(100% - 1.4em);
+  border-radius: 0.8rem 0 0 0.8rem;
+  left: 1.4em;
 }
 .map {
   margin: 0 0 0 -24px;
@@ -87,7 +87,7 @@ export default {
 
 #card {
   z-index: 0;
-  height: 15em;
+  height: 14em;
   display: flex;
   max-height: 100%;
   max-width: 100%;

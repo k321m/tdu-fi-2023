@@ -125,7 +125,7 @@ p.text {
   width: 100%;
   color: white;
   font-size: 20px;
-  border-radius: 3px;
+  border-radius: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,7 +133,7 @@ p.text {
 .carousel__item.carousel_image,
 .carousel__item.carousel_image::after {
   z-index: -1;
-  border-radius: 3px;
+  border-radius: 0.2rem;
   position: absolute;
   top: 0;
   left: 0;

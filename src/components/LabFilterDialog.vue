@@ -186,10 +186,10 @@ input[type="checkbox"]:checked + .checkbox-label:before {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  height: 90dvh;
-  max-height: calc(90dvh - 9em);
+  min-height: 88dvh;
+  max-height: 90dvh;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.8rem;
   padding-bottom: 8rem;
 }
 .lab-title {

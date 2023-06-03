@@ -89,14 +89,14 @@ export default {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  height: 88dvh;
-  max-height: calc(90dvh - 2em);
+  min-height: 88dvh;
+  max-height: 90dvh;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.8rem;
   padding-bottom: 10rem;
 }
 .lab-title {
-  font-size: 1.8em;
+  font-size: 1.6em;
 }
 /* アイコンと要素を上下中央揃えかつinline-blockで改行 */
 .lab-professor-place {

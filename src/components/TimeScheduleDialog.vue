@@ -16,10 +16,14 @@
       <p class="zen-kaku-bold pb-2" style="color: #360a73" v-else>
         {{ eventData.eventType }}
       </p>
-      <p class="zen-kaku-h2 pb-1" v-if="eventData.subTitle">
+      <p
+        class="zen-kaku-h2 pb-1"
+        style="font-size: 1.8em"
+        v-if="eventData.subTitle"
+      >
         {{ eventData.subTitle }}
       </p>
-      <p class="zen-kaku-h2">{{ eventData.title }}</p>
+      <p class="zen-kaku-h2" style="font-size: 1.8em">{{ eventData.title }}</p>
     </div>
 
     <div class="contents pb-4">
@@ -86,10 +90,10 @@ export default {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  height: 88dvh;
-  max-height: calc(90dvh - 2em);
+  min-height: 88dvh;
+  max-height: 90dvh;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0.8rem;
   padding-bottom: 10rem;
 }
 
