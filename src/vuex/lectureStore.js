@@ -10,6 +10,22 @@ export default {
   state: {
     lecture: {
       lecture_1: {
+        cardTitle: "情報メディア学科\nカリキュラム紹介",
+        mordalTitle: "情報メディア学科\nカリキュラム紹介",
+        year_of_enrollment: "",
+        professor: [],
+        info: "情報メディア学科では、ITサービスを研究・開発するために必要とされるコンピュータサイエンスと、多様性の時代に求められる創造力、表現力、感性を養うデジタルメディア技術について学ぶことができます。この動画では、情報メディア学科のカリキュラムの特色と、卒業後の進路に関して、井ノ上 寛人助教から受験生へのメッセージを聞くことができます（この動画は、現在、電大YouTubeキャンパスに公開されていません）。",
+        links: [
+          {
+            name: "▶︎ 井ノ上寛人助教（情報メディア学科公式HP）",
+            url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
+          },
+        ],
+        img: "background-image: url(" + lectureImg1 + ")",
+        video:
+          '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/O9LH8l20j0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+      },
+      lecture_2: {
         cardTitle: "情報メディア学基礎",
         mordalTitle: "情報メディア学基礎",
         year_of_enrollment: "学部1年次科目",
@@ -30,7 +46,7 @@ export default {
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/O9LH8l20j0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
-      lecture_2: {
+      lecture_3: {
         cardTitle: "インタラクティブメディア\nとデザイン",
         mordalTitle: "インタラクティブメディアとデザイン",
         year_of_enrollment: "学部3年次科目",
@@ -51,7 +67,7 @@ export default {
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/Ez9wRBnN8U0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
-      lecture_3: {
+      lecture_4: {
         cardTitle: "データペースプログラミング演習",
         mordalTitle: "データペースプログラミング演習",
         year_of_enrollment: "学部3年次科目",
@@ -72,7 +88,7 @@ export default {
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/CVE7cIjXaFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
-      lecture_4: {
+      lecture_5: {
         cardTitle: "コンピュータプログラミングⅠ・II",
         mordalTitle: "コンピュータプログラミングⅠ・II",
         year_of_enrollment: "学部1年次科目",
@@ -93,7 +109,7 @@ export default {
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/ahl2cBoKmp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
-      lecture_5: {
+      lecture_6: {
         cardTitle: "CGモデリングおよび演習",
         mordalTitle: "CGモデリングおよび演習",
         year_of_enrollment: "学部3年次科目",
@@ -122,7 +138,7 @@ export default {
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/zQoGV9dGmac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
-      lecture_6: {
+      lecture_7: {
         cardTitle: "CGレンダリングおよび演習",
         mordalTitle: "CGレンダリングおよび演習",
         year_of_enrollment: "学部3年次科目",
