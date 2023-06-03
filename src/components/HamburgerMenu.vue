@@ -8,7 +8,7 @@
     <div class="pa-5 scroll-contents">
       <div class="py-5">
         <div class="top-box">
-          <router-link class="routerLink" to="/">
+          <router-link class="routerLink" to="/" @click="closeHamburgerMenu">
             <div>
               <h1 class="zen-kaku-bold">トップ</h1>
             </div>
@@ -23,32 +23,48 @@
         </div>
         <transition name="open">
           <div class="pt-6 pl-6" v-if="isOpen">
-            <router-link class="routerLink" to="/#time-schedule">
+            <router-link
+              class="routerLink"
+              to="/#time-schedule"
+              @click="closeHamburgerMenu"
+            >
               <h2 class="zen-kaku-medium py-2">タイムスケジュール</h2>
             </router-link>
-            <router-link class="routerLink" to="/#map">
+            <router-link
+              class="routerLink"
+              to="/#map"
+              @click="closeHamburgerMenu"
+            >
               <h2 class="zen-kaku-medium py-2">地図</h2>
             </router-link>
           </div>
         </transition>
       </div>
 
-      <router-link class="routerLink" to="/labs">
+      <router-link class="routerLink" to="/labs" @click="closeHamburgerMenu">
         <div class="py-5">
           <h1 class="zen-kaku-bold">研究室公開</h1>
         </div>
       </router-link>
-      <router-link class="routerLink" to="/lecture-video">
+      <router-link
+        class="routerLink"
+        to="/lecture-video"
+        @click="closeHamburgerMenu"
+      >
         <div class="py-5">
           <h1 class="zen-kaku-bold">講義動画</h1>
         </div>
       </router-link>
-      <router-link class="routerLink" to="/questions">
+      <router-link
+        class="routerLink"
+        to="/questions"
+        @click="closeHamburgerMenu"
+      >
         <div class="py-5">
           <h1 class="zen-kaku-bold">具体的な質問例</h1>
         </div>
       </router-link>
-      <router-link class="routerLink" to="/my-note">
+      <router-link class="routerLink" to="/my-note" @click="closeHamburgerMenu">
         <div class="py-5">
           <h1 class="zen-kaku-bold">MyNote</h1>
         </div>
