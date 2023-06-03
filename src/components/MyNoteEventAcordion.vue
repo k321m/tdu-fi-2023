@@ -80,7 +80,19 @@
                     color: #010326;
                   "
                   @click="copyMemoToClipboard"
+                  v-if="!isCopied"
                   >mdi-clipboard-multiple</v-icon
+                >
+                <v-icon
+                  style="
+                    margin: 0 0 0 auto;
+                    padding-right: 0.4rem;
+                    font-size: 1rem;
+                    color: #010326;
+                  "
+                  @click="copyMemoToClipboard"
+                  v-else
+                  >mdi-clipboard-check-multiple</v-icon
                 >
               </div>
               <textarea
@@ -131,6 +143,7 @@ export default {
       memo: "",
       isDeleteDialogVisible: false,
       timeScheduleData: {},
+      isCopied: false,
     };
   },
   methods: {
@@ -180,6 +193,7 @@ export default {
       };
     },
     copyMemoToClipboard() {
+      this.isCopied = true;
       navigator.clipboard.writeText(this.memo);
     },
   },

@@ -1,6 +1,30 @@
 <template>
   <div>
-    <p class="zen-kaku-bold py-3">なんでもメモ</p>
+    <div class="pb-1" style="display: flex; align-items: flex-end">
+      <p class="zen-kaku-bold py-3">なんでもメモ</p>
+      <v-icon
+        style="
+          margin: 0 0 0 auto;
+          padding-right: 0.4rem;
+          font-size: 1rem;
+          color: #010326;
+        "
+        @click="copyMemoToClipboard"
+        v-if="!isCopied"
+        >mdi-clipboard-multiple</v-icon
+      >
+      <v-icon
+        style="
+          margin: 0 0 0 auto;
+          padding-right: 0.4rem;
+          font-size: 1rem;
+          color: #010326;
+        "
+        @click="copyMemoToClipboard"
+        v-else
+        >mdi-clipboard-check-multiple</v-icon
+      >
+    </div>
     <textarea
       @blur="saveMemo()"
       placeholder="重要なことはメモに残そう！"
@@ -16,6 +40,7 @@ export default {
     return {
       type: "anything",
       memo: "",
+      isCopied: false,
     };
   },
   methods: {
@@ -28,6 +53,10 @@ export default {
         type: this.type,
         memo: this.memo,
       });
+    },
+    copyMemoToClipboard() {
+      this.isCopied = true;
+      navigator.clipboard.writeText(this.memo);
     },
   },
   mounted() {
