@@ -26,7 +26,7 @@ export default {
       setTimeout(() => {
         context.emit("end-alert");
         isVisible.value = false;
-      }, 1000); // 2秒後にフェードアウト
+      }, 1000); // 1秒後にフェードアウト
     });
 
     onUnmounted(() => {
@@ -43,11 +43,12 @@ export default {
 <style scoped>
 .wrap {
   position: fixed;
-  width: 90dvw;
+  width: 100dvw;
   height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 .background {
   background-color: rgb(0, 0, 0, 0.8);

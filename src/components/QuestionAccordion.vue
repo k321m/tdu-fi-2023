@@ -86,6 +86,7 @@
 export default {
   name: "QuestionAccordion",
   props: ["questionValue", "questionKey"],
+  emits: ["start-alert"],
   data() {
     return {
       type: "questions",
@@ -94,13 +95,13 @@ export default {
   },
   methods: {
     addQuestion() {
+      this.$emit("start-alert");
       this.$store.commit("countAddQuestion");
       this.$store.commit("addMyNote", {
         type: this.type,
         key: this.questionKey,
         question: this.questionValue.ques,
       });
-      window.location.reload();
     },
   },
 };
