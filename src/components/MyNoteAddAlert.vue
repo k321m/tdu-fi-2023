@@ -1,0 +1,67 @@
+<template>
+  <div class="wrap">
+    <Transition name="fade">
+      <div class="background fade-item" v-if="isVisible">
+        <p
+          class="zen-kaku-bold"
+          style="color: white; text-align: center; font-size: 0.8em"
+        >
+          MyNoteに追加しました
+        </p>
+      </div>
+    </Transition>
+  </div>
+</template>
+
+<script>
+import { ref, onMounted, onUnmounted } from "vue";
+export default {
+  name: "MyNoteAddAlert",
+  emits: ["end-alert"],
+  setup(_, context) {
+    const isVisible = ref(false);
+
+    onMounted(() => {
+      isVisible.value = true;
+      setTimeout(() => {
+        context.emit("end-alert");
+        isVisible.value = false;
+      }, 1000); // 2秒後にフェードアウト
+    });
+
+    onUnmounted(() => {
+      clearTimeout();
+    });
+
+    return {
+      isVisible,
+    };
+  },
+};
+</script>
+
+<style scoped>
+.wrap {
+  position: fixed;
+  width: 90dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background {
+  background-color: rgb(0, 0, 0, 0.8);
+  border-radius: 100vh;
+  padding: 0.8rem 2rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

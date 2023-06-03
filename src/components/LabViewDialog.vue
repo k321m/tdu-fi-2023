@@ -1,4 +1,5 @@
 <template>
+  <MyNoteAddAlert v-if="isViewAlert" @end-alert="isViewAlert = false" />
   <div class="background-dialog pa-5">
     <!-- ×ボタン -->
     <div style="display: flex" @click="$emit('close-dialog')">
@@ -65,17 +66,23 @@
 </template>
 
 <script>
+import MyNoteAddAlert from "./MyNoteAddAlert.vue";
 export default {
   name: "LabViewDialog",
   props: ["labData", "labKey"],
   emits: ["close-dialog"],
   data() {
     return {
+      isViewAlert: false,
       type: "events",
     };
   },
+  components: {
+    MyNoteAddAlert,
+  },
   methods: {
     myNoteBtnClicked() {
+      this.isViewAlert = true;
       this.$store.commit("addMyNote", {
         type: this.type,
         key: this.labKey,
@@ -128,10 +135,7 @@ export default {
 }
 
 .footer{
-  /* position: absolute; */
-  /* bottom: 0px; */
   width: 100%;
-  /* padding-bottom: 2rem; */
 }
 
 .button-group{

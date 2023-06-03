@@ -55,7 +55,7 @@ export default {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  min-height: 88dvh;
+  min-height: 75dvh;
   max-height: 90dvh;
   background-color: white;
   border-radius: 0.8rem;

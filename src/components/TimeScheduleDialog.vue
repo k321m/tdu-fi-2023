@@ -1,4 +1,5 @@
 <template>
+  <MyNoteAddAlert v-if="isViewAlert" @end-alert="isViewAlert = false" />
   <div class="background-dialog px-5 pt-5">
     <div style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
@@ -66,17 +67,23 @@
 </template>
 
 <script>
+import MyNoteAddAlert from "./MyNoteAddAlert.vue";
 export default {
   name: "TimeScheduleDialog",
   props: ["eventData", "eventKey", "eventTime"],
   emits: ["close-dialog"],
   data() {
     return {
+      isViewAlert: false,
       type: "events",
     };
   },
+  components: {
+    MyNoteAddAlert,
+  },
   methods: {
     myNoteBtnClicked() {
+      this.isViewAlert = true;
       this.$store.commit("addMyNote", {
         type: this.type,
         key: this.eventKey,
