@@ -61,7 +61,6 @@ export default {
   name: "ClearFilterDialog",
   props: ["currentFilteredTags"],
   emits: ["close-dialog", "update-filtered"],
-  data() {},
   methods: {
     clearFilterTags() {
       this.$emit("close-dialog");
@@ -90,7 +89,7 @@ export default {
   height: 60dvh;
 }
 .lab-title {
-  font-size: 1.8em;
+  font-size: 1.6em;
   text-align: start;
 }
 

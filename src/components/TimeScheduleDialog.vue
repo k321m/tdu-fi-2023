@@ -7,7 +7,7 @@
     </div>
     <div class="pb-4">
       <p
-        class="zen-kaku-bold pb-2"
+        class="zen-kaku-bold pb-3"
         style="color: #e345e6"
         v-if="eventData.eventType == '限定プログラム'"
       >
@@ -17,13 +17,13 @@
         {{ eventData.eventType }}
       </p>
       <p
-        class="zen-kaku-h2 pb-1"
-        style="font-size: 1.8em"
+        class="zen-kaku-h2 pb-2"
+        style="font-size: 1.7em"
         v-if="eventData.subTitle"
       >
         {{ eventData.subTitle }}
       </p>
-      <p class="zen-kaku-h2" style="font-size: 1.8em">{{ eventData.title }}</p>
+      <p class="zen-kaku-h2" style="font-size: 1.7em">{{ eventData.title }}</p>
     </div>
 
     <div class="contents pb-4">

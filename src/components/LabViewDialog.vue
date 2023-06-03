@@ -145,5 +145,6 @@ export default {
 a{
   text-decoration:none;
   color: #010326;
+  word-break: break-all;
 }
 </style>

@@ -193,7 +193,7 @@ input[type="checkbox"]:checked + .checkbox-label:before {
   padding-bottom: 8rem;
 }
 .lab-title {
-  font-size: 1.8em;
+  font-size: 1.6em;
   text-align: start;
 }
 /* アイコンと要素を上下中央揃えかつinline-blockで改行 */
