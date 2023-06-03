@@ -1,5 +1,5 @@
 <template>
-  <div class="background-dialog px-5 pt-5">
+  <div class="background-dialog pa-5">
     <!-- ×ボタン -->
     <div style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
@@ -48,9 +48,8 @@
         <p>{{ labData.placeOfEmployment.join("、") }}</p>
       </div>
     </div>
-  </div>
-  <!-- ボタン -->
-  <div class="footer px-5">
+    <!-- ボタン -->
+    <div class="footer mt-6">
     <div class="button-group pb-2">
       <button class="default-btn btn-animation zen-kaku-bold">地図を確認</button>
       <button class="myNote-btn btn-animation zen-kaku-bold" @click="myNoteBtnClicked">MyNoteに追加</button>
@@ -59,6 +58,8 @@
       <a style="font-size: 0.8em;" :href="linkData['url']">{{ linkData['name'] }}</a>
     </div>
   </div>
+  </div>
+  
   
   
 </template>
@@ -127,10 +128,10 @@ export default {
 }
 
 .footer{
-  position: absolute;
-  bottom: 0px;
+  /* position: absolute; */
+  /* bottom: 0px; */
   width: 100%;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
 }
 
 .button-group{
