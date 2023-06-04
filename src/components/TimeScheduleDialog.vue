@@ -87,6 +87,7 @@ export default {
       this.$store.commit("addMyNote", {
         type: this.type,
         key: this.eventKey,
+        title: this.eventData.subTitle + " " + this.eventData.title,
       });
     },
   },

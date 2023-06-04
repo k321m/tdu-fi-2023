@@ -22,13 +22,17 @@
         />
       </div>
       <div class="pt-2">
-        <MyNoteAnythingMemo />
+        <MyNoteAnythingMemo ref="anyMemoRef" />
       </div>
       <div class="pt-10">
         <MyNoteDownloadButton />
-        <MyNoteAllDeleteButton />
+        <MyNoteAllDeleteButton @delete-data="$refs.anyMemoRef.clearMemo()" />
       </div>
     </div>
+    <MyNoteExportView
+      :eventDetailData="changedMyNoteDetailData.events"
+      :questionDetailData="changedMyNoteDetailData.questions"
+    />
   </div>
 </template>
 
@@ -40,6 +44,7 @@ import MyNoteAnythingMemo from "../components/MyNoteAnythingMemo.vue";
 import MyNoteAllDeleteButton from "../components/MyNoteAllDeleteButton.vue";
 import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
+import MyNoteExportView from "../components/MyNoteExportView.vue";
 export default {
   name: "MyNote",
   components: {
@@ -50,6 +55,7 @@ export default {
     MyNoteDownloadButton,
     MyNoteAllDeleteButton,
     MyNoteTutorial,
+    MyNoteExportView,
   },
   data() {
     return {
