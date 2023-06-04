@@ -25,14 +25,14 @@
         <MyNoteAnythingMemo ref="anyMemoRef" />
       </div>
       <div class="pt-10">
-        <MyNoteDownloadButton />
+        <MyNoteDownloadButton @click="downloadPDF" />
         <MyNoteAllDeleteButton @delete-data="$refs.anyMemoRef.clearMemo()" />
       </div>
     </div>
-    <MyNoteExportView
+    <!-- <MyNoteExportView
       :eventDetailData="changedMyNoteDetailData.events"
       :questionDetailData="changedMyNoteDetailData.questions"
-    />
+    /> -->
   </div>
 </template>
 
@@ -45,6 +45,26 @@ import MyNoteAllDeleteButton from "../components/MyNoteAllDeleteButton.vue";
 import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
 import MyNoteExportView from "../components/MyNoteExportView.vue";
+import pdfMake from "pdfmake/build/pdfmake";
+
+pdfMake.fonts = {
+  mplus: {
+    normal: "MPLUS1-VariableFont_wght.ttf",
+    bold: "MPLUS1-VariableFont_wght.ttf",
+  },
+};
+var docDefinition = {
+  pageSize: "A4", // PDF用紙サイズ設定
+  pageMargins: [10, 10, 10, 30], // PDF用紙マージン設定[左、上、右、下]
+  content: [
+    // ドキュメントのコンテンツを指定します
+    "This is a standard paragraph, using default style 日本語は正しく表示されるかわからない",
+  ],
+  defaultStyle: {
+    font: "mplus", // 使用したいフォント名を指定します
+  },
+};
+
 export default {
   name: "MyNote",
   components: {
@@ -71,9 +91,14 @@ export default {
       return myNoteDetailData;
     },
   },
+  methods: {
+    downloadPDF() {
+      pdfMake.createPdf(docDefinition).open();
+    },
+  },
   mounted() {
     this.myNoteDetailData = this.$store.getters.getMyNoteDetailData;
-    console.log(this.myNoteDetailData);
+    // console.log(this.myNoteDetailData);
   },
 };
 </script>

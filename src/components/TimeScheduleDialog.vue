@@ -83,11 +83,17 @@ export default {
   },
   methods: {
     myNoteBtnClicked() {
+      let addTitle = "";
+      if (this.eventData.subTitle == null) {
+        addTitle = this.eventData.title;
+      } else {
+        addTitle = this.eventData.subTitle + " " + this.eventData.title;
+      }
       this.isViewAlert = true;
       this.$store.commit("addMyNote", {
         type: this.type,
         key: this.eventKey,
-        title: this.eventData.subTitle + " " + this.eventData.title,
+        title: addTitle,
       });
     },
   },
