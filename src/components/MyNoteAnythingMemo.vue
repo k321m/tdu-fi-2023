@@ -57,6 +57,9 @@ export default {
     copyMemoToClipboard() {
       this.isCopied = true;
       navigator.clipboard.writeText(this.memo);
+      setTimeout(() => {
+        this.isCopied = false;
+      }, 3000);
     },
     clearMemo() {
       this.memo = "";

@@ -10,12 +10,18 @@
     </MyNoteDeleteDialog>
   </v-dialog>
   <div class="py-1">
-    <div
-      class="pink-border-btn"
+    <p
       @click="isDeleteDialogVisible = !isDeleteDialogVisible"
+      class="zen-kaku-bold"
+      style="
+        font-size: 0.8em;
+        color: #e345e6;
+        text-align: center;
+        text-decoration: underline;
+      "
     >
-      <p class="zen-kaku-bold">MyNoteのデータを削除</p>
-    </div>
+      データを削除
+    </p>
   </div>
 </template>
 

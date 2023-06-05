@@ -73,7 +73,7 @@ export default {
     addContent(content, title, data) {
       content.push({
         text: title,
-        fontSize: 24,
+        fontSize: 20,
         bold: true,
         margin: [0, 16, 0, 8],
       });
@@ -112,7 +112,7 @@ export default {
       // なんでもメモ
       content.push({
         text: "なんでもメモ",
-        fontSize: 24,
+        fontSize: 20,
         bold: true,
         margin: [0, 16, 0, 8],
       });
