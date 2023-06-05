@@ -2,7 +2,7 @@
   <div class="background">
     <div class="pb-4">
       <h2 class="pb-3">イベントメモ</h2>
-      <div v-for="data in mynoteData['events']">
+      <div v-for="data in eventsData">
         <div class="pb-2">
           <h3>{{ data.title }}</h3>
           <p v-if="data.memo != ''">{{ data.memo }}</p>
@@ -12,7 +12,7 @@
     </div>
     <div class="pb-4">
       <h2 class="pb-3">Q&Aメモ</h2>
-      <div v-for="data in mynoteData['questions']">
+      <div v-for="data in quesData">
         <div class="pb-2">
           <h3>{{ data.question }}</h3>
           <p v-if="data.memo != ''">{{ data.memo }}</p>
@@ -23,25 +23,16 @@
     <div class="pb-4">
       <h2 class="pb-3">なんでもメモ</h2>
       <div class="pb-2">
-        <p>{{ mynoteData["anything"].memo }}</p>
+        <p>{{ anyData.memo }}</p>
       </div>
     </div>
-    <!-- {{ mynoteData }} -->
   </div>
 </template>
 
 <script>
 export default {
   name: "MyNoteExportView",
-  data() {
-    return {
-      mynoteData: {},
-    };
-  },
-  mounted() {
-    this.mynoteData = this.$store.getters.getMyNote;
-    console.log(this.mynoteData);
-  },
+  props: ["eventsData", "quesData", "anyData"],
 };
 </script>
 
