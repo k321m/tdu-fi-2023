@@ -5,7 +5,7 @@
       @delete-data="deleteQuestion"
     >
       <template v-slot:type>質問項目</template>
-      <template v-slot:title>{{ questionValue.question }}</template>
+      <template v-slot:title>{{ questionValue.title }}</template>
       <template v-slot:message-caution>メモの内容が失われます</template>
     </MyNoteDeleteDialog>
   </v-dialog>
@@ -27,7 +27,7 @@
           style="line-height: 1.3em; padding-top: 0.2em"
           :class="{ 'text-ellipsis': !isOpen }"
         >
-          {{ questionValue.question }}
+          {{ questionValue.title }}
         </p>
       </div>
       <div class="pulldown-button py-1">

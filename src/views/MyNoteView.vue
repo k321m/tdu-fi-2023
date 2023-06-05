@@ -29,12 +29,6 @@
         <MyNoteAllDeleteButton @delete-data="$refs.anyMemoRef.clearMemo()" />
       </div>
     </div>
-    <MyNoteExportView
-      :eventsData="myNoteData.events"
-      :quesData="myNoteData.questions"
-      :anyData="myNoteData.anything"
-      v-if="isViewExportData"
-    />
   </div>
 </template>
 
@@ -46,10 +40,8 @@ import MyNoteAnythingMemo from "../components/MyNoteAnythingMemo.vue";
 import MyNoteAllDeleteButton from "../components/MyNoteAllDeleteButton.vue";
 import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
-import MyNoteExportView from "../components/MyNoteExportView.vue";
 import pdfMake from "pdfmake/build/pdfmake.js";
 import pdfFonts from "pdfmake/build/vfs_fonts.js";
-import htmlToPdfmake from "html-to-pdfmake";
 export default {
   name: "MyNote",
   components: {
@@ -60,7 +52,6 @@ export default {
     MyNoteDownloadButton,
     MyNoteAllDeleteButton,
     MyNoteTutorial,
-    MyNoteExportView,
   },
   data() {
     return {
@@ -79,6 +70,27 @@ export default {
     },
   },
   methods: {
+    addContent(content, title, data) {
+      content.push({
+        text: title,
+        fontSize: 24,
+        bold: true,
+        margin: [0, 8, 0, 8],
+      });
+      Object.entries(data).forEach(([key, value]) => {
+        content.push({
+          text: value.title,
+          fontSize: 16,
+          bold: true,
+        });
+        if (value.memo != "") {
+          content.push({ text: value.memo, fontSize: 12, marginBottom: 6 });
+        } else {
+          content.push({ text: "-", fontSize: 12, marginBottom: 6 });
+        }
+      });
+      return content;
+    },
     downloadPDF() {
       pdfMake.vfs = pdfFonts.pdfMake.vfs;
       pdfMake.fonts = {
@@ -87,38 +99,36 @@ export default {
           bold: "MPLUS1-Bold.ttf",
         },
       };
-
       this.myNoteData = this.$store.getters.getMyNote;
-      // const html = `<div>
-      //   <h1 style="color: red;">日本語</h1>
-      //   <table style="width: 100%; font-size: 10px">
-      //     <tr>
-      //       <th>お客様ID</th>
-      //       <td>0000</td>
-      //     </tr>
-      //     <tr>
-      //       <th>契約者名</th><td>テスト太郎</td>
-      //     </tr>
-      //     <tr>
-      //       <th>契約者住所</th><td>大阪府大阪市２－２－３　本末ビル２F</td>
-      //     </tr>
-      //   </table>
-      // </div>`;
+      let content = [];
+      // イベントメモ
+      this.addContent(content, "イベントメモ", this.myNoteData.events);
+      // Q&Aメモ
+      this.addContent(content, "Q&Aメモ", this.myNoteData.questions);
+
+      // なんでもメモ
+      content.push({
+        text: "なんでもメモ",
+        fontSize: 24,
+        bold: true,
+        margin: [0, 8, 0, 8],
+      });
+      if (this.myNoteData.anything.memo != "") {
+        content.push({
+          text: this.myNoteData.anything.memo,
+          fontSize: 12,
+          marginBottom: 6,
+        });
+      } else {
+        content.push({ text: "-", fontSize: 12, marginBottom: 6 });
+      }
+
       var docDefinition = {
         pageSize: "A4", // PDF用紙サイズ設定
         pageMargins: [10, 10, 10, 30], // PDF用紙マージン設定[左、上、右、下]
         content: [
           // ドキュメントのコンテンツを指定します
-          // htmlToPdfmake(html),
-          {
-            text: "This paragraph will have a bigger font",
-            fontSize: 15,
-            bold: true,
-          },
-          {
-            text: "This paragraph will have a bigger font",
-            fontSize: 15,
-          },
+          content,
         ],
         defaultStyle: {
           font: "mplus",
@@ -126,7 +136,6 @@ export default {
       };
       this.isViewExportData = true;
       pdfMake.createPdf(docDefinition).open();
-      // pdfMake.createPdf(docDefinition, null, null, pdfFonts.pdfMake.vfs).open();
     },
   },
   mounted() {

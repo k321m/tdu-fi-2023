@@ -29,7 +29,7 @@ export const store = createStore({
     addMyNote(state, obj) {
       // [questions]の場合はkeyをquestionとした質問内容を格納(現時点でユーザが質問を追加した場合のみの対応であるため，具体的な質問例を実装する場合にはmodule(Store)のKeyを入れるなどの対応が必要)
       if (obj.type == "questions")
-        var addDataTemplate = { question: obj.question, memo: "" };
+        var addDataTemplate = { title: obj.question, memo: "" };
       // objの中身は{ type:value("events" or "questions"), key:value ,(questionのみ)question:value]を想定
       else var addDataTemplate = { memo: "", done: false, title: obj.title };
       // MyNoteにデータを追加
@@ -119,7 +119,7 @@ export const store = createStore({
           [questionKey]: state.myNote.questions[questionKey],
         });
       });
-      // console.log(detailData);
+      console.log(detailData);
       return detailData;
     },
   },

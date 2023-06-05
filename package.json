@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
-    "html-to-pdfmake": "^2.4.20",
     "pdfmake": "^0.2.7",
     "vue": "^3.2.47",
     "vue-gtag": "^2.0.1",
