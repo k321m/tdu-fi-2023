@@ -119,7 +119,7 @@ export const store = createStore({
           [questionKey]: state.myNote.questions[questionKey],
         });
       });
-      console.log(detailData);
+      // console.log(detailData);
       return detailData;
     },
   },

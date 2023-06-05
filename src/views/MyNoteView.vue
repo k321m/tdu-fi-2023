@@ -75,18 +75,22 @@ export default {
         text: title,
         fontSize: 24,
         bold: true,
-        margin: [0, 8, 0, 8],
+        margin: [0, 16, 0, 8],
       });
       Object.entries(data).forEach(([key, value]) => {
         content.push({
-          text: value.title,
-          fontSize: 16,
+          text: "・" + value.title,
+          fontSize: 14,
           bold: true,
         });
         if (value.memo != "") {
-          content.push({ text: value.memo, fontSize: 12, marginBottom: 6 });
+          content.push({
+            text: value.memo,
+            fontSize: 12,
+            margin: [12, 2, 0, 6],
+          });
         } else {
-          content.push({ text: "-", fontSize: 12, marginBottom: 6 });
+          content.push({ text: "-", fontSize: 12, margin: [12, 2, 0, 6] });
         }
       });
       return content;
@@ -105,13 +109,12 @@ export default {
       this.addContent(content, "イベントメモ", this.myNoteData.events);
       // Q&Aメモ
       this.addContent(content, "Q&Aメモ", this.myNoteData.questions);
-
       // なんでもメモ
       content.push({
         text: "なんでもメモ",
         fontSize: 24,
         bold: true,
-        margin: [0, 8, 0, 8],
+        margin: [0, 16, 0, 8],
       });
       if (this.myNoteData.anything.memo != "") {
         content.push({
