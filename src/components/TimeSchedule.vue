@@ -101,7 +101,7 @@
                           <div>
                             <p
                               class="zen-kaku-medium"
-                              style="font-size: 0.6em"
+                              style="font-size: 0.6em; text-align: center"
                               :style="
                                 this.limitedEventsData[value.eventDetailKey]
                                   .subTitleStyle
@@ -116,7 +116,10 @@
                                   .subTitle
                               }}
                             </p>
-                            <p class="zen-kaku-medium" style="font-size: 0.9em">
+                            <p
+                              class="zen-kaku-medium"
+                              style="font-size: 0.9em; text-align: center"
+                            >
                               {{
                                 this.limitedEventsData[value.eventDetailKey]
                                   .title

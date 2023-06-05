@@ -104,6 +104,7 @@ p.jp-text {
   font-size: 0.7em;
   line-height: 1;
   font-style: normal;
+  text-align: end;
 }
 p.text {
   font-family: hack, sans-serif;
