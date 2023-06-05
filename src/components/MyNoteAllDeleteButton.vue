@@ -9,7 +9,7 @@
       <template v-slot:message-caution>全ての項目、メモが失われます</template>
     </MyNoteDeleteDialog>
   </v-dialog>
-  <div class="py-2">
+  <div class="py-1">
     <div
       class="pink-border-btn"
       @click="isDeleteDialogVisible = !isDeleteDialogVisible"
@@ -24,6 +24,7 @@ import MyNoteDeleteDialog from "./MyNoteDeleteDialog.vue";
 
 export default {
   name: "MyNoteAllDeleteButton",
+  emits: ["delete-data"],
   components: {
     MyNoteDeleteDialog,
   },
@@ -35,6 +36,7 @@ export default {
   },
   methods: {
     deleteAll() {
+      this.$emit("delete-data");
       this.$store.commit("deleteMyNote", {
         type: this.type,
       });

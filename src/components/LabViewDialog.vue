@@ -87,6 +87,7 @@ export default {
         type: this.type,
         key: this.labKey,
         time: "終日開催",
+        title:this.labData.title,
       });
     },
   },

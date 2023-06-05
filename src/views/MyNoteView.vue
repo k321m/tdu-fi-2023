@@ -22,11 +22,11 @@
         />
       </div>
       <div class="pt-2">
-        <MyNoteAnythingMemo />
+        <MyNoteAnythingMemo ref="anyMemoRef" />
       </div>
       <div class="pt-10">
-        <MyNoteDownloadButton />
-        <MyNoteAllDeleteButton />
+        <MyNoteDownloadButton @click="downloadPDF" />
+        <MyNoteAllDeleteButton @delete-data="$refs.anyMemoRef.clearMemo()" />
       </div>
     </div>
   </div>
@@ -40,6 +40,8 @@ import MyNoteAnythingMemo from "../components/MyNoteAnythingMemo.vue";
 import MyNoteAllDeleteButton from "../components/MyNoteAllDeleteButton.vue";
 import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
+import pdfMake from "pdfmake/build/pdfmake.js";
+import pdfFonts from "pdfmake/build/vfs_fonts.js";
 export default {
   name: "MyNote",
   components: {
@@ -55,6 +57,8 @@ export default {
     return {
       myNoteDetailData: {},
       isTutorialVisible: !this.$store.getters.getDoneMyNoteTutorial,
+      isViewExportData: false,
+      myNoteData: {},
     };
   },
   computed: {
@@ -65,9 +69,81 @@ export default {
       return myNoteDetailData;
     },
   },
+  methods: {
+    addContent(content, title, data) {
+      content.push({
+        text: title,
+        fontSize: 24,
+        bold: true,
+        margin: [0, 16, 0, 8],
+      });
+      Object.entries(data).forEach(([key, value]) => {
+        content.push({
+          text: "・" + value.title,
+          fontSize: 14,
+          bold: true,
+        });
+        if (value.memo != "") {
+          content.push({
+            text: value.memo,
+            fontSize: 12,
+            margin: [12, 2, 0, 6],
+          });
+        } else {
+          content.push({ text: "-", fontSize: 12, margin: [12, 2, 0, 6] });
+        }
+      });
+      return content;
+    },
+    downloadPDF() {
+      pdfMake.vfs = pdfFonts.pdfMake.vfs;
+      pdfMake.fonts = {
+        mplus: {
+          normal: "MPLUS1-Regular.ttf",
+          bold: "MPLUS1-Bold.ttf",
+        },
+      };
+      this.myNoteData = this.$store.getters.getMyNote;
+      let content = [];
+      // イベントメモ
+      this.addContent(content, "イベントメモ", this.myNoteData.events);
+      // Q&Aメモ
+      this.addContent(content, "Q&Aメモ", this.myNoteData.questions);
+      // なんでもメモ
+      content.push({
+        text: "なんでもメモ",
+        fontSize: 24,
+        bold: true,
+        margin: [0, 16, 0, 8],
+      });
+      if (this.myNoteData.anything.memo != "") {
+        content.push({
+          text: this.myNoteData.anything.memo,
+          fontSize: 12,
+          marginBottom: 6,
+        });
+      } else {
+        content.push({ text: "-", fontSize: 12, marginBottom: 6 });
+      }
+
+      var docDefinition = {
+        pageSize: "A4", // PDF用紙サイズ設定
+        pageMargins: [10, 10, 10, 30], // PDF用紙マージン設定[左、上、右、下]
+        content: [
+          // ドキュメントのコンテンツを指定します
+          content,
+        ],
+        defaultStyle: {
+          font: "mplus",
+        },
+      };
+      this.isViewExportData = true;
+      pdfMake.createPdf(docDefinition).open();
+    },
+  },
   mounted() {
     this.myNoteDetailData = this.$store.getters.getMyNoteDetailData;
-    console.log(this.myNoteDetailData);
+    // console.log(this.myNoteDetailData);
   },
 };
 </script>

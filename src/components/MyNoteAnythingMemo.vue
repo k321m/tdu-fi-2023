@@ -58,6 +58,9 @@ export default {
       this.isCopied = true;
       navigator.clipboard.writeText(this.memo);
     },
+    clearMemo() {
+      this.memo = "";
+    },
   },
   mounted() {
     this.updateMemo();

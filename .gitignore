@@ -7,14 +7,21 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+# Ignore node_modules except vfs_fonts.js
+/node_modules/*
+!/node_modules/pdfmake/
+/node_modules/pdfmake/*
+!/node_modules/pdfmake/build/
+/node_modules/pdfmake/build/*
+!/node_modules/pdfmake/build/vfs_fonts.js
+
+# Other entries...
 dist
 dist-ssr
 *.local
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+.vscode/
 .idea
 .DS_Store
 *.suo

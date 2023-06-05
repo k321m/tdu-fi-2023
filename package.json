@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
+    "pdfmake": "^0.2.7",
     "vue": "^3.2.47",
     "vue-gtag": "^2.0.1",
     "vue-router": "^4.1.6",
@@ -21,6 +22,7 @@
     "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
+    "@types/pdfmake": "^0.2.2",
     "@vitejs/plugin-vue": "^4.1.0",
     "vite": "^4.3.2"
   }
