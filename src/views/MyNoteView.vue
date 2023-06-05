@@ -47,17 +47,9 @@ import MyNoteAllDeleteButton from "../components/MyNoteAllDeleteButton.vue";
 import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
 import MyNoteExportView from "../components/MyNoteExportView.vue";
-import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
-// import htmlToPdfmake from "html-to-pdfmake";
-pdfMake.vfs = pdfFonts.pdfMake.vfs;
-pdfMake.fonts = {
-  mplus: {
-    normal: "MPLUS1-Regular.ttf",
-    bold: "MPLUS1-Bold.ttf",
-  },
-};
-
+import pdfMake from "pdfmake/build/pdfmake.js";
+import pdfFonts from "pdfmake/build/vfs_fonts.js";
+import htmlToPdfmake from "html-to-pdfmake";
 export default {
   name: "MyNote",
   components: {
@@ -88,8 +80,16 @@ export default {
   },
   methods: {
     downloadPDF() {
+      pdfMake.vfs = pdfFonts.pdfMake.vfs;
+      pdfMake.fonts = {
+        mplus: {
+          normal: "MPLUS1-Regular.ttf",
+          bold: "MPLUS1-Bold.ttf",
+        },
+      };
+
       this.myNoteData = this.$store.getters.getMyNote;
-      //   const html = `<div>
+      // const html = `<div>
       //   <h1 style="color: red;">日本語</h1>
       //   <table style="width: 100%; font-size: 10px">
       //     <tr>
@@ -109,20 +109,24 @@ export default {
         pageMargins: [10, 10, 10, 30], // PDF用紙マージン設定[左、上、右、下]
         content: [
           // ドキュメントのコンテンツを指定します
-          // "This is a standard paragraph, using default style 日本語は正しく表示されるかわからない",
           // htmlToPdfmake(html),
           {
             text: "This paragraph will have a bigger font",
             fontSize: 15,
             bold: true,
           },
+          {
+            text: "This paragraph will have a bigger font",
+            fontSize: 15,
+          },
         ],
         defaultStyle: {
-          font: "mplus", // 使用したいフォント名を指定します
+          font: "mplus",
         },
       };
       this.isViewExportData = true;
       pdfMake.createPdf(docDefinition).open();
+      // pdfMake.createPdf(docDefinition, null, null, pdfFonts.pdfMake.vfs).open();
     },
   },
   mounted() {
