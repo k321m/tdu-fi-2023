@@ -14,11 +14,9 @@
         </template>
       </ContentTitle>
       <div class="pt-6">
-        <!-- <MyNoteVisitList :eventDetailData="myNoteDetailData.events" /> -->
         <MyNoteVisitList :eventDetailData="changedMyNoteDetailData.events" />
       </div>
       <div class="pt-6">
-        <!-- <MyNoteQuestionList :questionDetailData="myNoteDetailData.questions" /> -->
         <MyNoteQuestionList
           :questionDetailData="changedMyNoteDetailData.questions"
         />
