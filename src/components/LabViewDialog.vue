@@ -26,7 +26,7 @@
         <span class="pl-1" style="font-size: 0.8em">{{ labData.professor["type"] }}</span>
       </div>
       </p>
-      <p class="lab-professor-place zen-kaku-regular">
+      <p class="lab-professor-place zen-kaku-regular" v-if="labData.place != ''">
         <img src="../assets/icon-map.svg" class="pr-1" />
         {{ labData.place }}
       </p>
@@ -55,9 +55,7 @@
       <button class="default-btn btn-animation zen-kaku-bold">地図を確認</button>
       <button class="myNote-btn btn-animation zen-kaku-bold" @click="myNoteBtnClicked">MyNoteに追加</button>
     </div>
-    <div v-for="linkData in labData.links">
-      <a class="zen-kaku-regular" style="font-size: 0.8em;" :href="linkData['url']">{{ linkData['name'] }}</a>
-    </div>
+      <a v-for="linkData in labData.links" class="zen-kaku-regular" style="font-size: 0.8em;display: block;margin-bottom: 0.2em;" :href="linkData['url']">{{ linkData['name'] }}</a>
   </div>
   </div>
   

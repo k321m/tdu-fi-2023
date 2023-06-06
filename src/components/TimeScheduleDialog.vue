@@ -58,14 +58,13 @@
         MyNoteに追加
       </button>
     </div>
-    <div v-for="linkData in eventData.links">
-      <a
-        class="zen-kaku-regular"
-        style="font-size: 0.8em"
-        :href="linkData['url']"
-        >{{ linkData["name"] }}</a
-      >
-    </div>
+    <a
+      v-for="linkData in eventData.links"
+      class="zen-kaku-regular"
+      style="font-size: 0.8em; display: block; margin-bottom: 0.2em"
+      :href="linkData['url']"
+      >{{ linkData["name"] }}</a
+    >
   </div>
 </template>
 
