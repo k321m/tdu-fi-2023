@@ -17,12 +17,17 @@
             <div class="img">
               <img :src="tutolial.src" />
             </div>
-            <div class="mb-5">
+            <div class="">
               <span
                 class="zen-kaku-medium"
                 style="font-size: 0.9rem"
                 v-html="tutolial.text"
               ></span>
+              <p
+                class="zen-kaku-medium"
+                style="font-size: 0.6em; text-align: center; padding-top: 1em"
+                v-html="tutolial.caution"
+              ></p>
             </div>
           </div>
         </Slide>
@@ -48,10 +53,11 @@
 <script>
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
-import tutorialImg1 from "../assets/myNote-tutorial-1.svg";
-import tutorialImg2 from "../assets/myNote-tutorial-2.svg";
-import tutorialImg3 from "../assets/myNote-tutorial-2.jpg";
-import tutorialImg4 from "../assets/myNote-tutorial-1.svg";
+import tutorialImg1 from "../assets/tutorial/tutorial01.svg";
+import tutorialImg2 from "../assets/tutorial/tutorial02.svg";
+import tutorialImg3 from "../assets/tutorial/tutorial03.svg";
+import tutorialImg4 from "../assets/tutorial/tutorial04.svg";
+
 export default {
   name: "MyNoteTutorial",
   emits: ["close-tutorial"],
@@ -62,18 +68,23 @@ export default {
         {
           src: tutorialImg1,
           text: "今日のオープンキャンパスで<br>東京電機大学をもっとよく知るために<br>自分だけのノートを作ろう",
+          caution: "",
         },
         {
           src: tutorialImg2,
-          text: "訪問したい場所やイベント<br>先輩や先生に聞きたいことを<br>MyNoteに追加",
+          text: "イベントタイムスケジュールや<br>研究室一覧、具体的な質問例などから<br>気になる項目をMyNoteに追加",
+          caution: "",
         },
         {
           src: tutorialImg3,
-          text: "今日のオープンキャンパスで<br>東京電機大学をもっとよく知るために<br>自分だけのノートを作ろう",
+          text: "達成したらチェックをしたり、<br>見聞きしたことをメモに残そう",
+          caution:
+            "※データはローカルストレージに保存されます。名誉毀損、プライバシーの侵害、誹謗・中傷を含む事柄は記入しないでください。",
         },
         {
           src: tutorialImg4,
-          text: "今日のオープンキャンパスで<br>東京電機大学をもっとよく知るために<br>自分だけのノートを作ろう",
+          text: "MyNoteを活用し<br>現役の学生や教員から見た<br>大学生活をたくさん聞き出して<br>大学選びや受験に役立てよう",
+          caution: "",
         },
       ],
     };
@@ -127,7 +138,10 @@ export default {
 
 .img {
   height: 30dvh;
-  margin: 2rem 0;
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 img {
   width: 80%;
