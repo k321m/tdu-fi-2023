@@ -59,9 +59,12 @@
       </button>
     </div>
     <div v-for="linkData in eventData.links">
-      <a style="font-size: 0.8em" :href="linkData['url']">{{
-        linkData["name"]
-      }}</a>
+      <a
+        class="zen-kaku-regular"
+        style="font-size: 0.8em"
+        :href="linkData['url']"
+        >{{ linkData["name"] }}</a
+      >
     </div>
   </div>
 </template>

@@ -52,7 +52,7 @@
                 <!-- リンク -->
                 <div v-for="linkData in questionValue.links">
                   <a
-                    class="pl-3"
+                    class="pl-3 zen-kaku-regular"
                     style="font-size: 0.8em"
                     :href="linkData['url']"
                     >{{ linkData["name"] }}</a

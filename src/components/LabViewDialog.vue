@@ -56,7 +56,7 @@
       <button class="myNote-btn btn-animation zen-kaku-bold" @click="myNoteBtnClicked">MyNoteに追加</button>
     </div>
     <div v-for="linkData in labData.links">
-      <a style="font-size: 0.8em;" :href="linkData['url']">{{ linkData['name'] }}</a>
+      <a class="zen-kaku-regular" style="font-size: 0.8em;" :href="linkData['url']">{{ linkData['name'] }}</a>
     </div>
   </div>
   </div>

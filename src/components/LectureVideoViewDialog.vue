@@ -36,7 +36,7 @@
       <div class="pb-3" v-html="lectureData.video"></div>
       <!-- Link -->
       <div v-for="linkData in lectureData.links" class="links">
-      <a style="font-size: 0.9em;" :href="linkData['url']">{{ linkData['name'] }}</a>
+      <a class="zen-kaku-regular" style="font-size: 0.9em;" :href="linkData['url']">{{ linkData['name'] }}</a>
     </div>
     </div>
   </div>
