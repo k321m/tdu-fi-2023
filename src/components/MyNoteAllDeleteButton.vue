@@ -20,7 +20,7 @@
         text-decoration: underline;
       "
     >
-      データを削除
+      データ削除
     </p>
   </div>
 </template>

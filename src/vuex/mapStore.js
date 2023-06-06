@@ -1,7 +1,7 @@
 import { store } from "./index";
-import map1Img from "/src/assets/maps/testMap.svg";
-import map2Img from "/src/assets/labs/メディア応用.svg";
-import map3Img from "/src/assets/maps/testMap.svg";
+import map1Img from "/src/assets/maps/Map01.svg";
+import map2Img from "/src/assets/maps/Map02.svg";
+import map3Img from "/src/assets/maps/Map03.svg";
 
 export default {
   namespaced: true,
