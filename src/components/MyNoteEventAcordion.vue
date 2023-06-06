@@ -102,23 +102,21 @@
               ></textarea>
             </div>
             <div class="py-5">
-              <v-row class="px-2">
-                <v-col class="pa-1">
-                  <div class="default-btn btn-animation">
-                    <p class="zen-kaku-bold">地図を確認</p>
-                  </div>
-                </v-col>
-                <v-col class="pa-1">
-                  <div
-                    class="default-border-btn btn-animation"
+              <div class="footer">
+                <div class="button-group">
+                  <button class="default-btn btn-animation zen-kaku-bold">
+                    地図を確認
+                  </button>
+                  <button
+                    class="default-border-btn btn-animation zen-kaku-bold"
                     @click="
                       this.isDeleteDialogVisible = !this.isDeleteDialogVisible
                     "
                   >
-                    <p class="zen-kaku-bold">リストから削除</p>
-                  </div>
-                </v-col>
-              </v-row>
+                    リストから削除
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -320,5 +318,17 @@ textarea:focus {
   line-height: 1.3;
   font-size: 14px;
   color: #d3d1ff;
+}
+
+.footer {
+  width: 100%;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.button-group > button {
+  font-size: 0.8em;
+  width: 49%;
 }
 </style>

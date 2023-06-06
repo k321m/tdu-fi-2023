@@ -16,7 +16,9 @@
       </div>
     </div>
     <div class="py-4">
-      <p class="zen-kaku-regular">▶︎ 具体的な質問例</p>
+      <router-link class="routerLink" to="/questions">
+        <p class="zen-kaku-regular">▶︎ 具体的な質問例</p>
+      </router-link>
     </div>
   </div>
 </template>
@@ -45,3 +47,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.routerLink {
+  text-decoration: none;
+  color: #010326;
+}
+</style>

@@ -7,8 +7,12 @@
     </div>
 
     <div class="py-4">
-      <p class="zen-kaku-regular">▶︎ タイムスケジュール</p>
-      <p class="zen-kaku-regular">▶︎ 研究室公開</p>
+      <router-link class="routerLink" to="/#time-schedule">
+        <p class="zen-kaku-regular mb-1">▶︎ タイムスケジュール</p>
+      </router-link>
+      <router-link class="routerLink" to="/labs">
+        <p class="zen-kaku-regular">▶︎ 研究室公開</p>
+      </router-link>
     </div>
   </div>
 </template>
@@ -22,3 +26,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.routerLink {
+  text-decoration: none;
+  color: #010326;
+}
+</style>
