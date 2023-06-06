@@ -43,7 +43,7 @@
       </div>
     </div>
     <div class="scroll-contents" style="font-size: 0.9em">
-      <p>{{ eventData.info }}</p>
+      <p class="zen-kaku-regular">{{ eventData.info }}</p>
     </div>
   </div>
   <div class="footer px-5">

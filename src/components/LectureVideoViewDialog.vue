@@ -17,7 +17,7 @@
     </p>
     <!-- 先生名と展示場所 -->
     <div class="pb-4" style="font-size: 0.9em">
-      <p class="lab-professor-place" v-if="lectureData.professor.length != 0">
+      <p class="lab-professor-place zen-kaku-regular" v-if="lectureData.professor.length != 0">
       <img src="../assets/icon-person.svg" class="pr-1" />
       <div style="display: inline-block;">
         <div class="flex-end" v-for="(data,index) in lectureData.professor">
@@ -31,7 +31,7 @@
     <!-- スクロールエリア -->
     <div class="scroll-contents" style="font-size: 0.9em">
       <!-- info -->
-      <p class="pb-7">{{ lectureData.info }}</p>
+      <p class="pb-7 zen-kaku-regular">{{ lectureData.info }}</p>
       <!-- Video -->
       <div class="pb-3" v-html="lectureData.video"></div>
       <!-- Link -->

@@ -19,14 +19,14 @@
     </p>
     <!-- 先生名と展示場所 -->
     <div class="pb-1" style="font-size: 0.9em">
-      <p class="lab-professor-place">
+      <p class="lab-professor-place zen-kaku-regular">
       <img src="../assets/icon-person.svg" class="pr-1" />
       <div class="flex-end">
         {{ labData.professor["name"] }}
         <span class="pl-1" style="font-size: 0.8em">{{ labData.professor["type"] }}</span>
       </div>
       </p>
-      <p class="lab-professor-place">
+      <p class="lab-professor-place zen-kaku-regular">
         <img src="../assets/icon-map.svg" class="pr-1" />
         {{ labData.place }}
       </p>
@@ -38,15 +38,15 @@
     <!-- スクロールエリア -->
     <div class="pb-4 scroll-contents" style="font-size: 0.9em">
       <!-- info -->
-      <p class="pb-3">{{ labData.info }}</p>
+      <p class="pb-3 zen-kaku-regular">{{ labData.info }}</p>
       <!-- theme -->
       <div class="pb-3">
         <p class="zen-kaku-bold pb-1">論文テーマ例</p>
-        <li v-for="theme in labData.theme">{{ theme }}</li>
+        <li class="zen-kaku-regular" v-for="theme in labData.theme">{{ theme }}</li>
       </div>
       <div class="pb-3">
         <p class="zen-kaku-bold pb-1">就職先例</p>
-        <p>{{ labData.placeOfEmployment.join("、") }}</p>
+        <p class="zen-kaku-regular">{{ labData.placeOfEmployment.join("、") }}</p>
       </div>
     </div>
     <!-- ボタン -->
