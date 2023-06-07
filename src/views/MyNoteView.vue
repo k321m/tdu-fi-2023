@@ -41,8 +41,6 @@ import MyNoteAnythingMemo from "../components/MyNoteAnythingMemo.vue";
 import MyNoteAllDeleteButton from "../components/MyNoteAllDeleteButton.vue";
 import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
-// import pdfMake from "pdfmake/build/pdfmake.js";
-// import pdfFonts from "pdfmake/build/vfs_fonts.js";
 
 export default {
   name: "MyNote",
@@ -120,7 +118,6 @@ export default {
       return content;
     },
     downloadPDF() {
-      // pdfMake.vfs = pdfFonts.pdfMake.vfs; いらないぽい
       pdfMake.fonts = {
         mplus: {
           normal: "MPLUS1-Regular.ttf",
