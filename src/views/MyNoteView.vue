@@ -42,6 +42,8 @@ import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
 // import pdfMake from "pdfmake/build/pdfmake.js";
 // import pdfFonts from "pdfmake/build/vfs_fonts.js";
+// import pdfMake from "..pdfmake/pdfmake.js";
+
 export default {
   name: "MyNote",
   components: {
