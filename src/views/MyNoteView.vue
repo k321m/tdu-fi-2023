@@ -118,7 +118,7 @@ export default {
       return content;
     },
     downloadPDF() {
-      // pdfMake.vfs = pdfFonts.pdfMake.vfs;
+      // pdfMake.vfs = pdfFonts.pdfMake.vfs; いらないぽい
       // pdfMake.fonts = {
       //   mplus: {
       //     normal: "MPLUS1-Regular.ttf",
