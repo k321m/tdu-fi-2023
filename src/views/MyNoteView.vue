@@ -1,6 +1,5 @@
 <template>
   <div id="contents">
-    ああああ
     <v-dialog persistent v-model="isTutorialVisible">
       <MyNoteTutorial
         @close-tutorial="isTutorialVisible = false"
