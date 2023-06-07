@@ -1,6 +1,6 @@
 <template>
   <MyNoteAddAlert v-if="isViewAlert" @end-alert="isViewAlert = false" />
-  <div class="background-dialog px-5 pt-5">
+  <div class="background-dialog pa-5">
     <div style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
         <v-icon>mdi-close</v-icon>
@@ -45,26 +45,27 @@
     <div class="scroll-contents" style="font-size: 0.9em">
       <p class="zen-kaku-regular">{{ eventData.info }}</p>
     </div>
-  </div>
-  <div class="footer px-5">
-    <div class="button-group pb-2">
-      <button class="default-btn btn-animation zen-kaku-bold">
-        地図を確認
-      </button>
-      <button
-        class="myNote-btn btn-animation zen-kaku-bold"
-        @click="myNoteBtnClicked"
+    <!-- ボタン -->
+    <div class="footer mt-6">
+      <div class="button-group pb-2">
+        <button class="default-btn btn-animation zen-kaku-bold">
+          地図を確認
+        </button>
+        <button
+          class="myNote-btn btn-animation zen-kaku-bold"
+          @click="myNoteBtnClicked"
+        >
+          MyNoteに追加
+        </button>
+      </div>
+      <a
+        v-for="linkData in eventData.links"
+        class="zen-kaku-regular"
+        style="font-size: 0.8em; display: block; margin-bottom: 0.2em"
+        :href="linkData['url']"
+        >{{ linkData["name"] }}</a
       >
-        MyNoteに追加
-      </button>
     </div>
-    <a
-      v-for="linkData in eventData.links"
-      class="zen-kaku-regular"
-      style="font-size: 0.8em; display: block; margin-bottom: 0.2em"
-      :href="linkData['url']"
-      >{{ linkData["name"] }}</a
-    >
   </div>
 </template>
 
@@ -106,7 +107,7 @@ export default {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  min-height: 88dvh;
+  min-height: 80dvh;
   max-height: 90dvh;
   background-color: white;
   border-radius: 0.8rem;
@@ -126,10 +127,7 @@ export default {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0px;
   width: 100%;
-  padding-bottom: 2rem;
 }
 
 .button-group {
