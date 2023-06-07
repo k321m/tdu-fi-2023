@@ -1,5 +1,6 @@
 <template>
   <div id="contents">
+    ああああ
     <v-dialog persistent v-model="isTutorialVisible">
       <MyNoteTutorial
         @close-tutorial="isTutorialVisible = false"
@@ -42,7 +43,6 @@ import MyNoteDownloadButton from "../components/MyNoteDownloadButton.vue";
 import MyNoteTutorial from "../components/MyNoteTutorial.vue";
 // import pdfMake from "pdfmake/build/pdfmake.js";
 // import pdfFonts from "pdfmake/build/vfs_fonts.js";
-// import pdfMake from "..pdfmake/pdfmake.js";
 
 export default {
   name: "MyNote",
@@ -121,36 +121,36 @@ export default {
     },
     downloadPDF() {
       // pdfMake.vfs = pdfFonts.pdfMake.vfs; いらないぽい
-      // pdfMake.fonts = {
-      //   mplus: {
-      //     normal: "MPLUS1-Regular.ttf",
-      //     bold: "MPLUS1-Bold.ttf",
-      //   },
-      // };
-      // this.myNoteData = this.$store.getters.getMyNote;
-      // let content = [];
-      // // イベントメモ
-      // this.addTitleToContent(content, "イベントメモ");
-      // this.addMemoToContent(content, this.myNoteData.events);
-      // // Q&Aメモ
-      // this.addTitleToContent(content, "Q&Aメモ");
-      // this.addMemoToContent(content, this.myNoteData.questions);
-      // // なんでもメモ
-      // this.addTitleToContent(content, "なんでもメモ");
-      // this.addMemoToContent(content, this.myNoteData.anything);
-      // var docDefinition = {
-      //   pageSize: "A4", // PDF用紙サイズ設定
-      //   pageMargins: [10, 10, 10, 30], // PDF用紙マージン設定[左、上、右、下]
-      //   content: [
-      //     // ドキュメントのコンテンツを指定します
-      //     content,
-      //   ],
-      //   defaultStyle: {
-      //     font: "mplus",
-      //   },
-      // };
-      // this.isViewExportData = true;
-      // pdfMake.createPdf(docDefinition).open();
+      pdfMake.fonts = {
+        mplus: {
+          normal: "MPLUS1-Regular.ttf",
+          bold: "MPLUS1-Bold.ttf",
+        },
+      };
+      this.myNoteData = this.$store.getters.getMyNote;
+      let content = [];
+      // イベントメモ
+      this.addTitleToContent(content, "イベントメモ");
+      this.addMemoToContent(content, this.myNoteData.events);
+      // Q&Aメモ
+      this.addTitleToContent(content, "Q&Aメモ");
+      this.addMemoToContent(content, this.myNoteData.questions);
+      // なんでもメモ
+      this.addTitleToContent(content, "なんでもメモ");
+      this.addMemoToContent(content, this.myNoteData.anything);
+      var docDefinition = {
+        pageSize: "A4", // PDF用紙サイズ設定
+        pageMargins: [10, 10, 10, 30], // PDF用紙マージン設定[左、上、右、下]
+        content: [
+          // ドキュメントのコンテンツを指定します
+          content,
+        ],
+        defaultStyle: {
+          font: "mplus",
+        },
+      };
+      this.isViewExportData = true;
+      pdfMake.createPdf(docDefinition).open();
     },
   },
   mounted() {
