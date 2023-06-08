@@ -51,17 +51,13 @@
     </div>
     <!-- ボタン -->
     <div class="footer mt-6">
-    <div class="button-group pb-2">
-      <ButtonDefault :title="'地図を確認'" :to="'/#map'"  />
-      <!-- <button class="default-btn btn-animation zen-kaku-bold">地図を確認</button> -->
+    <div class="button-group pb-2" v-if="labData.display">
+      <ButtonDefault :title="'地図を確認'" :to="'/'" :mapKey="labData.mapKey"  />
       <button class="myNote-btn btn-animation zen-kaku-bold" @click="myNoteBtnClicked">MyNoteに追加</button>
     </div>
       <a v-for="linkData in labData.links" class="link zen-kaku-regular" style="font-size: 0.8em;display: block;margin-bottom: 0.2em;" :href="linkData['url']">{{ linkData['name'] }}</a>
   </div>
   </div>
-  
-  
-  
 </template>
 
 <script>

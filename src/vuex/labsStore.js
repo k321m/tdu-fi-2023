@@ -2,9 +2,9 @@ import { store } from "./index";
 import labo01Img from "/src/assets/labs/情報セキュリティ.svg";
 import labo02Img from "/src/assets/labs/計算言語学.svg";
 import labo03Img from "/src/assets/labs/ビジュアルコンピューティング.svg";
-import labo04Img from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import labo04Img from "/src/assets/labs/ビジュアルコンピューティング_小玉.svg";
 import labo05Img from "/src/assets/labs/メディア応用.svg";
-import labo06Img from "/src/assets/labs/メディア応用.svg";
+import labo06Img from "/src/assets/labs/メディア応用_井ノ上.svg";
 import labo07Img from "/src/assets/labs/音響コミュニケーション.svg";
 import labo08Img from "/src/assets/labs/インタラクティブグラフィックス.svg";
 import labo09Img from "/src/assets/labs/実空間コンピューティング.svg";
@@ -50,6 +50,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo01Img + ")",
+        mapKey: "map_2",
       },
       labo_2: {
         eventType: "終日開催",
@@ -82,6 +83,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo02Img + ")",
+        mapKey: "map_2",
       },
       labo_3: {
         eventType: "終日開催",
@@ -93,7 +95,7 @@ export default {
           type: "教授",
         },
         tags: ["コンピュータグラフィックス", "VR", "AR"],
-        place: "1号館5階メディアラボ",
+        place: "1号館5階 0513A／0513B教室",
         info: "ヒトの視力を超える8Kスーパーハイビジョン。超高解像度・超高精細な8KCG映像をつくる技術と、臨場感にあふれるVR(仮想現実感)/AR(拡張現実感)技術の研究を進めています。実写画像を印象派風絵画に変換する技術や、自動車や自転車のVR運転シミュレータを開発しています。",
         theme: [
           "8Kスーパーハイビジョン映像の高速処理の研究",
@@ -117,6 +119,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo03Img + ")",
+        mapKey: "map_3",
       },
       labo_4: {
         eventType: "終日開催",
@@ -134,7 +137,7 @@ export default {
           "ランダムな半径の円を敷き詰める高速サンプリング法とその絵画風画像生成への応用",
           "アイラインの厚さによる二重瞼の目の大きさ錯視効果",
         ],
-        placeOfEmployment: ["-"],
+        placeOfEmployment: ["コモドソリューションズ", "ジャステック"],
         links: [
           {
             name: "▶︎ 小玉周平助教（情報メディア学科公式HP）",
@@ -146,6 +149,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo04Img + ")",
+        mapKey: "map_3",
       },
       labo_5: {
         eventType: "終日開催",
@@ -157,7 +161,7 @@ export default {
           type: "教授",
         },
         tags: ["映像表現", "視覚心理"],
-        place: "1号館5階メディアラボ",
+        place: "1号館5階 0515A教室",
         info: "画像・映像に対する視覚心理の観点から、大画面表示における臨場感表示の研究、見慣れているコンテンツに対しての違和感と記憶の評価、錯視画像における見え方の研究、2D・3Dコンテンツ表示の心理的影響、眼の動きの視線情報からのコンテンツ評価等の研究テーマを進めています。",
         theme: [
           "仮想空間バスケットボールの跳躍運動の感覚に関する研究",
@@ -181,6 +185,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo05Img + ")",
+        mapKey: "map_3",
       },
       labo_6: {
         eventType: "終日開催",
@@ -216,6 +221,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo06Img + ")",
+        mapKey: "map_2",
       },
       labo_7: {
         eventType: "終日開催",
@@ -227,7 +233,7 @@ export default {
           type: "教授",
         },
         tags: ["音響工学", "MR", "信号処理"],
-        place: "1号館4階演習室",
+        place: "1号館5階メディアラボ",
         info: "我々の生活や文化にとって音は重要ですが、その理解や制御は必ずしも簡単ではありません。そこで、MR(複合現実技術)を用いた音場の可視化や音のVR技術である音場合成/再現技術、そしてそれらを支える音響計測技術等、音をより良く知り、自由に創り出す技術の研究等を行っています。",
         theme: [
           "複合現実技術を用いた音場の可視化",
@@ -245,6 +251,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo07Img + ")",
+        mapKey: "map_3",
       },
       labo_8: {
         eventType: "終日開催",
@@ -280,6 +287,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo08Img + ")",
+        mapKey: "map_3",
       },
       labo_9: {
         eventType: "終日開催",
@@ -291,7 +299,7 @@ export default {
           type: "教授",
         },
         tags: ["IoT", "ウエラブルシステム"],
-        place: "1号館4階演習室／5階メディアラボ",
+        place: "1号館4階演習室／1号館5階 0515A教室",
         info: "環境情報や生体情報を取得活用するIoTを始め、ビッグデータ、画像処理、xR、機械学習システムの応用の研究を行っています。無線センサを用いた防災・環境・生体モニタリング、ウェアラブル技術、高精細位置情報、空間スキャン、人間行動解析、映像解析、ブラウザ技術、可視化技術など。",
         theme: [
           "水難事故被害抑止を目的とした水位による河川の危険エリア侵入の検知と通知システム",
@@ -315,6 +323,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo09Img + ")",
+        mapKey: "map_2",
       },
       labo_10: {
         eventType: "終日開催",
@@ -350,6 +359,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo10Img + ")",
+        mapKey: "",
       },
       labo_11: {
         eventType: "終日開催",
@@ -367,7 +377,12 @@ export default {
           "レビューテキストを用いた宿泊施設比較のための依存構造解析を用いたアスペクト階層の構築",
           "大規模イベントにおける現地ツイートを用いた混雑状況可視化システムの提案",
         ],
-        placeOfEmployment: ["-"],
+        placeOfEmployment: [
+          "富士通Japan",
+          "クレディセゾン",
+          "コナミデジタルエンタテインメント",
+          "ユー・エス・イー",
+        ],
         links: [
           {
             name: "▶︎ 山田剛一講師（情報メディア学科公式HP）",
@@ -379,6 +394,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo11Img + ")",
+        mapKey: "",
       },
       labo_12: {
         eventType: "終日開催",
@@ -411,6 +427,7 @@ export default {
           },
         ],
         img: "background-image: url(" + labo12Img + ")",
+        mapKey: "map_2",
       },
     },
   },
