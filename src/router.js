@@ -5,6 +5,7 @@ import Labs from "./views/LabsView.vue";
 import LectureVideo from "./views/LectureVideoView.vue";
 import Questions from "./views/QuestionsView.vue";
 import Login from "./views/LoginView.vue";
+import Attention from "./views/AttentionView.vue";
 import { store } from "./vuex/index.js";
 
 export const router = createRouter({
@@ -43,6 +44,12 @@ export const router = createRouter({
       path: "/my-note",
       name: "my-note",
       component: MyNote,
+      meta: { require: true },
+    },
+    {
+      path: "/attention",
+      name: "attention",
+      component: Attention,
       meta: { require: true },
     },
   ],

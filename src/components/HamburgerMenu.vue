@@ -74,8 +74,15 @@
           href="https://docs.google.com/forms/d/e/1FAIpQLSeQ5ru-Mzc-gULHow6ZkxNjnRPP6I7i6aUTtTJitU7GpdYWWQ/viewform"
           style="text-decoration: none; color: white"
         >
-          <h1 class="zen-kaku-bold">アンケート</h1>
+          <h3 class="zen-kaku-bold mb-4">> アンケート</h3>
         </a>
+        <router-link
+          class="routerLink"
+          to="/attention"
+          @click="closeHamburgerMenu"
+        >
+          <h3 class="zen-kaku-bold">> ご利用にあたって</h3>
+        </router-link>
       </div>
 
       <div class="social py-15">
