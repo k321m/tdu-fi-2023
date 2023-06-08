@@ -2,15 +2,10 @@
   <div class="pass-page">
     <div class="pass-contents">
       <div class="py-2">
-        <input
-          type="password"
-          class="text-box"
-          v-model="pass"
-          placeholder="パスワードを入力"
-        />
+        <input type="password" v-model="pass" placeholder="パスワードを入力" />
       </div>
       <div class="py-2">
-        <div class="default-btn" @click="click">
+        <div class="default-btn btn-animation" @click="click">
           <p class="zen-kaku-bold" style="font-size: 1rem">送信</p>
         </div>
       </div>
@@ -54,20 +49,25 @@ export default {
 }
 .pass-contents {
   width: 90%;
+  max-width: 520px;
 }
 
-.text-box {
+input {
   width: 100%;
   min-height: 55px;
-  padding: 8px 10px;
+  padding: 0.8em;
   border: 1px solid #acaaf2;
   background-color: transparent;
   color: #010440;
   font-size: 1rem;
   line-height: 1.5;
 }
-
-.text-box::placeholder {
-  color: #d3d1ff;
+::placeholder {
+  color: #acaaf2;
+}
+input:focus {
+  border: 1px solid #010440;
+  background-color: white;
+  outline: none;
 }
 </style>
