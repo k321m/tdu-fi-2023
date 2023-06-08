@@ -8,6 +8,7 @@ import mapStore from "./mapStore";
 
 export const store = createStore({
   state: {
+    password: "",
     doneMyNoteTutorial: false,
     addQueCounter: 0,
     myNote: {
@@ -17,6 +18,9 @@ export const store = createStore({
     },
   },
   mutations: {
+    savePassword(state, password) {
+      this.state.password = password;
+    },
     // MyNoteチュートリアル終了判定更新
     updateDoneMyNoteTutorial(state) {
       this.state.doneMyNoteTutorial = true;
@@ -55,6 +59,7 @@ export const store = createStore({
       if (obj.type == "all") {
         // TODO: 初期値を代入することで初期化処理を行うように修正
         // 全初期化(「MyNoteのデータを削除」ボタンで発火想定)
+        this.state.password = "";
         this.state.doneMyNoteTutorial = false;
         this.state.addQueCounter = 0;
         this.state.myNote.events = {};
@@ -67,6 +72,9 @@ export const store = createStore({
     },
   },
   getters: {
+    getPassword(state) {
+      return state.password;
+    },
     getDoneMyNoteTutorial(state) {
       return state.doneMyNoteTutorial;
     },
@@ -134,7 +142,7 @@ export const store = createStore({
     createPersistedstate({
       key: "tdu-fi-2023oc",
       // localStorageに格納するもの指定
-      paths: ["doneMyNoteTutorial", "addQueCounter", "myNote"],
+      paths: ["password", "doneMyNoteTutorial", "addQueCounter", "myNote"],
     }),
   ],
 });
