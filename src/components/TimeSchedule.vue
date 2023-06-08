@@ -6,6 +6,7 @@
         :eventKey="clickedEventKey"
         :eventTime="clickedEventTime"
         @close-dialog="isDialogVisible = false"
+        @open-map="openMap"
       />
     </v-dialog>
 
@@ -181,6 +182,10 @@ export default {
       this.clickedEventData = value;
       this.clickedEventKey = key;
       this.clickedEventTime = time;
+    },
+    openMap(key) {
+      // console.log(key);
+      this.$emit("open-map", key);
     },
   },
   mounted() {

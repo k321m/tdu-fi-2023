@@ -289,12 +289,8 @@ export default {
   transform: scaleY(-1);
 }
 
-.contents {
-  display: flex;
-}
-
 .contents > div {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 }

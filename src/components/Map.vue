@@ -15,8 +15,8 @@
         <div class="px-4 py-2">
           <div v-for="(data, key) in allMapData" :key="key">
             <div
-              id="card"
-              class="mb-2 align-end"
+              :id="key"
+              class="mb-2 align-end card"
               :key="key"
               @click="openViewDialog(data)"
             >
@@ -64,6 +64,9 @@ export default {
       this.clickedMapData = data;
       this.isViewDialogVisible = true;
     },
+    openViewDialogByKey(key) {
+      this.openViewDialog(this.allMapData[key]);
+    },
   },
   mounted() {
     this.allMapData = this.$store.getters["mapStore/getAllMapData"];
@@ -85,7 +88,7 @@ export default {
   margin: 0 0 0 -24px;
 }
 
-#card {
+.card {
   z-index: 0;
   height: 14em;
   display: flex;
@@ -98,7 +101,7 @@ export default {
     0px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));
   border-radius: 0.2rem;
 }
-#card .card-img {
+.card .card-img {
   z-index: -1;
   position: absolute;
   top: 0;

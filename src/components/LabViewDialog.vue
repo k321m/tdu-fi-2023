@@ -52,10 +52,11 @@
     <!-- ボタン -->
     <div class="footer mt-6">
     <div class="button-group pb-2">
-      <button class="default-btn btn-animation zen-kaku-bold">地図を確認</button>
+      <ButtonDefault :title="'地図を確認'" :to="'/#map'"  />
+      <!-- <button class="default-btn btn-animation zen-kaku-bold">地図を確認</button> -->
       <button class="myNote-btn btn-animation zen-kaku-bold" @click="myNoteBtnClicked">MyNoteに追加</button>
     </div>
-      <a v-for="linkData in labData.links" class="zen-kaku-regular" style="font-size: 0.8em;display: block;margin-bottom: 0.2em;" :href="linkData['url']">{{ linkData['name'] }}</a>
+      <a v-for="linkData in labData.links" class="link zen-kaku-regular" style="font-size: 0.8em;display: block;margin-bottom: 0.2em;" :href="linkData['url']">{{ linkData['name'] }}</a>
   </div>
   </div>
   
@@ -65,6 +66,7 @@
 
 <script>
 import MyNoteAddAlert from "./MyNoteAddAlert.vue";
+import ButtonDefault from "./ButtonDefault.vue";
 export default {
   name: "LabViewDialog",
   props: ["labData", "labKey"],
@@ -77,6 +79,7 @@ export default {
   },
   components: {
     MyNoteAddAlert,
+    ButtonDefault
   },
   methods: {
     myNoteBtnClicked() {
@@ -141,13 +144,15 @@ export default {
   display: flex;
   justify-content: space-between
 }
-.button-group > button {
+.button-group > * {
   font-size:0.8em;
   width: 49%;
 }
 
 a{
   text-decoration:none;
+}
+.link{
   color: #010326;
   word-break: break-all;
 }

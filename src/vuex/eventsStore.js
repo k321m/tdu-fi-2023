@@ -25,6 +25,16 @@ export default {
         // TODO: 変数だけでの反映
         img: "background-image: url(" + allDayEventImg1 + ")",
         links: [],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
+          },
+        ],
       },
       allDayEvent_2: {
         eventType: "終日開催",
@@ -34,6 +44,16 @@ export default {
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg2 + ")",
         links: [],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
+          },
+        ],
       },
       allDayEvent_3: {
         eventType: "終日開催",
@@ -43,6 +63,16 @@ export default {
         fontsize: "font-size: 0.65em",
         img: "background-image: url(" + allDayEventImg3 + ")",
         links: [],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
+          },
+        ],
       },
       allDayEvent_4: {
         eventType: "終日開催",
@@ -52,6 +82,16 @@ export default {
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg4 + ")",
         links: [],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map_2",
+            key: "map_2",
+          },
+          {
+            name: "mynote",
+          },
+        ],
       },
       allDayEvent_5: {
         eventType: "終日開催",
@@ -61,6 +101,17 @@ export default {
         fontsize: "font-size: 0.85em",
         img: "background-image: url(" + allDayEventImg5 + ")",
         links: [],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_2",
+          },
+          {
+            name: "pink",
+            to: "/labs",
+          },
+        ],
       },
     },
     limitedEvent: {
@@ -68,9 +119,9 @@ export default {
         eventType: "限定プログラム",
         title: "学科説明会",
         subTitle: "情報メディア学科",
-        place: "2501／2505教室",
+        place: "2号館5階 2501／2505教室",
         peopleNum: "360名",
-        info: "「どのようなことが学べるか？」など、学科の特徴を20分でお伝えします。",
+        info: "「どのようなことが学べるか？」など、学科の特徴を20分でお伝えします。※各回同じ内容を予定しています。",
         subTitleStyle: "color: #ff9d00",
         img: "background-image: url(" + limitedEventImg2 + ")",
         links: [
@@ -79,14 +130,24 @@ export default {
             url: "https://www.im.dendai.ac.jp",
           },
         ],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
+          },
+        ],
       },
       limitedEvent_2: {
         eventType: "限定プログラム",
         title: "学科説明会",
         subTitle: "情報システム工学科",
-        place: "2503教室",
+        place: "2号館5階 2503",
         peopleNum: "252名",
-        info: "「どのようなことが学べるか？」など、学科の特徴を20分でお伝えします。",
+        info: "「どのようなことが学べるか？」など、学科の特徴を20分でお伝えします。※各回同じ内容を予定しています。",
         subTitleStyle: "color: #FF9CFD",
         img: "background-image: url(" + limitedEventImg3 + ")",
         links: [
@@ -95,20 +156,40 @@ export default {
             url: "https://www.aj.dendai.ac.jp",
           },
         ],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
+          },
+        ],
       },
       limitedEvent_3: {
         eventType: "限定プログラム",
         title: "学科説明会",
         subTitle: "情報通信工学科",
-        place: "2601教室",
+        place: "2号館6階 2601教室",
         peopleNum: "180名",
-        info: "「どのようなことが学べるか？」など、学科の特徴を20分でお伝えします。",
+        info: "「どのようなことが学べるか？」など、学科の特徴を20分でお伝えします。※各回同じ内容を予定しています。",
         subTitleStyle: "color: #45CBE6",
         img: "background-image: url(" + limitedEventImg4 + ")",
         links: [
           {
             name: "▶︎ 情報通信工学科公式HP",
             url: "http://www.c.dendai.ac.jp",
+          },
+        ],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
           },
         ],
       },
@@ -125,6 +206,16 @@ export default {
           {
             name: "▶︎ 東京電機大学公式HP",
             url: "https://www.dendai.ac.jp",
+          },
+        ],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
           },
         ],
       },
@@ -144,6 +235,16 @@ export default {
             url: "https://www.dendai.ac.jp/prospective-students/",
           },
         ],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
+          },
+        ],
       },
       limitedEvent_6: {
         eventType: "限定プログラム",
@@ -159,6 +260,16 @@ export default {
           {
             name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",
             url: "https://www.dendai.ac.jp/prospective-students/",
+          },
+        ],
+        buttons: [
+          {
+            name: "default",
+            to: "/#map",
+            key: "map_1",
+          },
+          {
+            name: "mynote",
           },
         ],
       },

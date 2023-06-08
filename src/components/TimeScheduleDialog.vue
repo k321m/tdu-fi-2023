@@ -1,6 +1,6 @@
 <template>
   <MyNoteAddAlert v-if="isViewAlert" @end-alert="isViewAlert = false" />
-  <div class="background-dialog pa-5">
+  <div class="background-dialog pa-5 pb-7">
     <div style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
         <v-icon>mdi-close</v-icon>
@@ -42,25 +42,34 @@
         <span class="zen-kaku-regular pl-1">{{ eventData.peopleNum }}</span>
       </div>
     </div>
-    <div class="scroll-contents" style="font-size: 0.9em">
+    <div class="scroll-contents" style="font-size: 0.9em; padding-bottom: 1em">
       <p class="zen-kaku-regular">{{ eventData.info }}</p>
     </div>
     <!-- ボタン -->
     <div class="footer mt-6">
       <div class="button-group pb-2">
-        <button class="default-btn btn-animation zen-kaku-bold">
-          地図を確認
-        </button>
-        <button
-          class="myNote-btn btn-animation zen-kaku-bold"
-          @click="myNoteBtnClicked"
-        >
-          MyNoteに追加
-        </button>
+        <template v-for="button in eventData.buttons">
+          <template v-if="button.name == 'default'">
+            <ButtonDefault
+              :title="'地図を確認'"
+              :to="button.to"
+              :clickEvent="() => closeDialog(button.key)"
+            />
+          </template>
+          <template v-else-if="button.name == 'mynote'">
+            <ButtonMyNote
+              :title="'MyNoteに追加'"
+              :clickEvent="myNoteBtnClicked"
+            />
+          </template>
+          <template v-else-if="button.name == 'pink'">
+            <ButtonPink :title="'研究室を確認'" :to="'/labs'" />
+          </template>
+        </template>
       </div>
       <a
         v-for="linkData in eventData.links"
-        class="zen-kaku-regular"
+        class="zen-kaku-regular link"
         style="font-size: 0.8em; display: block; margin-bottom: 0.2em"
         :href="linkData['url']"
         >{{ linkData["name"] }}</a
@@ -71,6 +80,9 @@
 
 <script>
 import MyNoteAddAlert from "./MyNoteAddAlert.vue";
+import ButtonDefault from "./ButtonDefault.vue";
+import ButtonMyNote from "./ButtonMyNote.vue";
+import ButtonPink from "./ButtonPink.vue";
 export default {
   name: "TimeScheduleDialog",
   props: ["eventData", "eventKey", "eventTime"],
@@ -83,6 +95,9 @@ export default {
   },
   components: {
     MyNoteAddAlert,
+    ButtonDefault,
+    ButtonMyNote,
+    ButtonPink,
   },
   methods: {
     myNoteBtnClicked() {
@@ -99,6 +114,10 @@ export default {
         title: addTitle,
       });
     },
+    closeDialog(key) {
+      this.$emit("close-dialog");
+      this.$emit("open-map", key);
+    },
   },
 };
 </script>
@@ -107,7 +126,7 @@ export default {
 .background-dialog {
   display: flex;
   flex-direction: column;
-  min-height: 80dvh;
+  min-height: 70dvh;
   max-height: 90dvh;
   background-color: white;
   border-radius: 0.8rem;
@@ -134,12 +153,14 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.button-group > button {
+.button-group > * {
   font-size: 0.8em;
   width: 49%;
 }
 a {
   text-decoration: none;
+}
+.link {
   color: #010326;
 }
 </style>

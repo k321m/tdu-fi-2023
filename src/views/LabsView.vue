@@ -78,7 +78,7 @@
             id="card"
             class="mb-2 align-end"
             :key="key"
-            @click="openViewDialog(key)"
+            @click="openLabViewDialog(key)"
           >
             <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
             <div class="card-img" :style="allLabsData[key].img"></div>
@@ -105,6 +105,7 @@ import LabViewDialog from "../components/LabViewDialog.vue";
 import LabFilterDialog from "../components/LabFilterDialog.vue";
 import MyNoteIcon from "../components/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
+import MapViewDialog from "../components/MapViewDialog.vue";
 export default {
   name: "Labs",
   data() {
@@ -124,6 +125,7 @@ export default {
     LabFilterDialog,
     ContentTitle,
     MyNoteIcon,
+    MapViewDialog,
   },
   computed: {
     // 指定される条件が変わると、表示する研究室も変わる
@@ -153,7 +155,7 @@ export default {
         this.allTagData[key] = labsData;
       }
     },
-    openViewDialog(key) {
+    openLabViewDialog(key) {
       this.isViewDialogVisible = true;
       this.clickedLabData = this.allLabsData[key];
       this.clickedLabKey = key;

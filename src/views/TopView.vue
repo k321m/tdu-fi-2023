@@ -2,8 +2,8 @@
   <div id="contents">
     <TopTitle />
     <TopCarousel />
-    <TimeSchedule />
-    <Map />
+    <TimeSchedule @open-map="openMap" />
+    <Map ref="mapRef" />
     <MyNoteIcon />
   </div>
 </template>
@@ -24,6 +24,11 @@ export default {
     MyNoteIcon,
     TopTitle,
     Map,
+  },
+  methods: {
+    openMap(key) {
+      this.$refs.mapRef.openViewDialogByKey(key);
+    },
   },
 };
 </script>

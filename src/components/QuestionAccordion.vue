@@ -72,7 +72,7 @@
           <!-- MyNoteに追加ボタン -->
           <button
             class="myNote-btn btn-animation zen-kaku-bold"
-            @click="addQuestion"
+            @click="myNoteBtnClicked"
           >
             MyNoteに追加
           </button>
@@ -94,7 +94,7 @@ export default {
     };
   },
   methods: {
-    addQuestion() {
+    myNoteBtnClicked() {
       this.$emit("start-alert");
       this.$store.commit("countAddQuestion");
       this.$store.commit("addMyNote", {
