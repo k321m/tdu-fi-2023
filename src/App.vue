@@ -16,7 +16,7 @@
           @close-hamburger-menu="hamburgerMenu = !hamburgerMenu"
         ></HamburgerMenu>
       </transition>
-      <v-app-bar elevation="0" app>
+      <v-app-bar elevation="1" app>
         <a class="pl-5" style="text-decoration: none; display: flex" href="/">
           <img src="./assets/logo.svg" />
         </a>
