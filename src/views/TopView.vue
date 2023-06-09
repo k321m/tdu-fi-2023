@@ -15,7 +15,6 @@ import TopCarousel from "../components/TopCarousel.vue";
 import TopTitle from "../components/TopTitle.vue";
 import Map from "../components/Map.vue";
 import "../js/particles/top-particle";
-
 export default {
   name: "Top",
   components: {
@@ -29,6 +28,11 @@ export default {
     openMap(key) {
       this.$refs.mapRef.openViewDialogByKey(key);
     },
+  },
+  mounted() {
+    if (this.$route.query.id) {
+      this.$refs.mapRef.openViewDialogByKey(this.$route.query.id);
+    }
   },
 };
 </script>

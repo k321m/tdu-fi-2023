@@ -86,7 +86,7 @@ import ButtonPink from "./ButtonPink.vue";
 export default {
   name: "TimeScheduleDialog",
   props: ["eventData", "eventKey", "eventTime"],
-  emits: ["close-dialog"],
+  emits: ["close-dialog", "open-map"],
   data() {
     return {
       isViewAlert: false,

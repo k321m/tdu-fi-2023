@@ -1,7 +1,7 @@
 <template>
   <router-link
     class="btn default-btn btn-animation zen-kaku-bold"
-    :to="to"
+    :to="{ path: to, query: { id: mapKey } }"
     @click="handleClick()"
   >
     {{ title }}
@@ -10,7 +10,7 @@
 <script>
 export default {
   name: "ButtonDefault",
-  props: ["title", "to", "clickEvent"],
+  props: ["title", "to", "mapKey", "clickEvent"],
   methods: {
     handleClick() {
       if (this.clickEvent) {

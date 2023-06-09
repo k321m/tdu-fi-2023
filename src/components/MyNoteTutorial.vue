@@ -101,7 +101,7 @@ export default {
       this.$store.commit("updateDoneMyNoteTutorial");
     },
     handleSlideStart(index) {
-      console.log(JSON.stringify(index));
+      // console.log(JSON.stringify(index));
       if (index.slidingToIndex == this.tutorialData.length - 1) {
         this.isLastCarouse = true;
       } else {

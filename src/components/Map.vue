@@ -3,7 +3,8 @@
     <v-dialog v-model="isViewDialogVisible">
       <MapViewDialog
         :mapData="clickedMapData"
-        @close-dialog="isViewDialogVisible = false"
+        :mapId="clickedMapId"
+        @close-dialog="closeDialog"
       />
     </v-dialog>
     <div id="map" class="background">
@@ -18,7 +19,7 @@
               :id="key"
               class="mb-2 align-end card"
               :key="key"
-              @click="openViewDialog(data)"
+              @click="openViewDialog(data, key)"
             >
               <div
                 class="v-responsive__sizer"
@@ -54,18 +55,24 @@ export default {
       allMapData: {},
       isViewDialogVisible: false,
       clickedMapData: {},
+      clickedMapId: String,
     };
   },
   components: {
     MapViewDialog,
   },
   methods: {
-    openViewDialog(data) {
+    openViewDialog(data, key) {
       this.clickedMapData = data;
+      this.clickedMapId = key;
       this.isViewDialogVisible = true;
     },
     openViewDialogByKey(key) {
-      this.openViewDialog(this.allMapData[key]);
+      this.openViewDialog(this.allMapData[key], key);
+    },
+    closeDialog(id) {
+      this.isViewDialogVisible = false;
+      this.$router.push(`/#${id}`);
     },
   },
   mounted() {
