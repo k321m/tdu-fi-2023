@@ -2,7 +2,7 @@
   <div class="background-dialog pa-5">
     <div style="display: flex">
       <div class="pa-2" style="margin: 0 0 0 auto" @click="closeTutorial">
-        <p class="zen-kaku-bold">スキップ</p>
+        <p class="zen-kaku-medium">スキップ</p>
       </div>
     </div>
     <div style="display: flex; flex-grow: 1; align-items: center">

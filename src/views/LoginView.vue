@@ -9,7 +9,7 @@
           placeholder="パスワードを入力"
         />
       </div>
-      <p class="zen-kaku-bold alert" v-show="updateMiss">
+      <p class="zen-kaku-medium alert" v-show="updateMiss">
         パスワードが違います
       </p>
       <div class="py-3">
@@ -95,7 +95,7 @@ input:focus {
   outline: none;
 }
 .alert {
-  color: red;
+  color: #e345e6;
 }
 
 .disable {
