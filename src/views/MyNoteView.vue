@@ -17,6 +17,13 @@
           >説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明
         </template>
       </ContentTitle>
+      <div v-if="localStorageMessage != ''">
+        <!-- localstorageチェック -->
+        <p class="zen-kaku-bold" style="color: #e345e6; font-size: 0.8rem">
+          {{ localStorageMessage }}
+        </p>
+      </div>
+      <!-- MyNote -->
       <div class="pt-6">
         <MyNoteVisitList :eventDetailData="changedMyNoteDetailData.events" />
       </div>
@@ -62,6 +69,7 @@ export default {
       isTutorialVisible: !this.$store.getters.getDoneMyNoteTutorial,
       isViewExportData: false,
       myNoteData: {},
+      localStorageMessage: String,
     };
   },
   computed: {
@@ -139,12 +147,9 @@ export default {
       this.addTitleToContent(content, "なんでもメモ");
       this.addMemoToContent(content, this.myNoteData.anything);
       var docDefinition = {
-        pageSize: "A4", // PDF用紙サイズ設定
+        pageSize: "A4",
         pageMargins: [10, 10, 10, 30], // PDF用紙マージン設定[左、上、右、下]
-        content: [
-          // ドキュメントのコンテンツを指定します
-          content,
-        ],
+        content: [content],
         defaultStyle: {
           font: "mplus",
         },
@@ -152,10 +157,33 @@ export default {
       this.isViewExportData = true;
       pdfMake.createPdf(docDefinition).open();
     },
+    // localStorage利用可能チェック
+    setLocalStorageMessage() {
+      if (typeof localStorage !== "undefined") {
+        try {
+          localStorage.setItem("dummy", "1");
+          if (localStorage.getItem("dummy") === "1") {
+            localStorage.removeItem("dummy");
+            this.localStorageMessage = "";
+          } else {
+            this.localStorageMessage =
+              "※ご利用のブラウザにおいてlocalStorageが無効化されているため、MyNoteがご利用いただけません。詳しくは当サイトの「ご利用にあたって」またはブラウザのヘルプをご参照し、設定の変更を行ってください";
+          }
+        } catch (e) {
+          this.localStorageMessage =
+            "※ご利用のブラウザはlocalStorageの一部機能に未対応のため、MyNoteがご利用いただけません。推奨ブラウザについては当サイトの「ご利用にあたって」をご参照ください。";
+        }
+      } else {
+        this.localStorageMessage =
+          "※ご利用のブラウザはlocalStorage未対応のため、MyNoteがご利用いただけません。推奨ブラウザについては当サイトの「ご利用にあたって」をご参照ください。";
+      }
+    },
   },
   mounted() {
     this.myNoteDetailData = this.$store.getters.getMyNoteDetailData;
     // console.log(this.myNoteDetailData);
+    this.setLocalStorageMessage();
+    // console.log(this.localStorageMessage);
   },
 };
 </script>
