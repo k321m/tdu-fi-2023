@@ -6,7 +6,11 @@
       ></MyNoteTutorial>
     </v-dialog>
     <div class="pa-4">
-      <ContentTitle :isHelpVisible="true" @open-help="isTutorialVisible = true">
+      <ContentTitle
+        :isHelpVisible="true"
+        :isAttentionVisible="true"
+        @open-help="isTutorialVisible = true"
+      >
         <template v-slot:jp-title>マイノート</template>
         <template v-slot:title>>MyNote</template>
         <template v-slot:info

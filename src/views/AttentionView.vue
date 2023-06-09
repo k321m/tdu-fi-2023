@@ -57,7 +57,13 @@
       </li>
     </ul>
 
-    <p class="zen-kaku-bold pb-3" style="font-size: 1.2em">5. MyNote</p>
+    <p
+      id="attention-mynote"
+      class="zen-kaku-bold pb-3"
+      style="font-size: 1.2em"
+    >
+      5. MyNote
+    </p>
     <p class="zen-kaku-regular pb-8">
       本ウェブサイトのMyNoteという機能では、登録した項目やメモなどのデータを保存するために「localStorage（ローカルストレージ）」と呼ばれる技術を使用しています。
       ローカルストレージとはWeb
