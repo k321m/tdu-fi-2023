@@ -17,7 +17,8 @@ body {
 }
 
 /* フォント */
-p {
+p,
+ul {
   text-align: justify;
   word-break: break-all;
 }

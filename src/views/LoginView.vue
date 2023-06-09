@@ -73,21 +73,26 @@ export default {
 }
 .pass-contents {
   width: 90%;
+  max-width: 520px;
 }
 
-.text-box {
+input {
   width: 100%;
   min-height: 55px;
-  padding: 8px 10px;
+  padding: 0.8em;
   border: 1px solid #acaaf2;
   background-color: transparent;
   color: #010440;
   font-size: 1rem;
   line-height: 1.5;
 }
-
-.text-box::placeholder {
-  color: #d3d1ff;
+::placeholder {
+  color: #acaaf2;
+}
+input:focus {
+  border: 1px solid #010440;
+  background-color: white;
+  outline: none;
 }
 .alert {
   color: red;
