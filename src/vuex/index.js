@@ -9,6 +9,8 @@ import mapStore from "./mapStore";
 export const store = createStore({
   state: {
     password: "",
+    tmpPassword: "",
+    missedPassword: false,
     doneMyNoteTutorial: false,
     addQueCounter: 0,
     myNote: {
@@ -20,6 +22,9 @@ export const store = createStore({
   mutations: {
     savePassword(state, password) {
       this.state.password = password;
+    },
+    updateMissedPassword(state) {
+      this.state.missedPassword = true;
     },
     // MyNoteチュートリアル終了判定更新
     updateDoneMyNoteTutorial(state) {
@@ -74,6 +79,9 @@ export const store = createStore({
   getters: {
     getPassword(state) {
       return state.password;
+    },
+    getMissedPassword(state) {
+      return state.missedPassword;
     },
     getDoneMyNoteTutorial(state) {
       return state.doneMyNoteTutorial;
