@@ -4,6 +4,7 @@
       :labData="clickedLabData"
       :labKey="clickedLabKey"
       @close-dialog="isViewDialogVisible = false"
+      @open-map-dialog="openMapDialog"
     />
   </v-dialog>
   <v-dialog v-model="isFilterDialogVisible">
@@ -12,6 +13,13 @@
       :filteredTags="filteredTags"
       @close-dialog="isFilterDialogVisible = false"
       @update-filtered="onUpdateFilteredTags"
+    />
+  </v-dialog>
+  <v-dialog v-model="isMapDialogVisible">
+    <MapViewDialog
+      :mapData="mapData"
+      :mapId="mapId"
+      @close-dialog="isMapDialogVisible = false"
     />
   </v-dialog>
 
@@ -118,6 +126,10 @@ export default {
       isFilterDialogVisible: false,
       filteredLabsKey: Set, //現在表示している研究室のkey
       filteredTags: ["all"], //現在指定されている条件配列
+      allMapData: {},
+      mapData: {},
+      mapId: String,
+      isMapDialogVisible: false,
     };
   },
   components: {
@@ -173,11 +185,16 @@ export default {
       );
       // console.log(this.filteredTags);
     },
+    openMapDialog(mapId) {
+      this.mapId = mapId;
+      this.mapData = this.allMapData[mapId];
+      this.isMapDialogVisible = true;
+      console.log(this.mapId, this.mapData);
+    },
   },
   mounted() {
     // jsonから全研究室のデータを取得して変数に格納
     this.allLabsData = this.$store.getters["labsStore/getAllLabsData"];
-    // console.log(this.allLabsData);
     // 全研究室のデータから{タグ:[研究室のkey]}からなる辞書を作成
     for (const item of Object.keys(this.allLabsData)) {
       this.updateTagData("all", item);
@@ -192,8 +209,9 @@ export default {
       }
     }
     this.filteredLabsKey = new Set(this.allTagData["all"]);
-    // console.log(this.filteredLabsKey);
-    // console.log(this.allTagData);
+    // マップデータを取得
+    this.allMapData = this.$store.getters["mapStore/getAllMapData"];
+    console.log(this.allMapData);
   },
 };
 </script>

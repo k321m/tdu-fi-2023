@@ -52,7 +52,7 @@
     <!-- ボタン -->
     <div class="footer mt-6">
     <div class="button-group pb-2" v-if="labData.display">
-      <ButtonDefault :title="'地図を確認'" :to="'/'" :mapKey="labData.mapKey"  />
+      <ButtonDefault :title="'地図を確認'" :to="''" :clickEvent="()=>openMapDialog()" />
       <button class="myNote-btn btn-animation zen-kaku-bold" @click="myNoteBtnClicked">MyNoteに追加</button>
     </div>
       <a v-for="linkData in labData.links" class="link zen-kaku-regular" style="font-size: 0.8em;display: block;margin-bottom: 0.2em;" :href="linkData['url']">{{ linkData['name'] }}</a>
@@ -66,7 +66,7 @@ import ButtonDefault from "./ButtonDefault.vue";
 export default {
   name: "LabViewDialog",
   props: ["labData", "labKey"],
-  emits: ["close-dialog"],
+  emits: ["close-dialog","open-map-dialog"],
   data() {
     return {
       isViewAlert: false,
@@ -87,6 +87,11 @@ export default {
         title:this.labData.title,
       });
     },
+    openMapDialog(){
+      console.log(this.labData.mapKey);
+      // this.$emit('close-dialog');
+      this.$emit('open-map-dialog',this.labData.mapKey);
+    }
   },
 };
 </script>
