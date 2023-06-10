@@ -17,7 +17,7 @@
     </div>
     <div class="py-4">
       <router-link class="routerLink" to="/questions">
-        <p class="zen-kaku-regular">▶︎ 具体的な質問例</p>
+        <p class="zen-kaku-regular">▶︎ おすすめ質問TOP10</p>
       </router-link>
     </div>
   </div>

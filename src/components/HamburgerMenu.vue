@@ -61,7 +61,7 @@
         @click="closeHamburgerMenu"
       >
         <div class="py-5">
-          <h1 class="zen-kaku-bold">具体的な質問例</h1>
+          <h1 class="zen-kaku-bold">おすすめ質問TOP10</h1>
         </div>
       </router-link>
       <router-link class="routerLink" to="/my-note" @click="closeHamburgerMenu">

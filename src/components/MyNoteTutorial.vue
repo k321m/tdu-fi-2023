@@ -72,7 +72,7 @@ export default {
         },
         {
           src: tutorialImg2,
-          text: "イベントタイムスケジュールや<br>研究室一覧、具体的な質問例などから<br>気になる項目をMyNoteに追加",
+          text: "イベントタイムスケジュールや<br>研究室一覧、おすすめ質問TOP10などから<br>気になる項目をMyNoteに追加",
           caution: "",
         },
         {

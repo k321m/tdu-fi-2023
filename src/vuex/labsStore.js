@@ -45,7 +45,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/isl1/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -78,7 +78,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cll/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -114,7 +114,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/vcl/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -144,7 +144,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/vcl-2/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -180,7 +180,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/mal/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -216,7 +216,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -246,7 +246,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/acl/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -282,7 +282,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/igl/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -318,7 +318,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cps/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -354,7 +354,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cdl/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -389,7 +389,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cll_lecturer/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],
@@ -422,7 +422,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cal/",
           },
           {
-            name: "▶︎ 具体的な質問例",
+            name: "▶︎ おすすめ質問TOP10",
             url: "/questions",
           },
         ],

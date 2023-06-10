@@ -3,17 +3,17 @@
     <MyNoteAddAlert v-if="isViewAlert" @end-alert="isViewAlert = false" />
     <div class="pa-4">
       <ContentTitle>
-        <template v-slot:jp-title>具体的な質問例</template>
+        <template v-slot:jp-title>おすすめ質問TOP10</template>
         <template v-slot:title>>Questions</template>
-        <template v-slot:info
-          >説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明
+        <template v-slot:info>
+          OCは学生や教員に直接質問ができる貴重な機会です。下記に「おすすめ質問TOP10」と「よくある質問とその回答」を抜粋して掲載しました。よろしければ参考にしてください。
         </template>
       </ContentTitle>
       <div class="pt-6">
         <!-- おすすめ質問 -->
         <div class="mb-8">
           <p class="zen-kaku-bold mb-4" style="font-size: 1.1em">
-            おすすめ質問：TOP10
+            おすすめ質問TOP10
           </p>
           <div v-for="(value, key) in allRecommendQuestionsData">
             <QuestionAccordion

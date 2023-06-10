@@ -58,7 +58,11 @@ export default {
         { title: "MyNote", icon: "mdi-home", url: "/my-note" },
         { title: "研究室公開", icon: "mdi-heart", url: "/labs" },
         { title: "講義動画", icon: "mdi-information-variant", url: "" },
-        { title: "具体的な質問例", icon: "mdi-information-variant", url: "" },
+        {
+          title: "おすすめ質問TOP10",
+          icon: "mdi-information-variant",
+          url: "",
+        },
       ],
     };
   },

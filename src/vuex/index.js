@@ -36,7 +36,7 @@ export const store = createStore({
     },
     // TODO: Type与えなくても処理する方法に修正
     addMyNote(state, obj) {
-      // [questions]の場合はkeyをquestionとした質問内容を格納(現時点でユーザが質問を追加した場合のみの対応であるため，具体的な質問例を実装する場合にはmodule(Store)のKeyを入れるなどの対応が必要)
+      // [questions]の場合はkeyをquestionとした質問内容を格納(現時点でユーザが質問を追加した場合のみの対応であるため，おすすめ質問TOP10を実装する場合にはmodule(Store)のKeyを入れるなどの対応が必要)
       if (obj.type == "questions")
         var addDataTemplate = { title: obj.question, memo: "" };
       // objの中身は{ type:value("events" or "questions"), key:value ,(questionのみ)question:value]を想定
@@ -127,7 +127,7 @@ export const store = createStore({
       });
 
       // MyNoteに保存したquestionKey(ex. **_**)を使ってMyNoteからデータを取得
-      // (下記のコードは現状ではそのままMyNoteを格納すれば良いだけの処理だが，今後具体的な質問例から追加されることを想定して以下の書き方にしてある)
+      // (下記のコードは現状ではそのままMyNoteを格納すれば良いだけの処理だが，今後おすすめ質問TOP10から追加されることを想定して以下の書き方にしてある)
       // 取得したデータをdetailDataに格納
       questionKeys.forEach(function (questionKey) {
         // ユーザが質問を自分で追加した場合のデータ取得であり，その場合データはMyNoteに全て格納されているためそのまま渡しているのと同義

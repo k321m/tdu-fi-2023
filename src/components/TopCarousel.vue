@@ -30,8 +30,9 @@
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import MenuImg01 from "/src/assets/labs/ビジュアルコンピューティング.svg";
 import MenuImg02 from "/src/assets/lectures/インタラクティブメディアとデザイン.svg";
-import MenuImg03 from "/src/assets/labs/ビジュアルコンピューティング.svg";
-import MenuImg04 from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import MenuImg03 from "/src/assets/top-crousel/おすすめ質問TOP10.svg";
+import MenuImg04 from "/src/assets/top-crousel/MyNote.svg";
+import MenuImg05 from "/src/assets/top-crousel/アンケート.svg";
 
 import "vue3-carousel/dist/carousel.css";
 export default {
@@ -53,7 +54,7 @@ export default {
         },
         {
           text: "Questions",
-          jptext: "具体的な質問例",
+          jptext: "おすすめ質問TOP10",
           img: "background-image: url(" + MenuImg03 + ")",
           to: "/questions",
         },
@@ -66,7 +67,7 @@ export default {
         {
           text: "Survey",
           jptext: "アンケート",
-          img: "background-image: url(" + MenuImg04 + ")",
+          img: "background-image: url(" + MenuImg05 + ")",
           to: "https://docs.google.com/forms/d/e/1FAIpQLSeQ5ru-Mzc-gULHow6ZkxNjnRPP6I7i6aUTtTJitU7GpdYWWQ/viewform",
         },
       ],

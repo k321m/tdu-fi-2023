@@ -13,8 +13,8 @@
       >
         <template v-slot:jp-title>マイノート</template>
         <template v-slot:title>>MyNote</template>
-        <template v-slot:info
-          >説明説明説明説明説明説明説明説明説説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説明説説明
+        <template v-slot:info>
+          MyNoteには、訪問したイベントや研究室、質問した項目や、それらに関するメモなどを保存・PDFとして出力することができます。本日得られた大切な情報は、MyNoteを活用して今後の大学選びや受験にお役立てください。
         </template>
       </ContentTitle>
       <div v-if="localStorageMessage != ''">
