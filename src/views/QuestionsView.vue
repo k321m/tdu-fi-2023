@@ -13,7 +13,7 @@
         <!-- おすすめ質問 -->
         <div class="mb-8">
           <p class="zen-kaku-bold mb-4" style="font-size: 1.1em">
-            おすすめ質問
+            おすすめ質問：TOP10
           </p>
           <div v-for="(value, key) in allRecommendQuestionsData">
             <QuestionAccordion
@@ -27,7 +27,9 @@
       <div class="pt-6">
         <!-- おすすめ質問 -->
         <div class="mb-8">
-          <p class="zen-kaku-bold mb-4" style="font-size: 1.1em">FAQ</p>
+          <p class="zen-kaku-bold mb-4" style="font-size: 1.1em">
+            FAQ：よくある質問とその回答
+          </p>
           <div v-for="(value, key) in allFAQData">
             <QuestionAccordion
               :questionValue="value"
