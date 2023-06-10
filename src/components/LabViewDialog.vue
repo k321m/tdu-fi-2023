@@ -89,7 +89,6 @@ export default {
     },
     openMapDialog(){
       console.log(this.labData.mapKey);
-      // this.$emit('close-dialog');
       this.$emit('open-map-dialog',this.labData.mapKey);
     }
   },

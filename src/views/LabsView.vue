@@ -189,7 +189,6 @@ export default {
       this.mapId = mapId;
       this.mapData = this.allMapData[mapId];
       this.isMapDialogVisible = true;
-      console.log(this.mapId, this.mapData);
     },
   },
   mounted() {
@@ -211,7 +210,6 @@ export default {
     this.filteredLabsKey = new Set(this.allTagData["all"]);
     // マップデータを取得
     this.allMapData = this.$store.getters["mapStore/getAllMapData"];
-    console.log(this.allMapData);
   },
 };
 </script>
