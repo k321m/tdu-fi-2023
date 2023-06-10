@@ -7,6 +7,7 @@
         @close-dialog="closeDialog"
       />
     </v-dialog>
+    <div id="map" style="padding-top: 72px; margin-top: -72px"></div>
     <div id="map" class="background">
       <div class="map">
         <div class="py-4 pl-4">

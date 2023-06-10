@@ -10,7 +10,8 @@
       />
     </v-dialog>
 
-    <div id="time-schedule" class="background">
+    <div id="time-schedule" style="padding-top: 72px; margin-top: -72px"></div>
+    <div class="background">
       <div class="time-schedule">
         <div class="py-4 pl-4">
           <p class="zen-kaku-bold pl-5 pb-2">タイムスケジュール</p>
