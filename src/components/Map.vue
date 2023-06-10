@@ -10,7 +10,7 @@
     <div id="map" class="background">
       <div class="map">
         <div class="py-4 pl-4">
-          <p class="zen-kaku-h5 pl-5 pb-2">地図</p>
+          <p class="zen-kaku-bold pl-5 pb-2">地図</p>
           <p class="hack-h2">>Map</p>
         </div>
         <div class="px-4 py-2">

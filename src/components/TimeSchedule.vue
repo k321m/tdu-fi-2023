@@ -68,7 +68,7 @@
             </v-col>
             <v-col class="pt-15 pl-5">
               <div>
-                <p class="zen-kaku-h5">入場開始</p>
+                <p class="zen-kaku-medium">入場開始</p>
               </div>
               <div style="padding-top: 92px">
                 <template
@@ -134,7 +134,7 @@
                 </template>
               </div>
               <div class="">
-                <p class="zen-kaku-h5">オープンキャンパス終了</p>
+                <p class="zen-kaku-medium">オープンキャンパス終了</p>
               </div>
             </v-col>
           </v-row>
