@@ -11,6 +11,13 @@
       <template v-slot:message-caution>メモの内容が失われます</template>
     </MyNoteDeleteDialog>
   </v-dialog>
+  <v-dialog v-model="isMapDialogVisible">
+    <MapViewDialog
+      :mapData="mapData"
+      :mapId="mapId"
+      @close-dialog="isMapDialogVisible = false"
+    />
+  </v-dialog>
   <div class="accordion">
     <div class="title-box" :class="{ 'opened-border-radius': isOpen }">
       <div class="text-area">
@@ -104,9 +111,11 @@
             <div class="py-5">
               <div class="footer">
                 <div class="button-group">
-                  <button class="default-btn btn-animation zen-kaku-bold">
-                    地図を確認
-                  </button>
+                  <ButtonDefault
+                    :title="'地図を確認'"
+                    :to="''"
+                    :clickEvent="() => openMapDialog()"
+                  />
                   <button
                     class="default-border-btn btn-animation zen-kaku-bold"
                     @click="
@@ -127,11 +136,15 @@
 
 <script>
 import MyNoteDeleteDialog from "./MyNoteDeleteDialog.vue";
+import ButtonDefault from "./ButtonDefault.vue";
+import MapViewDialog from "../components/MapViewDialog.vue";
 export default {
   name: "MyNoteEventAcordion",
   props: ["eventValue", "eventKey"],
   components: {
     MyNoteDeleteDialog,
+    ButtonDefault,
+    MapViewDialog,
   },
   data() {
     return {
@@ -142,6 +155,10 @@ export default {
       isDeleteDialogVisible: false,
       timeScheduleData: {},
       isCopied: false,
+      allMapData: {},
+      mapData: {},
+      mapId: String,
+      isMapDialogVisible: false,
     };
   },
   methods: {
@@ -197,11 +214,21 @@ export default {
         this.isCopied = false;
       }, 3000);
     },
+    openMapDialog() {
+      if (this.eventValue.buttons == undefined) {
+        this.mapId = this.eventValue.mapKey;
+      } else {
+        this.mapId = this.eventValue.buttons[0].key;
+      }
+      this.mapData = this.allMapData[this.mapId];
+      this.isMapDialogVisible = true;
+    },
   },
   mounted() {
     this.updateIsChecked();
     this.updateMemo();
     this.timeScheduleData = this.$store.getters["eventsStore/getTimeSchedule"];
+    this.allMapData = this.$store.getters["mapStore/getAllMapData"];
   },
 };
 </script>
@@ -323,8 +350,16 @@ textarea:focus {
   display: flex;
   justify-content: space-between;
 }
-.button-group > button {
+.button-group > * {
   font-size: 0.8em;
   width: 49%;
+}
+
+a {
+  text-decoration: none;
+}
+.link {
+  color: #010326;
+  word-break: break-all;
 }
 </style>
