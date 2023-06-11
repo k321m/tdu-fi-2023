@@ -22,7 +22,8 @@
           style="text-decoration: none; display: flex"
           href="/"
         >
-          <img src="./assets/logo.svg" />
+          <!-- <img src="./assets/logos/logo_dark.svg" /> -->
+          <img src="./assets/logos/logo-light.svg" />
         </a>
         <v-app-bar-nav-icon @click.stop="hamburgerMenu = !hamburgerMenu" />
       </v-app-bar>
