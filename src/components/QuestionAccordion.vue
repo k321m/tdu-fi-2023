@@ -60,9 +60,7 @@
             </div>
           </div>
           <!-- MyNoteに追加ボタン -->
-          <Button myNote :clickEvent="() => myNoteBtnClicked()"
-            >MyNoteに追加</Button
-          >
+          <Button myNote @click="myNoteBtnClicked">MyNoteに追加</Button>
         </div>
       </transition>
     </div>

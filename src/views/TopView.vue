@@ -1,12 +1,11 @@
 <template>
   <div id="contents">
-    <Button :clickEvent="() => test()" myNote>MyNoteボタン</Button>
+    <Button myNote>MyNoteボタン</Button>
     <Button default>デフォルトボタン</Button>
-    <Button defaultBorder :clickEvent="() => test()"
-      >デフォルトボーダーボタン</Button
-    >
-    <Button pink :clickEvent="() => test()">ピンクボタン</Button>
-    <Button pinkBorder :clickEvent="() => test()">ピンクボーダーボタン</Button>
+    <Button defaultBorder>デフォルトボーダーボタン</Button>
+    <Button pink>ピンクボタン</Button>
+    <Button pinkBorder>ピンクボーダーボタン</Button>
+
     <h1>h1のサイズです。</h1>
     <h2>h2のサイズです。</h2>
     <h3>h3のサイズです。</h3>
@@ -50,9 +49,6 @@ export default {
   methods: {
     openMap(key) {
       this.$refs.mapRef.openViewDialogByKey(key);
-    },
-    test() {
-      console.log("テスト");
     },
   },
 };

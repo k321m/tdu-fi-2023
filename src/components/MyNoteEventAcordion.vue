@@ -108,15 +108,11 @@
             <div class="py-5">
               <div class="footer">
                 <div class="button-group">
-                  <Button default :clickEvent="() => openMapDialog()">
-                    地図を確認
-                  </Button>
+                  <Button default @click="openMapDialog"> 地図を確認 </Button>
                   <Button
                     defaultBorder
-                    :clickEvent="
-                      () =>
-                        (this.isDeleteDialogVisible =
-                          !this.isDeleteDialogVisible)
+                    @click="
+                      this.isDeleteDialogVisible = !this.isDeleteDialogVisible
                     "
                     >リストから削除</Button
                   >

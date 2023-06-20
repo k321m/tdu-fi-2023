@@ -37,7 +37,7 @@
       <Button
         :myNote="isLastCarouse"
         :default="!isLastCarouse"
-        :clickEvent="() => nextCarousel()"
+        @click="nextCarousel"
       >
         <template v-if="isLastCarouse">MyNoteをはじめる</template>
         <template v-else>次へ</template>

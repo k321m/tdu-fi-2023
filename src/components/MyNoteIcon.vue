@@ -2,7 +2,7 @@
   <transition :name="doneMyNoteTutorial ? 'fade' : ''">
     <div class="arrow_box" v-if="isArrowVisible">
       <div class="text-box">
-        <h4 style="text-align: center">
+        <h4 style="text-align: center" class="white">
           やりたいことや聞いたことは<br />MyNoteに保存しよう！
         </h4>
       </div>

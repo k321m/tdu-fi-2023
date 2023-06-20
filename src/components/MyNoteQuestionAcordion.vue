@@ -66,7 +66,7 @@
             ></textarea>
           </div>
           <div class="pt-5">
-            <Button defaultBorder :clickEvent="() => openDeleteDialog()">
+            <Button defaultBorder @click="openDeleteDialog">
               リストから削除
             </Button>
           </div>

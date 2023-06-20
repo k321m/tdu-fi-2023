@@ -34,7 +34,7 @@
           <Button defaultBorder @click="$emit('close-dialog')"
             >キャンセル
           </Button>
-          <Button :clickEvent="() => clearFilterTags()">解除</Button>
+          <Button @click="clearFilterTags">解除</Button>
         </div>
       </div>
     </div>
