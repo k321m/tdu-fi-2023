@@ -60,7 +60,7 @@
             </div>
           </div>
           <!-- MyNoteに追加ボタン -->
-          <Button myNote @click="myNoteBtnClicked">MyNoteに追加</Button>
+          <Button myNote @click="myNoteBtnClicked">質問リストに追加</Button>
         </div>
       </transition>
     </div>

@@ -1,5 +1,7 @@
 <template>
-  <MyNoteAddAlert v-if="isViewAlert" @end-alert="isViewAlert = false" />
+  <Alert v-if="isViewAlert" @end-alert="isViewAlert = false"
+    >訪問リストに追加しました</Alert
+  >
   <div class="background-dialog pa-5 pb-7">
     <div style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
@@ -45,7 +47,7 @@
             <Button @click="openMap(button.key)">地図を確認</Button>
           </template>
           <template v-else-if="button.name == 'mynote'">
-            <Button myNote @click="myNoteBtnClicked">MyNoteに追加</Button>
+            <Button myNote @click="myNoteBtnClicked">訪問リストに追加</Button>
           </template>
           <template v-else-if="button.name == 'pink'">
             <Button pink :to="'/labs'">研究室を確認</Button>
@@ -64,7 +66,7 @@
 
 <script>
 import Button from "./parts/Button.vue";
-import MyNoteAddAlert from "./MyNoteAddAlert.vue";
+import Alert from "./parts/Alert.vue";
 export default {
   name: "TimeScheduleDialog",
   props: ["eventData", "eventKey", "eventTime"],
@@ -77,7 +79,7 @@ export default {
   },
   components: {
     Button,
-    MyNoteAddAlert,
+    Alert,
   },
   methods: {
     myNoteBtnClicked() {

@@ -3,7 +3,7 @@
     <Transition name="fade">
       <div class="background fade-item" v-if="isVisible">
         <p class="white small" style="text-align: center">
-          <b>MyNoteに追加しました</b>
+          <b><slot /></b>
         </p>
       </div>
     </Transition>
@@ -13,7 +13,7 @@
 <script>
 import { ref, onMounted, onUnmounted } from "vue";
 export default {
-  name: "MyNoteAddAlert",
+  name: "Alert",
   emits: ["end-alert"],
   setup(_, context) {
     const isVisible = ref(false);

@@ -1,5 +1,5 @@
 <template>
-  <MyNoteAddAlert v-if="isViewAlert" @end-alert="isViewAlert = false" />
+  <Alert v-if="isViewAlert" @end-alert="isViewAlert = false">訪問リストに追加しました</Alert>
   <div class="background-dialog pa-5">
     <!-- ×ボタン -->
     <div style="display: flex" @click="$emit('close-dialog')">
@@ -53,7 +53,7 @@
     <div class="footer mt-6">
     <div class="button-group pb-2" v-if="labData.display">
       <Button @click="openMapDialog">地図を確認</Button>
-      <Button myNote @click="myNoteBtnClicked">MyNoteに追加</Button>
+      <Button myNote @click="myNoteBtnClicked">訪問リストに追加</Button>
     </div>
       <a v-for="linkData in labData.links" class="" style="font-size: 0.8em;display: block;margin-bottom: 0.2em;" :href="linkData['url']">{{ linkData['name'] }}</a>
   </div>
@@ -62,7 +62,7 @@
 
 <script>
 import Button from "./parts/Button.vue";
-import MyNoteAddAlert from "./MyNoteAddAlert.vue";
+import Alert from "./parts/Alert.vue";
 export default {
   name: "LabViewDialog",
   props: ["labData", "labKey"],
@@ -74,7 +74,7 @@ export default {
     };
   },
   components: {
-    MyNoteAddAlert,
+    Alert,
     Button
   },
   methods: {
