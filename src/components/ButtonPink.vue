@@ -1,6 +1,6 @@
 <template>
   <router-link
-    class="btn pink-btn btn-animation zen-kaku-bold"
+    class="btn pink-btn btn-animation"
     :to="to"
     @click="handleClick()"
   >

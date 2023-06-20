@@ -7,43 +7,35 @@
       </div>
     </div>
     <div class="pb-4">
-      <p
-        class="zen-kaku-bold pb-3"
-        style="color: #e345e6"
-        v-if="eventData.eventType == '限定プログラム'"
-      >
+      <h4 class="pb-2 pink" v-if="eventData.eventType == '限定プログラム'">
         {{ eventData.eventType }}
-      </p>
-      <p class="zen-kaku-bold pb-2" style="color: #360a73" v-else>
+      </h4>
+      <h4 class="pb-2 purple" v-else>
         {{ eventData.eventType }}
-      </p>
-      <p
-        class="zen-kaku-h2 pb-2"
-        style="font-size: 1.7em"
-        v-if="eventData.subTitle"
-      >
+      </h4>
+      <h2 v-if="eventData.subTitle">
         {{ eventData.subTitle }}
-      </p>
-      <p class="zen-kaku-h2" style="font-size: 1.7em">{{ eventData.title }}</p>
+      </h2>
+      <h2>{{ eventData.title }}</h2>
     </div>
 
     <div class="contents pb-4">
       <!-- TODO:表示されないため修正 -->
       <div v-if="eventTime">
-        <img src="../assets/icon-clock.svg" />
-        <span class="zen-kaku-regular pl-1">{{ eventTime }}</span>
+        <img src="../assets/icon-clock.svg" class="pr-1" />
+        <p>{{ eventTime }}</p>
       </div>
       <div>
-        <img src="../assets/icon-map.svg" />
-        <span class="zen-kaku-regular pl-1">{{ eventData.place }}</span>
+        <img src="../assets/icon-map.svg" class="pr-1" />
+        <p>{{ eventData.place }}</p>
       </div>
       <div v-if="eventData.peopleNum">
-        <img src="../assets/icon-people.svg" />
-        <span class="zen-kaku-regular pl-1">{{ eventData.peopleNum }}</span>
+        <img src="../assets/icon-people.svg" class="pr-1" />
+        <p>{{ eventData.peopleNum }}</p>
       </div>
     </div>
     <div class="scroll-contents" style="font-size: 0.9em; padding-bottom: 1em">
-      <p class="zen-kaku-regular">{{ eventData.info }}</p>
+      <p>{{ eventData.info }}</p>
     </div>
     <!-- ボタン -->
     <div class="footer mt-6">
@@ -52,8 +44,8 @@
           <template v-if="button.name == 'default'">
             <ButtonDefault
               :title="'地図を確認'"
-              :to="button.to"
-              :clickEvent="() => closeDialog(button.key)"
+              :to="''"
+              :clickEvent="() => openMap(button.key)"
             />
           </template>
           <template v-else-if="button.name == 'mynote'">
@@ -69,7 +61,6 @@
       </div>
       <a
         v-for="linkData in eventData.links"
-        class="zen-kaku-regular link"
         style="font-size: 0.8em; display: block; margin-bottom: 0.2em"
         :href="linkData['url']"
         >{{ linkData["name"] }}</a
@@ -114,8 +105,7 @@ export default {
         title: addTitle,
       });
     },
-    closeDialog(key) {
-      this.$emit("close-dialog");
+    openMap(key) {
       this.$emit("open-map", key);
     },
   },
@@ -137,7 +127,7 @@ export default {
   display: inline-flex;
   align-items: center;
   margin-right: 0.8rem;
-  margin-right: 0.8rem;
+  font-size: 0.9em;
 }
 
 .scroll-contents {
@@ -154,13 +144,9 @@ export default {
   justify-content: space-between;
 }
 .button-group > * {
-  font-size: 0.8em;
   width: 49%;
 }
 a {
   text-decoration: none;
-}
-.link {
-  color: #010326;
 }
 </style>

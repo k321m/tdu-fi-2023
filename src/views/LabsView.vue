@@ -36,43 +36,41 @@
       <!-- end ページタイトル -->
       <!-- 研究室一覧 -->
       <section class="pt-6">
-        <p class="zen-kaku-bold pb-4">
-          研究室一覧<span class="pl-3">{{ filteredLabs.size }}件</span>
+        <p class="pb-4">
+          <b
+            >研究室一覧<span class="pl-3">{{ filteredLabs.size }}件</span></b
+          >
         </p>
         <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
         <!-- 絞り込みボタン -->
         <div class="pb-2">
-          <p class="filter_button zen-kaku-bold" @click="openFilterDialog()">
+          <p class="filter_button" @click="openFilterDialog()">
             <span class="mdi mdi-filter-menu pr-1"></span>
-            絞り込み条件
+            <b>絞り込み条件</b>
           </p>
         </div>
         <!-- 適用中の絞り込み条件（タグ） -->
         <div class="pb-2">
           <ul>
             <template v-for="tag in filteredTags">
-              <li class="zen-kaku-bold" v-if="tag == 'all'">なし</li>
-              <li
-                class="tag-item zen-kaku-bold mr-2"
-                v-else-if="tag == 'display'"
-              >
-                展示あり<span
+              <li v-if="tag == 'all'"><b>なし</b></li>
+              <li class="tag-item mr-2" v-else-if="tag == 'display'">
+                <b>展示あり</b
+                ><span
                   class="mdi mdi-close-thick pl-1"
                   @click="removeFilteredTag('display')"
                 ></span>
               </li>
-              <li
-                class="tag-item zen-kaku-bold mr-2"
-                v-else-if="tag == 'not-display'"
-              >
-                展示なし<span
+              <li class="tag-item mr-2" v-else-if="tag == 'not-display'">
+                <b>展示なし</b
+                ><span
                   class="mdi mdi-close-thick pl-1"
                   @click="removeFilteredTag('not-display')"
                 ></span>
               </li>
-              <li class="tag-item zen-kaku-bold mr-2" v-else>
-                {{ tag
-                }}<span
+              <li class="tag-item mr-2" v-else>
+                <b>{{ tag }}</b>
+                <span
                   class="mdi mdi-close-thick pl-1"
                   @click="removeFilteredTag(tag)"
                 ></span>
@@ -94,11 +92,11 @@
               class="card-img"
               style="background-color: rgba(36, 7, 77, 0.5)"
             ></div>
-            <p
-              class="card-title zen-kaku-bold text-white v-responsive__sizer v-responsive__content"
+            <h3
+              class="card-title white v-responsive__sizer v-responsive__content"
             >
               {{ allLabsData[key].cardTitle }}
-            </p>
+            </h3>
           </div>
         </div>
       </section>
@@ -218,18 +216,18 @@ export default {
 .filter_button {
   display: block;
   font-size: 0.8rem;
-  color: #010440;
+  color: var(--dark);
 }
 
 li {
   display: inline-block;
   font-size: 0.6rem;
   list-style: none;
-  color: #360a73;
+  color: var(--purple);
   margin-bottom: 0.1rem;
 }
 li.tag-item {
-  background-color: #d3d1ff;
+  background-color: var(--light-purple);
   padding: 0.35rem 0.4rem;
   border-radius: 100vh;
 }
@@ -260,7 +258,6 @@ li.tag-item {
 }
 .card-title {
   display: block;
-  font-size: 1.2rem;
   letter-spacing: 0rem;
   min-width: 0;
   padding: 0.8rem 1rem;

@@ -19,11 +19,11 @@
       <!-- end ページタイトル -->
       <!-- 講義動画一覧 -->
       <section class="pt-6">
-        <p class="zen-kaku-bold pb-4">
+        <h3 class="pb-4">
           講義動画一覧<span class="pl-3"
             >{{ Object.keys(allLecturesData).length }}件</span
           >
-        </p>
+        </h3>
         <!-- 講義動画カード -->
         <div v-for="(data, key) in allLecturesData" :key="key">
           <div
@@ -38,11 +38,11 @@
               class="card-img"
               style="background-color: rgba(36, 7, 77, 0.5)"
             ></div>
-            <p
-              class="card-title zen-kaku-bold text-white v-responsive__sizer v-responsive__content"
+            <h3
+              class="card-title white v-responsive__sizer v-responsive__content"
             >
               {{ data.cardTitle }}
-            </p>
+            </h3>
           </div>
         </div>
         <!-- end 講義動画カード -->
@@ -115,7 +115,6 @@ export default {
 }
 .card-title {
   display: block;
-  font-size: 1.2rem;
   letter-spacing: 0rem;
   min-width: 0;
   padding: 0.8rem 1rem;

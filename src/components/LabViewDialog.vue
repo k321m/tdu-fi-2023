@@ -9,53 +9,53 @@
     </div>
     <!-- 展示情報 -->
     <div class="pb-2">
-      <p class="zen-kaku-bold" style="color: #e345e6" v-if="labData.display">
+      <h4 class="pink" v-if="labData.display">
         展示あり
-      </p>
-      <p class="zen-kaku-bold" style="color: #360a73" v-else>展示なし</p>
+      </h4>
+      <h4 class="purple" v-else>展示なし</h4>
     </div>
-    <p class="zen-kaku-bold lab-title pb-2" style="color: #010326">
+    <h2 class="lab-title pb-2">
       {{ labData.title }}
-    </p>
+    </h2>
     <!-- 先生名と展示場所 -->
     <div class="pb-1" style="font-size: 0.9em">
-      <p class="lab-professor-place zen-kaku-regular">
+      <p class="lab-professor-place">
       <img src="../assets/icon-person.svg" class="pr-1" />
       <div class="flex-end">
         {{ labData.professor["name"] }}
-        <span class="pl-1" style="font-size: 0.8em">{{ labData.professor["type"] }}</span>
+        <span class="pl-1 small">{{ labData.professor["type"] }}</span>
       </div>
       </p>
-      <p class="lab-professor-place zen-kaku-regular" v-if="labData.place != ''">
+      <p class="lab-professor-place" v-if="labData.place != ''">
         <img src="../assets/icon-map.svg" class="pr-1" />
         {{ labData.place }}
       </p>
     </div>
     <!-- タグ -->
     <div class="pb-4">
-      <p v-for="tag in labData.tags" class="tag-item zen-kaku-medium">{{tag}}</p>
+      <p v-for="tag in labData.tags" class="tag-item sub-strong">{{tag}}</p>
     </div>
     <!-- スクロールエリア -->
     <div class="pb-4 scroll-contents" style="font-size: 0.9em">
       <!-- info -->
-      <p class="pb-3 zen-kaku-regular">{{ labData.info }}</p>
+      <p class="pb-3">{{ labData.info }}</p>
       <!-- theme -->
       <div class="pb-3">
-        <p class="zen-kaku-bold pb-1">論文テーマ例</p>
-        <li class="zen-kaku-regular" v-for="theme in labData.theme">{{ theme }}</li>
+        <h4 class="pb-1">論文テーマ例</h4>
+        <li v-for="theme in labData.theme">{{ theme }}</li>
       </div>
       <div class="pb-3">
-        <p class="zen-kaku-bold pb-1">就職先例</p>
-        <p class="zen-kaku-regular">{{ labData.placeOfEmployment.join("、") }}</p>
+        <h4 class="pb-1">就職先例</h4>
+        <p>{{ labData.placeOfEmployment.join("、") }}</p>
       </div>
     </div>
     <!-- ボタン -->
     <div class="footer mt-6">
     <div class="button-group pb-2" v-if="labData.display">
       <ButtonDefault :title="'地図を確認'" :to="''" :clickEvent="()=>openMapDialog()" />
-      <button class="myNote-btn btn-animation zen-kaku-bold" @click="myNoteBtnClicked">MyNoteに追加</button>
+      <button class="btn myNote-btn btn-animation" @click="myNoteBtnClicked">MyNoteに追加</button>
     </div>
-      <a v-for="linkData in labData.links" class="link zen-kaku-regular" style="font-size: 0.8em;display: block;margin-bottom: 0.2em;" :href="linkData['url']">{{ linkData['name'] }}</a>
+      <a v-for="linkData in labData.links" class="" style="font-size: 0.8em;display: block;margin-bottom: 0.2em;" :href="linkData['url']">{{ linkData['name'] }}</a>
   </div>
   </div>
 </template>
@@ -106,14 +106,12 @@ export default {
   padding-bottom: 10rem;
 }
 .lab-title {
-  font-size: 1.6em;
   text-align: start;
 }
 /* アイコンと要素を上下中央揃えかつinline-blockで改行 */
 .lab-professor-place {
   display: inline-flex;
   align-items: center;
-  color: #010326;
   margin-right: 0.8rem;
 }
 /* 名前と役職で下揃え */
@@ -124,7 +122,7 @@ export default {
 .tag-item {
   display: inline-block;
   font-size: 0.4rem;
-  color: #360a73;
+  color: var(--purple);
   background-color: #ECEBFF;
   padding: 0.35rem 0.8rem;
   border-radius: 100vh;
@@ -145,15 +143,6 @@ export default {
   justify-content: space-between
 }
 .button-group > * {
-  font-size:0.8em;
   width: 49%;
-}
-
-a{
-  text-decoration:none;
-}
-.link{
-  color: #010326;
-  word-break: break-all;
 }
 </style>

@@ -13,14 +13,11 @@
         <v-icon>mdi-close</v-icon>
       </div>
     </div>
-    <p class="zen-kaku-bold lab-title pb-5" style="color: #010326">
-      絞り込み条件
-    </p>
+    <h2 class="lab-title pb-5">絞り込み条件</h2>
 
     <div class="pb-4 scroll-contents">
-      <!-- <div>CheckedTags: {{ checkedTags }}</div> -->
       <div class="pb-3">
-        <p class="zen-kaku-bold pb-2" style="color: #010326">展示の有無</p>
+        <h4 class="pb-2">展示の有無</h4>
 
         <div class="pb-4">
           <div class="checkbox">
@@ -32,8 +29,8 @@
             />
             <label
               for="display-true"
-              class="checkbox-label zen-kaku-regular"
-              :class="{ 'zen-kaku-medium': checkedTags.includes('display') }"
+              class="checkbox-label"
+              :class="{ 'sub-strong': checkedTags.includes('display') }"
               >あり</label
             >
           </div>
@@ -46,16 +43,16 @@
               v-model="checkedTags"
             /><label
               for="display-false"
-              class="checkbox-label zen-kaku-regular"
+              class="checkbox-label"
               :class="{
-                'zen-kaku-medium': checkedTags.includes('not-display'),
+                'sub-strong': checkedTags.includes('not-display'),
               }"
               >なし</label
             >
           </div>
         </div>
 
-        <p class="zen-kaku-bold pb-2" style="color: #010326">キーワード</p>
+        <h4 class="pb-2">キーワード</h4>
         <template v-for="(data, tag) in allTagData">
           <div
             class="checkbox"
@@ -69,8 +66,8 @@
             />
             <label
               :for="tag"
-              class="checkbox-label zen-kaku-regular"
-              :class="{ 'zen-kaku-medium': checkedTags.includes(tag) }"
+              class="checkbox-label"
+              :class="{ 'sub-strong': checkedTags.includes(tag) }"
               >{{ tag }}</label
             >
           </div>
@@ -82,13 +79,13 @@
   <div class="footer px-5">
     <div class="button-group pb-2">
       <button
-        class="default-border-btn btn-animation zen-kaku-bold clear-button"
+        class="btn default-border-btn btn-animation clear-button"
         @click="isClearFilterDialogVisible = true"
       >
         クリア
       </button>
       <button
-        class="default-btn btn-animation zen-kaku-bold filter-button"
+        class="btn default-btn btn-animation filter-button"
         @click="onFilteredButton"
       >
         この条件で絞り込む
@@ -146,7 +143,6 @@ input[type="checkbox"] {
   position: relative;
   display: inline-flex; /* ブロックレベル要素化する */
   align-items: center;
-  color: #010326; /* フォントの色を指定 */
   padding-left: 1.4em;
 }
 
@@ -162,7 +158,7 @@ input[type="checkbox"] {
 }
 /* チェックボックス（チェックなし） */
 .checkbox-label::before {
-  border: 1px solid #d3d1ff; /* ボックスの境界線を実線で指定する */
+  border: 1px solid var(--light-purple); /* ボックスの境界線を実線で指定する */
 }
 /* チェックマーク */
 .checkbox-label::after {
@@ -192,15 +188,12 @@ input[type="checkbox"]:checked + .checkbox-label:before {
   border-radius: 0.8rem;
   padding-bottom: 8rem;
 }
-.lab-title {
-  font-size: 1.6em;
-  text-align: start;
-}
+
 /* アイコンと要素を上下中央揃えかつinline-blockで改行 */
 .lab-professor-place {
   display: inline-flex;
   align-items: center;
-  color: #010326;
+  color: var(--black);
   margin-right: 0.8rem;
 }
 .scroll-contents {
@@ -227,10 +220,5 @@ input[type="checkbox"]:checked + .checkbox-label:before {
 }
 .button-group .filter-button {
   width: 59%;
-}
-
-a {
-  text-decoration: none;
-  color: #010326;
 }
 </style>

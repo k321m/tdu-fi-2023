@@ -1,10 +1,7 @@
 <template>
-  <button
-    class="btn myNote-btn btn-animation zen-kaku-bold"
-    @click="clickEvent"
-  >
+  <a class="btn myNote-btn btn-animation" @click="clickEvent">
     {{ title }}
-  </button>
+  </a>
 </template>
 <script>
 export default {

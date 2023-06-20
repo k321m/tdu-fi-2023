@@ -2,9 +2,9 @@
   <transition :name="doneMyNoteTutorial ? 'fade' : ''">
     <div class="arrow_box" v-if="isArrowVisible">
       <div class="text-box">
-        <p class="zen-kaku-bold" style="text-align: center">
+        <h4 style="text-align: center">
           やりたいことや聞いたことは<br />MyNoteに保存しよう！
-        </p>
+        </h4>
       </div>
     </div>
   </transition>
@@ -57,10 +57,10 @@ export default {
   bottom: 130px;
   width: 170px;
   height: 100px;
-  background: #e345e6;
+  background: var(--pink);
   padding: 10px;
   text-align: center;
-  color: #ffffff;
+  color: var(--white);
   font-size: 8px;
   font-weight: bold;
   border-radius: 8px;
@@ -81,8 +81,8 @@ export default {
   top: 100%;
   margin-left: -10px;
   border-color: transparent;
-  border-top-color: #e345e6;
-  border-right-color: #e345e6;
+  border-top-color: var(--pink);
+  border-right-color: var(--pink);
   border-width: 10px;
 }
 

@@ -14,8 +14,8 @@
       >
         <div class="carousel__item carousel_image" :style="slide.img">
           <div class="text-box pr-3 pb-2">
-            <p class="jp-text">{{ slide.jptext }}</p>
-            <p class="text py-1">{{ slide.text }}</p>
+            <h5 class="text-ja">{{ slide.jptext }}</h5>
+            <h2 class="text-en py-1">{{ slide.text }}</h2>
           </div>
         </div>
       </Slide>
@@ -99,19 +99,13 @@ export default {
   text-align: right;
   transform: scale(0.9, 1);
 }
-p.jp-text {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 700;
-  font-size: 0.7em;
-  line-height: 1;
-  font-style: normal;
+.text-ja {
   text-align: end;
+  color: var(--white);
 }
-p.text {
-  font-family: hack, sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-  font-style: normal;
+.text-en {
+  font-family: var(--font-en);
+  color: var(--white);
   line-height: 1.2;
   letter-spacing: -0.03em;
 }

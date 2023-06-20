@@ -2,11 +2,8 @@
   <div class="wrap">
     <Transition name="fade">
       <div class="background fade-item" v-if="isVisible">
-        <p
-          class="zen-kaku-bold"
-          style="color: white; text-align: center; font-size: 0.8em"
-        >
-          MyNoteに追加しました
+        <p class="white small" style="text-align: center">
+          <b>MyNoteに追加しました</b>
         </p>
       </div>
     </Transition>

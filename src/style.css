@@ -1,6 +1,122 @@
+:root {
+  --white: #ffffff;
+  --light: #f2f2f2;
+  --black: #010326;
+  --dark: #010440;
+  --purple: #360a73;
+  --light-purple: #d3d1ff;
+  --pink: #e345e6;
+  --gradient: linear-gradient(
+    108deg,
+    rgba(235, 87, 237, 1) 0%,
+    rgba(235, 87, 237, 1) 0% 50%,
+    rgba(143, 158, 237, 1) 75%,
+    rgba(41, 237, 237, 1)
+  );
+  --font-en: "hack", sans-serif;
+  --font-ja: zen-kaku-gothic-new, sans-serif;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   overflow: hidden;
+  margin: 0;
+  font-family: var(--font-ja);
+  font-weight: var(--regular);
+  font-style: normal;
+  line-height: 1.3;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+/* フォント */
+p,
+ul,
+li {
+  font-weight: var(--regular);
+  color: var(--black);
+  text-align: justify;
+  word-break: break-all;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  font-weight: var(--bold);
+  color: var(--black);
+}
+
+span {
+  color: inherit;
+}
+
+b,
+strong {
+  font-weight: var(--bold);
+  color: inherit;
+}
+
+.sub-strong {
+  font-weight: var(--medium);
+  color: inherit;
+}
+
+small,
+.small {
+  font-size: 0.875em;
+  color: inherit;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.white {
+  color: var(--white);
+}
+
+.hack {
+  font-family: var(--font-en);
+}
+
+.hack-extra {
+  font-family: var(--font-en);
+  font-weight: var(--bold);
+  font-size: 3em;
+  line-height: 1.3;
+}
+.hack-h1 {
+  font-family: var(--font-en);
+  font-weight: var(--bold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.hack-h3 {
+  font-family: var(--font-en);
+  font-weight: var(--bold);
+  line-height: 1;
 }
 
 /* Background */
@@ -9,145 +125,56 @@ body {
   z-index: 0; /*描画を一番下に*/
   width: 100%;
   height: 100%;
-  background-color: #f3f3f3; /*背景色*/
+  background-color: var(--light); /*背景色*/
 }
 #contents {
   position: relative; /*描画を#particles-jsよりも上にするためposition:relative;を指定*/
   z-index: 10; /*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
 }
 
-/* フォント */
-p,
-ul {
-  text-align: justify;
+a {
+  text-decoration: none;
+  color: var(--purple);
   word-break: break-all;
-}
-.hack-h1 {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 3em;
-  line-height: 1.3;
-}
-.hack-h2 {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 1;
-  letter-spacing: -0.03em;
-}
-.hack-h4 {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1.5em;
-  line-height: 1;
-}
-.hack-h5 {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1.1rem;
-  line-height: 1;
-}
-
-p.hack {
-  font-family: hack, sans-serif;
-  font-weight: 400;
-  font-size: 0.8em;
-  font-style: normal;
-}
-.zen-kaku-h2 {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 700;
-  font-size: 2em;
-  font-style: normal;
-  line-height: 1;
-}
-
-.zen-kaku-regular {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-}
-
-.zen-kaku-medium {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  line-height: 1.3;
-}
-.zen-kaku-bold {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  line-height: 1.3;
 }
 
 /* ボタン　*/
-.myNote-btn {
+.btn {
+  font-weight: var(--bold);
   min-height: 52px;
-  background: linear-gradient(
-    108deg,
-    rgba(235, 87, 237, 1) 0%,
-    rgba(235, 87, 237, 1) 0% 50%,
-    rgba(143, 158, 237, 1) 75%,
-    rgba(41, 237, 237, 1)
-  );
-  color: white;
   border-radius: 0.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
+  padding: 1.1rem;
+}
+.myNote-btn {
+  background: var(--gradient);
+  color: var(--white);
 }
 .default-btn {
-  min-height: 52px;
-  padding: 1.1rem;
-  background-color: #010440;
-  color: white;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+  background-color: var(--dark);
+  color: var(--white);
 }
 .default-border-btn {
-  min-height: 52px;
-  padding: 1.1rem;
-  background-color: white;
-  border: 2px solid #010440;
-  color: #010440;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+  background-color: var(--white);
+  border: 2px solid var(--dark);
+  color: var(--dark);
+}
+
+.desable-btn {
+  background-color: var(--light-purple);
+  color: var(--white);
 }
 .pink-btn {
-  min-height: 52px;
-  background-color: #e345e6;
-  padding: 1.1rem;
-  color: white;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+  background-color: var(--pink);
+  color: var(--white);
 }
 .pink-border-btn {
-  min-height: 52px;
-  padding: 1.1rem;
-  background-color: white;
-  border: 2px solid #e345e6;
-  color: #e345e6;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+  background-color: var(--white);
+  border: 2px solid var(--pink);
+  color: var(--pink);
 }
 /* ボタンクリックアニメーション　*/
 .btn-animation {
@@ -176,10 +203,14 @@ p.hack {
   opacity: 0.3;
 }
 
+i.v-icon {
+  color: var(--black);
+}
+
 /* 選択されている風 */
 .vue-typer.custom .char.typed {
   color: #f2f2f2;
-  background-color: #010326;
+  background-color: var(--black);
 }
 
 /* Vuetify 微調整*/
@@ -204,7 +235,7 @@ p.hack {
 }
 .v-overlay__scrim {
   opacity: 0.9 !important;
-  background-color: #010326 !important;
+  background-color: var(--black) !important;
 }
 
 /* ダイアログ */
@@ -215,4 +246,12 @@ div.v-dialog.v-overlay--active.v-theme--light > div.v-overlay__content {
 
 .v-toolbar__content {
   justify-content: space-between;
+}
+
+router-link {
+  text-decoration: none;
+}
+
+::placeholder {
+  color: var(--light-purple);
 }

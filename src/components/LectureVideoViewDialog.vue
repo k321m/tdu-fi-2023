@@ -7,17 +7,17 @@
       </div>
     </div>
     <!-- 展示情報 -->
-    <div class="pb-1">
-      <p class="zen-kaku-bold" style="color: #360a73; font-size: 0.9rem;" v-if="lectureData.year_of_enrollment != ''">
+    <div class="pb-2">
+      <h4 class="purple" v-if="lectureData.year_of_enrollment != ''">
         {{ lectureData.year_of_enrollment }}
-      </p>
+      </h4>
     </div>
-    <p class="zen-kaku-bold lecture-title pb-2" style="color: #010326">
+    <h2 class="lecture-title pb-2">
       {{ lectureData.mordalTitle }}
-    </p>
+    </h2>
     <!-- 先生名と展示場所 -->
     <div class="pb-4" style="font-size: 0.9em">
-      <p class="lab-professor-place zen-kaku-regular" v-if="lectureData.professor.length != 0">
+      <p class="lab-professor-place" v-if="lectureData.professor.length != 0">
       <img src="../assets/icon-person.svg" class="pr-1" />
       <div style="display: inline-block;">
         <div class="flex-end" v-for="(data,index) in lectureData.professor">
@@ -31,12 +31,12 @@
     <!-- スクロールエリア -->
     <div class="scroll-contents" style="font-size: 0.9em">
       <!-- info -->
-      <p class="pb-7 zen-kaku-regular">{{ lectureData.info }}</p>
+      <p class="pb-7">{{ lectureData.info }}</p>
       <!-- Video -->
       <div class="pb-3" v-html="lectureData.video"></div>
       <!-- Link -->
       <div v-for="linkData in lectureData.links" class="links">
-      <a class="zen-kaku-regular" style="font-size: 0.9em;" :href="linkData['url']">{{ linkData['name'] }}</a>
+      <a style="font-size: 0.9em;" :href="linkData['url']">{{ linkData['name'] }}</a>
     </div>
     </div>
   </div>
@@ -62,14 +62,13 @@ export default {
   padding-bottom: 3rem;
 }
 .lecture-title {
-  font-size: 1.6em;
   text-align: start;
 }
 /* アイコンと要素を上下中央揃えかつinline-blockで改行 */
 .lab-professor-place {
   display: inline-flex;
   align-items: center;
-  color: #010326;
+  color: var(--black);
   margin-right: 0.8rem;
 }
 /* 名前と役職で下揃え */
@@ -83,8 +82,4 @@ export default {
   overflow-y: scroll;
 }
 
-a {
-  text-decoration: none;
-  color: #010326;
-}
 </style>

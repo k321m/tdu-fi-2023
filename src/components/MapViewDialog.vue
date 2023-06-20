@@ -1,12 +1,8 @@
 <template>
   <div class="background-dialog">
-    <div
-      class="pb-2"
-      style="display: flex"
-      @click="$emit('close-dialog', mapId)"
-    >
+    <div class="pb-2" style="display: flex" @click="$emit('close-dialog')">
       <div style="margin: 0 0 0 auto">
-        <v-icon style="color: white">mdi-close</v-icon>
+        <v-icon style="color: var(--white)">mdi-close</v-icon>
       </div>
     </div>
     <img :src="mapData.src" />
@@ -16,7 +12,7 @@
 <script>
 export default {
   name: "MapViewDialog",
-  props: ["mapData", "mapId"],
+  props: ["mapData"],
   emits: ["close-dialog"],
   data() {
     return {};

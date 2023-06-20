@@ -12,9 +12,7 @@
       <div class="pt-6">
         <!-- おすすめ質問 -->
         <div class="mb-8">
-          <p class="zen-kaku-bold mb-4" style="font-size: 1.1em">
-            おすすめ質問TOP10
-          </p>
+          <h3 class="mb-4" style="font-size: 1.1em">おすすめ質問TOP10</h3>
           <div v-for="(value, key) in allRecommendQuestionsData">
             <QuestionAccordion
               :questionValue="value"
@@ -27,9 +25,9 @@
       <div class="pt-6">
         <!-- おすすめ質問 -->
         <div class="mb-8">
-          <p class="zen-kaku-bold mb-4" style="font-size: 1.1em">
+          <h3 class="mb-4" style="font-size: 1.1em">
             FAQ：よくある質問とその回答
-          </p>
+          </h3>
           <div v-for="(value, key) in allFAQData">
             <QuestionAccordion
               :questionValue="value"
@@ -78,6 +76,6 @@ export default {
 
 <style scoped>
 p {
-  color: #010326;
+  color: var(--black);
 }
 </style>

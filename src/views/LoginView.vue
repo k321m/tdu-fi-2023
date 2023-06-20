@@ -9,13 +9,15 @@
           placeholder="パスワードを入力"
         />
       </div>
-      <p class="zen-kaku-medium alert" v-show="updateMiss">
-        パスワードが違います
-      </p>
+      <p class="sub-strong pink" v-show="updateMiss">パスワードが違います</p>
       <div class="py-3">
-        <div :class="changeStyle()" class="btn-animation" @click="send">
-          <p class="zen-kaku-bold" style="font-size: 1rem">送信</p>
-        </div>
+        <a
+          :class="pass ? 'default-btn' : 'desable-btn'"
+          class="btn btn-animation"
+          @click="send"
+        >
+          送信
+        </a>
       </div>
     </div>
   </div>
@@ -41,13 +43,6 @@ export default {
         this.$store.state.tmpPassword = this.pass;
         this.$router.push({ name: "index" });
       }
-    },
-    // 何も入力されていない時は送信できなそうなスタイルに変更
-    changeStyle() {
-      return {
-        disable: !this.pass,
-        able: this.pass,
-      };
     },
   },
   computed: {
@@ -86,39 +81,10 @@ input {
   font-size: 1rem;
   line-height: 1.5;
 }
-::placeholder {
-  color: #acaaf2;
-}
+
 input:focus {
   border: 1px solid #010440;
-  background-color: white;
+  background-color: var(--white);
   outline: none;
-}
-.alert {
-  color: #e345e6;
-}
-
-.disable {
-  min-height: 48px;
-  padding: 1.1rem;
-  background-color: #bab8f1;
-  color: white;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-}
-
-.able {
-  min-height: 48px;
-  padding: 1.1rem;
-  background-color: #010440;
-  color: white;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
 }
 </style>

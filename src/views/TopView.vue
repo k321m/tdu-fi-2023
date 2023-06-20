@@ -1,5 +1,19 @@
 <template>
   <div id="contents">
+    <h1>h1のサイズです。</h1>
+    <h2>h2のサイズです。</h2>
+    <h3>h3のサイズです。</h3>
+    <h4>h4のサイズです。</h4>
+    <h5>h5のサイズです。</h5>
+    <h6>h6のサイズです。</h6>
+    <p>
+      pはこんな感じpはこんな感じpはこんな感じpはこんな感じpはこんな感じpはこんな感じpはこんな感じ
+    </p>
+    <ul>
+      <li>リストはこんな感じ</li>
+      <li>リストはこんな感じ</li>
+      <li>リストはこんな感じ</li>
+    </ul>
     <TopTitle />
     <TopCarousel />
     <TimeSchedule @open-map="openMap" />
@@ -28,11 +42,6 @@ export default {
     openMap(key) {
       this.$refs.mapRef.openViewDialogByKey(key);
     },
-  },
-  mounted() {
-    if (this.$route.query.id) {
-      this.$refs.mapRef.openViewDialogByKey(this.$route.query.id);
-    }
   },
 };
 </script>

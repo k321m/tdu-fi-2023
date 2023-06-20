@@ -4,15 +4,15 @@
       <MapViewDialog
         :mapData="clickedMapData"
         :mapId="clickedMapId"
-        @close-dialog="closeDialog"
+        @close-dialog="isViewDialogVisible = false"
       />
     </v-dialog>
     <div id="map" style="padding-top: 72px; margin-top: -72px"></div>
     <div id="map" class="background">
       <div class="map">
         <div class="py-4 pl-4">
-          <p class="zen-kaku-bold pl-5 pb-2">地図</p>
-          <p class="hack-h2">>Map</p>
+          <h4 class="pl-5 pb-2">地図</h4>
+          <h1 class="hack-h1">>Map</h1>
         </div>
         <div class="px-4 py-2">
           <div v-for="(data, key) in allMapData" :key="key">
@@ -31,14 +31,14 @@
                 class="card-img"
                 style="background-color: rgba(36, 7, 77, 0.583)"
               ></div>
-              <p
-                class="card-title zen-kaku-bold text-white v-responsive__sizer v-responsive__content"
+              <h3
+                class="card-title white v-responsive__sizer v-responsive__content"
               >
-                <span style="font-size: 1.1rem; margin-bottom: 0.2rem">
+                <span class="small" style="margin-bottom: 0.2rem">
                   {{ data.site }}
                 </span>
                 {{ data.title }}
-              </p>
+              </h3>
             </div>
           </div>
         </div>
@@ -56,24 +56,18 @@ export default {
       allMapData: {},
       isViewDialogVisible: false,
       clickedMapData: {},
-      clickedMapId: String,
     };
   },
   components: {
     MapViewDialog,
   },
   methods: {
-    openViewDialog(data, key) {
+    openViewDialog(data) {
       this.clickedMapData = data;
-      this.clickedMapId = key;
       this.isViewDialogVisible = true;
     },
     openViewDialogByKey(key) {
-      this.openViewDialog(this.allMapData[key], key);
-    },
-    closeDialog(id) {
-      this.isViewDialogVisible = false;
-      this.$router.push(`/#${id}`);
+      this.openViewDialog(this.allMapData[key]);
     },
   },
   mounted() {
@@ -127,7 +121,6 @@ export default {
 .card-title {
   display: inline-flex;
   flex-direction: column;
-  font-size: 1.6rem;
   letter-spacing: 0rem;
   min-width: 0;
   padding: 0.8rem 1rem;

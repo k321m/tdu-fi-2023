@@ -27,15 +27,17 @@
           </transition-group>
         </div>
         <div
-          class="pl-3 pr-3 zen-kaku-medium"
+          class="pl-3 pr-3"
           style="line-height: 1.3em; padding-top: 0.2em"
           @click="isOpen = !isOpen"
           :class="{ 'text-ellipsis': !isOpen }"
         >
-          <span v-if="eventValue.subTitle != null" class="pr-1">{{
-            eventValue.subTitle
-          }}</span>
-          <span>{{ eventValue.title }}</span>
+          <p class="sub-strong">
+            <span v-if="eventValue.subTitle != null" class="pr-1">{{
+              eventValue.subTitle
+            }}</span>
+            <span>{{ eventValue.title }}</span>
+          </p>
         </div>
       </div>
 
@@ -50,41 +52,37 @@
       <div class="accordion-content pb-4" v-if="isOpen">
         <div name="content">
           <div>
-            <p
-              class="zen-kaku-bold pb-2"
-              style="color: #e345e6"
+            <h4
+              class="pb-2 pink"
               v-if="eventValue.eventType == '限定プログラム'"
             >
               {{ eventValue.eventType }}
-            </p>
-            <p class="zen-kaku-bold pb-2" style="color: #360a73" v-else>
+            </h4>
+            <h4 class="purple pb-2" v-else>
               {{ eventValue.eventType }}
-            </p>
+            </h4>
             <div class="contents">
               <div v-if="getEventTime()">
                 <img class="pr-1" src="../assets/icon-clock.svg" />
-                <span class="zen-kaku-regular pr-2">{{ getEventTime() }}</span>
+                <p class="pr-2">{{ getEventTime() }}</p>
               </div>
               <div>
                 <img class="pr-1" src="../assets/icon-map.svg" />
-                <span class="zen-kaku-regular pr-2">{{
-                  eventValue.place
-                }}</span>
+                <p class="pr-2">{{ eventValue.place }}</p>
               </div>
               <div v-if="eventValue.peopleNum">
                 <img class="pr-1" src="../assets/icon-people.svg" />
-                <span class="zen-kaku-regular">{{ eventValue.peopleNum }}</span>
+                <p>{{ eventValue.peopleNum }}</p>
               </div>
             </div>
             <div class="pt-2">
               <div class="pb-1" style="display: flex; align-items: flex-end">
-                <p class="zen-kaku-bold py-3">メモ</p>
+                <h4 class="py-3">メモ</h4>
                 <v-icon
                   style="
                     margin: 0 0 0 auto;
                     padding-right: 0.4rem;
                     font-size: 1rem;
-                    color: #010326;
                   "
                   @click="copyMemoToClipboard"
                   v-if="!isCopied"
@@ -95,7 +93,6 @@
                     margin: 0 0 0 auto;
                     padding-right: 0.4rem;
                     font-size: 1rem;
-                    color: #010326;
                   "
                   @click="copyMemoToClipboard"
                   v-else
@@ -116,14 +113,14 @@
                     :to="''"
                     :clickEvent="() => openMapDialog()"
                   />
-                  <button
-                    class="default-border-btn btn-animation zen-kaku-bold"
+                  <div
+                    class="btn default-border-btn btn-animation"
                     @click="
                       this.isDeleteDialogVisible = !this.isDeleteDialogVisible
                     "
                   >
                     リストから削除
-                  </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -255,7 +252,7 @@ export default {
 .title-box {
   min-height: 1em;
   padding: 1em;
-  background-color: #ffffff;
+  background-color: var(--white);
   display: flex;
   align-items: center;
   border-radius: 0.3em;
@@ -266,7 +263,7 @@ export default {
 .checkbox {
   width: 1.8em;
   height: 1.8em;
-  border: solid 1px #d3d1ff;
+  border: solid 1px var(--light-purple);
 }
 .checkedbox {
   width: 1.8em;
@@ -291,7 +288,7 @@ export default {
   margin-left: auto;
 }
 .accordion-content {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 0.5em 1em 1.4em 1em;
   border-radius: 0 0 0.3em 0.3em;
 }
@@ -317,30 +314,24 @@ export default {
 }
 
 .contents > div {
+  font-size: 0.9em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 textarea {
-  padding: 10px;
+  padding: 8px;
   width: 100%;
-  min-height: 200px;
-  border: 1px solid #acaaf2;
+  border: 1px solid var(--light-purple);
+  background-color: var(--white);
   overflow: scroll;
+  min-height: 200px;
 }
 textarea:focus {
-  border: 1px solid #010440;
-  background-color: white;
+  border: 1px solid var(--dark);
+  background-color: var(--white);
   outline: none;
-}
-::placeholder {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-  font-size: 14px;
-  color: #d3d1ff;
 }
 
 .footer {
@@ -359,7 +350,7 @@ a {
   text-decoration: none;
 }
 .link {
-  color: #010326;
+  color: var(--black);
   word-break: break-all;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="background-dialog pa-5">
     <div style="display: flex">
       <div class="pa-2" style="margin: 0 0 0 auto" @click="closeTutorial">
-        <p class="zen-kaku-medium">スキップ</p>
+        <p>スキップ</p>
       </div>
     </div>
     <div style="display: flex; flex-grow: 1; align-items: center">
@@ -17,14 +17,9 @@
             <div class="img">
               <img :src="tutolial.src" />
             </div>
-            <div class="">
-              <span
-                class="zen-kaku-medium"
-                style="font-size: 0.9rem"
-                v-html="tutolial.text"
-              ></span>
+            <div>
+              <p style="font-size: 0.9rem" v-html="tutolial.text"></p>
               <p
-                class="zen-kaku-medium"
                 style="font-size: 0.6em; text-align: center; padding-top: 1em"
                 v-html="tutolial.caution"
               ></p>
@@ -39,13 +34,13 @@
       </Carousel>
     </div>
     <div class="py-5">
-      <div
-        :class="isLastCarouse ? 'myNote-btn' : 'default-btn'"
+      <a
+        :class="isLastCarouse ? 'btn myNote-btn' : 'btn default-btn'"
         @click="nextCarousel()"
       >
-        <p class="zen-kaku-bold" v-if="isLastCarouse">MyNoteをはじめる</p>
-        <p class="zen-kaku-bold" v-else>次へ</p>
-      </div>
+        <template v-if="isLastCarouse">MyNoteをはじめる</template>
+        <template v-else>次へ</template>
+      </a>
     </div>
   </div>
 </template>
@@ -127,6 +122,11 @@ export default {
   border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
+}
+
+p {
+  font-weight: var(--medium);
+  text-align: center;
 }
 .carousel__item {
   display: flex;

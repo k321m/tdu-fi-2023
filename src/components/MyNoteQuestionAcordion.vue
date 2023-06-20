@@ -16,14 +16,9 @@
       @click="isOpen = !isOpen"
     >
       <div class="text-area">
+        <p class="pb-1" style="font-size: 1.5em; line-height: 1em">Q</p>
         <p
-          class="zen-kaku-medium pb-1"
-          style="font-size: 1.5em; line-height: 1em"
-        >
-          Q
-        </p>
-        <p
-          class="pl-3 pr-3 zen-kaku-medium"
+          class="pl-3 pr-3"
           style="line-height: 1.3em; padding-top: 0.2em"
           :class="{ 'text-ellipsis': !isOpen }"
         >
@@ -42,13 +37,12 @@
         <div name="content">
           <div>
             <div class="pb-1" style="display: flex; align-items: flex-end">
-              <p class="zen-kaku-bold py-3">メモ</p>
+              <h4 class="py-3">メモ</h4>
               <v-icon
                 style="
                   margin: 0 0 0 auto;
                   padding-right: 0.4rem;
                   font-size: 1rem;
-                  color: #010326;
                 "
                 @click="copyMemoToClipboard"
                 v-if="!isCopied"
@@ -59,7 +53,6 @@
                   margin: 0 0 0 auto;
                   padding-right: 0.4rem;
                   font-size: 1rem;
-                  color: #010326;
                 "
                 @click="copyMemoToClipboard"
                 v-else
@@ -74,10 +67,10 @@
           </div>
           <div class="pt-5">
             <div
-              class="default-border-btn btn-animation"
+              class="btn default-border-btn btn-animation"
               @click="openDeleteDialog"
             >
-              <p class="zen-kaku-bold">リストから削除</p>
+              リストから削除
             </div>
           </div>
         </div>
@@ -149,6 +142,9 @@ export default {
   max-width: 100%;
   margin: 0.5em auto;
 }
+p {
+  font-weight: var(--medium);
+}
 .text-area {
   display: flex;
   align-items: flex-start;
@@ -165,7 +161,7 @@ export default {
 .title-box {
   min-height: 1em;
   padding: 1em;
-  background-color: #ffffff;
+  background-color: var(--white);
   display: flex;
   align-items: center;
   border-radius: 0.3em;
@@ -178,7 +174,7 @@ export default {
   margin-left: auto;
 }
 .accordion-content {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 0.5em 1em 1.4em 1em;
   border-radius: 0 0 0.3em 0.3em;
 }
@@ -203,29 +199,21 @@ export default {
   transform: scaleY(-1);
 }
 textarea {
-  padding: 1rem;
+  padding: 8px;
   width: 100%;
-  min-height: 12em;
-  border: 1px solid #acaaf2;
-  background-color: white;
+  border: 1px solid var(--light-purple);
+  background-color: var(--white);
   overflow: scroll;
+  min-height: 12em;
 }
 textarea:focus {
-  border: 1px solid #010440;
-  background-color: white;
+  border: 1px solid var(--dark);
+  background-color: var(--white);
   outline: none;
 }
 .contents > div {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-::placeholder {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-  font-size: 1rem;
-  color: #d3d1ff;
 }
 </style>

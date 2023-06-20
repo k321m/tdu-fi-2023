@@ -14,9 +14,9 @@
     <div class="background">
       <div class="time-schedule">
         <div class="py-4 pl-4">
-          <p class="zen-kaku-bold pl-5 pb-2">タイムスケジュール</p>
+          <h4 class="pl-5 pb-2">タイムスケジュール</h4>
           <VueTyper
-            class="pl-1 hack-h2"
+            class="pl-1 hack-h1"
             text=">Time Schedule"
             type-delay="55"
             :repeat="0"
@@ -24,7 +24,7 @@
           </VueTyper>
         </div>
         <div class="py-4">
-          <p class="zen-kaku-bold pl-4 pb-3">終日開催</p>
+          <h4 class="pl-4 pb-3">終日開催</h4>
           <div class="pl-4">
             <Carousel :itemsToShow="3.2" snapAlign="start" :transition="1500">
               <Slide v-for="(value, key) in this.allDayEventsData" :key="value">
@@ -34,16 +34,16 @@
                   @click="openDialog(value, key)"
                 >
                   <div></div>
-                  <span class="zen-kaku-medium" :style="value.fontsize">
+                  <p :style="value.fontsize" class="white">
                     {{ value.title }}
-                  </span>
+                  </p>
                 </div>
               </Slide>
             </Carousel>
           </div>
         </div>
         <div class="py-4" id="timeline">
-          <p class="zen-kaku-bold pl-4 pb-3">限定プログラム</p>
+          <h4 class="pl-4 pb-3">限定プログラム</h4>
           <v-row class="pl-4">
             <v-col cols="2">
               <v-timeline line-color="black" side="end">
@@ -69,7 +69,7 @@
             </v-col>
             <v-col class="pt-15 pl-5">
               <div>
-                <p class="zen-kaku-medium">入場開始</p>
+                <p>入場開始</p>
               </div>
               <div style="padding-top: 92px">
                 <template
@@ -102,7 +102,6 @@
                         >
                           <div>
                             <p
-                              class="zen-kaku-medium"
                               style="font-size: 0.6em; text-align: center"
                               :style="
                                 this.limitedEventsData[value.eventDetailKey]
@@ -119,8 +118,8 @@
                               }}
                             </p>
                             <p
-                              class="zen-kaku-medium"
                               style="font-size: 0.9em; text-align: center"
+                              class="white"
                             >
                               {{
                                 this.limitedEventsData[value.eventDetailKey]
@@ -135,7 +134,7 @@
                 </template>
               </div>
               <div class="">
-                <p class="zen-kaku-medium">オープンキャンパス終了</p>
+                <p>オープンキャンパス終了</p>
               </div>
             </v-col>
           </v-row>
@@ -215,6 +214,12 @@ export default {
   margin: 3px;
 }
 
+.hack-h1 {
+  font-size: 2em;
+}
+p {
+  font-weight: var(--medium);
+}
 .carousel__item {
   background-size: cover;
   background-position: center center;
