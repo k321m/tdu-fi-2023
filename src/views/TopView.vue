@@ -1,5 +1,12 @@
 <template>
   <div id="contents">
+    <Button :clickEvent="() => test()" myNote>MyNoteボタン</Button>
+    <Button default>デフォルトボタン</Button>
+    <Button defaultBorder :clickEvent="() => test()"
+      >デフォルトボーダーボタン</Button
+    >
+    <Button pink :clickEvent="() => test()">ピンクボタン</Button>
+    <Button pinkBorder :clickEvent="() => test()">ピンクボーダーボタン</Button>
     <h1>h1のサイズです。</h1>
     <h2>h2のサイズです。</h2>
     <h3>h3のサイズです。</h3>
@@ -23,6 +30,7 @@
 </template>
 
 <script>
+import Button from "../components/parts/Button.vue";
 import MyNoteIcon from "../components/MyNoteIcon.vue";
 import TimeSchedule from "../components/TimeSchedule.vue";
 import TopCarousel from "../components/TopCarousel.vue";
@@ -37,10 +45,14 @@ export default {
     MyNoteIcon,
     TopTitle,
     Map,
+    Button,
   },
   methods: {
     openMap(key) {
       this.$refs.mapRef.openViewDialogByKey(key);
+    },
+    test() {
+      console.log("テスト");
     },
   },
 };

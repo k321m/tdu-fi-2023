@@ -1,5 +1,15 @@
 <template>
   <div class="py-2">
-    <div class="btn pink-btn">PDFダウンロード</div>
+    <Button pink>PDFダウンロード</Button>
   </div>
 </template>
+
+<script>
+import Button from "./parts/Button.vue";
+export default {
+  name: "MyNoteDownloadButton",
+  components: {
+    Button,
+  },
+};
+</script>

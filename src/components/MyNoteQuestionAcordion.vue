@@ -66,12 +66,9 @@
             ></textarea>
           </div>
           <div class="pt-5">
-            <div
-              class="btn default-border-btn btn-animation"
-              @click="openDeleteDialog"
-            >
+            <Button defaultBorder :clickEvent="() => openDeleteDialog()">
               リストから削除
-            </div>
+            </Button>
           </div>
         </div>
       </div>
@@ -80,12 +77,14 @@
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 import MyNoteDeleteDialog from "./MyNoteDeleteDialog.vue";
 export default {
   name: "MyNoteEventAcordion",
   props: ["questionValue", "questionKey"],
   components: {
     MyNoteDeleteDialog,
+    Button,
   },
   data() {
     return {

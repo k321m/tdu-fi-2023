@@ -1,6 +1,4 @@
 <template>
-  <!-- currentFilteredTags[0]が「all」だったら「現在適用している絞り込み条件はありません」を表示 -->
-  <!-- それ以外なら -->
   <template v-if="currentFilteredTags[0] == 'all'">
     <div class="background-clear-dialog px-5 pt-5 message">
       <p
@@ -14,13 +12,7 @@
         <b>現在適用している条件はありません。</b>
       </p>
       <div class="footer">
-        <button
-          class="btn default-border-btn btn-animation back-button"
-          style="width: 100%"
-          @click="$emit('close-dialog')"
-        >
-          とじる
-        </button>
+        <Button defaultBorder @click="$emit('close-dialog')">とじる</Button>
       </div>
     </div>
   </template>
@@ -39,18 +31,10 @@
       <!-- ボタン -->
       <div class="footer">
         <div class="button-group">
-          <button
-            class="btn default-border-btn btn-animation"
-            @click="$emit('close-dialog')"
-          >
-            キャンセル
-          </button>
-          <button
-            class="btn default-btn btn-animation"
-            @click="clearFilterTags"
-          >
-            解除
-          </button>
+          <Button defaultBorder @click="$emit('close-dialog')"
+            >キャンセル
+          </Button>
+          <Button :clickEvent="() => clearFilterTags()">解除</Button>
         </div>
       </div>
     </div>
@@ -58,10 +42,14 @@
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 export default {
   name: "ClearFilterDialog",
   props: ["currentFilteredTags"],
   emits: ["close-dialog", "update-filtered"],
+  components: {
+    Button,
+  },
   methods: {
     clearFilterTags() {
       this.$emit("close-dialog");
@@ -78,6 +66,7 @@ export default {
   background-color: white;
   border-radius: 0.8rem;
   padding-bottom: 2rem;
+  width: 90dvw;
   max-width: 580px;
   justify-content: space-between;
 }
@@ -107,8 +96,7 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.button-group > button,
-.back-button {
+.button-group > * {
   width: 49%;
 }
 </style>

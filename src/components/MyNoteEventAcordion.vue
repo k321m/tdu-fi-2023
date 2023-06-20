@@ -108,19 +108,18 @@
             <div class="py-5">
               <div class="footer">
                 <div class="button-group">
-                  <ButtonDefault
-                    :title="'地図を確認'"
-                    :to="''"
-                    :clickEvent="() => openMapDialog()"
-                  />
-                  <div
-                    class="btn default-border-btn btn-animation"
-                    @click="
-                      this.isDeleteDialogVisible = !this.isDeleteDialogVisible
+                  <Button default :clickEvent="() => openMapDialog()">
+                    地図を確認
+                  </Button>
+                  <Button
+                    defaultBorder
+                    :clickEvent="
+                      () =>
+                        (this.isDeleteDialogVisible =
+                          !this.isDeleteDialogVisible)
                     "
+                    >リストから削除</Button
                   >
-                    リストから削除
-                  </div>
                 </div>
               </div>
             </div>
@@ -132,15 +131,15 @@
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 import MyNoteDeleteDialog from "./MyNoteDeleteDialog.vue";
-import ButtonDefault from "./ButtonDefault.vue";
 import MapViewDialog from "../components/MapViewDialog.vue";
 export default {
   name: "MyNoteEventAcordion",
   props: ["eventValue", "eventKey"],
   components: {
+    Button,
     MyNoteDeleteDialog,
-    ButtonDefault,
     MapViewDialog,
   },
   data() {

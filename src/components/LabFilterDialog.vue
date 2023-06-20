@@ -78,23 +78,22 @@
   <!-- ボタン -->
   <div class="footer px-5">
     <div class="button-group pb-2">
-      <button
-        class="btn default-border-btn btn-animation clear-button"
+      <Button
+        defaultBorder
         @click="isClearFilterDialogVisible = true"
+        class="clear-button"
       >
         クリア
-      </button>
-      <button
-        class="btn default-btn btn-animation filter-button"
-        @click="onFilteredButton"
-      >
+      </Button>
+      <Button @click="onFilteredButton" class="filter-button">
         この条件で絞り込む
-      </button>
+      </Button>
     </div>
   </div>
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 import ClearFilterDialog from "./ClearFilterDialog.vue";
 export default {
   name: "LabFilterDialog",
@@ -108,6 +107,7 @@ export default {
   },
   components: {
     ClearFilterDialog,
+    Button,
   },
   methods: {
     // 絞り込みボタンを押すと親のメソッドを動かす。｢現在指定されている条件｣を子の｢選択中の条件｣にする。

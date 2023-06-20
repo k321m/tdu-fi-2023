@@ -60,12 +60,9 @@
             </div>
           </div>
           <!-- MyNoteに追加ボタン -->
-          <button
-            class="btn myNote-btn btn-animation"
-            @click="myNoteBtnClicked"
+          <Button myNote :clickEvent="() => myNoteBtnClicked()"
+            >MyNoteに追加</Button
           >
-            MyNoteに追加
-          </button>
         </div>
       </transition>
     </div>
@@ -73,10 +70,14 @@
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 export default {
   name: "QuestionAccordion",
   props: ["questionValue", "questionKey"],
   emits: ["start-alert"],
+  components: {
+    Button,
+  },
   data() {
     return {
       type: "questions",
@@ -166,9 +167,5 @@ p {
   display: flex;
   align-items: center;
   padding-bottom: 1em;
-}
-
-.myNote-btn {
-  width: 100%;
 }
 </style>

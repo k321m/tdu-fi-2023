@@ -1,0 +1,64 @@
+<template>
+  <a
+    class="btn btn-default btn-animation"
+    :class="setButtonStyle()"
+    :href="to"
+    @click="handleClick()"
+  >
+    <slot />
+  </a>
+</template>
+<script>
+export default {
+  name: "Button",
+  props: {
+    to: {
+      type: String,
+    },
+    clickEvent: {
+      type: Function,
+    },
+    myNote: {
+      type: Boolean,
+      default: false,
+    },
+    default: {
+      type: Boolean,
+      default: false,
+    },
+    desable: {
+      type: Boolean,
+      default: false,
+    },
+    defaultBorder: {
+      type: Boolean,
+      default: false,
+    },
+    pink: {
+      type: Boolean,
+      default: false,
+    },
+    pinkBorder: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    handleClick() {
+      if (this.clickEvent) {
+        this.clickEvent();
+      }
+    },
+    setButtonStyle() {
+      return {
+        "btn-myNote": this.myNote,
+        "btn-default": this.default,
+        "btn-desable": this.desable,
+        "btn-default-border": this.defaultBorder,
+        "btn-pink": this.pink,
+        "btn-pink-border": this.pinkBorder,
+      };
+    },
+  },
+};
+</script>

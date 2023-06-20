@@ -11,13 +11,9 @@
       </div>
       <p class="sub-strong pink" v-show="updateMiss">パスワードが違います</p>
       <div class="py-3">
-        <a
-          :class="pass ? 'default-btn' : 'desable-btn'"
-          class="btn btn-animation"
-          @click="send"
-        >
+        <Button :default="pass" :desable="!pass" :clickEvent="() => send()">
           送信
-        </a>
+        </Button>
       </div>
     </div>
   </div>
@@ -25,10 +21,12 @@
 
 <script>
 import TopTitle from "../components/TopTitle.vue";
+import Button from "../components/parts/Button.vue";
 export default {
   name: "LoginView",
   components: {
     TopTitle,
+    Button,
   },
   data() {
     return {

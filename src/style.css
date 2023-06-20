@@ -149,29 +149,29 @@ a {
   font-size: 0.8rem;
   padding: 1.1rem;
 }
-.myNote-btn {
+.btn-myNote {
   background: var(--gradient);
   color: var(--white);
 }
-.default-btn {
+.btn-default {
   background-color: var(--dark);
   color: var(--white);
 }
-.default-border-btn {
+.btn-default-border {
   background-color: var(--white);
   border: 2px solid var(--dark);
   color: var(--dark);
 }
 
-.desable-btn {
+.btn-desable {
   background-color: var(--light-purple);
   color: var(--white);
 }
-.pink-btn {
+.btn-pink {
   background-color: var(--pink);
   color: var(--white);
 }
-.pink-border-btn {
+.btn-pink-border {
   background-color: var(--white);
   border: 2px solid var(--pink);
   color: var(--pink);

@@ -42,20 +42,13 @@
       <div class="button-group pb-2">
         <template v-for="button in eventData.buttons">
           <template v-if="button.name == 'default'">
-            <ButtonDefault
-              :title="'地図を確認'"
-              :to="''"
-              :clickEvent="() => openMap(button.key)"
-            />
+            <Button @click="openMap(button.key)">地図を確認</Button>
           </template>
           <template v-else-if="button.name == 'mynote'">
-            <ButtonMyNote
-              :title="'MyNoteに追加'"
-              :clickEvent="myNoteBtnClicked"
-            />
+            <Button myNote @click="myNoteBtnClicked">MyNoteに追加</Button>
           </template>
           <template v-else-if="button.name == 'pink'">
-            <ButtonPink :title="'研究室を確認'" :to="'/labs'" />
+            <Button pink :to="'/labs'">研究室を確認</Button>
           </template>
         </template>
       </div>
@@ -70,10 +63,8 @@
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 import MyNoteAddAlert from "./MyNoteAddAlert.vue";
-import ButtonDefault from "./ButtonDefault.vue";
-import ButtonMyNote from "./ButtonMyNote.vue";
-import ButtonPink from "./ButtonPink.vue";
 export default {
   name: "TimeScheduleDialog",
   props: ["eventData", "eventKey", "eventTime"],
@@ -85,10 +76,8 @@ export default {
     };
   },
   components: {
+    Button,
     MyNoteAddAlert,
-    ButtonDefault,
-    ButtonMyNote,
-    ButtonPink,
   },
   methods: {
     myNoteBtnClicked() {

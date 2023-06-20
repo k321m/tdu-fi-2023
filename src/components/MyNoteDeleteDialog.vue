@@ -1,5 +1,5 @@
 <template>
-  <div class="background-dialog pa-7">
+  <div class="background-dialog px-5 pt-5">
     <h2><slot name="type"></slot>を削除する</h2>
     <div class="pt-8">
       <p>
@@ -14,28 +14,23 @@
         <b><slot name="title"></slot></b>
       </p>
     </div>
-    <div>
-      <v-row class="pa-2">
-        <v-col class="pa-1">
-          <div
-            class="btn default-border-btn btn-animation"
-            @click="closeDeleteDialog"
-          >
-            キャンセル
-          </div>
-        </v-col>
-        <v-col class="pa-1">
-          <div class="btn pink-btn btn-animation" @click="deleteData">削除</div>
-        </v-col>
-      </v-row>
+    <div class="footer">
+      <div class="button-group">
+        <Button defaultBorder @click="closeDeleteDialog"> キャンセル </Button>
+        <Button @click="deleteData">解除</Button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 export default {
   name: "MyNoteDeleteDialog",
   emits: ["close-delete-dialog", "delete-data"],
+  components: {
+    Button,
+  },
   methods: {
     closeDeleteDialog() {
       this.$emit("close-delete-dialog");
@@ -50,11 +45,16 @@ export default {
 
 <style scoped>
 .background-dialog {
-  max-height: 90dvh;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 0.8rem;
-  width: 100%;
+  padding-bottom: 2rem;
+  width: 90dvw;
   max-width: 580px;
+  min-height: 40dvh;
+  max-height: 68dvh;
+  justify-content: space-between;
 }
 .delete-data-box {
   min-height: 8rem;
@@ -65,5 +65,15 @@ export default {
 
 p {
   font-weight: var(--medium);
+}
+.footer {
+  width: 100%;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.button-group > * {
+  width: 49%;
 }
 </style>

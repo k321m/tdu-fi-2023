@@ -34,19 +34,21 @@
       </Carousel>
     </div>
     <div class="py-5">
-      <a
-        :class="isLastCarouse ? 'btn myNote-btn' : 'btn default-btn'"
-        @click="nextCarousel()"
+      <Button
+        :myNote="isLastCarouse"
+        :default="!isLastCarouse"
+        :clickEvent="() => nextCarousel()"
       >
         <template v-if="isLastCarouse">MyNoteをはじめる</template>
         <template v-else>次へ</template>
-      </a>
+      </Button>
     </div>
   </div>
 </template>
 
 <script>
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import Button from "./parts/Button.vue";
 import "vue3-carousel/dist/carousel.css";
 import tutorialImg1 from "../assets/tutorial/tutorial01.svg";
 import tutorialImg2 from "../assets/tutorial/tutorial02.svg";
@@ -89,6 +91,7 @@ export default {
     Slide,
     Navigation,
     Pagination,
+    Button,
   },
   methods: {
     closeTutorial() {
