@@ -26,24 +26,11 @@
         </h3>
         <!-- 講義動画カード -->
         <div v-for="(data, key) in allLecturesData" :key="key">
-          <div
-            id="card"
-            class="mb-2 align-end"
-            :key="key"
-            @click="openViewDialog(key)"
-          >
-            <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
-            <div class="card-img" :style="data.img"></div>
-            <div
-              class="card-img"
-              style="background-color: rgba(36, 7, 77, 0.5)"
-            ></div>
-            <h3
-              class="card-title white v-responsive__sizer v-responsive__content"
-            >
+          <Card :key="key" @click="openViewDialog(key)" :img="data.img">
+            <template v-slot:title>
               {{ data.cardTitle }}
-            </h3>
-          </div>
+            </template>
+          </Card>
         </div>
         <!-- end 講義動画カード -->
       </section>
@@ -55,8 +42,9 @@
 
 <script>
 import LectureVideoViewDialog from "../components/LectureVideoViewDialog.vue";
-import MyNoteIcon from "../components/MyNoteIcon.vue";
+import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
+import Card from "../components/parts/Card.vue";
 export default {
   name: "LectureVideo",
   data() {
@@ -71,6 +59,7 @@ export default {
     LectureVideoViewDialog,
     ContentTitle,
     MyNoteIcon,
+    Card,
   },
   methods: {
     openViewDialog(key) {
@@ -87,38 +76,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-#card {
-  z-index: 0;
-  height: 14em;
-  display: flex;
-  max-height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0px 2px 1px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
-    0px 1px 1px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
-    0px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));
-  border-radius: 0.2rem;
-}
-#card .card-img {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.card-title {
-  display: block;
-  letter-spacing: 0rem;
-  min-width: 0;
-  padding: 0.8rem 1rem;
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>

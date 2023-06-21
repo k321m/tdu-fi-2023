@@ -80,24 +80,15 @@
         </div>
         <!-- 研究室カード -->
         <div v-for="key in filteredLabs" :key="key">
-          <div
-            id="card"
-            class="mb-2 align-end"
+          <Card
             :key="key"
             @click="openLabViewDialog(key)"
+            :img="allLabsData[key].img"
           >
-            <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
-            <div class="card-img" :style="allLabsData[key].img"></div>
-            <div
-              class="card-img"
-              style="background-color: rgba(36, 7, 77, 0.5)"
-            ></div>
-            <h3
-              class="card-title white v-responsive__sizer v-responsive__content"
-            >
+            <template v-slot:title>
               {{ allLabsData[key].cardTitle }}
-            </h3>
-          </div>
+            </template>
+          </Card>
         </div>
       </section>
       <!-- end 研究室一覧 -->
@@ -109,9 +100,10 @@
 <script>
 import LabViewDialog from "../components/LabViewDialog.vue";
 import LabFilterDialog from "../components/LabFilterDialog.vue";
-import MyNoteIcon from "../components/MyNoteIcon.vue";
+import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 import MapViewDialog from "../components/MapViewDialog.vue";
+import Card from "../components/parts/Card.vue";
 export default {
   name: "Labs",
   data() {
@@ -136,6 +128,7 @@ export default {
     ContentTitle,
     MyNoteIcon,
     MapViewDialog,
+    Card,
   },
   computed: {
     // 指定される条件が変わると、表示する研究室も変わる
@@ -230,38 +223,5 @@ li.tag-item {
   background-color: var(--light-purple);
   padding: 0.35rem 0.4rem;
   border-radius: 100vh;
-}
-
-#card {
-  z-index: 0;
-  height: 14em;
-  display: flex;
-  max-height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0px 2px 1px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
-    0px 1px 1px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
-    0px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));
-  border-radius: 0.2rem;
-}
-#card .card-img {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.card-title {
-  display: block;
-  letter-spacing: 0rem;
-  min-width: 0;
-  padding: 0.8rem 1rem;
-  text-align: right;
-  white-space: pre-wrap;
 }
 </style>

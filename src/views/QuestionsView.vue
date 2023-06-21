@@ -1,8 +1,8 @@
 <template>
   <div id="contents">
-    <Alert v-if="isViewAlert" @end-alert="isViewAlert = false"
-      >質問リストに追加しました</Alert
-    >
+    <Alert v-if="isViewAlert" @end-alert="isViewAlert = false">
+      質問リストに追加しました
+    </Alert>
     <div class="pa-4">
       <ContentTitle>
         <template v-slot:jp-title>おすすめ質問TOP10</template>
@@ -47,7 +47,7 @@
 <script>
 import ContentTitle from "../components/ContentTitle.vue";
 import QuestionAccordion from "../components/QuestionAccordion.vue";
-import MyNoteIcon from "../components/MyNoteIcon.vue";
+import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import Alert from "../components/parts/Alert.vue";
 
 export default {

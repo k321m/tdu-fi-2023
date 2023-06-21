@@ -22,7 +22,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
           },
         ],
-        img: "background-image: url(" + lectureImg1 + ")",
+        img: lectureImg1,
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/r2HoMUIYbKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -43,7 +43,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cdl/",
           },
         ],
-        img: "background-image: url(" + lectureImg2 + ")",
+        img: lectureImg2,
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/O9LH8l20j0Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -64,7 +64,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
           },
         ],
-        img: "background-image: url(" + lectureImg3 + ")",
+        img: lectureImg3,
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/Ez9wRBnN8U0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -85,12 +85,12 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/cdl/",
           },
         ],
-        img: "background-image: url(" + lectureImg4 + ")",
+        img: lectureImg4,
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/CVE7cIjXaFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
       lecture_5: {
-        cardTitle: "コンピュータプログラミングⅠ・II",
+        cardTitle: "コンピュータプログラミング\nⅠ・II",
         mordalTitle: "コンピュータプログラミングⅠ・II",
         year_of_enrollment: "学部1年次科目",
         professor: [
@@ -106,7 +106,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
           },
         ],
-        img: "background-image: url(" + lectureImg5 + ")",
+        img: lectureImg5,
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/ahl2cBoKmp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -135,7 +135,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/igl/",
           },
         ],
-        img: "background-image: url(" + lectureImg6 + ")",
+        img: lectureImg6,
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/zQoGV9dGmac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },
@@ -164,7 +164,7 @@ export default {
             url: "https://www.im.dendai.ac.jp/laboratory/igl/",
           },
         ],
-        img: "background-image: url(" + lectureImg7 + ")",
+        img: lectureImg7,
         video:
           '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/U0LuPqCInJk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
       },

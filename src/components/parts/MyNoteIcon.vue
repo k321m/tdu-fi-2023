@@ -12,7 +12,7 @@
   <router-link to="/my-note">
     <div class="my-note-icon">
       <div class="btnripple2" v-if="doneMyNoteTutorial"></div>
-      <img :class="iconAnimationStyleSet()" src="../assets/MyNote.svg" />
+      <img :class="iconAnimationStyleSet()" src="../../assets/MyNote.svg" />
     </div>
   </router-link>
 </template>

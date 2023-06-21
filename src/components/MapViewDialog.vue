@@ -5,7 +5,7 @@
         <v-icon style="color: var(--white)">mdi-close</v-icon>
       </div>
     </div>
-    <img :src="mapData.src" />
+    <img :src="mapData.img" />
   </div>
 </template>
 

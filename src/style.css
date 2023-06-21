@@ -81,7 +81,7 @@ strong {
 
 small,
 .small {
-  font-size: 0.875em;
+  font-size: 0.8em;
   color: inherit;
 }
 
@@ -205,6 +205,9 @@ a {
 
 i.v-icon {
   color: var(--black);
+}
+.blur {
+  filter: blur(0.1rem);
 }
 
 /* 選択されている風 */

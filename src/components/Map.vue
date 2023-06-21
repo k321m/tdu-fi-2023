@@ -16,30 +16,12 @@
         </div>
         <div class="px-4 py-2">
           <div v-for="(data, key) in allMapData" :key="key">
-            <div
-              :id="key"
-              class="mb-2 align-end card"
-              :key="key"
-              @click="openViewDialog(data, key)"
-            >
-              <div
-                class="v-responsive__sizer"
-                style="padding-bottom: 75%"
-              ></div>
-              <div class="card-img blur" :style="data.img"></div>
-              <div
-                class="card-img"
-                style="background-color: rgba(36, 7, 77, 0.583)"
-              ></div>
-              <h3
-                class="card-title white v-responsive__sizer v-responsive__content"
-              >
-                <span class="small" style="margin-bottom: 0.2rem">
-                  {{ data.site }}
-                </span>
+            <Card :key="key" @click="openViewDialog(data, key)" :img="data.img">
+              <template v-slot:sub-title>{{ data.site }}</template>
+              <template v-slot:title>
                 {{ data.title }}
-              </h3>
-            </div>
+              </template>
+            </Card>
           </div>
         </div>
       </div>
@@ -49,6 +31,7 @@
 
 <script>
 import MapViewDialog from "./MapViewDialog.vue";
+import Card from "./parts/Card.vue";
 export default {
   name: "Map",
   data() {
@@ -60,6 +43,7 @@ export default {
   },
   components: {
     MapViewDialog,
+    Card,
   },
   methods: {
     openViewDialog(data) {
@@ -88,43 +72,5 @@ export default {
 }
 .map {
   margin: 0 0 0 -24px;
-}
-
-.card {
-  z-index: 0;
-  height: 14em;
-  display: flex;
-  max-height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0px 2px 1px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
-    0px 1px 1px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
-    0px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));
-  border-radius: 0.2rem;
-}
-.card .card-img {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.blur {
-  filter: blur(0.2rem);
-}
-.card-title {
-  display: inline-flex;
-  flex-direction: column;
-  letter-spacing: 0rem;
-  min-width: 0;
-  padding: 0.8rem 1rem;
-  text-align: right;
-  white-space: pre-wrap;
 }
 </style>
