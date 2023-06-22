@@ -213,11 +213,13 @@ a {
 }
 .dialog-info > div {
   display: inline-flex;
-  align-items: center;
   margin-right: 0.8rem;
   font-size: 0.9em;
 }
-
+.flex-end {
+  display: inline-flex;
+  align-items: flex-end;
+}
 .scroll-contents {
   flex-grow: 1;
   overflow-y: scroll;

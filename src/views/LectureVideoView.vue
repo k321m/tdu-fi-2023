@@ -1,11 +1,15 @@
 <template>
-  <v-dialog v-model="isViewDialogVisible">
+  <!-- <v-dialog v-model="isDialogVisible">
     <LectureVideoViewDialog
       :lectureData="clickedLectureData"
-      @close-dialog="isViewDialogVisible = false"
+      @close-dialog="isDialogVisible = false"
     />
-  </v-dialog>
-
+  </v-dialog> -->
+  <LectureVideoViewDialog
+    :view="isDialogVisible"
+    @update:view="isDialogVisible = $event"
+    :lectureData="clickedLectureData"
+  ></LectureVideoViewDialog>
   <div id="contents">
     <div class="pa-4">
       <!-- ページタイトル -->
@@ -41,7 +45,8 @@
 </template>
 
 <script>
-import LectureVideoViewDialog from "../components/LectureVideoViewDialog.vue";
+// import LectureVideoViewDialog from "../components/LectureVideoViewDialog.vue";
+import LectureVideoViewDialog from "../components/templates/LectureVideoViewDialog.vue";
 import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 import Card from "../components/parts/Card.vue";
@@ -50,7 +55,7 @@ export default {
   data() {
     return {
       allLecturesData: {}, //全講義動画のデータ辞書
-      isViewDialogVisible: false, //講義動画詳細モーダルの可視状態
+      isDialogVisible: false, //講義動画詳細モーダルの可視状態
       clickedLectureData: Array, //選択された講義動画のデータ
       clickedLectureKey: String, //選択された講義動画のデータのkey
     };
@@ -63,7 +68,7 @@ export default {
   },
   methods: {
     openViewDialog(key) {
-      this.isViewDialogVisible = true;
+      this.isDialogVisible = true;
       this.clickedLectureData = this.allLecturesData[key];
       this.clickedLectureKey = key;
     },

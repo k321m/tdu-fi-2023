@@ -26,21 +26,36 @@
     <!-- イベント情報 -->
     <template v-slot:info>
       <DialogInfo v-if="eventTime" :imgSrc="'/src/assets/icon-clock.svg'">
-        {{ eventTime }}
+        <template v-slot:item>
+          {{ eventTime }}
+        </template>
       </DialogInfo>
       <DialogInfo :imgSrc="'/src/assets/icon-map.svg'">
-        {{ eventData.place }}
+        <template v-slot:item>
+          {{ eventData.place }}
+        </template>
       </DialogInfo>
       <DialogInfo
         v-if="eventData.peopleNum"
         :imgSrc="'/src/assets/icon-people.svg'"
       >
-        {{ eventData.peopleNum }}
+        <template v-slot:item>
+          {{ eventData.peopleNum }}
+        </template>
       </DialogInfo>
     </template>
     <!-- 本文 -->
     <template v-slot:body>
       <p>{{ eventData.info }}</p>
+      <div :class="{ 'mt-2': eventData.links.length != 0 }">
+        <a
+          v-for="linkData in eventData.links"
+          style="font-size: 0.8em; display: block; margin-bottom: 0.4em"
+          :href="linkData['url']"
+        >
+          {{ linkData["name"] }}
+        </a>
+      </div>
     </template>
     <!-- フッター -->
     <template v-slot:footer>
@@ -57,18 +72,6 @@
           </template>
         </template>
       </div>
-      <a
-        v-for="linkData in eventData.links"
-        style="
-          font-size: 0.8em;
-          display: block;
-          margin-bottom: 0.2em;
-          margin-top: 0.4em;
-        "
-        :href="linkData['url']"
-      >
-        {{ linkData["name"] }}
-      </a>
     </template>
   </Dialog>
 </template>
