@@ -1,7 +1,7 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" v-if="isVisible">
     <Transition name="fade">
-      <div class="background fade-item" v-if="isVisible">
+      <div class="background fade-item">
         <p class="white small" style="text-align: center">
           <b><slot /></b>
         </p>

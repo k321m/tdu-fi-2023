@@ -1,14 +1,13 @@
 <template>
   <div class="py-8">
-    <v-dialog v-model="isDialogVisible">
-      <TimeScheduleDialog
-        :eventData="clickedEventData"
-        :eventKey="clickedEventKey"
-        :eventTime="clickedEventTime"
-        @close-dialog="isDialogVisible = false"
-        @open-map="openMap"
-      />
-    </v-dialog>
+    <TimeScheduleDialog
+      :view="isDialogVisible"
+      @update:view="isDialogVisible = $event"
+      :eventData="clickedEventData"
+      :eventKey="clickedEventKey"
+      :eventTime="clickedEventTime"
+      @open-map="openMap"
+    ></TimeScheduleDialog>
 
     <div id="time-schedule" style="padding-top: 72px; margin-top: -72px"></div>
     <div class="background">
@@ -18,7 +17,7 @@
           <VueTyper
             class="pl-1 hack-h1"
             text=">Time Schedule"
-            type-delay="55"
+            :type-delay="55"
             :repeat="0"
           >
           </VueTyper>
@@ -145,7 +144,8 @@
 </template>
 
 <script>
-import TimeScheduleDialog from "./TimeScheduleDialog.vue";
+// import TimeScheduleDialog from "./TimeScheduleDialog.vue";
+import TimeScheduleDialog from "./templates/TimeScheduleDialog.vue";
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
 export default {

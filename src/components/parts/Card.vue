@@ -16,7 +16,7 @@ export default {
   name: "Card",
   props: {
     img: {
-      type: Object,
+      type: String,
     },
     clickEvent: {
       type: Function,

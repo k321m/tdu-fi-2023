@@ -17,7 +17,7 @@
     <div class="footer">
       <div class="button-group">
         <Button defaultBorder @click="closeDeleteDialog"> キャンセル </Button>
-        <Button @click="deleteData">解除</Button>
+        <Button pink @click="deleteData">削除</Button>
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@
         <VueTyper
           class="hack-h3"
           text=">2023"
-          type-delay="50"
+          :type-delay="50"
           :repeat="0"
           @typed="isfirstTypeDone = true"
         />
@@ -14,8 +14,8 @@
         <VueTyper
           class="hack-h3"
           text=">TOKYO DENKI UNIVERSITY"
-          type-delay="50"
-          pre-type-delay="500"
+          :type-delay="50"
+          :pre-type-delay="500"
           :repeat="0"
           @typed="isSecondTypeDone = true"
         />
@@ -24,8 +24,8 @@
         <VueTyper
           class="hack-extra custom"
           text="OPEN CAMPUS"
-          type-delay="55"
-          pre-type-delay="2000"
+          :type-delay="55"
+          :pre-type-delay="2000"
           :repeat="0"
           @typed="isThirdTypeDone = true"
         ></VueTyper>
@@ -34,8 +34,8 @@
         <VueTyper
           class="hack-extra"
           text="6.11"
-          type-delay="55"
-          pre-type-delay="2800"
+          :type-delay="55"
+          :pre-type-delay="2800"
           :repeat="0"
           @typed="isForthTypeDone = true"
         />
@@ -43,8 +43,8 @@
           <VueTyper
             class="pl-1 hack-h3"
             text="sun"
-            type-delay="55"
-            pre-type-delay="3100"
+            :type-delay="55"
+            :pre-type-delay="3100"
             :repeat="0"
           />
         </span>

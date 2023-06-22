@@ -47,6 +47,7 @@ import Map from "../components/Map.vue";
 import "../js/particles/top-particle";
 export default {
   name: "Top",
+  emits: ["close-dialog"],
   components: {
     TopCarousel,
     TimeSchedule,

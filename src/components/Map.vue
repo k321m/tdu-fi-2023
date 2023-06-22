@@ -3,7 +3,6 @@
     <v-dialog v-model="isViewDialogVisible">
       <MapViewDialog
         :mapData="clickedMapData"
-        :mapId="clickedMapId"
         @close-dialog="isViewDialogVisible = false"
       />
     </v-dialog>
