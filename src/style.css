@@ -211,7 +211,7 @@ a {
 .button-group > * {
   width: 49%;
 }
-.dialog-info > div {
+.dialog-info > div:not(.tags) {
   display: inline-flex;
   margin-right: 0.8rem;
   font-size: 0.9em;
@@ -219,6 +219,16 @@ a {
 .flex-end {
   display: inline-flex;
   align-items: flex-end;
+}
+.tag-item {
+  display: inline-block;
+  font-size: 0.4rem;
+  color: var(--purple);
+  background-color: #ecebff;
+  padding: 0.35rem 0.8rem;
+  border-radius: 100vh;
+  margin-right: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 .scroll-contents {
   flex-grow: 1;

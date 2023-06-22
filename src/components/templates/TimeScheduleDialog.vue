@@ -50,7 +50,7 @@
       <div :class="{ 'mt-2': eventData.links.length != 0 }">
         <a
           v-for="linkData in eventData.links"
-          style="font-size: 0.8em; display: block; margin-bottom: 0.4em"
+          style="font-size: 0.9em; display: block; margin-bottom: 0.4em"
           :href="linkData['url']"
         >
           {{ linkData["name"] }}

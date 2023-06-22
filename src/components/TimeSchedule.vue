@@ -7,7 +7,7 @@
       :eventKey="clickedEventKey"
       :eventTime="clickedEventTime"
       @open-map="openMap"
-    ></TimeScheduleDialog>
+    />
 
     <div id="time-schedule" style="padding-top: 72px; margin-top: -72px"></div>
     <div class="background">

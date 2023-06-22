@@ -31,7 +31,7 @@
       <div :class="{ 'mt-2': lectureData.links.length != 0 }">
         <a
           v-for="linkData in lectureData.links"
-          style="font-size: 0.8em; display: block; margin-bottom: 0.4em"
+          style="font-size: 0.9em; display: block; margin-bottom: 0.4em"
           :href="linkData['url']"
         >
           {{ linkData["name"] }}

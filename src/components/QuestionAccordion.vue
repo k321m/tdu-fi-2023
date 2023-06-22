@@ -11,7 +11,7 @@
         <div class="text-area">
           <p class="pb-1" style="font-size: 1.5em; line-height: 1em">Q</p>
           <p
-            class="pl-3 pr-3"
+            class="pl-3 mr-3"
             style="line-height: 1.3em; padding-top: 0.2em"
             :class="{ 'text-ellipsis': !isOpen }"
           >
@@ -34,7 +34,7 @@
               <p class="pb-1" style="font-size: 1.5em; line-height: 1em">A</p>
               <div style="display: flex; flex-direction: column" class="pb-2">
                 <p
-                  class="pl-3 pr-3 pb-2"
+                  class="pl-3 mr-3 pb-2"
                   style="line-height: 1.3em; padding-top: 0.2em"
                 >
                   {{ questionValue.ans }}

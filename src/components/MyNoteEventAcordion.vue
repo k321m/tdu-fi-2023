@@ -27,7 +27,7 @@
           </transition-group>
         </div>
         <div
-          class="pl-3 pr-3"
+          class="pl-3 mr-3"
           style="line-height: 1.3em; padding-top: 0.2em"
           @click="isOpen = !isOpen"
           :class="{ 'text-ellipsis': !isOpen }"

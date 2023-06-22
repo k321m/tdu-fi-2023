@@ -1,10 +1,4 @@
 <template>
-  <!-- <v-dialog v-model="isDialogVisible">
-    <LectureVideoViewDialog
-      :lectureData="clickedLectureData"
-      @close-dialog="isDialogVisible = false"
-    />
-  </v-dialog> -->
   <LectureVideoViewDialog
     :view="isDialogVisible"
     @update:view="isDialogVisible = $event"
@@ -45,7 +39,6 @@
 </template>
 
 <script>
-// import LectureVideoViewDialog from "../components/LectureVideoViewDialog.vue";
 import LectureVideoViewDialog from "../components/templates/LectureVideoViewDialog.vue";
 import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";

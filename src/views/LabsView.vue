@@ -1,12 +1,11 @@
 <template>
-  <v-dialog v-model="isViewDialogVisible">
-    <LabViewDialog
-      :labData="clickedLabData"
-      :labKey="clickedLabKey"
-      @close-dialog="isViewDialogVisible = false"
-      @open-map-dialog="openMapDialog"
-    />
-  </v-dialog>
+  <LabViewDialog
+    :view="isViewDialogVisible"
+    @update:view="isViewDialogVisible = $event"
+    :labData="clickedLabData"
+    :labKey="clickedLabKey"
+    @open-map-dialog="openMapDialog"
+  />
   <v-dialog v-model="isFilterDialogVisible">
     <LabFilterDialog
       :allTagData="allTagData"
@@ -98,7 +97,7 @@
 </template>
 
 <script>
-import LabViewDialog from "../components/LabViewDialog.vue";
+import LabViewDialog from "../components/templates/LabViewDialog.vue";
 import LabFilterDialog from "../components/LabFilterDialog.vue";
 import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
