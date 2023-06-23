@@ -40,9 +40,6 @@ export default {
   name: "TopCarousel",
   data() {
     return {
-      settings: {
-        itemsToShow: 1.4,
-      },
       breakpoints: {
         500: {
           itemsToShow: 2,

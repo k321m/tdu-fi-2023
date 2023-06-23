@@ -2,7 +2,6 @@
   <div id="card" class="mb-2 align-end">
     <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
     <div class="card-img blur" :style="setImgStyle()"></div>
-    <div class="card-img" style="background-color: rgba(36, 7, 77, 0.5)"></div>
     <h3 class="card-title white v-responsive__sizer v-responsive__content">
       <span class="small" style="margin-bottom: 0.2em">
         <slot name="sub-title" />
@@ -58,6 +57,16 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+#card .card-img::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(36, 7, 77, 0.5);
 }
 .card-title {
   display: inline-grid;

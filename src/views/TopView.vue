@@ -1,6 +1,6 @@
 <template>
   <div id="contents">
-    <div class="container">
+    <!-- <div class="container">
       <Button myNote>MyNoteボタン</Button>
       <Button default>デフォルトボタン</Button>
       <Button defaultBorder>デフォルトボーダーボタン</Button>
@@ -31,7 +31,7 @@
         <li>リストはこんな感じ</li>
         <li>リストはこんな感じ</li>
       </ul>
-    </div>
+    </div> -->
 
     <TopTitle />
     <TopCarousel />
