@@ -12,132 +12,145 @@
     <div id="time-schedule" style="padding-top: 72px; margin-top: -72px"></div>
     <div>
       <div class="time-schedule py-4">
-        <div class="py-4 pl-4">
-          <h4 class="pl-5 pb-2">タイムスケジュール</h4>
-          <VueTyper
-            class="pl-1 hack-h1"
-            text=">Time Schedule"
-            :type-delay="55"
-            :repeat="0"
-          >
-          </VueTyper>
-        </div>
-        <div class="py-4">
-          <h4 class="pl-4 pb-3">終日開催</h4>
-          <div class="pl-4">
-            <Carousel :itemsToShow="3.2" snapAlign="start" :transition="1500">
-              <Slide v-for="(value, key) in this.allDayEventsData" :key="value">
-                <div
-                  class="carousel__item"
-                  :style="value.img"
-                  @click="openDialog(value, key)"
-                >
-                  <div></div>
-                  <p :style="value.fontsize" class="white">
-                    {{ value.title }}
-                  </p>
-                </div>
-              </Slide>
-            </Carousel>
+        <!-- <div class="py-4 pl-4"> -->
+        <div class="container">
+          <div class="py-4">
+            <h4 class="pl-5 pb-2">タイムスケジュール</h4>
+            <VueTyper
+              class="pl-1 hack-h1"
+              text=">Time Schedule"
+              :type-delay="55"
+              :repeat="0"
+            >
+            </VueTyper>
           </div>
-        </div>
-        <div class="py-4" id="timeline">
-          <h4 class="pl-4 pb-3">限定プログラム</h4>
-          <v-row class="pl-4">
-            <v-col cols="2">
-              <v-timeline line-color="black" side="end">
-                <v-timeline-item height="100px" size="xx-small">
-                  <template v-slot:opposite>
-                    <span class="hack-h5">10:00</span>
-                  </template>
-                </v-timeline-item>
-                <template v-for="time in timesData" :key="time">
-                  <v-timeline-item height="32px" size="xx-small">
+          <div class="py-4">
+            <!-- <h4 class="pl-4 pb-3">終日開催</h4> -->
+            <h4 class="pb-3">終日開催</h4>
+            <!-- <div class="pl-4"> -->
+            <div class="">
+              <Carousel :itemsToShow="3.2" snapAlign="start" :transition="1500">
+                <Slide
+                  v-for="(value, key) in this.allDayEventsData"
+                  :key="value"
+                >
+                  <div
+                    class="carousel__item"
+                    :style="value.img"
+                    @click="openDialog(value, key)"
+                  >
+                    <div></div>
+                    <p :style="value.fontsize" class="white">
+                      {{ value.title }}
+                    </p>
+                  </div>
+                </Slide>
+              </Carousel>
+            </div>
+          </div>
+          <div class="py-4" id="timeline">
+            <!-- <h4 class="pl-4 pb-3">限定プログラム</h4> -->
+            <h4 class="pb-3">限定プログラム</h4>
+            <!-- <v-row class="pl-4"> -->
+            <v-row class="">
+              <v-col cols="2">
+                <v-timeline line-color="black" side="end">
+                  <v-timeline-item height="100px" size="xx-small">
                     <template v-slot:opposite>
-                      <span class="hack-h5">{{ time }}</span>
+                      <span class="hack-h5">10:00</span>
                     </template>
                   </v-timeline-item>
-                </template>
-
-                <v-timeline-item height="132px" size="xx-small">
-                  <template v-slot:opposite>
-                    <span class="hack-h5">16:00</span>
+                  <template v-for="time in timesData" :key="time">
+                    <v-timeline-item height="32px" size="xx-small">
+                      <template v-slot:opposite>
+                        <span class="hack-h5">{{ time }}</span>
+                      </template>
+                    </v-timeline-item>
                   </template>
-                </v-timeline-item>
-              </v-timeline>
-            </v-col>
-            <v-col class="pt-15 pl-5">
-              <div>
-                <p>入場開始</p>
-              </div>
-              <div style="padding-top: 92px">
-                <template
-                  v-for="timeSchedule in this.timeScheduleData"
-                  :key="timeSchedule"
-                >
-                  <div style="padding-bottom: 53px">
-                    <Carousel
-                      :itemsToShow="2.4"
-                      snapAlign="start"
-                      :transition="1500"
-                    >
-                      <Slide v-for="(value, key) in timeSchedule" :key="value">
-                        <div
-                          class="carousel__item"
-                          @click="
-                            openDialog(
-                              this.limitedEventsData[value.eventDetailKey],
-                              key,
-                              value.time
-                            )
-                          "
-                          :style="[
-                            this.limitedEventsData[value.eventDetailKey]
-                              .carousel_height,
-                            this.limitedEventsData[value.eventDetailKey]
-                              .img_height,
-                            this.limitedEventsData[value.eventDetailKey].img,
-                          ]"
+
+                  <v-timeline-item height="132px" size="xx-small">
+                    <template v-slot:opposite>
+                      <span class="hack-h5">16:00</span>
+                    </template>
+                  </v-timeline-item>
+                </v-timeline>
+              </v-col>
+              <v-col class="pt-15 pl-5">
+                <div>
+                  <p>入場開始</p>
+                </div>
+                <div style="padding-top: 92px">
+                  <template
+                    v-for="timeSchedule in this.timeScheduleData"
+                    :key="timeSchedule"
+                  >
+                    <div style="padding-bottom: 53px">
+                      <Carousel
+                        :itemsToShow="2.4"
+                        snapAlign="start"
+                        :transition="1500"
+                      >
+                        <Slide
+                          v-for="(value, key) in timeSchedule"
+                          :key="value"
                         >
-                          <div>
-                            <p
-                              class="white"
-                              style="font-size: 0.6em; text-align: center"
-                              :style="
-                                this.limitedEventsData[value.eventDetailKey]
-                                  .subTitleStyle
-                              "
-                              v-if="
-                                this.limitedEventsData[value.eventDetailKey]
-                                  .subTitle
-                              "
-                            >
-                              {{
-                                this.limitedEventsData[value.eventDetailKey]
-                                  .subTitle
-                              }}
-                            </p>
-                            <p
-                              style="font-size: 0.9em; text-align: center"
-                              class="white"
-                            >
-                              {{
-                                this.limitedEventsData[value.eventDetailKey]
-                                  .title
-                              }}
-                            </p>
+                          <div
+                            class="carousel__item"
+                            @click="
+                              openDialog(
+                                this.limitedEventsData[value.eventDetailKey],
+                                key,
+                                value.time
+                              )
+                            "
+                            :style="[
+                              this.limitedEventsData[value.eventDetailKey]
+                                .carousel_height,
+                              this.limitedEventsData[value.eventDetailKey]
+                                .img_height,
+                              this.limitedEventsData[value.eventDetailKey].img,
+                            ]"
+                          >
+                            <div>
+                              <p
+                                class="white"
+                                style="font-size: 0.6em; text-align: center"
+                                :style="
+                                  this.limitedEventsData[value.eventDetailKey]
+                                    .subTitleStyle
+                                "
+                                v-if="
+                                  this.limitedEventsData[value.eventDetailKey]
+                                    .subTitle
+                                "
+                              >
+                                {{
+                                  this.limitedEventsData[value.eventDetailKey]
+                                    .subTitle
+                                }}
+                              </p>
+                              <p
+                                style="font-size: 0.9em; text-align: center"
+                                class="white"
+                              >
+                                {{
+                                  this.limitedEventsData[value.eventDetailKey]
+                                    .title
+                                }}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      </Slide>
-                    </Carousel>
-                  </div>
-                </template>
-              </div>
-              <div class="">
-                <p>オープンキャンパス終了</p>
-              </div>
-            </v-col>
-          </v-row>
+                        </Slide>
+                      </Carousel>
+                    </div>
+                  </template>
+                </div>
+                <div class="">
+                  <p>オープンキャンパス終了</p>
+                </div>
+              </v-col>
+            </v-row>
+          </div>
         </div>
       </div>
     </div>
@@ -201,7 +214,6 @@ export default {
 
 <style scoped>
 .time-schedule {
-  width: 100vw;
   position: relative;
 }
 

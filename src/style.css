@@ -18,7 +18,17 @@
   --regular: 400;
   --medium: 500;
   --bold: 700;
-  --bs-gutter-x: 1.5rem;
+
+  --bs-gutter-x: 1.1rem;
+
+  /* トップカルーセル */
+  --vc-nav-color: var(--black) !important;
+  --vc-nav-color-hover: var(--light-purple) !important;
+  --vc-pgn-background-color: var(--light-purple) !important;
+  --vc-pgn-active-color: var(--black) !important;
+  --vc-pgn-height: 6px !important;
+  --vc-pgn-width: 6px !important;
+  --vc-pgn-border-radius: 50% !important;
 }
 
 *,
@@ -142,7 +152,31 @@ small,
   margin-right: auto;
   margin-left: auto;
 }
-
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
 /* 白いシート */
 .time-schedule::before {
   content: "";
@@ -296,6 +330,13 @@ i.v-icon {
 .v-timeline-item__opposite {
   padding-inline-end: 5px !important;
   line-height: 0;
+}
+
+#top-carousel {
+  /* max-width: 700px; */
+  max-width: 1000px;
+  width: 100dvw;
+  margin: auto;
 }
 #top-carousel .carousel__viewport {
   min-height: 245px;

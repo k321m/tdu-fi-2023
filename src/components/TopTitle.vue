@@ -1,6 +1,6 @@
 <template>
   <div id="top-title" style="min-height: 225px">
-    <div class="pl-4 pt-8 pb-4">
+    <div class="pt-8 pb-4 container">
       <div>
         <VueTyper
           class="hack-h3"

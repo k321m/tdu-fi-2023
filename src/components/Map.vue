@@ -9,18 +9,26 @@
     <div id="map" style="padding-top: 72px; margin-top: -72px"></div>
     <div id="map">
       <div class="map py-4">
-        <div class="py-4 px-4">
-          <h4 class="pl-5 pb-2">地図</h4>
-          <h1 class="hack-h1">>Map</h1>
-        </div>
-        <div class="px-4 py-2">
-          <div v-for="(data, key) in allMapData" :key="key">
-            <Card :key="key" @click="openViewDialog(data, key)" :img="data.img">
-              <template v-slot:sub-title>{{ data.site }}</template>
-              <template v-slot:title>
-                {{ data.title }}
-              </template>
-            </Card>
+        <div class="container">
+          <!-- <div class="py-4 px-4"> -->
+          <div class="py-4">
+            <h4 class="pl-5 pb-2">地図</h4>
+            <h1 class="hack-h1">>Map</h1>
+          </div>
+          <!-- <div class="px-4 py-2"> -->
+          <div class="py-2">
+            <div v-for="(data, key) in allMapData" :key="key">
+              <Card
+                :key="key"
+                @click="openViewDialog(data, key)"
+                :img="data.img"
+              >
+                <template v-slot:sub-title>{{ data.site }}</template>
+                <template v-slot:title>
+                  {{ data.title }}
+                </template>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
@@ -70,7 +78,6 @@ export default {
   left: 1.4em;
 } */
 .map {
-  /* margin: 0 0 0 -24px; */
   position: relative;
   text-align: end;
 }

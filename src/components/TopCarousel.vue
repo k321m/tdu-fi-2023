@@ -3,8 +3,9 @@
     <Carousel
       class="py-8"
       :itemsToShow="1.4"
+      :breakpoints="breakpoints"
       :wrapAround="true"
-      :transition="2500"
+      :transition="1200"
       :autoplay="5000"
     >
       <Slide
@@ -39,6 +40,20 @@ export default {
   name: "TopCarousel",
   data() {
     return {
+      settings: {
+        itemsToShow: 1.4,
+      },
+      breakpoints: {
+        500: {
+          itemsToShow: 2,
+        },
+        720: {
+          itemsToShow: 2.4,
+        },
+        800: {
+          itemsToShow: 3.2,
+        },
+      },
       contents: [
         {
           text: "Laboratory",
@@ -147,13 +162,8 @@ export default {
   opacity: 0.8;
 }
 .carousel__slide {
+  transform-origin: bottom;
   padding: 6.5em;
-}
-
-.carousel__prev,
-.carousel__next {
-  box-sizing: content-box;
-  border: 5px solid white;
 }
 
 .carousel__track {
@@ -164,26 +174,11 @@ export default {
   transition: 1.5s;
 }
 
-.carousel__slide {
-  opacity: 0.9;
-  transform-origin: bottom;
-  transform: rotateY(-20deg) scale(0.87);
-}
-.carousel__slide--prev {
-  opacity: 1;
-  transform-origin: bottom;
+.carousel__slide:not(.carousel__slide--active) {
   transform: rotateY(-10deg) scale(0.87);
 }
 
-.carousel__slide--next {
-  opacity: 1;
-  transform-origin: bottom;
-  transform: rotateY(10deg) scale(0.87);
-}
-
 .carousel__slide--active {
-  opacity: 1;
-  transform-origin: bottom;
   filter: drop-shadow(0px 4px 3px #a5a5a5);
   transform: rotateY(0) scale(1.1, 1);
 }
