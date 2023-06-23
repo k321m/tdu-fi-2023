@@ -18,6 +18,7 @@
   --regular: 400;
   --medium: 500;
   --bold: 700;
+  --bs-gutter-x: 1.5rem;
 }
 
 *,
@@ -128,9 +129,46 @@ small,
   height: 100%;
   background-color: var(--light); /*背景色*/
 }
+
 #contents {
   position: relative; /*描画を#particles-jsよりも上にするためposition:relative;を指定*/
   z-index: 10; /*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+}
+
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* 白いシート */
+.time-schedule::before {
+  content: "";
+  display: block;
+  width: 94%;
+  max-width: 720px;
+  height: 100%;
+  background-color: var(--white);
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 0.8rem 0.8rem 0;
+}
+.map::before {
+  content: "";
+  display: block;
+  width: 94%;
+  max-width: 720px;
+  height: 100%;
+  background-color: var(--white);
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0.8rem 0 0 0.8rem;
 }
 
 a {

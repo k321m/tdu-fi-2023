@@ -2,8 +2,7 @@
   <div>
     <h4>訪問リスト</h4>
     <div v-for="(value, key) in eventDetailData" :key="value">
-      <MyNoteEventAcordion :eventValue="value" :eventKey="key">
-      </MyNoteEventAcordion>
+      <MyNoteEventAcordion :eventValue="value" :eventKey="key" />
     </div>
 
     <div class="py-4">

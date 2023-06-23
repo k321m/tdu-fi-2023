@@ -22,7 +22,7 @@
     <div class="title-box" :class="{ 'opened-border-radius': isOpen }">
       <div class="text-area">
         <div @click="checked()">
-          <transition-group name="check" mode="out-in">
+          <transition-group name="check">
             <div :class="checkboxStyleSet()" :key="eventKey"></div>
           </transition-group>
         </div>

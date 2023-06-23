@@ -70,8 +70,8 @@ export default {
     this.allRecommendQuestionsData =
       this.$store.getters["questionsStore/getAllRecommendQuestionsData"];
     this.allFAQData = this.$store.getters["questionsStore/getAllFAQData"];
-    console.log(this.allRecommendQuestionsData);
-    console.log(this.allFAQData);
+    // console.log(this.allRecommendQuestionsData);
+    // console.log(this.allFAQData);
   },
 };
 </script>

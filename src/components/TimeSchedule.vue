@@ -10,8 +10,8 @@
     />
 
     <div id="time-schedule" style="padding-top: 72px; margin-top: -72px"></div>
-    <div class="background">
-      <div class="time-schedule">
+    <div>
+      <div class="time-schedule py-4">
         <div class="py-4 pl-4">
           <h4 class="pl-5 pb-2">タイムスケジュール</h4>
           <VueTyper
@@ -101,6 +101,7 @@
                         >
                           <div>
                             <p
+                              class="white"
                               style="font-size: 0.6em; text-align: center"
                               :style="
                                 this.limitedEventsData[value.eventDetailKey]
@@ -199,15 +200,9 @@ export default {
 </script>
 
 <style scoped>
-.background {
-  overflow: visible;
-  background-color: white;
-  z-index: -1; /*描画を一番下に*/
-  width: calc(100% - 1.4em);
-  border-radius: 0 0.8rem 0.8rem 0;
-}
 .time-schedule {
   width: 100vw;
+  position: relative;
 }
 
 .carousel__slide {

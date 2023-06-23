@@ -7,9 +7,9 @@
       />
     </v-dialog>
     <div id="map" style="padding-top: 72px; margin-top: -72px"></div>
-    <div id="map" class="background">
-      <div class="map">
-        <div class="py-4 pl-4">
+    <div id="map">
+      <div class="map py-4">
+        <div class="py-4 px-4">
           <h4 class="pl-5 pb-2">地図</h4>
           <h1 class="hack-h1">>Map</h1>
         </div>
@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style scoped>
-.background {
+/* .background {
   position: relative;
   background-color: white;
   background-size: cover;
@@ -68,8 +68,10 @@ export default {
   width: calc(100% - 1.4em);
   border-radius: 0.8rem 0 0 0.8rem;
   left: 1.4em;
-}
+} */
 .map {
-  margin: 0 0 0 -24px;
+  /* margin: 0 0 0 -24px; */
+  position: relative;
+  text-align: end;
 }
 </style>

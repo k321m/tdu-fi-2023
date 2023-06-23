@@ -1,7 +1,7 @@
 <template>
   <v-dialog>
     <slot name="alert" />
-    <div class="background-dialog pa-5 pb-7">
+    <div class="background-dialog pt-5 px-5 pb-8">
       <div style="display: flex; justify-content: flex-end">
         <v-icon @click="$emit('close-dialog')">mdi-close</v-icon>
       </div>
@@ -59,6 +59,5 @@ export default {
   max-height: 90dvh;
   background-color: white;
   border-radius: 0.8rem;
-  padding-bottom: 10rem;
 }
 </style>
