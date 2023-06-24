@@ -8,9 +8,9 @@
     <div class="pa-5 scroll-contents">
       <div class="py-5">
         <div class="top-box">
-          <router-link class="routerLink" to="/" @click="closeHamburgerMenu">
+          <router-link to="/" @click="closeHamburgerMenu">
             <div>
-              <h1 class="zen-kaku-bold">トップ</h1>
+              <h2>トップ</h2>
             </div>
           </router-link>
 
@@ -22,51 +22,35 @@
           </div>
         </div>
         <transition name="open">
-          <div class="pt-6 pl-6" v-if="isOpen">
-            <router-link
-              class="routerLink"
-              to="/#time-schedule"
-              @click="closeHamburgerMenu"
-            >
-              <h2 class="zen-kaku-medium py-2">タイムスケジュール</h2>
+          <div class="pt-6 pl-5" v-if="isOpen">
+            <router-link to="/#time-schedule" @click="closeHamburgerMenu">
+              <h3 class="py-2">タイムスケジュール</h3>
             </router-link>
-            <router-link
-              class="routerLink"
-              to="/#map"
-              @click="closeHamburgerMenu"
-            >
-              <h2 class="zen-kaku-medium py-2">地図</h2>
+            <router-link to="/#map" @click="closeHamburgerMenu">
+              <h3 class="py-2">地図</h3>
             </router-link>
           </div>
         </transition>
       </div>
 
-      <router-link class="routerLink" to="/labs" @click="closeHamburgerMenu">
+      <router-link to="/labs" @click="closeHamburgerMenu">
         <div class="py-5">
-          <h1 class="zen-kaku-bold">研究室公開</h1>
+          <h2>研究室公開</h2>
         </div>
       </router-link>
-      <router-link
-        class="routerLink"
-        to="/lecture-video"
-        @click="closeHamburgerMenu"
-      >
+      <router-link to="/lecture-video" @click="closeHamburgerMenu">
         <div class="py-5">
-          <h1 class="zen-kaku-bold">講義動画</h1>
+          <h2>講義動画</h2>
         </div>
       </router-link>
-      <router-link
-        class="routerLink"
-        to="/questions"
-        @click="closeHamburgerMenu"
-      >
+      <router-link to="/questions" @click="closeHamburgerMenu">
         <div class="py-5">
-          <h1 class="zen-kaku-bold">おすすめ質問TOP10</h1>
+          <h2>おすすめ質問TOP10</h2>
         </div>
       </router-link>
-      <router-link class="routerLink" to="/my-note" @click="closeHamburgerMenu">
+      <router-link to="/my-note" @click="closeHamburgerMenu">
         <div class="py-5">
-          <h1 class="zen-kaku-bold">MyNote</h1>
+          <h2>MyNote</h2>
         </div>
       </router-link>
       <div class="py-5">
@@ -74,19 +58,15 @@
           href="https://docs.google.com/forms/d/e/1FAIpQLSeQ5ru-Mzc-gULHow6ZkxNjnRPP6I7i6aUTtTJitU7GpdYWWQ/viewform"
           style="text-decoration: none; color: white"
         >
-          <h3 class="zen-kaku-bold mb-4">> アンケート</h3>
+          <h3 class="mb-4">> アンケート</h3>
         </a>
-        <router-link
-          class="routerLink"
-          to="/attention"
-          @click="closeHamburgerMenu"
-        >
-          <h3 class="zen-kaku-bold">> ご利用にあたって</h3>
+        <router-link to="/attention" @click="closeHamburgerMenu">
+          <h3>> ご利用にあたって</h3>
         </router-link>
       </div>
 
       <div class="social py-15">
-        <h2 class="hack-h4">OFFICIAL SITE AND SNS:</h2>
+        <h3 class="hack-h3">OFFICIAL SITE AND SNS:</h3>
         <div style="display: flex" class="py-5">
           <a class="pr-4" href="https://www.dendai.ac.jp">
             <img src="../assets/icon-web.svg" />
@@ -152,29 +132,21 @@ export default {
   top: 0;
   left: 0;
   z-index: 2000;
-  background-color: #010326;
+  background-color: var(--black);
 }
 .header {
   padding: 1em 0 1.8em 0;
   display: flex;
 }
-h1 {
-  font-size: 1.8em;
-}
 
-h2 {
-  font-size: 1.5em;
+h2,
+h3 {
+  color: var(--white);
 }
-
 .scroll-contents {
   flex-grow: 1;
   overflow-y: scroll;
   height: 100%; /* 適切な高さを指定する */
-}
-
-.routerLink {
-  text-decoration: none;
-  color: white;
 }
 
 .top-box {

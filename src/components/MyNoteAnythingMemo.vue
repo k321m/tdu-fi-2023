@@ -1,25 +1,15 @@
 <template>
   <div>
     <div class="pb-1" style="display: flex; align-items: flex-end">
-      <p class="zen-kaku-bold py-3">なんでもメモ</p>
+      <h4 class="py-3">なんでもメモ</h4>
       <v-icon
-        style="
-          margin: 0 0 0 auto;
-          padding-right: 0.4rem;
-          font-size: 1rem;
-          color: #010326;
-        "
+        style="margin: 0 0 0 auto; padding-right: 0.4rem; font-size: 1rem"
         @click="copyMemoToClipboard"
         v-if="!isCopied"
         >mdi-clipboard-multiple</v-icon
       >
       <v-icon
-        style="
-          margin: 0 0 0 auto;
-          padding-right: 0.4rem;
-          font-size: 1rem;
-          color: #010326;
-        "
+        style="margin: 0 0 0 auto; padding-right: 0.4rem; font-size: 1rem"
         @click="copyMemoToClipboard"
         v-else
         >mdi-clipboard-check-multiple</v-icon
@@ -73,26 +63,17 @@ export default {
 
 <style scoped>
 textarea {
-  padding: 10px;
+  padding: 8px;
   width: 100%;
-  min-height: 12em;
-  border: 1px solid #acaaf2;
-  background-color: white;
+  border: 1px solid var(--light-purple);
+  background-color: var(--white);
   overflow: scroll;
+  min-height: 12em;
 }
 
 textarea:focus {
-  border: 1px solid #010440;
-  background-color: white;
+  border: 1px solid var(--dark);
+  background-color: var(--white);
   outline: none;
-}
-
-::placeholder {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-  font-size: 14px;
-  color: #d3d1ff;
 }
 </style>

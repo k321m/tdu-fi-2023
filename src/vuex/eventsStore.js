@@ -200,8 +200,7 @@ export default {
         peopleNum: "500名",
         info: "東京電機大学の学びの特色や強みなどをお話しします。まずはこのガイダンスで電大のことを知りましょう！",
         img: "background-image: url(" + limitedEventImg1 + ")",
-        carousel_height: "min-height: 60px",
-        img_height: "background-size: cover;",
+        carousel_height: true,
         links: [
           {
             name: "▶︎ 東京電機大学公式HP",
@@ -227,8 +226,7 @@ export default {
         peopleNum: "99名",
         info: "試験科目は？昨年度の受験倍率・合格最低点は？併願方法についても詳しく解説します。",
         img: "background-image: url(" + limitedEventImg5 + ")",
-        carousel_height: "min-height: 60px",
-        img_height: "background-size: cover;",
+        carousel_height: true,
         links: [
           {
             name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",
@@ -254,8 +252,7 @@ export default {
         peopleNum: "297名",
         info: "推薦入試やAO入試などをお考えの受験生必見！面接のポイント（教員は何を見るのか？）など、オープンキャンパスでしか聞けない情報を得られます。",
         img: "background-image: url(" + limitedEventImg6 + ")",
-        carousel_height: "min-height: 60px",
-        img_height: "background-size: cover;",
+        carousel_height: true,
         links: [
           {
             name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",

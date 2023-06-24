@@ -9,14 +9,9 @@
         @click="isOpen = !isOpen"
       >
         <div class="text-area">
+          <p class="pb-1" style="font-size: 1.5em; line-height: 1em">Q</p>
           <p
-            class="zen-kaku-medium pb-1"
-            style="font-size: 1.5em; line-height: 1em"
-          >
-            Q
-          </p>
-          <p
-            class="pl-3 pr-3 zen-kaku-medium"
+            class="pl-3 mr-3"
             style="line-height: 1.3em; padding-top: 0.2em"
             :class="{ 'text-ellipsis': !isOpen }"
           >
@@ -36,15 +31,10 @@
           <!-- 回答 -->
           <div class="answer-box" v-if="questionValue.ans != ''">
             <div class="text-area">
-              <p
-                class="zen-kaku-medium pb-1"
-                style="font-size: 1.5em; line-height: 1em"
-              >
-                A
-              </p>
+              <p class="pb-1" style="font-size: 1.5em; line-height: 1em">A</p>
               <div style="display: flex; flex-direction: column" class="pb-2">
                 <p
-                  class="pl-3 pr-3 zen-kaku-medium pb-2"
+                  class="pl-3 mr-3 pb-2"
                   style="line-height: 1.3em; padding-top: 0.2em"
                 >
                   {{ questionValue.ans }}
@@ -52,7 +42,7 @@
                 <!-- リンク -->
                 <div v-for="linkData in questionValue.links">
                   <a
-                    class="pl-3 zen-kaku-regular"
+                    class="pl-3"
                     style="font-size: 0.8em"
                     :href="linkData['url']"
                     >{{ linkData["name"] }}</a
@@ -70,12 +60,7 @@
             </div>
           </div>
           <!-- MyNoteに追加ボタン -->
-          <button
-            class="myNote-btn btn-animation zen-kaku-bold"
-            @click="myNoteBtnClicked"
-          >
-            MyNoteに追加
-          </button>
+          <Button myNote @click="myNoteBtnClicked">質問リストに追加</Button>
         </div>
       </transition>
     </div>
@@ -83,10 +68,14 @@
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 export default {
   name: "QuestionAccordion",
   props: ["questionValue", "questionKey"],
   emits: ["start-alert"],
+  components: {
+    Button,
+  },
   data() {
     return {
       type: "questions",
@@ -108,7 +97,7 @@ export default {
 </script>
 <style scoped>
 p {
-  color: #010326;
+  font-weight: var(--medium);
 }
 .accordion {
   max-width: 100%;
@@ -117,7 +106,7 @@ p {
 .title-box {
   min-height: 1em;
   padding: 1em;
-  background-color: #ffffff;
+  background-color: var(--white);
   display: flex;
   align-items: center;
   border-radius: 0.3em;
@@ -166,7 +155,7 @@ p {
 }
 
 .accordion-content {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 0.5em 1em 1.4em 1em;
   border-radius: 0 0 0.3em 0.3em;
 }
@@ -176,14 +165,5 @@ p {
   display: flex;
   align-items: center;
   padding-bottom: 1em;
-}
-
-.myNote-btn {
-  width: 100%;
-  font-size: 0.8em;
-}
-a {
-  text-decoration: none;
-  color: #010326;
 }
 </style>

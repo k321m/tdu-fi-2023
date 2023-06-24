@@ -1,44 +1,36 @@
 <template>
-  <div class="background-dialog pa-7">
-    <p class="zen-kaku-bold" style="font-size: 1.6em">
-      <slot name="type"></slot>を削除する
-    </p>
+  <div class="background-dialog px-5 pt-5">
+    <h2><slot name="type"></slot>を削除する</h2>
     <div class="pt-8">
-      <p class="zen-kaku-medium">
+      <p>
         この操作は取り消せません。 <br />削除すると<slot
           name="message-plane"
         ></slot
-        ><span style="color: #e345e6"><slot name="message-caution"></slot></span
-        >。
+        ><span class="pink"><slot name="message-caution"></slot></span>。
       </p>
     </div>
     <div class="delete-data-box">
-      <p class="zen-kaku-bold"><slot name="title"></slot></p>
+      <p>
+        <b><slot name="title"></slot></b>
+      </p>
     </div>
-    <div>
-      <v-row class="pa-2">
-        <v-col class="pa-1">
-          <div
-            class="default-border-btn btn-animation"
-            @click="closeDeleteDialog"
-          >
-            <p class="zen-kaku-bold">キャンセル</p>
-          </div>
-        </v-col>
-        <v-col class="pa-1">
-          <div class="pink-btn btn-animation" @click="deleteData">
-            <p class="zen-kaku-bold">削除</p>
-          </div>
-        </v-col>
-      </v-row>
+    <div class="footer">
+      <div class="button-group">
+        <Button defaultBorder @click="closeDeleteDialog"> キャンセル </Button>
+        <Button pink @click="deleteData">削除</Button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 export default {
   name: "MyNoteDeleteDialog",
   emits: ["close-delete-dialog", "delete-data"],
+  components: {
+    Button,
+  },
   methods: {
     closeDeleteDialog() {
       this.$emit("close-delete-dialog");
@@ -53,14 +45,35 @@ export default {
 
 <style scoped>
 .background-dialog {
-  max-height: 90dvh;
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 0.8rem;
+  padding-bottom: 2rem;
+  width: 90dvw;
+  max-width: 580px;
+  min-height: 40dvh;
+  max-height: 68dvh;
+  justify-content: space-between;
 }
 .delete-data-box {
   min-height: 8rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+p {
+  font-weight: var(--medium);
+}
+.footer {
+  width: 100%;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.button-group > * {
+  width: 49%;
 }
 </style>

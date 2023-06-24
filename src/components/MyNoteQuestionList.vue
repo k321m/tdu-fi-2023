@@ -5,7 +5,7 @@
     ></MyNoteAddQueDialog>
   </v-dialog>
   <div>
-    <p class="zen-kaku-bold">質問リスト</p>
+    <h4>質問リスト</h4>
     <div v-for="(value, key) in questionDetailData" :key="value">
       <MyNoteQuestionAcordion :questionValue="value" :questionKey="key">
       </MyNoteQuestionAcordion>
@@ -17,7 +17,7 @@
     </div>
     <div class="py-4">
       <router-link class="routerLink" to="/questions">
-        <p class="zen-kaku-regular">▶︎ おすすめ質問TOP10</p>
+        <p>▶︎ おすすめ質問TOP10</p>
       </router-link>
     </div>
   </div>
@@ -50,6 +50,6 @@ export default {
 <style scoped>
 .routerLink {
   text-decoration: none;
-  color: #010326;
+  color: var(--black);
 }
 </style>

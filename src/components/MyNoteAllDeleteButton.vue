@@ -12,15 +12,10 @@
   <div class="py-1">
     <p
       @click="isDeleteDialogVisible = !isDeleteDialogVisible"
-      class="zen-kaku-bold"
-      style="
-        font-size: 0.8em;
-        color: #e345e6;
-        text-align: center;
-        text-decoration: underline;
-      "
+      class="pink small"
+      style="text-align: center; text-decoration: underline"
     >
-      データ削除
+      <b>データ削除</b>
     </p>
   </div>
 </template>
