@@ -6,6 +6,7 @@ import LectureVideo from "./views/LectureVideoView.vue";
 import Questions from "./views/QuestionsView.vue";
 import Login from "./views/LoginView.vue";
 import Attention from "./views/AttentionView.vue";
+import ProgrammingEXP from "./views/ProgrammingExperienceView.vue";
 import { store } from "./vuex/index.js";
 
 // const PASSWORD =
@@ -56,6 +57,12 @@ export const router = createRouter({
       path: "/attention",
       name: "attention",
       component: Attention,
+      meta: { require: true },
+    },
+    {
+      path: "/programming",
+      name: "programming",
+      component: ProgrammingEXP,
       meta: { require: true },
     },
   ],
