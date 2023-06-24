@@ -250,7 +250,7 @@ export default {
 }
 .long-event.carousel__slide {
   margin-right: 0.2em;
-  height: 4.4em;
+  height: 4em;
 }
 
 .hack-h1 {
