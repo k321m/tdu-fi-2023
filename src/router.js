@@ -8,11 +8,8 @@ import Login from "./views/LoginView.vue";
 import Attention from "./views/AttentionView.vue";
 import { store } from "./vuex/index.js";
 
-// const PASSWORD =
-//   "5d37188b0c2437ff10c03f4623fe2f0085d92aff74e37a9233e2fca1cdf692bd";
-
 const PASSWORD =
-  "1ff2739722dea85e4e7b5fbd291e40ababdd42b841ce64fa9b2ae08a94899284";
+  "183d977fa4efbbe3ff4fe12b3debe9fbf5a3104e1fd2a1633d4514513c6c8c29";
 
 export const router = createRouter({
   history: createWebHistory(),
