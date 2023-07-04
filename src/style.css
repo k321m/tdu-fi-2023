@@ -374,9 +374,11 @@ router-link {
 }
 
 /* タイムラインカルーセル */
-#all-day-event > .carousel__viewport,
-#limited-event > .carousel__viewport {
-  width: 100dvw;
-  max-width: var(--max-width);
-  padding-right: 8dvw;
+
+#all-day-event > .carousel__viewport {
+  padding-right: 1.3em !important;
+}
+#limited-event > .carousel__viewport,
+#limited-event > .carousel__viewport > * {
+  padding-right: 1.2em !important;
 }

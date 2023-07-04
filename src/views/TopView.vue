@@ -1,6 +1,6 @@
 <template>
   <div id="contents">
-    <!-- <div class="container">
+    <!-- <div class="v-container">
       <Button myNote>MyNoteボタン</Button>
       <Button default>デフォルトボタン</Button>
       <Button defaultBorder>デフォルトボーダーボタン</Button>

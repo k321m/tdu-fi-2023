@@ -12,7 +12,7 @@
     <div id="time-schedule" style="padding-top: 72px; margin-top: -72px"></div>
     <div>
       <div class="time-schedule py-4">
-        <div class="container">
+        <div class="v-container">
           <div class="py-4">
             <h4 class="pl-5 pb-2">タイムスケジュール</h4>
             <VueTyper
@@ -25,73 +25,72 @@
           </div>
           <div class="py-4">
             <h4 class="pb-3">終日開催</h4>
-            <div class="">
-              <Carousel
-                id="all-day-event"
-                :itemsToShow="2.4"
-                :breakpoints="breakpoints_allDay"
-                snapAlign="start"
-                :transition="1500"
-              >
-                <Slide
-                  v-for="(value, key) in this.allDayEventsData"
-                  :key="value"
+            <!-- <div class=""> -->
+            <Carousel
+              id="all-day-event"
+              :itemsToShow="2.2"
+              :breakpoints="breakpoints_allDay"
+              snapAlign="start"
+              :transition="500"
+            >
+              <Slide v-for="(value, key) in this.allDayEventsData" :key="value">
+                <div
+                  class="carousel__item"
+                  :style="value.img"
+                  @click="openDialog(value, key)"
                 >
-                  <div
-                    class="carousel__item"
-                    :style="value.img"
-                    @click="openDialog(value, key)"
-                  >
-                    <div></div>
-                    <p :style="value.fontsize" class="white">
-                      {{ value.title }}
-                    </p>
-                  </div>
-                </Slide>
-              </Carousel>
-            </div>
+                  <!-- <div></div> -->
+                  <p :style="value.fontsize" class="white">
+                    {{ value.title }}
+                  </p>
+                </div>
+              </Slide>
+            </Carousel>
+            <!-- </div> -->
           </div>
           <div class="py-4" id="timeline">
             <h4 class="pb-3">限定プログラム</h4>
-            <v-row class="">
-              <v-col cols="2">
-                <v-timeline line-color="black" side="end">
-                  <v-timeline-item height="100px" size="xx-small">
-                    <template v-slot:opposite>
-                      <span class="hack-h5">10:00</span>
-                    </template>
-                  </v-timeline-item>
-                  <template v-for="time in timesData" :key="time">
-                    <v-timeline-item height="32px" size="xx-small">
-                      <template v-slot:opposite>
-                        <span class="hack-h5">{{ time }}</span>
-                      </template>
-                    </v-timeline-item>
+            <div style="display: flex">
+              <v-timeline line-color="black" side="end">
+                <v-timeline-item height="100px" size="xx-small">
+                  <template v-slot:opposite>
+                    <span class="hack"><b>10:00</b></span>
                   </template>
-
-                  <v-timeline-item height="132px" size="xx-small">
+                </v-timeline-item>
+                <template v-for="time in timesData" :key="time">
+                  <v-timeline-item height="32px" size="xx-small">
                     <template v-slot:opposite>
-                      <span class="hack-h5">16:00</span>
+                      <span class="hack"
+                        ><b>{{ time }}</b></span
+                      >
                     </template>
                   </v-timeline-item>
-                </v-timeline>
-              </v-col>
-              <v-col class="pt-15 pl-5">
-                <div>
-                  <p>入場開始</p>
-                </div>
-                <div style="padding-top: 92px">
+                </template>
+
+                <v-timeline-item height="132px" size="xx-small">
+                  <template v-slot:opposite>
+                    <span class="hack"><b>16:00</b></span>
+                  </template>
+                </v-timeline-item>
+              </v-timeline>
+              <div class="timeline-item pt-13 pl-1">
+                <p>入場開始</p>
+                <div style="padding-top: 94px">
                   <template
-                    v-for="timeSchedule in this.timeScheduleData"
+                    v-for="(timeSchedule, key) in this.timeScheduleData"
                     :key="timeSchedule"
                   >
-                    <div style="padding-bottom: 53px">
+                    <div
+                      :style="
+                        key != lastTimeScheduleKey ? 'margin-bottom:48px' : ''
+                      "
+                    >
                       <Carousel
                         id="limited-event"
                         :itemsToShow="2.4"
                         :breakpoints="breakpoints_limited"
-                        snapAlign="start"
-                        :transition="1500"
+                        snapAlign="center"
+                        :transition="500"
                       >
                         <Slide
                           v-for="(value, key) in timeSchedule"
@@ -149,11 +148,9 @@
                     </div>
                   </template>
                 </div>
-                <div class="">
-                  <p>オープンキャンパス終了</p>
-                </div>
-              </v-col>
-            </v-row>
+                <p style="padding-top: 48px">オープンキャンパス終了</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -171,34 +168,50 @@ export default {
   data() {
     return {
       breakpoints_allDay: {
+        280: {
+          itemsToShow: 1.2,
+        },
+        300: {
+          itemsToShow: 2.0,
+        },
         400: {
-          itemsToShow: 3.4,
+          itemsToShow: 2.4,
         },
         580: {
-          itemsToShow: 4.4,
+          itemsToShow: 3.4,
         },
         720: {
-          itemsToShow: 5.4,
+          itemsToShow: 4.4,
+        },
+        1000: {
+          itemsToShow: 7,
         },
       },
       breakpoints_limited: {
+        280: {
+          itemsToShow: 1,
+        },
+        300: {
+          itemsToShow: 1.6,
+        },
         400: {
-          itemsToShow: 3.4,
+          itemsToShow: 2.4,
         },
         540: {
-          itemsToShow: 4.4,
+          itemsToShow: 3.2,
         },
         700: {
-          itemsToShow: 5.4,
+          itemsToShow: 4.4,
         },
         1000: {
-          itemsToShow: 6.4,
+          itemsToShow: 7,
         },
       },
       isDialogVisible: false,
       allDayEventsData: {},
       limitedEventsData: {},
       timeScheduleData: {},
+      lastTimeScheduleKey: String,
       timesData: [
         "11:00",
         "11:30",
@@ -230,12 +243,17 @@ export default {
       // console.log(key);
       this.$emit("open-map", key);
     },
+    // isLastTSData() {
+    //   return true;
+    // },
   },
   mounted() {
     this.allDayEventsData = this.$store.getters["eventsStore/getAllDayEvents"];
     this.limitedEventsData =
       this.$store.getters["eventsStore/getLimitedEvents"];
     this.timeScheduleData = this.$store.getters["eventsStore/getTimeSchedule"];
+    let keys_array = Object.keys(this.timeScheduleData);
+    this.lastTimeScheduleKey = keys_array.pop();
   },
 };
 </script>
@@ -291,6 +309,13 @@ p {
 }
 
 .v-row {
+  flex-wrap: nowrap;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   flex-wrap: nowrap;
 }
 /* .carousel__slide {

@@ -9,7 +9,7 @@
     <div id="map" style="padding-top: 72px; margin-top: -72px"></div>
     <div id="map">
       <div class="map py-4">
-        <div class="container">
+        <div class="v-container">
           <!-- <div class="py-4 px-4"> -->
           <div class="py-4">
             <h4 class="pl-5 pb-2">地図</h4>

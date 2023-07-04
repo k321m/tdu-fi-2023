@@ -5,9 +5,11 @@
       :itemsToShow="1.4"
       :breakpoints="breakpoints"
       :wrapAround="true"
-      :transition="1200"
-      :autoplay="5000"
+      :autoplay="4000"
+      :transition="500"
     >
+      <!-- :autoplay="5000" -->
+      <!-- :transition="1200" -->
       <Slide
         v-for="slide in contents"
         :key="slide"
@@ -48,7 +50,7 @@ export default {
           itemsToShow: 2.4,
         },
         800: {
-          itemsToShow: 3.2,
+          itemsToShow: 3,
         },
       },
       contents: [
