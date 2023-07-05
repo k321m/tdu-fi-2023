@@ -52,7 +52,7 @@
         <div class="pb-2">
           <ul>
             <template v-for="tag in filteredTags">
-              <li v-if="tag == 'all'"><b>なし</b></li>
+              <template v-if="tag == 'all'"></template>
               <li class="tag-item mr-2" v-else-if="tag == 'display'">
                 <b>展示あり</b
                 ><span
