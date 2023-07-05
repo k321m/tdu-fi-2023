@@ -45,7 +45,7 @@
         <div class="pb-2">
           <p class="filter_button" @click="openFilterDialog()">
             <span class="mdi mdi-filter-menu pr-1"></span>
-            <b>絞り込み条件</b>
+            <b>絞り込む</b>
           </p>
         </div>
         <!-- 適用中の絞り込み条件（タグ） -->
@@ -206,9 +206,13 @@ export default {
 
 <style scoped>
 .filter_button {
-  display: block;
+  display: inline-block;
   font-size: 0.8rem;
   color: var(--dark);
+  border: 1px solid var(--dark);
+  background-color: var(--white);
+  border-radius: 100dvh;
+  padding: 0.35rem 0.6rem;
 }
 
 li {
@@ -220,7 +224,7 @@ li {
 }
 li.tag-item {
   background-color: var(--light-purple);
-  padding: 0.35rem 0.4rem;
+  padding: 0.35rem 0.6rem;
   border-radius: 100vh;
 }
 </style>
