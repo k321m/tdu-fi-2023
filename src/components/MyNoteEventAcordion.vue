@@ -11,13 +11,11 @@
       <template v-slot:message-caution>メモの内容が失われます</template>
     </MyNoteDeleteDialog>
   </v-dialog>
-  <!-- <v-dialog v-model="isMapDialogVisible"> -->
   <ImageViewDialog
     v-model="isMapDialogVisible"
     :imgData="mapData"
     @close-dialog="isMapDialogVisible = false"
   />
-  <!-- </v-dialog> -->
   <div class="accordion">
     <div class="title-box" :class="{ 'opened-border-radius': isOpen }">
       <div class="text-area">

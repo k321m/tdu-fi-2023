@@ -1,12 +1,10 @@
 <template>
   <div class="py-8">
-    <!-- <v-dialog v-model="isViewDialogVisible"> -->
     <ImageViewDialog
       v-model="isViewDialogVisible"
       :imgData="clickedMapData"
       @close-dialog="isViewDialogVisible = false"
     />
-    <!-- </v-dialog> -->
     <div id="map" style="padding-top: 72px; margin-top: -72px"></div>
     <div id="map">
       <div class="map py-4">

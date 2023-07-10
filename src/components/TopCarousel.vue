@@ -67,10 +67,16 @@ export default {
           to: "/lecture-video",
         },
         {
-          text: "Questions",
+          text: "QuestionsTOP10",
           jptext: "おすすめ質問TOP10",
           img: "background-image: url(" + MenuImg03 + ")",
           to: "/questions",
+        },
+        {
+          text: "FAQ",
+          jptext: "よくある質問",
+          img: "background-image: url(" + MenuImg03 + ")",
+          to: "/faq",
         },
         {
           text: "MyNote",

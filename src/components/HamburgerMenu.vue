@@ -48,6 +48,11 @@
           <h2>おすすめ質問TOP10</h2>
         </div>
       </router-link>
+      <router-link to="/faq" @click="closeHamburgerMenu">
+        <div class="py-5">
+          <h2>よくある質問</h2>
+        </div>
+      </router-link>
       <router-link to="/my-note" @click="closeHamburgerMenu">
         <div class="py-5">
           <h2>MyNote</h2>
