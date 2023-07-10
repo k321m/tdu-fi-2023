@@ -43,10 +43,16 @@
         <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
         <!-- 絞り込みボタン -->
         <div class="pb-2">
-          <p class="filter_button" @click="openFilterDialog()">
+          <p class="small" @click="openFilterDialog()">
             <span class="mdi mdi-filter-menu pr-1"></span>
             <b>絞り込む</b>
           </p>
+          <Button
+            defaultBorder
+            @click="openFilterDialog()"
+            class="filter_button"
+            ><span class="mdi mdi-filter-menu pr-1" />絞り込む</Button
+          >
         </div>
         <!-- 適用中の絞り込み条件（タグ） -->
         <div class="pb-2">
@@ -103,6 +109,7 @@ import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 import MapViewDialog from "../components/MapViewDialog.vue";
 import Card from "../components/parts/Card.vue";
+import Button from "../components/parts/Button.vue";
 export default {
   name: "Labs",
   data() {
@@ -128,6 +135,7 @@ export default {
     MyNoteIcon,
     MapViewDialog,
     Card,
+    Button,
   },
   computed: {
     // 指定される条件が変わると、表示する研究室も変わる
@@ -206,13 +214,10 @@ export default {
 
 <style scoped>
 .filter_button {
-  display: inline-block;
-  font-size: 0.8rem;
-  color: var(--dark);
-  border: 1px solid var(--dark);
-  background-color: var(--white);
+  width: 32dvw;
   border-radius: 100dvh;
-  padding: 0.35rem 0.6rem;
+  padding: 0.5rem 0.6rem;
+  min-height: 32px;
 }
 
 li {
