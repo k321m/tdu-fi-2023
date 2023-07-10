@@ -48,10 +48,21 @@
         <h4 class="pb-1">論文テーマ例</h4>
         <li v-for="theme in labData.theme">{{ theme }}</li>
       </div>
-      <div class="pb-3">
+      <div class="pb-4">
         <h4 class="pb-1">就職先例</h4>
         <p>{{ labData.placeOfEmployment.join("、") }}</p>
       </div>
+
+      <Button
+        style="border-radius: 100dvh"
+        defaultBorder
+        class="mb-4"
+        :to="labData.links[0]['url']"
+      >
+        <v-icon class="pr-1" style="color: var(--dark)">mdi-school</v-icon>
+        もっと{{ labData.professor["type"] }}の研究について知る
+      </Button>
+
       <a
         v-for="linkData in labData.links"
         class=""
