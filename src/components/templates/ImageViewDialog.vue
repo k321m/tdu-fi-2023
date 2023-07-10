@@ -6,7 +6,7 @@
           <v-icon style="color: var(--white)">mdi-close</v-icon>
         </div>
       </div>
-      <img :src="imgData.img" />
+      <img style="width: 100%; height: auto" :src="imgData" />
     </div>
   </v-dialog>
 </template>

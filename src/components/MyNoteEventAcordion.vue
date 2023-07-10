@@ -210,7 +210,7 @@ export default {
       } else {
         this.mapId = this.eventValue.buttons[0].key;
       }
-      this.mapData = this.allMapData[this.mapId];
+      this.mapData = this.allMapData[this.mapId].img;
       this.isMapDialogVisible = true;
     },
   },

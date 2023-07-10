@@ -182,7 +182,7 @@ export default {
     },
     openMapDialog(mapId) {
       this.mapId = mapId;
-      this.mapData = this.allMapData[mapId];
+      this.mapData = this.allMapData[mapId].img;
       this.isMapDialogVisible = true;
     },
   },

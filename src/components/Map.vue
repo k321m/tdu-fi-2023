@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     openViewDialog(data) {
-      this.clickedMapData = data;
+      this.clickedMapData = data.img;
       this.isViewDialogVisible = true;
     },
     openViewDialogByKey(key) {

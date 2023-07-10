@@ -1,5 +1,6 @@
 import { store } from "./index";
-
+import schedule01 from "../assets/scheduleEx/schedule01.png";
+import schedule02 from "../assets/scheduleEx/schedule02.png";
 export default {
   namespaced: true,
   state: {
@@ -155,8 +156,9 @@ export default {
       },
       faq_10: {
         ques: "忙しさはどのくらいですか？一週間のスケジュール例を教えてください。",
-        ans: "",
+        ans: "下記に「電大生のとある一週間」を掲載します。是非ご覧ください。",
         links: [],
+        images: [schedule01, schedule02],
       },
     },
   },

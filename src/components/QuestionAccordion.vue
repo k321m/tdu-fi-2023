@@ -1,4 +1,9 @@
 <template>
+  <ImageViewDialog
+    v-model="isImageDialogVisible"
+    :imgData="clickedImg"
+    @close-dialog="isImageDialogVisible = false"
+  />
   <!-- おすすめ質問 -->
   <div class="mb-2">
     <div class="accordion">
@@ -39,6 +44,16 @@
                 >
                   {{ questionValue.ans }}
                 </p>
+                <!-- 画像 -->
+                <template v-if="questionValue.images">
+                  <template v-for="imgSrc in questionValue.images">
+                    <img
+                      style="width: 100%; height: auto"
+                      :src="imgSrc"
+                      @click="openImgDialog(imgSrc)"
+                    />
+                  </template>
+                </template>
                 <!-- リンク -->
                 <div v-for="linkData in questionValue.links">
                   <a
@@ -69,17 +84,21 @@
 
 <script>
 import Button from "./parts/Button.vue";
+import ImageViewDialog from "./templates/ImageViewDialog.vue";
 export default {
   name: "QuestionAccordion",
   props: ["questionValue", "questionKey"],
   emits: ["start-alert"],
   components: {
     Button,
+    ImageViewDialog,
   },
   data() {
     return {
       type: "questions",
       isOpen: false,
+      isImageDialogVisible: false,
+      clickedImg: String,
     };
   },
   methods: {
@@ -91,6 +110,11 @@ export default {
         key: this.questionKey,
         question: this.questionValue.ques,
       });
+    },
+    openImgDialog(data) {
+      this.clickedImg = data;
+      console.log(data);
+      this.isImageDialogVisible = true;
     },
   },
 };
