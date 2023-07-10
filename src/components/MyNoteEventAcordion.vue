@@ -11,13 +11,13 @@
       <template v-slot:message-caution>メモの内容が失われます</template>
     </MyNoteDeleteDialog>
   </v-dialog>
-  <v-dialog v-model="isMapDialogVisible">
-    <MapViewDialog
-      :mapData="mapData"
-      :mapId="mapId"
-      @close-dialog="isMapDialogVisible = false"
-    />
-  </v-dialog>
+  <!-- <v-dialog v-model="isMapDialogVisible"> -->
+  <ImageViewDialog
+    v-model="isMapDialogVisible"
+    :imgData="mapData"
+    @close-dialog="isMapDialogVisible = false"
+  />
+  <!-- </v-dialog> -->
   <div class="accordion">
     <div class="title-box" :class="{ 'opened-border-radius': isOpen }">
       <div class="text-area">
@@ -129,14 +129,14 @@
 <script>
 import Button from "./parts/Button.vue";
 import MyNoteDeleteDialog from "./MyNoteDeleteDialog.vue";
-import MapViewDialog from "../components/MapViewDialog.vue";
+import ImageViewDialog from "./templates/ImageViewDialog.vue";
 export default {
   name: "MyNoteEventAcordion",
   props: ["eventValue", "eventKey"],
   components: {
     Button,
     MyNoteDeleteDialog,
-    MapViewDialog,
+    ImageViewDialog,
   },
   data() {
     return {

@@ -14,14 +14,11 @@
       @update-filtered="onUpdateFilteredTags"
     />
   </v-dialog>
-  <v-dialog v-model="isMapDialogVisible">
-    <MapViewDialog
-      :mapData="mapData"
-      :mapId="mapId"
-      @close-dialog="isMapDialogVisible = false"
-    />
-  </v-dialog>
-
+  <ImageViewDialog
+    v-model="isMapDialogVisible"
+    :imgData="mapData"
+    @close-dialog="isMapDialogVisible = false"
+  />
   <div id="contents">
     <div class="pa-4">
       <!-- ページタイトル -->
@@ -107,7 +104,7 @@ import LabViewDialog from "../components/templates/LabViewDialog.vue";
 import LabFilterDialog from "../components/LabFilterDialog.vue";
 import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
-import MapViewDialog from "../components/MapViewDialog.vue";
+import ImageViewDialog from "../components/templates/ImageViewDialog.vue";
 import Card from "../components/parts/Card.vue";
 import Button from "../components/parts/Button.vue";
 export default {
@@ -133,7 +130,7 @@ export default {
     LabFilterDialog,
     ContentTitle,
     MyNoteIcon,
-    MapViewDialog,
+    ImageViewDialog,
     Card,
     Button,
   },

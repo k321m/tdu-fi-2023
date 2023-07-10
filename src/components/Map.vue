@@ -1,11 +1,12 @@
 <template>
   <div class="py-8">
-    <v-dialog v-model="isViewDialogVisible">
-      <MapViewDialog
-        :mapData="clickedMapData"
-        @close-dialog="isViewDialogVisible = false"
-      />
-    </v-dialog>
+    <!-- <v-dialog v-model="isViewDialogVisible"> -->
+    <ImageViewDialog
+      v-model="isViewDialogVisible"
+      :imgData="clickedMapData"
+      @close-dialog="isViewDialogVisible = false"
+    />
+    <!-- </v-dialog> -->
     <div id="map" style="padding-top: 72px; margin-top: -72px"></div>
     <div id="map">
       <div class="map py-4">
@@ -37,7 +38,7 @@
 </template>
 
 <script>
-import MapViewDialog from "./MapViewDialog.vue";
+import ImageViewDialog from "./templates/ImageViewDialog.vue";
 import Card from "./parts/Card.vue";
 export default {
   name: "Map",
@@ -49,7 +50,7 @@ export default {
     };
   },
   components: {
-    MapViewDialog,
+    ImageViewDialog,
     Card,
   },
   methods: {

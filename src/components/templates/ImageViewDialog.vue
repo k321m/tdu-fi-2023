@@ -1,18 +1,20 @@
 <template>
-  <div class="background-dialog">
-    <div class="pb-2" style="display: flex" @click="$emit('close-dialog')">
-      <div style="margin: 0 0 0 auto">
-        <v-icon style="color: var(--white)">mdi-close</v-icon>
+  <v-dialog>
+    <div class="background-dialog">
+      <div class="pb-2" style="display: flex" @click="$emit('close-dialog')">
+        <div style="margin: 0 0 0 auto">
+          <v-icon style="color: var(--white)">mdi-close</v-icon>
+        </div>
       </div>
+      <img :src="imgData.img" />
     </div>
-    <img :src="mapData.img" />
-  </div>
+  </v-dialog>
 </template>
 
 <script>
 export default {
-  name: "MapViewDialog",
-  props: ["mapData"],
+  name: "ImageViewDialog",
+  props: ["imgData"],
   emits: ["close-dialog"],
   data() {
     return {};
