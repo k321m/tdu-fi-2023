@@ -142,10 +142,40 @@ export default {
         this.filteredTags = ["all"];
       }
       // console.log(`computed: filteredLabs() : ${this.filteredTags}`);
-      for (let tag of this.filteredTags) {
-        let keyArray = this.allTagData[tag] || [];
-        for (let key of keyArray) {
-          filteredLabsKey.add(key);
+      // 展示有無が絞り込み条件に入っているか確認
+      if (this.filteredTags.includes("display")) {
+        // 展示あり　とタグのArrayをand絞り込みする
+        let displayArray = this.allTagData["display"];
+        for (let tag of this.filteredTags) {
+          if (tag == "display" && this.filteredTags.length != 1) continue;
+          let tagArray = this.allTagData[tag] || [];
+          let filterArray = displayArray.filter((item) =>
+            tagArray.includes(item)
+          );
+          // console.log(filterArray);
+          for (let key of filterArray) {
+            filteredLabsKey.add(key);
+          }
+        }
+      } else if (this.filteredTags.includes("not-display")) {
+        let displayArray = this.allTagData["not-display"];
+        for (let tag of this.filteredTags) {
+          if (tag == "not-display" && this.filteredTags.length != 1) continue;
+          let tagArray = this.allTagData[tag] || [];
+          let filterArray = displayArray.filter((item) =>
+            tagArray.includes(item)
+          );
+          for (let key of filterArray) {
+            filteredLabsKey.add(key);
+          }
+        }
+      } else {
+        // 入ってなかったらそのまま
+        for (let tag of this.filteredTags) {
+          let keyArray = this.allTagData[tag] || [];
+          for (let key of keyArray) {
+            filteredLabsKey.add(key);
+          }
         }
       }
       return filteredLabsKey;
@@ -171,8 +201,8 @@ export default {
       this.isFilterDialogVisible = true;
     },
     onUpdateFilteredTags(e) {
-      // console.log(`onUpdateFilteredTags(): ${this.filteredTags}`);
       this.filteredTags = e;
+      // console.log(`onUpdateFilteredTags(): ${this.filteredTags}`);
     },
     removeFilteredTag(removeTag) {
       this.filteredTags = this.filteredTags.filter(
