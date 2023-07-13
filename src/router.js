@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Top from "./views/TopView.vue";
 import MyNote from "./views/MyNoteView.vue";
+import Department from "./views/DepartmentView.vue";
 import Labs from "./views/LabsView.vue";
 import LectureVideo from "./views/LectureVideoView.vue";
 import Questions from "./views/QuestionsView.vue";
@@ -25,6 +26,12 @@ export const router = createRouter({
       path: "/login",
       name: "login",
       component: Login,
+    },
+    {
+      path: "/department",
+      name: "department",
+      component: Department,
+      meta: { require: true },
     },
     {
       path: "/labs",

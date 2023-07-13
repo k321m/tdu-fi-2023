@@ -33,6 +33,11 @@
         </transition>
       </div>
 
+      <router-link to="/department" @click="closeHamburgerMenu">
+        <div class="py-5">
+          <h2>学科紹介</h2>
+        </div>
+      </router-link>
       <router-link to="/labs" @click="closeHamburgerMenu">
         <div class="py-5">
           <h2>研究室公開</h2>

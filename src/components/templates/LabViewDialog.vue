@@ -53,13 +53,8 @@
         <p>{{ labData.placeOfEmployment.join("、") }}</p>
       </div>
 
-      <Button
-        style="border-radius: 100dvh"
-        defaultBorder
-        class="mb-4"
-        :to="labData.links[0]['url']"
-      >
-        <v-icon class="pr-1" style="color: var(--dark)">mdi-school</v-icon>
+      <Button circleBorder class="mb-4" :to="labData.links[0]['url']">
+        <v-icon class="pr-1" style="color: var(--purple)">mdi-school</v-icon>
         もっと{{ labData.professor["type"] }}の研究について知る
       </Button>
 

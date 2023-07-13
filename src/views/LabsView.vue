@@ -44,10 +44,7 @@
             <span class="mdi mdi-filter-menu pr-1"></span>
             <b>絞り込む</b>
           </p>
-          <Button
-            defaultBorder
-            @click="openFilterDialog()"
-            class="filter_button"
+          <Button circleBorder @click="openFilterDialog()" class="filter_button"
             ><span class="mdi mdi-filter-menu pr-1" />絞り込む</Button
           >
         </div>
@@ -242,7 +239,6 @@ export default {
 <style scoped>
 .filter_button {
   width: 32dvw;
-  border-radius: 100dvh;
   padding: 0.5rem 0.6rem;
   min-height: 32px;
 }

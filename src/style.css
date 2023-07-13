@@ -237,7 +237,12 @@ a {
   border: 2px solid var(--dark);
   color: var(--dark);
 }
-
+.btn-circle-border {
+  background-color: var(--white);
+  border: 2px solid var(--purple);
+  border-radius: 100vh;
+  color: var(--purple);
+}
 .btn-desable {
   background-color: var(--light-purple);
   color: var(--white);
