@@ -3,10 +3,13 @@
     <Carousel
       class="py-8"
       :itemsToShow="1.4"
+      :breakpoints="breakpoints"
       :wrapAround="true"
-      :transition="2500"
-      :autoplay="5000"
+      :autoplay="4000"
+      :transition="500"
     >
+      <!-- :autoplay="5000" -->
+      <!-- :transition="1200" -->
       <Slide
         v-for="slide in contents"
         :key="slide"
@@ -14,8 +17,8 @@
       >
         <div class="carousel__item carousel_image" :style="slide.img">
           <div class="text-box pr-3 pb-2">
-            <p class="jp-text">{{ slide.jptext }}</p>
-            <p class="text py-1">{{ slide.text }}</p>
+            <h5 class="text-ja">{{ slide.jptext }}</h5>
+            <h2 class="text-en py-1">{{ slide.text }}</h2>
           </div>
         </div>
       </Slide>
@@ -39,6 +42,17 @@ export default {
   name: "TopCarousel",
   data() {
     return {
+      breakpoints: {
+        500: {
+          itemsToShow: 2,
+        },
+        720: {
+          itemsToShow: 2.4,
+        },
+        800: {
+          itemsToShow: 3,
+        },
+      },
       contents: [
         {
           text: "Laboratory",
@@ -53,10 +67,16 @@ export default {
           to: "/lecture-video",
         },
         {
-          text: "Questions",
+          text: "QuestionsTOP10",
           jptext: "おすすめ質問TOP10",
           img: "background-image: url(" + MenuImg03 + ")",
           to: "/questions",
+        },
+        {
+          text: "FAQ",
+          jptext: "よくある質問",
+          img: "background-image: url(" + MenuImg03 + ")",
+          to: "/faq",
         },
         {
           text: "MyNote",
@@ -99,19 +119,13 @@ export default {
   text-align: right;
   transform: scale(0.9, 1);
 }
-p.jp-text {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 700;
-  font-size: 0.7em;
-  line-height: 1;
-  font-style: normal;
+.text-ja {
   text-align: end;
+  color: var(--white);
 }
-p.text {
-  font-family: hack, sans-serif;
-  font-weight: 700;
-  font-size: 1.5em;
-  font-style: normal;
+.text-en {
+  font-family: var(--font-en);
+  color: var(--white);
   line-height: 1.2;
   letter-spacing: -0.03em;
 }
@@ -153,13 +167,8 @@ p.text {
   opacity: 0.8;
 }
 .carousel__slide {
+  transform-origin: bottom;
   padding: 6.5em;
-}
-
-.carousel__prev,
-.carousel__next {
-  box-sizing: content-box;
-  border: 5px solid white;
 }
 
 .carousel__track {
@@ -170,26 +179,11 @@ p.text {
   transition: 1.5s;
 }
 
-.carousel__slide {
-  opacity: 0.9;
-  transform-origin: bottom;
-  transform: rotateY(-20deg) scale(0.87);
-}
-.carousel__slide--prev {
-  opacity: 1;
-  transform-origin: bottom;
+.carousel__slide:not(.carousel__slide--active) {
   transform: rotateY(-10deg) scale(0.87);
 }
 
-.carousel__slide--next {
-  opacity: 1;
-  transform-origin: bottom;
-  transform: rotateY(10deg) scale(0.87);
-}
-
 .carousel__slide--active {
-  opacity: 1;
-  transform-origin: bottom;
   filter: drop-shadow(0px 4px 3px #a5a5a5);
   transform: rotateY(0) scale(1.1, 1);
 }

@@ -1,29 +1,27 @@
 <template>
-  <div class="background-dialog pa-7">
-    <p class="zen-kaku-bold" style="font-size: 1.8em">質問項目を追加する</p>
+  <div class="background-dialog px-5 pt-5">
+    <h2>質問項目を追加する</h2>
     <div class="pt-7" style="flex-grow: 1; display: flex">
       <textarea placeholder="何を聞く？" v-model="question"></textarea>
     </div>
     <div class="pt-5">
-      <v-row class="pa-2">
-        <v-col class="pa-1">
-          <div class="default-border-btn" @click="closeAddDialog">
-            <p class="zen-kaku-bold">キャンセル</p>
-          </div>
-        </v-col>
-        <v-col class="pa-1">
-          <div class="myNote-btn btn-animation" @click="addQuestion">
-            <p class="zen-kaku-bold">追加</p>
-          </div>
-        </v-col>
-      </v-row>
+      <div class="footer">
+        <div class="button-group">
+          <Button defaultBorder @click="closeAddDialog">キャンセル</Button>
+          <Button myNote @click="addQuestion">追加</Button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
+import Button from "./parts/Button.vue";
 export default {
   name: "MyNoteAddQueDialog",
   emits: ["close-add-dialog"],
+  components: {
+    Button,
+  },
   data() {
     return {
       type: "questions",
@@ -54,32 +52,48 @@ export default {
 
 <style scoped>
 .background-dialog {
-  min-height: 60dvh;
+  /* min-height: 60dvh;
   max-height: 90dvh;
   background-color: white;
   border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 580px; */
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 0.8rem;
+  padding-bottom: 2rem;
+  width: 90dvw;
+  max-width: 580px;
+  min-height: 40dvh;
+  max-height: 68dvh;
+  justify-content: space-between;
 }
 
 textarea {
-  padding: 10px;
+  padding: 8px;
   width: 100%;
-  height: auto;
-  border: 1px solid #acaaf2;
+  border: 1px solid var(--light-purple);
+  background-color: var(--white);
   overflow: scroll;
+  height: auto;
 }
 textarea:focus {
-  border: 1px solid #010440;
-  background-color: white;
+  border: 1px solid var(--dark);
+  background-color: var(--white);
   outline: none;
 }
-::placeholder {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-  font-size: 1rem;
-  color: #d3d1ff;
+.footer {
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.button-group > * {
+  width: 49%;
 }
 </style>

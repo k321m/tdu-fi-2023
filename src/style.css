@@ -1,6 +1,136 @@
+:root {
+  --white: #ffffff;
+  --light: #f2f2f2;
+  --black: #010326;
+  --dark: #010440;
+  --purple: #360a73;
+  --light-purple: #d3d1ff;
+  --pink: #e345e6;
+  --gradient: linear-gradient(
+    108deg,
+    rgba(235, 87, 237, 1) 0%,
+    rgba(235, 87, 237, 1) 0% 50%,
+    rgba(143, 158, 237, 1) 75%,
+    rgba(41, 237, 237, 1)
+  );
+  --font-en: "hack", sans-serif;
+  --font-ja: zen-kaku-gothic-new, sans-serif;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+
+  --max-width: 1320px;
+
+  --bs-gutter-x: 1.1rem;
+
+  /* トップカルーセル */
+  --vc-nav-color: var(--black) !important;
+  --vc-nav-color-hover: var(--light-purple) !important;
+  --vc-pgn-background-color: var(--light-purple) !important;
+  --vc-pgn-active-color: var(--black) !important;
+  --vc-pgn-height: 6px !important;
+  --vc-pgn-width: 6px !important;
+  --vc-pgn-border-radius: 50% !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   overflow: hidden;
+  margin: 0;
+  font-family: var(--font-ja);
+  font-weight: var(--regular);
+  font-style: normal;
+  line-height: 1.3;
+  font-size: 1rem;
+  color: var(--dark);
+  overflow-wrap: break-word;
+}
+
+/* フォント */
+p,
+ul,
+li {
+  font-weight: var(--regular);
+  color: var(--black);
+  text-align: justify;
+  word-break: break-all;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  font-weight: var(--bold);
+  color: var(--black);
+}
+
+span {
+  color: inherit;
+}
+
+b,
+strong {
+  font-weight: var(--bold);
+  color: inherit;
+}
+
+.sub-strong {
+  font-weight: var(--medium);
+  color: inherit;
+}
+
+small,
+.small {
+  font-size: 0.8em;
+  color: inherit;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.purple {
+  color: var(--purple);
+}
+
+.white {
+  color: var(--white);
+}
+
+.hack {
+  font-family: var(--font-en);
+}
+
+.hack-extra {
+  font-family: var(--font-en);
+  font-weight: var(--bold);
+  font-size: 3em;
+  line-height: 1.3;
+}
+.hack-h1 {
+  font-family: var(--font-en);
+  font-weight: var(--bold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.hack-h3 {
+  font-family: var(--font-en);
+  font-weight: var(--bold);
+  line-height: 1;
 }
 
 /* Background */
@@ -9,145 +139,122 @@ body {
   z-index: 0; /*描画を一番下に*/
   width: 100%;
   height: 100%;
-  background-color: #f3f3f3; /*背景色*/
+  background-color: var(--light); /*背景色*/
 }
+
 #contents {
   position: relative; /*描画を#particles-jsよりも上にするためposition:relative;を指定*/
   z-index: 10; /*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
 }
 
-/* フォント */
-p,
-ul {
-  text-align: justify;
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+/* 白いシート */
+.time-schedule::before {
+  content: "";
+  display: block;
+  width: 94%;
+  max-width: 720px;
+  height: 100%;
+  background-color: var(--white);
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 0.8rem 0.8rem 0;
+}
+.map::before {
+  content: "";
+  display: block;
+  width: 94%;
+  max-width: 720px;
+  height: 100%;
+  background-color: var(--white);
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0.8rem 0 0 0.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--purple);
   word-break: break-all;
-}
-.hack-h1 {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 3em;
-  line-height: 1.3;
-}
-.hack-h2 {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 1;
-  letter-spacing: -0.03em;
-}
-.hack-h4 {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1.5em;
-  line-height: 1;
-}
-.hack-h5 {
-  font-family: "hack", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 1.1rem;
-  line-height: 1;
-}
-
-p.hack {
-  font-family: hack, sans-serif;
-  font-weight: 400;
-  font-size: 0.8em;
-  font-style: normal;
-}
-.zen-kaku-h2 {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 700;
-  font-size: 2em;
-  font-style: normal;
-  line-height: 1;
-}
-
-.zen-kaku-regular {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.3;
-}
-
-.zen-kaku-medium {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  line-height: 1.3;
-}
-.zen-kaku-bold {
-  font-family: zen-kaku-gothic-new, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  line-height: 1.3;
 }
 
 /* ボタン　*/
-.myNote-btn {
+.btn {
+  font-weight: var(--bold);
   min-height: 52px;
-  background: linear-gradient(
-    108deg,
-    rgba(235, 87, 237, 1) 0%,
-    rgba(235, 87, 237, 1) 0% 50%,
-    rgba(143, 158, 237, 1) 75%,
-    rgba(41, 237, 237, 1)
-  );
-  color: white;
   border-radius: 0.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-}
-.default-btn {
-  min-height: 52px;
   padding: 1.1rem;
-  background-color: #010440;
-  color: white;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
 }
-.default-border-btn {
-  min-height: 52px;
-  padding: 1.1rem;
-  background-color: white;
-  border: 2px solid #010440;
-  color: #010440;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+.btn-myNote {
+  background: var(--gradient);
+  color: var(--white);
 }
-.pink-btn {
-  min-height: 52px;
-  background-color: #e345e6;
-  padding: 1.1rem;
-  color: white;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+.btn-default {
+  background-color: var(--dark);
+  color: var(--white);
 }
-.pink-border-btn {
-  min-height: 52px;
-  padding: 1.1rem;
-  background-color: white;
-  border: 2px solid #e345e6;
-  color: #e345e6;
-  border-radius: 0.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+.btn-default-border {
+  background-color: var(--white);
+  border: 2px solid var(--dark);
+  color: var(--dark);
+}
+.btn-circle-border {
+  background-color: var(--white);
+  border: 2px solid var(--purple);
+  border-radius: 100vh;
+  color: var(--purple);
+}
+.btn-desable {
+  background-color: var(--light-purple);
+  color: var(--white);
+}
+.btn-pink {
+  background-color: var(--pink);
+  color: var(--white);
+}
+.btn-pink-border {
+  background-color: var(--white);
+  border: 2px solid var(--pink);
+  color: var(--pink);
 }
 /* ボタンクリックアニメーション　*/
 .btn-animation {
@@ -176,10 +283,106 @@ p.hack {
   opacity: 0.3;
 }
 
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.button-group > * {
+  width: 49%;
+}
+
+/* ハンバーガーメニュー */
+.btn-menu {
+  position: relative;
+  background: transparent;
+  /* background: #e345e6; */
+  margin-right: 0.5rem;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+}
+.btn-menu span {
+  display: inline-block;
+  transition: all 0.4s; /*アニメーションの設定*/
+  position: absolute;
+  left: 12%;
+  height: 2px;
+  border-radius: 0.2rem;
+  background: var(--black);
+}
+
+.btn-menu span:nth-of-type(1) {
+  top: 30%;
+  width: 70%;
+}
+.btn-menu span:nth-of-type(2) {
+  top: 50%;
+  width: 40%;
+}
+.btn-menu span:nth-of-type(3) {
+  top: 70%;
+  width: 70%;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+.btn-menu.open {
+  z-index: 2000;
+}
+.btn-menu.open span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+.btn-menu.open span:nth-of-type(2) {
+  opacity: 0; /*真ん中の線は透過*/
+}
+.btn-menu.open span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/* ダイアログ */
+.dialog-info > div:not(.tags) {
+  display: inline-flex;
+  margin-right: 0.8rem;
+  font-size: 0.9em;
+}
+.flex-end {
+  display: inline-flex;
+  align-items: flex-end;
+}
+.tag-item {
+  display: inline-block;
+  font-size: 0.4rem;
+  color: var(--purple);
+  background-color: #ecebff;
+  padding: 0.35rem 0.8rem;
+  border-radius: 100vh;
+  margin-right: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+.scroll-contents {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+.footer {
+  width: 100%;
+}
+i.v-icon {
+  color: var(--black);
+}
+.blur {
+  filter: blur(0.1rem);
+}
+
 /* 選択されている風 */
 .vue-typer.custom .char.typed {
   color: #f2f2f2;
-  background-color: #010326;
+  background-color: var(--black);
 }
 
 /* Vuetify 微調整*/
@@ -190,6 +393,12 @@ p.hack {
 .v-timeline-item__opposite {
   padding-inline-end: 5px !important;
   line-height: 0;
+}
+
+#top-carousel {
+  max-width: 1000px;
+  width: 100dvw;
+  margin: auto;
 }
 #top-carousel .carousel__viewport {
   min-height: 245px;
@@ -204,7 +413,7 @@ p.hack {
 }
 .v-overlay__scrim {
   opacity: 0.9 !important;
-  background-color: #010326 !important;
+  background-color: var(--black) !important;
 }
 
 /* ダイアログ */
@@ -215,4 +424,22 @@ div.v-dialog.v-overlay--active.v-theme--light > div.v-overlay__content {
 
 .v-toolbar__content {
   justify-content: space-between;
+}
+
+router-link {
+  text-decoration: none;
+}
+
+::placeholder {
+  color: var(--light-purple);
+}
+
+/* タイムラインカルーセル */
+
+#all-day-event > .carousel__viewport {
+  padding-right: 1.3em !important;
+}
+#limited-event > .carousel__viewport,
+#limited-event > .carousel__viewport > * {
+  padding-right: 1.2em !important;
 }

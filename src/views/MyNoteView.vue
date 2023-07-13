@@ -19,8 +19,8 @@
       </ContentTitle>
       <div v-if="localStorageMessage != ''">
         <!-- localstorageチェック -->
-        <p class="zen-kaku-bold" style="color: #e345e6; font-size: 0.8rem">
-          {{ localStorageMessage }}
+        <p class="pink small">
+          <b>{{ localStorageMessage }}</b>
         </p>
       </div>
       <!-- MyNote -->

@@ -2,7 +2,7 @@
   <div class="background-dialog pa-5">
     <div style="display: flex">
       <div class="pa-2" style="margin: 0 0 0 auto" @click="closeTutorial">
-        <p class="zen-kaku-medium">スキップ</p>
+        <p>スキップ</p>
       </div>
     </div>
     <div style="display: flex; flex-grow: 1; align-items: center">
@@ -17,14 +17,9 @@
             <div class="img">
               <img :src="tutolial.src" />
             </div>
-            <div class="">
-              <span
-                class="zen-kaku-medium"
-                style="font-size: 0.9rem"
-                v-html="tutolial.text"
-              ></span>
+            <div>
+              <p style="font-size: 0.9rem" v-html="tutolial.text"></p>
               <p
-                class="zen-kaku-medium"
                 style="font-size: 0.6em; text-align: center; padding-top: 1em"
                 v-html="tutolial.caution"
               ></p>
@@ -39,19 +34,21 @@
       </Carousel>
     </div>
     <div class="py-5">
-      <div
-        :class="isLastCarouse ? 'myNote-btn' : 'default-btn'"
-        @click="nextCarousel()"
+      <Button
+        :myNote="isLastCarouse"
+        :default="!isLastCarouse"
+        @click="nextCarousel"
       >
-        <p class="zen-kaku-bold" v-if="isLastCarouse">MyNoteをはじめる</p>
-        <p class="zen-kaku-bold" v-else>次へ</p>
-      </div>
+        <template v-if="isLastCarouse">MyNoteをはじめる</template>
+        <template v-else>次へ</template>
+      </Button>
     </div>
   </div>
 </template>
 
 <script>
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
+import Button from "./parts/Button.vue";
 import "vue3-carousel/dist/carousel.css";
 import tutorialImg1 from "../assets/tutorial/tutorial01.svg";
 import tutorialImg2 from "../assets/tutorial/tutorial02.svg";
@@ -94,6 +91,7 @@ export default {
     Slide,
     Navigation,
     Pagination,
+    Button,
   },
   methods: {
     closeTutorial() {
@@ -127,6 +125,11 @@ export default {
   border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
+}
+
+p {
+  font-weight: var(--medium);
+  text-align: center;
 }
 .carousel__item {
   display: flex;

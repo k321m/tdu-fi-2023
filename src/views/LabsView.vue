@@ -1,12 +1,11 @@
 <template>
-  <v-dialog v-model="isViewDialogVisible">
-    <LabViewDialog
-      :labData="clickedLabData"
-      :labKey="clickedLabKey"
-      @close-dialog="isViewDialogVisible = false"
-      @open-map-dialog="openMapDialog"
-    />
-  </v-dialog>
+  <LabViewDialog
+    :view="isViewDialogVisible"
+    @update:view="isViewDialogVisible = $event"
+    :labData="clickedLabData"
+    :labKey="clickedLabKey"
+    @open-map-dialog="openMapDialog"
+  />
   <v-dialog v-model="isFilterDialogVisible">
     <LabFilterDialog
       :allTagData="allTagData"
@@ -15,14 +14,11 @@
       @update-filtered="onUpdateFilteredTags"
     />
   </v-dialog>
-  <v-dialog v-model="isMapDialogVisible">
-    <MapViewDialog
-      :mapData="mapData"
-      :mapId="mapId"
-      @close-dialog="isMapDialogVisible = false"
-    />
-  </v-dialog>
-
+  <ImageViewDialog
+    v-model="isMapDialogVisible"
+    :imgData="mapData"
+    @close-dialog="isMapDialogVisible = false"
+  />
   <div id="contents">
     <div class="pa-4">
       <!-- ページタイトル -->
@@ -36,43 +32,39 @@
       <!-- end ページタイトル -->
       <!-- 研究室一覧 -->
       <section class="pt-6">
-        <p class="zen-kaku-bold pb-4">
-          研究室一覧<span class="pl-3">{{ filteredLabs.size }}件</span>
+        <p class="pb-4">
+          <b
+            >研究室一覧<span class="pl-3">{{ filteredLabs.size }}件</span></b
+          >
         </p>
-        <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
         <!-- 絞り込みボタン -->
         <div class="pb-2">
-          <p class="filter_button zen-kaku-bold" @click="openFilterDialog()">
-            <span class="mdi mdi-filter-menu pr-1"></span>
-            絞り込み条件
-          </p>
+          <Button circleBorder @click="openFilterDialog()" class="filter_button"
+            ><span class="mdi mdi-filter-menu pr-1" />絞り込む</Button
+          >
         </div>
         <!-- 適用中の絞り込み条件（タグ） -->
         <div class="pb-2">
           <ul>
             <template v-for="tag in filteredTags">
-              <li class="zen-kaku-bold" v-if="tag == 'all'">なし</li>
-              <li
-                class="tag-item zen-kaku-bold mr-2"
-                v-else-if="tag == 'display'"
-              >
-                展示あり<span
+              <template v-if="tag == 'all'"></template>
+              <li class="tag-item mr-2" v-else-if="tag == 'display'">
+                <b>展示あり</b
+                ><span
                   class="mdi mdi-close-thick pl-1"
                   @click="removeFilteredTag('display')"
                 ></span>
               </li>
-              <li
-                class="tag-item zen-kaku-bold mr-2"
-                v-else-if="tag == 'not-display'"
-              >
-                展示なし<span
+              <li class="tag-item mr-2" v-else-if="tag == 'not-display'">
+                <b>展示なし</b
+                ><span
                   class="mdi mdi-close-thick pl-1"
                   @click="removeFilteredTag('not-display')"
                 ></span>
               </li>
-              <li class="tag-item zen-kaku-bold mr-2" v-else>
-                {{ tag
-                }}<span
+              <li class="tag-item mr-2" v-else>
+                <b>{{ tag }}</b>
+                <span
                   class="mdi mdi-close-thick pl-1"
                   @click="removeFilteredTag(tag)"
                 ></span>
@@ -82,24 +74,15 @@
         </div>
         <!-- 研究室カード -->
         <div v-for="key in filteredLabs" :key="key">
-          <div
-            id="card"
-            class="mb-2 align-end"
+          <Card
             :key="key"
             @click="openLabViewDialog(key)"
+            :img="allLabsData[key].img"
           >
-            <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
-            <div class="card-img" :style="allLabsData[key].img"></div>
-            <div
-              class="card-img"
-              style="background-color: rgba(36, 7, 77, 0.5)"
-            ></div>
-            <p
-              class="card-title zen-kaku-bold text-white v-responsive__sizer v-responsive__content"
-            >
+            <template v-slot:title>
               {{ allLabsData[key].cardTitle }}
-            </p>
-          </div>
+            </template>
+          </Card>
         </div>
       </section>
       <!-- end 研究室一覧 -->
@@ -109,11 +92,13 @@
 </template>
 
 <script>
-import LabViewDialog from "../components/LabViewDialog.vue";
+import LabViewDialog from "../components/templates/LabViewDialog.vue";
 import LabFilterDialog from "../components/LabFilterDialog.vue";
-import MyNoteIcon from "../components/MyNoteIcon.vue";
+import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
 import ContentTitle from "../components/ContentTitle.vue";
-import MapViewDialog from "../components/MapViewDialog.vue";
+import ImageViewDialog from "../components/templates/ImageViewDialog.vue";
+import Card from "../components/parts/Card.vue";
+import Button from "../components/parts/Button.vue";
 export default {
   name: "Labs",
   data() {
@@ -137,7 +122,9 @@ export default {
     LabFilterDialog,
     ContentTitle,
     MyNoteIcon,
-    MapViewDialog,
+    ImageViewDialog,
+    Card,
+    Button,
   },
   computed: {
     // 指定される条件が変わると、表示する研究室も変わる
@@ -147,10 +134,40 @@ export default {
         this.filteredTags = ["all"];
       }
       // console.log(`computed: filteredLabs() : ${this.filteredTags}`);
-      for (let tag of this.filteredTags) {
-        let keyArray = this.allTagData[tag] || [];
-        for (let key of keyArray) {
-          filteredLabsKey.add(key);
+      // 展示有無が絞り込み条件に入っているか確認
+      if (this.filteredTags.includes("display")) {
+        // 展示あり　とタグのArrayをand絞り込みする
+        let displayArray = this.allTagData["display"];
+        for (let tag of this.filteredTags) {
+          if (tag == "display" && this.filteredTags.length != 1) continue;
+          let tagArray = this.allTagData[tag] || [];
+          let filterArray = displayArray.filter((item) =>
+            tagArray.includes(item)
+          );
+          // console.log(filterArray);
+          for (let key of filterArray) {
+            filteredLabsKey.add(key);
+          }
+        }
+      } else if (this.filteredTags.includes("not-display")) {
+        let displayArray = this.allTagData["not-display"];
+        for (let tag of this.filteredTags) {
+          if (tag == "not-display" && this.filteredTags.length != 1) continue;
+          let tagArray = this.allTagData[tag] || [];
+          let filterArray = displayArray.filter((item) =>
+            tagArray.includes(item)
+          );
+          for (let key of filterArray) {
+            filteredLabsKey.add(key);
+          }
+        }
+      } else {
+        // 入ってなかったらそのまま
+        for (let tag of this.filteredTags) {
+          let keyArray = this.allTagData[tag] || [];
+          for (let key of keyArray) {
+            filteredLabsKey.add(key);
+          }
         }
       }
       return filteredLabsKey;
@@ -176,8 +193,8 @@ export default {
       this.isFilterDialogVisible = true;
     },
     onUpdateFilteredTags(e) {
-      // console.log(`onUpdateFilteredTags(): ${this.filteredTags}`);
       this.filteredTags = e;
+      // console.log(`onUpdateFilteredTags(): ${this.filteredTags}`);
     },
     removeFilteredTag(removeTag) {
       this.filteredTags = this.filteredTags.filter(
@@ -187,7 +204,7 @@ export default {
     },
     openMapDialog(mapId) {
       this.mapId = mapId;
-      this.mapData = this.allMapData[mapId];
+      this.mapData = this.allMapData[mapId].img;
       this.isMapDialogVisible = true;
     },
   },
@@ -216,55 +233,21 @@ export default {
 
 <style scoped>
 .filter_button {
-  display: block;
-  font-size: 0.8rem;
-  color: #010440;
+  width: 32dvw;
+  padding: 0.5rem 0.6rem;
+  min-height: 32px;
 }
 
 li {
   display: inline-block;
   font-size: 0.6rem;
   list-style: none;
-  color: #360a73;
+  color: var(--purple);
   margin-bottom: 0.1rem;
 }
 li.tag-item {
-  background-color: #d3d1ff;
-  padding: 0.35rem 0.4rem;
+  background-color: var(--light-purple);
+  padding: 0.35rem 0.6rem;
   border-radius: 100vh;
-}
-
-#card {
-  z-index: 0;
-  height: 14em;
-  display: flex;
-  max-height: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0px 2px 1px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
-    0px 1px 1px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
-    0px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));
-  border-radius: 0.2rem;
-}
-#card .card-img {
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.card-title {
-  display: block;
-  font-size: 1.2rem;
-  letter-spacing: 0rem;
-  min-width: 0;
-  padding: 0.8rem 1rem;
-  text-align: right;
-  white-space: pre-wrap;
 }
 </style>

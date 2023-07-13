@@ -2,18 +2,9 @@
   <v-app>
     <div>
       <transition name="fade">
-        <!-- <v-navigation-drawer app v-model="drawer">
-        <v-list nav>
-          <v-list-item v-for="menu in menus" :key="menu.title" :to="menu.url">
-            <v-list-item-content>
-              <v-list-item-title>{{ menu.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer> -->
         <HamburgerMenu
-          v-if="hamburgerMenu"
-          @close-hamburger-menu="hamburgerMenu = !hamburgerMenu"
+          v-if="isOpenMenu"
+          @close-hamburger-menu="isOpenMenu = !isOpenMenu"
         ></HamburgerMenu>
       </transition>
       <v-app-bar elevation="1" app>
@@ -25,11 +16,19 @@
           <!-- <img src="./assets/logos/logo_dark.svg" /> -->
           <img src="./assets/logos/logo-light.svg" />
         </a>
-        <v-app-bar-nav-icon @click.stop="hamburgerMenu = !hamburgerMenu" />
+        <!-- <div class="btn-menu" :class="{ open: test }" @click="test = !test"> -->
+        <div
+          class="btn-menu"
+          :class="{ open: isOpenMenu }"
+          @click.stop="isOpenMenu = !isOpenMenu"
+        >
+          <span></span><span></span><span></span>
+        </div>
+        <!-- <v-app-bar-nav-icon @click.stop="isOpenMenu = !isOpenMenu" /> -->
       </v-app-bar>
     </div>
 
-    <v-main :class="{ 'position-fixed': hamburgerMenu }">
+    <v-main :class="{ 'position-fixed': isOpenMenu }">
       <div id="particles-js"></div>
       <router-view />
     </v-main>
@@ -37,7 +36,7 @@
     <div class="pt-2">
       <v-footer color="black" height="56px" absolute app>
         <div class="w-100">
-          <p class="text-center hack">Created by inue研</p>
+          <p class="text-center hack white small">Created by inue研</p>
         </div>
       </v-footer>
     </div>
@@ -53,7 +52,8 @@ export default {
   },
   data() {
     return {
-      hamburgerMenu: false,
+      isOpenMenu: false,
+      test: false,
       menus: [
         { title: "トップ", icon: "mdi-web", url: "/" },
         { title: "MyNote", icon: "mdi-home", url: "/my-note" },

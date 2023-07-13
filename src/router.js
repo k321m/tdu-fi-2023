@@ -1,19 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Top from "./views/TopView.vue";
 import MyNote from "./views/MyNoteView.vue";
+import Department from "./views/DepartmentView.vue";
 import Labs from "./views/LabsView.vue";
 import LectureVideo from "./views/LectureVideoView.vue";
 import Questions from "./views/QuestionsView.vue";
+import Faq from "./views/FaqView.vue";
 import Login from "./views/LoginView.vue";
 import Attention from "./views/AttentionView.vue";
 import ProgrammingEXP from "./views/ProgrammingExperienceView.vue";
 import { store } from "./vuex/index.js";
 
-// const PASSWORD =
-//   "5d37188b0c2437ff10c03f4623fe2f0085d92aff74e37a9233e2fca1cdf692bd";
-
 const PASSWORD =
-  "1ff2739722dea85e4e7b5fbd291e40ababdd42b841ce64fa9b2ae08a94899284";
+  "183d977fa4efbbe3ff4fe12b3debe9fbf5a3104e1fd2a1633d4514513c6c8c29";
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -28,6 +27,12 @@ export const router = createRouter({
       path: "/login",
       name: "login",
       component: Login,
+    },
+    {
+      path: "/department",
+      name: "department",
+      component: Department,
+      meta: { require: true },
     },
     {
       path: "/labs",
@@ -45,6 +50,12 @@ export const router = createRouter({
       path: "/questions",
       name: "questions",
       component: Questions,
+      meta: { require: true },
+    },
+    {
+      path: "/faq",
+      name: "faq",
+      component: Faq,
       meta: { require: true },
     },
     {

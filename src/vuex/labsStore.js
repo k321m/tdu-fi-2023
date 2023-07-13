@@ -49,7 +49,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo01Img + ")",
+        img: labo01Img,
         mapKey: "map_2",
       },
       labo_2: {
@@ -82,7 +82,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo02Img + ")",
+        img: labo02Img,
         mapKey: "map_2",
       },
       labo_3: {
@@ -118,7 +118,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo03Img + ")",
+        img: labo03Img,
         mapKey: "map_3",
       },
       labo_4: {
@@ -148,7 +148,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo04Img + ")",
+        img: labo04Img,
         mapKey: "map_3",
       },
       labo_5: {
@@ -184,7 +184,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo05Img + ")",
+        img: labo05Img,
         mapKey: "map_3",
       },
       labo_6: {
@@ -220,7 +220,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo06Img + ")",
+        img: labo06Img,
         mapKey: "map_2",
       },
       labo_7: {
@@ -250,7 +250,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo07Img + ")",
+        img: labo07Img,
         mapKey: "map_3",
       },
       labo_8: {
@@ -286,7 +286,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo08Img + ")",
+        img: labo08Img,
         mapKey: "map_3",
       },
       labo_9: {
@@ -322,7 +322,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo09Img + ")",
+        img: labo09Img,
         mapKey: "map_2",
       },
       labo_10: {
@@ -358,7 +358,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo10Img + ")",
+        img: labo10Img,
         mapKey: "",
       },
       labo_11: {
@@ -393,7 +393,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo11Img + ")",
+        img: labo11Img,
         mapKey: "",
       },
       labo_12: {
@@ -426,7 +426,7 @@ export default {
             url: "/questions",
           },
         ],
-        img: "background-image: url(" + labo12Img + ")",
+        img: labo12Img,
         mapKey: "map_2",
       },
     },
