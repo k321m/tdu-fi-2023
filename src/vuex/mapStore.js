@@ -1,7 +1,7 @@
 import { store } from "./index";
 import map1Img from "/src/assets/maps/Map01.svg";
-import map2Img from "/src/assets/maps/Map02.svg";
-import map3Img from "/src/assets/maps/Map03.svg";
+// import map2Img from "/src/assets/maps/Map02.svg";
+// import map3Img from "/src/assets/maps/Map03.svg";
 import map2Png from "/src/assets/maps/Map02.png";
 import map3Png from "/src/assets/maps/Map03.png";
 
@@ -17,12 +17,12 @@ export default {
       map_2: {
         title: "学科展示室/研究室公開",
         site: "1号館4階 演習室",
-        img: map2Img,
+        img: map2Png,
       },
       map_3: {
         title: "研究室公開",
         site: "1号館5階 メディアラボ",
-        img: map3Img,
+        img: map3Png,
       },
     },
   },
