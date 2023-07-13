@@ -25,14 +25,11 @@
     </template>
     <!-- イベント情報 -->
     <template v-slot:info>
-      <DialogInfo :imgSrc="'/src/assets/icon-person.svg'">
+      <DialogInfo personIcon>
         <template v-slot:item> {{ labData.professor["name"] }}</template>
         <template v-slot:small-item>{{ labData.professor["type"] }}</template>
       </DialogInfo>
-      <DialogInfo
-        v-if="labData.place != ''"
-        :imgSrc="'/src/assets/icon-map.svg'"
-      >
+      <DialogInfo v-if="labData.place != ''" mapIcon>
         <template v-slot:item> {{ labData.place }}</template>
       </DialogInfo>
       <div class="tags mt-1">

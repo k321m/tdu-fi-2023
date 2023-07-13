@@ -15,7 +15,7 @@
     <!-- イベント情報 -->
     <template v-slot:info>
       <template v-for="(data, index) in lectureData.professor">
-        <DialogInfo :imgSrc="index == 0 ? '/src/assets/icon-person.svg' : ''">
+        <DialogInfo :peopleIcon="index == 0 ? true : false">
           <template v-slot:item> {{ data["name"] }}</template>
           <template v-slot:small-item>{{ data["type"] }}</template>
           <template v-if="index !== lectureData.professor.length - 1">
