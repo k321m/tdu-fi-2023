@@ -25,7 +25,7 @@
     </template>
     <!-- イベント情報 -->
     <template v-slot:info>
-      <DialogInfo v-if="eventTime" :imgSrc="'/src/assets/icon-clock.svg'">
+      <DialogInfo v-if="eventTime" :imgSrc="clockIcon">
         <template v-slot:item>
           {{ eventTime }}
         </template>
@@ -81,6 +81,7 @@ import Dialog from "../parts/Dialog.vue";
 import DialogInfo from "../parts/DialogInfo.vue";
 import Button from "../parts/Button.vue";
 import Alert from "../parts/Alert.vue";
+import ClockIcon from "/src/assets/icon-clock.svg";
 export default {
   name: "TimeScheduleDialog",
   props: {
@@ -103,6 +104,7 @@ export default {
     return {
       isViewAlert: false,
       type: "events",
+      clockIcon: ClockIcon,
     };
   },
   components: {
