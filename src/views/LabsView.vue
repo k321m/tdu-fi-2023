@@ -37,13 +37,8 @@
             >研究室一覧<span class="pl-3">{{ filteredLabs.size }}件</span></b
           >
         </p>
-        <!-- <div>FilteredTags: {{ filteredTags }}</div> -->
         <!-- 絞り込みボタン -->
         <div class="pb-2">
-          <p class="small" @click="openFilterDialog()">
-            <span class="mdi mdi-filter-menu pr-1"></span>
-            <b>絞り込む</b>
-          </p>
           <Button circleBorder @click="openFilterDialog()" class="filter_button"
             ><span class="mdi mdi-filter-menu pr-1" />絞り込む</Button
           >

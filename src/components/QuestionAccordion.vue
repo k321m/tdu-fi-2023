@@ -113,7 +113,6 @@ export default {
     },
     openImgDialog(data) {
       this.clickedImg = data;
-      console.log(data);
       this.isImageDialogVisible = true;
     },
   },

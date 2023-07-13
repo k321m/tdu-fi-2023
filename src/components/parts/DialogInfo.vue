@@ -13,6 +13,7 @@
 <script>
 export default {
   name: "DialogInfo",
-  props: { imgSrc: { type: String } },
+  // props: { imgSrc: { type: String } },
+  props: [imgSrc],
 };
 </script>

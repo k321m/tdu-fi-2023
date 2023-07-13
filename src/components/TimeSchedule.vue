@@ -41,7 +41,7 @@
                 >
                   <!-- <div></div> -->
                   <p :style="value.fontsize" class="white">
-                    {{ value.title }}
+                    <b>{{ value.title }}</b>
                   </p>
                 </div>
               </Slide>
@@ -127,19 +127,19 @@
                                     .subTitle
                                 "
                               >
-                                {{
+                                <b>{{
                                   this.limitedEventsData[value.eventDetailKey]
                                     .subTitle
-                                }}
+                                }}</b>
                               </p>
                               <p
                                 style="font-size: 0.9em; text-align: center"
                                 class="white"
                               >
-                                {{
+                                <b>{{
                                   this.limitedEventsData[value.eventDetailKey]
                                     .title
-                                }}
+                                }}</b>
                               </p>
                             </div>
                           </div>

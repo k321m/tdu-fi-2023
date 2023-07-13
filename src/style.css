@@ -290,6 +290,62 @@ a {
 .button-group > * {
   width: 49%;
 }
+
+/* ハンバーガーメニュー */
+.btn-menu {
+  position: relative;
+  background: transparent;
+  /* background: #e345e6; */
+  margin-right: 0.5rem;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+}
+.btn-menu span {
+  display: inline-block;
+  transition: all 0.4s; /*アニメーションの設定*/
+  position: absolute;
+  left: 12%;
+  height: 2px;
+  border-radius: 0.2rem;
+  background: var(--black);
+}
+
+.btn-menu span:nth-of-type(1) {
+  top: 30%;
+  width: 70%;
+}
+.btn-menu span:nth-of-type(2) {
+  top: 50%;
+  width: 40%;
+}
+.btn-menu span:nth-of-type(3) {
+  top: 70%;
+  width: 70%;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+.btn-menu.open {
+  z-index: 2000;
+}
+.btn-menu.open span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+.btn-menu.open span:nth-of-type(2) {
+  opacity: 0; /*真ん中の線は透過*/
+}
+.btn-menu.open span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+/* ダイアログ */
 .dialog-info > div:not(.tags) {
   display: inline-flex;
   margin-right: 0.8rem;
