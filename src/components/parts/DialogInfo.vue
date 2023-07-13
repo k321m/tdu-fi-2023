@@ -14,6 +14,6 @@
 export default {
   name: "DialogInfo",
   // props: { imgSrc: { type: String } },
-  props: [imgSrc],
+  props: ["imgSrc"],
 };
 </script>
