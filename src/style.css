@@ -443,3 +443,14 @@ router-link {
 #limited-event > .carousel__viewport > * {
   padding-right: 1.2em !important;
 }
+
+/* アイコン */
+#fixed-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 1dvh 0;
+  position: fixed;
+  z-index: 100;
+  right: 4dvw;
+  bottom: 4dvh;
+}

@@ -37,14 +37,14 @@
     <TopCarousel />
     <TimeSchedule @open-map="openMap" />
     <Map ref="mapRef" />
-    <MyNoteIcon />
+    <FixedIcons />
   </div>
 </template>
 
 <script>
 import Button from "../components/parts/Button.vue";
 import Card from "../components/parts/Card.vue";
-import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
+import FixedIcons from "../components/templates/FixedIcons.vue";
 import TimeSchedule from "../components/TimeSchedule.vue";
 import TopCarousel from "../components/TopCarousel.vue";
 import TopTitle from "../components/TopTitle.vue";
@@ -56,7 +56,7 @@ export default {
   components: {
     TopCarousel,
     TimeSchedule,
-    MyNoteIcon,
+    FixedIcons,
     TopTitle,
     Map,
     Button,

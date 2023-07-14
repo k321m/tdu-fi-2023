@@ -10,10 +10,12 @@
   </transition>
 
   <router-link to="/my-note">
-    <div class="my-note-icon">
-      <div class="btnripple2" v-if="doneMyNoteTutorial"></div>
-      <img :class="iconAnimationStyleSet()" src="../../assets/MyNote.svg" />
-    </div>
+    <div class="btnripple2" v-if="doneMyNoteTutorial"></div>
+    <img
+      :class="iconAnimationStyleSet()"
+      src="/src/assets/mynote-3d-icon.png"
+      style="width: 20dvw; height: auto; max-width: 120px; min-width: 72px"
+    />
   </router-link>
 </template>
 
@@ -106,12 +108,12 @@ export default {
   }
 }
 
-.my-note-icon {
+/* .my-note-icon {
   position: fixed;
   z-index: 100;
   right: 20px;
   bottom: 20px;
-}
+} */
 
 .loudAnimation {
   position: absolute;

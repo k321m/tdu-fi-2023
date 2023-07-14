@@ -28,7 +28,7 @@
             <!-- <div class=""> -->
             <Carousel
               id="all-day-event"
-              :itemsToShow="2.2"
+              :itemsToShow="1.2"
               :breakpoints="breakpoints_allDay"
               snapAlign="start"
               :transition="500"
@@ -87,7 +87,7 @@
                     >
                       <Carousel
                         id="limited-event"
-                        :itemsToShow="2.4"
+                        :itemsToShow="1"
                         :breakpoints="breakpoints_limited"
                         snapAlign="center"
                         :transition="500"
@@ -195,7 +195,7 @@ export default {
           itemsToShow: 1.6,
         },
         400: {
-          itemsToShow: 2.4,
+          itemsToShow: 2.0,
         },
         540: {
           itemsToShow: 3.2,
