@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>問題１</h2>
+    <h2>問題2</h2>
     <p>
       白い円を下方向に連続して動かすには空欄にどのコードを当てはめれば良いでしょうか？
     </p>
@@ -8,33 +8,33 @@
       <pre>
     <code>
   int i;
-  void setup(){ <span class="small">// 一番初めに一度だけ実行される</span>
+  void setup(){ <span class="small">//一番初めに一度だけ実行される</span>
     size(300,300); 
     i = 0;
   } 
-  void draw(){  // 毎フレーム実行される
+  void draw(){  <span class="small">//毎フレーム実行される</span>
     background(220);
-    ellipse(250,<span class="hole-box">{{ holeValue }}</span>,80,80);
-    i += 1;
+    ellipse(150,<span class="hole-box">{{ holeValue }}</span>,80,80);
+    i = i + 1;
   }</code>
     </pre>
     </div>
 
     <div class="v-row">
-      <div class="default-border-btn v-col" @click="select1()">
+      <div class="btn btn-default-border v-col" @click="select1()">
         <code>{{ select1Value }}</code>
       </div>
-      <div class="default-border-btn v-col" @click="select2()">
+      <div class="btn btn-default-border v-col" @click="select2()">
         <code>{{ select2Value }}</code>
       </div>
-      <div class="default-border-btn v-col" @click="select3()">
+      <div class="btn btn-default-border v-col" @click="select3()">
         <code>{{ select3Value }}</code>
       </div>
-      <div class="default-border-btn v-col" @click="select4()">
+      <div class="btn btn-default-border v-col" @click="select4()">
         <code>{{ select4Value }}</code>
       </div>
     </div>
-    <div class="pink-btn my-5" @click="execute()">実行</div>
+    <div class="btn btn-pink my-5" @click="execute()">実行</div>
     <div class="p5-canvas ma-7">
       <div id="canvas"></div>
       <p v-if="executedFlag">{{ answerText }}</p>
@@ -58,7 +58,7 @@ export default {
       holeValue: "       ",
       select1Value: "100",
       select2Value: "100 + i",
-      select3Value: "250",
+      select3Value: "150",
       select4Value: "100 - i",
       answerText: "不正解",
       executedFlag: false,
@@ -70,20 +70,27 @@ export default {
   },
   methods: {
     select1() {
-      // if (!this.executedFlag) {
-      //   this.holeValue = this.select1Value;
-      // }
+      if (!this.executedFlag) {
+        this.holeValue = this.select1Value;
+      }
     },
     select2() {
-      this.holeValue = this.select2Value;
+      if (!this.executedFlag) {
+        this.holeValue = this.select2Value;
+      }
     },
     select3() {
-      this.holeValue = this.select3Value;
+      if (!this.executedFlag) {
+        this.holeValue = this.select3Value;
+      }
     },
     select4() {
-      this.holeValue = this.select4Value;
+      if (!this.executedFlag) {
+        this.holeValue = this.select4Value;
+      }
     },
     execute() {
+      this.executedFlag = true;
       if (this.holeValue == this.select1Value) {
         p5Slect1(this.p5Value);
       }
@@ -97,9 +104,6 @@ export default {
       if (this.holeValue == this.select4Value) {
         p5Slect4(this.p5Value);
       }
-      setTimeout(() => {
-        this.executedFlag = true;
-      }, 1000);
     },
   },
 };
