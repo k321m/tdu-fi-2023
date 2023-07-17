@@ -71,7 +71,7 @@
                 <p>入場開始</p>
                 <br />
                 <p>&#xFE19;</p>
-                <div style="padding-top: 72px">
+                <div style="padding-top: 74px">
                   <template
                     v-for="(timeSchedule, key) in this.timeScheduleData"
                     :key="timeSchedule"
