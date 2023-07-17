@@ -46,7 +46,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo01Img,
@@ -79,7 +79,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo02Img,
@@ -115,7 +115,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo03Img,
@@ -145,7 +145,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo04Img,
@@ -181,7 +181,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo05Img,
@@ -217,7 +217,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo06Img,
@@ -247,7 +247,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo07Img,
@@ -283,7 +283,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo08Img,
@@ -319,7 +319,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo09Img,
@@ -355,7 +355,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo10Img,
@@ -390,7 +390,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo11Img,
@@ -423,7 +423,7 @@ export default {
           },
           {
             name: "▶︎ おすすめ質問TOP10",
-            url: "/questions",
+            url: "/questions-top10",
           },
         ],
         img: labo12Img,

@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="py-4">
-      <router-link class="routerLink" to="/questions">
+      <router-link class="routerLink" to="/questions-top10">
         <p>▶︎ おすすめ質問TOP10</p>
       </router-link>
     </div>

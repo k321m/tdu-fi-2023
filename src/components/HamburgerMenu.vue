@@ -48,7 +48,7 @@
           <h2>講義動画</h2>
         </div>
       </router-link>
-      <router-link to="/questions" @click="closeHamburgerMenu">
+      <router-link to="/questions-top10" @click="closeHamburgerMenu">
         <div class="py-5">
           <h2>おすすめ質問TOP10</h2>
         </div>
@@ -144,12 +144,11 @@ export default {
   height: 100dvh;
   position: fixed;
   color: white;
-  top: 64px;
+  top: 63px;
   left: 0;
   right: 0;
   z-index: 2000;
   background-color: var(--black);
-  margin-bottom: 64px;
   box-shadow: -1px 2px 1px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
     -1px 1px 1px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
     -1px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12)) !important;

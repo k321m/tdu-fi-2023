@@ -70,7 +70,7 @@ export default {
           text: "QuestionsTOP10",
           jptext: "おすすめ質問TOP10",
           img: "background-image: url(" + MenuImg03 + ")",
-          to: "/questions",
+          to: "/questions-top10",
         },
         {
           text: "FAQ",
