@@ -33,7 +33,7 @@
       <div v-show="isThirdTypeDone">
         <VueTyper
           class="hack-extra"
-          text="6.11"
+          text="7.29"
           :type-delay="55"
           :pre-type-delay="2800"
           :repeat="0"
@@ -42,9 +42,29 @@
         <span v-show="isForthTypeDone">
           <VueTyper
             class="pl-1 hack-h3"
-            text="sun"
+            text="sat,"
             :type-delay="55"
             :pre-type-delay="3100"
+            :repeat="0"
+            @typed="isFifthTypeDone = true"
+          />
+        </span>
+        <span v-show="isFifthTypeDone">
+          <VueTyper
+            class="hack-extra"
+            text="30"
+            :type-delay="55"
+            :pre-type-delay="3500"
+            :repeat="0"
+            @typed="isSixthTypeDone = true"
+          />
+        </span>
+        <span v-show="isSixthTypeDone">
+          <VueTyper
+            class="pl-1 hack-h3"
+            text="sun"
+            :type-delay="55"
+            :pre-type-delay="3800"
             :repeat="0"
           />
         </span>
@@ -62,6 +82,8 @@ export default {
       isSecondTypeDone: false,
       isThirdTypeDone: false,
       isForthTypeDone: false,
+      isFifthTypeDone: false,
+      isSixthTypeDone: false,
     };
   },
 };
