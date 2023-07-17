@@ -39,14 +39,14 @@
         </div>
       </div> -->
     </div>
-    <MyNoteIcon />
+    <FixedIcons />
   </div>
 </template>
 
 <script>
 import ContentTitle from "../components/ContentTitle.vue";
 import QuestionAccordion from "../components/QuestionAccordion.vue";
-import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
+import FixedIcons from "../components/templates/FixedIcons.vue";
 import Alert from "../components/parts/Alert.vue";
 
 export default {
@@ -54,7 +54,7 @@ export default {
   components: {
     ContentTitle,
     QuestionAccordion,
-    MyNoteIcon,
+    FixedIcons,
     Alert,
   },
   data() {

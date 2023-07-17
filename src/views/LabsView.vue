@@ -87,14 +87,14 @@
       </section>
       <!-- end 研究室一覧 -->
     </div>
-    <MyNoteIcon />
+    <FixedIcons />
   </div>
 </template>
 
 <script>
 import LabViewDialog from "../components/templates/LabViewDialog.vue";
 import LabFilterDialog from "../components/LabFilterDialog.vue";
-import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
+import FixedIcons from "../components/templates/FixedIcons.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 import ImageViewDialog from "../components/templates/ImageViewDialog.vue";
 import Card from "../components/parts/Card.vue";
@@ -121,7 +121,7 @@ export default {
     LabViewDialog,
     LabFilterDialog,
     ContentTitle,
-    MyNoteIcon,
+    FixedIcons,
     ImageViewDialog,
     Card,
     Button,
