@@ -7,16 +7,21 @@
           @close-hamburger-menu="isOpenMenu = !isOpenMenu"
         ></HamburgerMenu>
       </transition>
-      <v-app-bar elevation="1" app>
+      <v-app-bar
+        elevation="1"
+        app
+        :style="
+          isOpenMenu ? 'background: var(--black)' : 'background: var(--white)'
+        "
+        :class="isOpenMenu ? 'fade-enter-active-bar' : 'fade-leave-active-bar'"
+      >
         <a
           class="pl-5 pt-1"
           style="text-decoration: none; display: flex"
           href="/"
         >
-          <!-- <img src="./assets/logos/logo_dark.svg" /> -->
           <img src="./assets/logos/logo-light.svg" />
         </a>
-        <!-- <div class="btn-menu" :class="{ open: test }" @click="test = !test"> -->
         <div
           class="btn-menu"
           :class="{ open: isOpenMenu }"
@@ -24,7 +29,6 @@
         >
           <span></span><span></span><span></span>
         </div>
-        <!-- <v-app-bar-nav-icon @click.stop="isOpenMenu = !isOpenMenu" /> -->
       </v-app-bar>
     </div>
 
@@ -33,7 +37,7 @@
       <router-view />
     </v-main>
 
-    <div class="pt-2">
+    <div class="pt-2" v-show="!isOpenMenu">
       <v-footer color="black" height="56px" absolute app>
         <div class="w-100">
           <p class="text-center hack white small">Created by inue研</p>
@@ -100,8 +104,14 @@ export default {
 .fade-enter-active {
   animation: fade-in 0.2s;
 }
-
 .fade-leave-active {
   animation: fade-out 0.1s;
+}
+
+.fade-enter-active-bar {
+  transition: all 0.2s;
+}
+.fade-leave-active-bar {
+  transition: all 0.04s;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
-  <div class="menu pa-5">
-    <div class="header">
+  <div class="menu pa-5" v-click-outside="onClickOutside">
+    <!-- <div class="header">
       <div style="margin-left: auto" @click="closeHamburgerMenu">
         <img src="../assets/close-button.svg" />
       </div>
-    </div>
+    </div> -->
     <div class="pa-5 scroll-contents">
       <div class="py-5">
         <div class="top-box">
@@ -124,6 +124,9 @@ export default {
         closeAcordionbutton: !this.isOpen,
       };
     },
+    onClickOutside() {
+      this.closeHamburgerMenu();
+    },
   },
   watch: {
     $route() {
@@ -136,13 +139,20 @@ export default {
 <style scoped>
 .menu {
   width: 100%;
-  height: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  height: 100dvh;
   position: fixed;
   color: white;
-  top: 0;
+  top: 64px;
   left: 0;
+  right: 0;
   z-index: 2000;
   background-color: var(--black);
+  margin-bottom: 64px;
+  box-shadow: -1px 2px 1px -1px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
+    -1px 1px 1px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
+    -1px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12)) !important;
 }
 .header {
   padding: 1em 0 1.8em 0;
