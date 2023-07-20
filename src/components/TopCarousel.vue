@@ -31,11 +31,11 @@
 
 <script>
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
-import MenuImg01 from "/src/assets/labs/ビジュアルコンピューティング.svg";
+import MenuImg01 from "/src/assets/top-crousel/labs.png";
 import MenuImg02 from "/src/assets/lectures/インタラクティブメディアとデザイン.svg";
 import MenuImg03 from "/src/assets/top-crousel/おすすめ質問TOP10.svg";
-import MenuImg04 from "/src/assets/top-crousel/MyNote.svg";
-import MenuImg05 from "/src/assets/top-crousel/アンケート.svg";
+import MenuImg04 from "/src/assets/top-crousel/myNote.png";
+import MenuImg05 from "/src/assets/top-crousel/survey.png";
 
 import "vue3-carousel/dist/carousel.css";
 export default {

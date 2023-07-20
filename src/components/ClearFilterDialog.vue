@@ -25,7 +25,11 @@
       </div>
       <div class="scroll-contents pb-3 mb-4">
         <ul>
-          <li class="pb-1" v-for="tag in currentFilteredTags">・{{ tag }}</li>
+          <li class="pb-1" v-for="tag in currentFilteredTags">
+            <template v-if="tag == 'display'">・展示あり</template>
+            <template v-else-if="tag == 'not-display'">・展示なし</template>
+            <template v-else>・{{ tag }}</template>
+          </li>
         </ul>
       </div>
       <!-- ボタン -->

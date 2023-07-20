@@ -338,12 +338,4 @@ textarea:focus {
   font-size: 0.8em;
   width: 49%;
 }
-
-a {
-  text-decoration: none;
-}
-.link {
-  color: var(--black);
-  word-break: break-all;
-}
 </style>

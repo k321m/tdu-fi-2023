@@ -20,7 +20,7 @@
           style="text-decoration: none; display: flex"
           href="/"
         >
-          <img src="./assets/logos/logo-light.svg" />
+          <img :src="isOpenMenu ? LogoDark : LogoLight" />
         </a>
         <div
           class="btn-menu"
@@ -49,6 +49,8 @@
 
 <script>
 import HamburgerMenu from "./components/HamburgerMenu.vue";
+import LogoLight from "./assets/logos/logo-light.svg";
+import LogoDark from "./assets/logos/logo-dark.svg";
 export default {
   name: "App",
   components: {
@@ -69,6 +71,8 @@ export default {
           url: "",
         },
       ],
+      LogoLight,
+      LogoDark,
     };
   },
 };

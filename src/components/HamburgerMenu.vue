@@ -1,10 +1,5 @@
 <template>
   <div class="menu pa-5" v-click-outside="onClickOutside">
-    <!-- <div class="header">
-      <div style="margin-left: auto" @click="closeHamburgerMenu">
-        <img src="../assets/close-button.svg" />
-      </div>
-    </div> -->
     <div class="pa-5 scroll-contents">
       <div class="py-5">
         <div class="top-box">
