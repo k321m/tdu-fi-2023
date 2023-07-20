@@ -64,7 +64,7 @@ export const store = createStore({
       if (obj.type == "all") {
         // TODO: 初期値を代入することで初期化処理を行うように修正
         // 全初期化(「MyNoteのデータを削除」ボタンで発火想定)
-        this.state.password = "";
+        // this.state.password = "";
         this.state.doneMyNoteTutorial = false;
         this.state.addQueCounter = 0;
         this.state.myNote.events = {};
