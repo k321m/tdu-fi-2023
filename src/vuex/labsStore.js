@@ -50,7 +50,7 @@ export default {
           },
         ],
         img: labo01Img,
-        mapKey: "map_2",
+        mapKey: ["map_2"],
       },
       labo_2: {
         eventType: "終日開催",
@@ -83,7 +83,7 @@ export default {
           },
         ],
         img: labo02Img,
-        mapKey: "map_2",
+        mapKey: ["map_2"],
       },
       labo_3: {
         eventType: "終日開催",
@@ -119,7 +119,7 @@ export default {
           },
         ],
         img: labo03Img,
-        mapKey: "map_3",
+        mapKey: ["map_3"],
       },
       labo_4: {
         eventType: "終日開催",
@@ -149,7 +149,7 @@ export default {
           },
         ],
         img: labo04Img,
-        mapKey: "map_3",
+        mapKey: ["map_3"],
       },
       labo_5: {
         eventType: "終日開催",
@@ -185,7 +185,7 @@ export default {
           },
         ],
         img: labo05Img,
-        mapKey: "map_3",
+        mapKey: ["map_3"],
       },
       labo_6: {
         eventType: "終日開催",
@@ -221,7 +221,7 @@ export default {
           },
         ],
         img: labo06Img,
-        mapKey: "map_2",
+        mapKey: ["map_2"],
       },
       labo_7: {
         eventType: "終日開催",
@@ -251,7 +251,7 @@ export default {
           },
         ],
         img: labo07Img,
-        mapKey: "map_3",
+        mapKey: ["map_3"],
       },
       labo_8: {
         eventType: "終日開催",
@@ -287,7 +287,7 @@ export default {
           },
         ],
         img: labo08Img,
-        mapKey: "map_3",
+        mapKey: ["map_3"],
       },
       labo_9: {
         eventType: "終日開催",
@@ -323,7 +323,7 @@ export default {
           },
         ],
         img: labo09Img,
-        mapKey: "map_2",
+        mapKey: ["map_2", "map_3"],
       },
       labo_10: {
         eventType: "終日開催",
@@ -427,7 +427,7 @@ export default {
           },
         ],
         img: labo12Img,
-        mapKey: "map_2",
+        mapKey: ["map_2"],
       },
     },
   },

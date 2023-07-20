@@ -51,11 +51,16 @@ export default {
   },
   methods: {
     openViewDialog(data) {
-      this.clickedMapData = data.img;
+      this.clickedMapData = [data.img];
       this.isViewDialogVisible = true;
     },
-    openViewDialogByKey(key) {
-      this.openViewDialog(this.allMapData[key]);
+    openViewDialogByKey(mapId) {
+      let mapData = [];
+      for (let key in mapId) {
+        mapData.push(this.allMapData[mapId[key]].img);
+      }
+      this.clickedMapData = mapData;
+      this.isViewDialogVisible = true;
     },
   },
   mounted() {

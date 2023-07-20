@@ -147,7 +147,7 @@ export default {
       isCopied: false,
       allMapData: {},
       mapData: {},
-      mapId: String,
+      mapId: {},
       isMapDialogVisible: false,
     };
   },
@@ -206,11 +206,17 @@ export default {
     },
     openMapDialog() {
       if (this.eventValue.buttons == undefined) {
+        // イベント系ぽい
         this.mapId = this.eventValue.mapKey;
       } else {
+        // 研究室ぽい
         this.mapId = this.eventValue.buttons[0].key;
       }
-      this.mapData = this.allMapData[this.mapId].img;
+      let mapDataArray = [];
+      this.mapId.forEach((value) => {
+        mapDataArray.push(this.allMapData[value].img);
+      });
+      this.mapData = mapDataArray;
       this.isMapDialogVisible = true;
     },
   },

@@ -28,7 +28,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -46,7 +46,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -65,7 +65,7 @@ export default {
           {
             name: "default",
 
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -83,7 +83,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_2",
+            key: ["map_2"],
           },
           {
             name: "mynote",
@@ -101,7 +101,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_2",
+            key: ["map_2", "map_3"],
           },
           {
             name: "pink",
@@ -129,7 +129,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -154,7 +154,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -179,7 +179,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -203,7 +203,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -229,7 +229,7 @@ export default {
           {
             name: "default",
 
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -254,7 +254,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -278,7 +278,7 @@ export default {
         buttons: [
           {
             name: "default",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",

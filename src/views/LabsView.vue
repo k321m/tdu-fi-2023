@@ -113,7 +113,7 @@ export default {
       filteredTags: ["all"], //現在指定されている条件配列
       allMapData: {},
       mapData: {},
-      mapId: String,
+      mapId: {},
       isMapDialogVisible: false,
     };
   },
@@ -203,8 +203,12 @@ export default {
       // console.log(this.filteredTags);
     },
     openMapDialog(mapId) {
-      this.mapId = mapId;
-      this.mapData = this.allMapData[mapId].img;
+      this.mapId = mapId; //{mapkey-01,mapkey-02}
+      let mapDataArray = [];
+      this.mapId.forEach((value) => {
+        mapDataArray.push(this.allMapData[value].img);
+      });
+      this.mapData = mapDataArray;
       this.isMapDialogVisible = true;
     },
   },
