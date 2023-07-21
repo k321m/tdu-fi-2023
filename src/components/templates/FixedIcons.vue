@@ -9,9 +9,9 @@
         <v-icon class="plus" :class="{ open: isOpen }">mdi-plus</v-icon>
       </span>
       <div class="menu-round" :class="{ open: isOpen }">
+        <MyNoteIcon class="menu-icon" />
+        <MyNoteIcon class="menu-icon" />
         <MissionIcon class="menu-icon" />
-        <MyNoteIcon class="menu-icon" />
-        <MyNoteIcon class="menu-icon" />
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@ export default {
   bottom: 0;
   right: 0;
   border-radius: 50%;
-  background-color: var(--pink);
+  background-color: #fa00ff;
   box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
   z-index: 100;
   display: flex;
@@ -73,7 +73,7 @@ export default {
   80% {
     width: 3em;
     height: 3em;
-    background-color: var(--pink);
+    background-color: #fa00ff;
   }
   100% {
     width: 3em;
@@ -99,7 +99,7 @@ export default {
 }
 @keyframes plus-animation {
   100% {
-    color: var(--pink);
+    color: #fa00ff;
     transform: rotate(135deg);
   }
 }
@@ -116,24 +116,24 @@ export default {
 }
 
 .menu-round .menu-icon {
-  bottom: 0.25em;
   right: 0.25em;
+  bottom: 0.25em;
   transition: 0.1s;
 }
 
 .menu-round.open .menu-icon:nth-of-type(1) {
-  right: 0.44em;
-  bottom: 7.5em;
+  right: 0.2em;
+  bottom: 8em;
   transition-delay: 0.44s;
 }
 .menu-round.open .menu-icon:nth-of-type(2) {
-  right: 5em;
-  bottom: 5.2em;
+  right: 5.8em;
+  bottom: 5.8em;
   transition-delay: 0.42s;
 }
 .menu-round.open .menu-icon:nth-of-type(3) {
-  right: 7.2em;
-  bottom: 0.48em;
+  right: 8.8em;
+  bottom: 0.2em;
   transition-delay: 0.4s;
 }
 </style>
