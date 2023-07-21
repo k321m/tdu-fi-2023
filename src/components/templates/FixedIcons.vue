@@ -48,49 +48,37 @@ export default {
 .menu-toggle {
   width: 3em;
   height: 3em;
-  background: transparent;
   position: absolute;
   bottom: 0;
   right: 0;
+  border-radius: 50%;
+  background-color: var(--pink);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.1s;
 }
-.menu-toggle::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: var(--pink);
-  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: 0.2s;
-}
-
-.menu-toggle.open::before {
-  width: 2.5em;
-  height: 2.5em;
-}
-.menu-toggle.open::after {
-  content: "";
-  position: absolute;
-  width: 2.5em;
-  height: 2.5em;
-  border-radius: 50%;
-  animation-name: display;
-  animation-duration: 0.1s;
-  animation-delay: 0.4s;
+.menu-toggle.open {
+  animation-name: menu-toggle-animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-@keyframes display {
-  0% {
-    opacity: 0;
+@keyframes menu-toggle-animation {
+  50% {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  80% {
+    width: 2.5em;
+    height: 2.5em;
+    background-color: var(--pink);
   }
   100% {
-    opacity: 1;
+    width: 2.5em;
+    height: 2.5em;
     background-color: var(--black);
-    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -99,14 +87,21 @@ export default {
   color: white;
   transition: 0.4s;
   z-index: 101;
+  transition: 0.1s;
 }
 
 .plus.open {
+  animation-name: plus-animation;
+  animation-duration: 0.2s;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
   font-size: 1.8em;
-  transform: rotate(135deg);
-  color: var(--pink);
-  transition: 0.1s;
-  transition-delay: 0.4s;
+}
+@keyframes plus-animation {
+  100% {
+    color: var(--pink);
+    transform: rotate(135deg);
+  }
 }
 
 .menu-icon {
@@ -127,18 +122,18 @@ export default {
 }
 
 .menu-round.open .menu-icon:nth-of-type(1) {
-  right: 0.5em;
+  right: 0.48em;
   bottom: 7.5em;
   transition-delay: 0.44s;
 }
 .menu-round.open .menu-icon:nth-of-type(2) {
-  right: 5em;
-  bottom: 5em;
+  right: 5.2em;
+  bottom: 5.2em;
   transition-delay: 0.42s;
 }
 .menu-round.open .menu-icon:nth-of-type(3) {
-  right: 7em;
-  bottom: 0.5em;
+  right: 7.2em;
+  bottom: 0.48em;
   transition-delay: 0.4s;
 }
 </style>
