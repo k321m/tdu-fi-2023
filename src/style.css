@@ -132,6 +132,11 @@ small,
   font-weight: var(--bold);
   line-height: 1;
 }
+.vdl-logo {
+  font-family: "vdl-logojrblack", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
 
 /* Background */
 #particles-js {
