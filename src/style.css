@@ -454,7 +454,7 @@ router-link {
 .fixed-icon-img {
   width: 2em;
   height: auto;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 .menu-round.open .fixed-icon-img {
   width: 4.2em;

@@ -46,8 +46,8 @@ export default {
 }
 
 .menu-toggle {
-  width: 3em;
-  height: 3em;
+  width: 3.5em;
+  height: 3.5em;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -67,17 +67,17 @@ export default {
 }
 @keyframes menu-toggle-animation {
   50% {
-    width: 2.5em;
-    height: 2.5em;
+    width: 3em;
+    height: 3em;
   }
   80% {
-    width: 2.5em;
-    height: 2.5em;
+    width: 3em;
+    height: 3em;
     background-color: var(--pink);
   }
   100% {
-    width: 2.5em;
-    height: 2.5em;
+    width: 3em;
+    height: 3em;
     background-color: var(--black);
   }
 }
@@ -118,16 +118,16 @@ export default {
 .menu-round .menu-icon {
   bottom: 0.25em;
   right: 0.25em;
-  transition: 0.2s;
+  transition: 0.1s;
 }
 
 .menu-round.open .menu-icon:nth-of-type(1) {
-  right: 0.48em;
+  right: 0.44em;
   bottom: 7.5em;
   transition-delay: 0.44s;
 }
 .menu-round.open .menu-icon:nth-of-type(2) {
-  right: 5.2em;
+  right: 5em;
   bottom: 5.2em;
   transition-delay: 0.42s;
 }
