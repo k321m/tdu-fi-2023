@@ -1,5 +1,9 @@
 <template>
-  <transition :name="doneMyNoteTutorial ? 'fade' : ''">
+  <router-link to="/my-note">
+    <img src="/src/assets/mynote-3d-icon.png" class="fixed-icon-img" />
+  </router-link>
+</template>
+<!-- <transition :name="doneMyNoteTutorial ? 'fade' : ''">
     <div class="arrow_box" v-if="isArrowVisible">
       <div class="text-box">
         <h4 style="text-align: center" class="white">
@@ -7,18 +11,10 @@
         </h4>
       </div>
     </div>
-  </transition>
+  </transition> -->
 
-  <router-link to="/my-note">
-    <div class="btnripple2" v-if="doneMyNoteTutorial"></div>
-    <img
-      :class="iconAnimationStyleSet()"
-      src="/src/assets/mynote-3d-icon.png"
-      style="width: 25dvw; height: auto; max-width: 120px; min-width: 72px"
-    />
-  </router-link>
-</template>
-
+<!-- <div class="btnripple2" v-if="doneMyNoteTutorial"></div> -->
+<!-- :class="iconAnimationStyleSet()" -->
 <script>
 export default {
   name: "MyNoteIcon",
@@ -52,7 +48,7 @@ export default {
 </script>
 
 <style scoped>
-.arrow_box {
+/* .arrow_box {
   position: fixed;
   z-index: 102;
   right: 20px;
@@ -68,9 +64,9 @@ export default {
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-}
+} */
 
-.arrow_box:before,
+/* .arrow_box:before,
 .arrow_box:after {
   position: absolute;
   right: 40px;
@@ -78,24 +74,24 @@ export default {
   width: 0;
   border: solid transparent;
   content: "";
-}
-.arrow_box:before {
+} */
+/* .arrow_box:before {
   top: 100%;
   margin-left: -10px;
   border-color: transparent;
   border-top-color: var(--pink);
   border-right-color: var(--pink);
   border-width: 10px;
-}
-
+} */
+/* 
 .text-box {
   position: absolute;
   width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
+} */
+/* 
 .fade-leave-active {
   animation: fade 0.5s reverse;
 }
@@ -106,7 +102,7 @@ export default {
   100% {
     opacity: 1;
   }
-}
+} */
 
 /* .my-note-icon {
   position: fixed;
@@ -115,7 +111,7 @@ export default {
   bottom: 20px;
 } */
 
-.loudAnimation {
+/* .loudAnimation {
   position: absolute;
   z-index: 101;
   width: 70px;
@@ -123,9 +119,9 @@ export default {
   right: 5px;
   bottom: 5px;
   animation: poyopoyo 3s ease-out infinite;
-}
+} */
 
-@keyframes poyopoyo {
+/* @keyframes poyopoyo {
   0%,
   40%,
   60%,
@@ -136,52 +132,52 @@ export default {
   70% {
     transform: scale(0.9);
   }
-}
+} */
 
-.btnripple2 {
-  /*波紋の基点とするためrelativeを指定*/
-  position: relative;
-  /*波紋の形状*/
-  display: inline-block;
+/* .btnripple2 { */
+/*波紋の基点とするためrelativeを指定*/
+/* position: relative; */
+/*波紋の形状*/
+/* display: inline-block;
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  outline: none;
-  /*アニメーションの設定*/
-  transition: all 0.5s;
-}
+  outline: none; */
+/*アニメーションの設定*/
+/* transition: all 0.5s;
+} */
 
 /*hoverした際の背景色の設定*/
-.btnripple2:hover {
+/* .btnripple2:hover {
   background: #666;
-}
+} */
 
 /*波形を2つ設定*/
-.btnripple2::after,
+/* .btnripple2::after,
 .btnripple2::before {
-  content: "";
-  /*絶対配置で波形の位置を決める*/
-  position: absolute;
+  content: ""; */
+/*絶対配置で波形の位置を決める*/
+/* position: absolute;
   left: -25%;
-  top: -25%;
-  /*波形の形状*/
-  border: 1px solid #c063f9;
+  top: -25%; */
+/*波形の形状*/
+/* border: 1px solid #c063f9;
   width: 150%;
   height: 150%;
-  border-radius: 50%;
-  /*はじめは不透明*/
-  opacity: 1;
-  /*ループするアニメーションの設定*/
-  animation: 1s circleanime linear infinite;
-}
+  border-radius: 50%; */
+/*はじめは不透明*/
+/* opacity: 1; */
+/*ループするアニメーションの設定*/
+/* animation: 1s circleanime linear infinite;
+} */
 
 /*波形の2つ目は0.5秒遅らせてアニメーション*/
-.btnripple2::before {
+/* .btnripple2::before {
   animation-delay: 0.5s;
-}
+} */
 
 /*波形のアニメーション*/
-@keyframes circleanime {
+/* @keyframes circleanime {
   0% {
     transform: scale(0.68);
   }
@@ -189,9 +185,9 @@ export default {
     transform: scale(1.2);
     opacity: 0;
   }
-}
+} */
 
-.quietAnimation {
+/* .quietAnimation {
   animation: fuwafuwa 3s infinite ease-in-out alternate;
   display: inline-block;
 }
@@ -205,5 +201,5 @@ export default {
   100% {
     transform: translate(0, 0px) rotate(4deg);
   }
-}
+} */
 </style>

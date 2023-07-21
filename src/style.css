@@ -444,12 +444,20 @@ router-link {
 }
 
 /* アイコン */
-#fixed-icons {
-  display: flex;
-  flex-direction: column;
-  gap: 1dvh 0;
+.fixed-icons {
+  box-sizing: border-box;
   position: fixed;
-  z-index: 100;
-  right: 4dvw;
-  bottom: 4dvh;
+  right: 1em;
+  bottom: 1em;
+}
+
+.fixed-icon-img {
+  width: 2em;
+  height: auto;
+  transition: 0.4s;
+}
+.menu-round.open .fixed-icon-img {
+  width: 4em;
+  height: auto;
+  transition-delay: 0.4s;
 }
