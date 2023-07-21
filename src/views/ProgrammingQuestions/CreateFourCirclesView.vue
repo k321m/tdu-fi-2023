@@ -10,11 +10,10 @@
   int x = 60;
   int y = 150;
   int d = 50;
-  for (int i = 1; <span class="hole-box">{{ holeValue }}</span>; i = i + 1){
+  for (int i = 1; <span class="hole-box">{{ holeValue }}</span>; i = i + 1) {
     ellipse(x, y, d, d);
     x = x + 60;
   }</code>
-<!-- i &lt= 4 -->
     </pre>
       </div>
       <div v-for="value in this.choices" :key="value">

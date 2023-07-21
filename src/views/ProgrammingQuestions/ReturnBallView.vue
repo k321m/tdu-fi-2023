@@ -3,20 +3,26 @@
     <div class="pa-3">
       <h2><span>03</span>ReturnBall</h2>
       <p>
-        白いボールを地面(下側の枠線)で跳ね返るようにするには空欄にどのコードを当てはめれば良いでしょうか？
+        白いボールが地面(下側の枠線)で跳ね返るようにするには空欄にどのコードを当てはめれば良いでしょうか？
       </p>
       <div class="code-box">
         <pre>
-<code>
-  size(300, 300);
-  int x = 60;
-  int y = 150;
+  <code>
+  int x = 150;
+  int y = 100;
   int d = 50;
-  for (int i = 1; <span class="hole-box">{{ holeValue }}</span>; i = i + 1){
+  int i = 1;
+  void setup() { <span class="small">//一番初めに一度だけ実行される</span>
+    size(300, 300); 
+  } 
+  void draw() {  <span class="small">//毎フレーム実行される</span>
+    background(220);
     ellipse(x, y, d, d);
-    x = x + 60;
+    if (<span class="hole-box">{{ holeValue }}</span>) {
+      i = -1;
+    }
+    y = y + i;
   }</code>
-<!-- i &lt= 4 -->
     </pre>
       </div>
       <div v-for="value in this.choices" :key="value">
@@ -42,7 +48,7 @@ import {
   p5Slect2,
   p5Slect3,
   p5Slect4,
-} from "../../js/p5/createFourCircles";
+} from "../../js/p5/returnBall";
 export default {
   name: "ReturnBallView",
   components: {
@@ -52,20 +58,20 @@ export default {
     return {
       choices: [
         {
-          code: "i < 4",
-          judge: false,
-        },
-        {
-          code: "i <= 3",
-          judge: false,
-        },
-        {
-          code: "i > 4",
-          judge: false,
-        },
-        {
-          code: "i <= 4",
+          code: "y + d/2 > height",
           judge: true,
+        },
+        {
+          code: "y > height",
+          judge: false,
+        },
+        {
+          code: "x + d > width",
+          judge: false,
+        },
+        {
+          code: "y + d > height",
+          judge: false,
         },
       ],
       holeValue: "       ",

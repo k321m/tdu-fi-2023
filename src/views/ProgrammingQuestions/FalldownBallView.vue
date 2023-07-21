@@ -8,15 +8,16 @@
       <div class="code-box">
         <pre>
     <code>
-  int i;
-  void setup(){ <span class="small">//一番初めに一度だけ実行される</span>
-    size(300,300); 
-    i = 0;
+  int x = 150;
+  int y = 100;
+  int d = 50;
+  void setup() { <span class="small">//一番初めに一度だけ実行される</span>
+    size(300, 300); 
   } 
-  void draw(){  <span class="small">//毎フレーム実行される</span>
+  void draw() {  <span class="small">//毎フレーム実行される</span>
     background(220);
-    ellipse(150,<span class="hole-box">{{ holeValue }}</span>,80,80);
-    i = i + 1;
+    ellipse(x, <span class="hole-box">{{ holeValue }}</span>, d, d);
+    y = y + 1;
   }</code>
     </pre>
       </div>

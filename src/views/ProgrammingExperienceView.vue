@@ -11,7 +11,7 @@
       <Button class="my-5" defaultBorder>Processing基本知識</Button>
 
       <div class="question-button my-2">
-        <router-link to="/question1"></router-link>
+        <router-link :to="{ name: 'question1' }"></router-link>
         <div class="text-area">
           <p class="hack" style="font-size: 1.5em; line-height: 1em">Q1</p>
           <p class="hack" style="line-height: 1em; padding: 0.3em 0 0 1.5em">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="question-button my-2">
-        <router-link to="/question2"></router-link>
+        <router-link :to="{ name: 'question2' }"></router-link>
         <div class="text-area">
           <p class="hack" style="font-size: 1.5em; line-height: 1em">Q2</p>
           <p class="hack" style="line-height: 1em; padding: 0.3em 0 0 1.5em">
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="question-button my-2">
-        <router-link to="/question3"></router-link>
+        <router-link :to="{ name: 'question3' }"></router-link>
         <div class="text-area">
           <p class="hack" style="font-size: 1.5em; line-height: 1em">Q3</p>
           <p class="hack" style="line-height: 1em; padding: 0.3em 0 0 1.5em">
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="question-button my-2">
-        <router-link to="/question4"></router-link>
+        <router-link :to="{ name: 'question4' }"></router-link>
         <div class="text-area">
           <p class="hack" style="font-size: 1.5em; line-height: 1em">Q4</p>
           <p class="hack" style="line-height: 1em; padding: 0.3em 0 0 1.5em">
