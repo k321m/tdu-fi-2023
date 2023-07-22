@@ -9,7 +9,7 @@ import Faq from "./views/FaqView.vue";
 import Login from "./views/LoginView.vue";
 import Attention from "./views/AttentionView.vue";
 import ProgrammingEXP from "./views/ProgrammingExperienceView.vue";
-import Question1 from "./views/ProgrammingQuestions/CreateFourCirclesView.vue";
+import Question1 from "./views/ProgrammingQuestions/CreateCirclesView.vue";
 import Question2 from "./views/ProgrammingQuestions/FalldownBallView.vue";
 import Question3 from "./views/ProgrammingQuestions/ReturnBallView.vue";
 import Question4 from "./views/ProgrammingQuestions/BouncingBallView.vue";

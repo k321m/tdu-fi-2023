@@ -1,7 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <h2><span>01</span>CreateFourCircles</h2>
+      <h2><span>01</span>CreateCircles</h2>
       <p>白い円を4つ作るには空欄にどのコードを当てはめれば良いでしょうか？</p>
       <div class="code-box">
         <pre>
