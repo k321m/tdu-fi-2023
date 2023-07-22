@@ -31,11 +31,12 @@
 
 <script>
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
-import MenuImg01 from "/src/assets/labs/ビジュアルコンピューティング.svg";
-import MenuImg02 from "/src/assets/lectures/インタラクティブメディアとデザイン.svg";
-import MenuImg03 from "/src/assets/top-crousel/おすすめ質問TOP10.svg";
-import MenuImg04 from "/src/assets/top-crousel/MyNote.svg";
-import MenuImg05 from "/src/assets/top-crousel/アンケート.svg";
+import MenuImg01 from "/src/assets/top-crousel/labs.png";
+import MenuImg02 from "/src/assets/top-crousel/lecture.png";
+import MenuImg03 from "/src/assets/top-crousel/questionstop10.png";
+import MenuImg04 from "/src/assets/top-crousel/faq.png";
+import MenuImg05 from "/src/assets/top-crousel/myNote.png";
+import MenuImg06 from "/src/assets/top-crousel/survey.png";
 
 import "vue3-carousel/dist/carousel.css";
 export default {
@@ -70,24 +71,24 @@ export default {
           text: "QuestionsTOP10",
           jptext: "おすすめ質問TOP10",
           img: "background-image: url(" + MenuImg03 + ")",
-          to: "/questions",
+          to: "/questions-top10",
         },
         {
           text: "FAQ",
           jptext: "よくある質問",
-          img: "background-image: url(" + MenuImg03 + ")",
+          img: "background-image: url(" + MenuImg04 + ")",
           to: "/faq",
         },
         {
           text: "MyNote",
           jptext: "マイノート",
-          img: "background-image: url(" + MenuImg04 + ")",
+          img: "background-image: url(" + MenuImg05 + ")",
           to: "/my-note",
         },
         {
           text: "Survey",
           jptext: "アンケート",
-          img: "background-image: url(" + MenuImg05 + ")",
+          img: "background-image: url(" + MenuImg06 + ")",
           to: "https://docs.google.com/forms/d/e/1FAIpQLSeQ5ru-Mzc-gULHow6ZkxNjnRPP6I7i6aUTtTJitU7GpdYWWQ/viewform",
         },
       ],

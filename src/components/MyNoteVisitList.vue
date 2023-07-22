@@ -6,12 +6,14 @@
     </div>
 
     <div class="py-4">
-      <router-link class="routerLink" to="/#time-schedule">
-        <p class="mb-1">▶︎ タイムスケジュール</p>
-      </router-link>
-      <router-link class="routerLink" to="/labs">
-        <p>▶︎ 研究室公開</p>
-      </router-link>
+      <div>
+        <router-link class="link mb-1" to="/#time-schedule">
+          ▶︎ タイムスケジュール
+        </router-link>
+      </div>
+      <div>
+        <router-link class="link" to="/labs"> ▶︎ 研究室公開 </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -25,9 +27,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.routerLink {
-  text-decoration: none;
-  color: var(--black);
-}
-</style>

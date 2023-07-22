@@ -4,7 +4,7 @@ import MyNote from "./views/MyNoteView.vue";
 import Department from "./views/DepartmentView.vue";
 import Labs from "./views/LabsView.vue";
 import LectureVideo from "./views/LectureVideoView.vue";
-import Questions from "./views/QuestionsView.vue";
+import QuestionsTop10 from "./views/QuestionsTop10View.vue";
 import Faq from "./views/FaqView.vue";
 import Login from "./views/LoginView.vue";
 import Attention from "./views/AttentionView.vue";
@@ -51,9 +51,9 @@ export const router = createRouter({
       meta: { require: true },
     },
     {
-      path: "/questions",
-      name: "questions",
-      component: Questions,
+      path: "/questions-top10",
+      name: "questions-top10",
+      component: QuestionsTop10,
       meta: { require: true },
     },
     {

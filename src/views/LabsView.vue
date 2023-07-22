@@ -87,14 +87,14 @@
       </section>
       <!-- end 研究室一覧 -->
     </div>
-    <MyNoteIcon />
+    <FixedIcons />
   </div>
 </template>
 
 <script>
 import LabViewDialog from "../components/templates/LabViewDialog.vue";
 import LabFilterDialog from "../components/LabFilterDialog.vue";
-import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
+import FixedIcons from "../components/templates/FixedIcons.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 import ImageViewDialog from "../components/templates/ImageViewDialog.vue";
 import Card from "../components/parts/Card.vue";
@@ -113,7 +113,7 @@ export default {
       filteredTags: ["all"], //現在指定されている条件配列
       allMapData: {},
       mapData: {},
-      mapId: String,
+      mapId: {},
       isMapDialogVisible: false,
     };
   },
@@ -121,7 +121,7 @@ export default {
     LabViewDialog,
     LabFilterDialog,
     ContentTitle,
-    MyNoteIcon,
+    FixedIcons,
     ImageViewDialog,
     Card,
     Button,
@@ -203,8 +203,12 @@ export default {
       // console.log(this.filteredTags);
     },
     openMapDialog(mapId) {
-      this.mapId = mapId;
-      this.mapData = this.allMapData[mapId].img;
+      this.mapId = mapId; //{mapkey-01,mapkey-02}
+      let mapDataArray = [];
+      this.mapId.forEach((value) => {
+        mapDataArray.push(this.allMapData[value].img);
+      });
+      this.mapData = mapDataArray;
       this.isMapDialogVisible = true;
     },
   },

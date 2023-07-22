@@ -1,7 +1,5 @@
 import { store } from "./index";
 import map1Img from "/src/assets/maps/Map01.svg";
-// import map2Img from "/src/assets/maps/Map02.svg";
-// import map3Img from "/src/assets/maps/Map03.svg";
 import map2Png from "/src/assets/maps/Map02.png";
 import map3Png from "/src/assets/maps/Map03.png";
 

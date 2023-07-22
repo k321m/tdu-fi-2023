@@ -28,8 +28,7 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -47,8 +46,7 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -60,14 +58,14 @@ export default {
         title: "クラブ・サークル紹介",
         place: "5号館1階アトリウム",
         info: "電大ならではの専門性を活かした学術系クラブをはじめ、体育会系クラブ、興味関心が広がる文化系のクラブ、様々な課外活動を学生同士で支える委員会があり、多くの学生がクラブ・サークル団体に所属しています。団体部会の代表学生がご質問におこたえします！",
-        fontsize: "font-size: 0.65em",
+        fontsize: "font-size: 0.8em",
         img: "background-image: url(" + allDayEventImg3 + ")",
         links: [],
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -85,8 +83,7 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map_2",
-            key: "map_2",
+            key: ["map_2"],
           },
           {
             name: "mynote",
@@ -104,8 +101,7 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_2",
+            key: ["map_2", "map_3"],
           },
           {
             name: "pink",
@@ -133,8 +129,7 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -159,8 +154,7 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -185,8 +179,7 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -196,8 +189,8 @@ export default {
       limitedEvent_4: {
         eventType: "限定プログラム",
         title: "電大ガイダンス",
-        place: "2号館丹羽ホール",
-        peopleNum: "500名",
+        place: "5号館3階 5301教室",
+        peopleNum: "153名",
         info: "東京電機大学の学びの特色や強みなどをお話しします。まずはこのガイダンスで電大のことを知りましょう！",
         img: "background-image: url(" + limitedEventImg1 + ")",
         carousel_height: true,
@@ -210,8 +203,7 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -222,8 +214,8 @@ export default {
         eventType: "限定プログラム",
         title: "入試ガイダンス",
         subTitle: "一般・共通テスト",
-        place: "5301教室",
-        peopleNum: "99名",
+        place: "5号館2階 5203／5204／5205教室",
+        peopleNum: "297名",
         info: "試験科目は？昨年度の受験倍率・合格最低点は？併願方法についても詳しく解説します。",
         img: "background-image: url(" + limitedEventImg5 + ")",
         carousel_height: true,
@@ -236,8 +228,8 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -248,8 +240,8 @@ export default {
         eventType: "限定プログラム",
         title: "入試ガイダンス",
         subTitle: "推薦・AO",
-        place: "5203／5204教室",
-        peopleNum: "297名",
+        place: "1号館2階 1204／1205／1206教室",
+        peopleNum: "360名",
         info: "推薦入試やAO入試などをお考えの受験生必見！面接のポイント（教員は何を見るのか？）など、オープンキャンパスでしか聞けない情報を得られます。",
         img: "background-image: url(" + limitedEventImg6 + ")",
         carousel_height: true,
@@ -262,8 +254,31 @@ export default {
         buttons: [
           {
             name: "default",
-            to: "/#map",
-            key: "map_1",
+            key: ["map_1"],
+          },
+          {
+            name: "mynote",
+          },
+        ],
+      },
+      limitedEvent_7: {
+        eventType: "限定プログラム",
+        title: "女子高校生向け説明会",
+        isLongTitle: true,
+        place: "5号館3階 5302教室",
+        peopleNum: "153名",
+        info: "",
+        img: "background-image: url(" + limitedEventImg6 + ")",
+        links: [
+          {
+            name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",
+            url: "https://www.dendai.ac.jp/prospective-students/",
+          },
+        ],
+        buttons: [
+          {
+            name: "default",
+            key: ["map_1"],
           },
           {
             name: "mynote",
@@ -293,65 +308,71 @@ export default {
       timeSchedule_2: {
         limitedEvent_1_timeSchedule_2: {
           eventDetailKey: "limitedEvent_1",
-          time: "12:15-12:35",
+          time: "12:00-12:20",
         },
         limitedEvent_3_timeSchedule_2: {
           eventDetailKey: "limitedEvent_3",
-          time: "12:15-12:35",
+          time: "12:00-12:20",
         },
         limitedEvent_4_timeSchedule_2: {
           eventDetailKey: "limitedEvent_4",
-          time: "12:15-12:45",
+          time: "12:00-12:30",
         },
         limitedEvent_5_timeSchedule_2: {
           eventDetailKey: "limitedEvent_5",
-          time: "12:15-12:45",
+          time: "12:00-12:30",
+        },
+        limitedEvent_7_timeSchedule_2: {
+          eventDetailKey: "limitedEvent_7",
+          time: "12:00-12:30",
         },
       },
       timeSchedule_3: {
         limitedEvent_2_timeSchedule_3: {
           eventDetailKey: "limitedEvent_2",
-          time: "13:15-13:35",
+          time: "12:45-13:05",
         },
         limitedEvent_3_timeSchedule_3: {
           eventDetailKey: "limitedEvent_3",
-          time: "13:15-13:35",
-        },
-        limitedEvent_4_timeSchedule_3: {
-          eventDetailKey: "limitedEvent_4",
-          time: "13:15-13:45",
+          time: "12:45-13:05",
         },
         limitedEvent_5_timeSchedule_3: {
           eventDetailKey: "limitedEvent_5",
-          time: "13:15-13:45",
+          time: "12:45-13:15",
         },
         limitedEvent_6_timeSchedule_3: {
           eventDetailKey: "limitedEvent_6",
-          time: "13:15-13:45",
+          time: "12:45-13:15",
         },
       },
       timeSchedule_4: {
         limitedEvent_1_timeSchedule_4: {
           eventDetailKey: "limitedEvent_1",
-          time: "14:15-14:35",
-        },
-        limitedEvent_2_timeSchedule_4: {
-          eventDetailKey: "limitedEvent_2",
-          time: "14:15-14:35",
+          time: "13:30-13:50",
         },
         limitedEvent_3_timeSchedule_4: {
           eventDetailKey: "limitedEvent_3",
-          time: "14:15-14:35",
+          time: "13:30-13:50",
         },
         limitedEvent_4_timeSchedule_4: {
           eventDetailKey: "limitedEvent_4",
+          time: "13:30-14:00",
+        },
+      },
+      timeSchedule_5: {
+        limitedEvent_2_timeSchedule_5: {
+          eventDetailKey: "limitedEvent_2",
+          time: "14:15-14:35",
+        },
+        limitedEvent_4_timeSchedule_5: {
+          eventDetailKey: "limitedEvent_4",
           time: "14:15-14:45",
         },
-        limitedEvent_5_timeSchedule_4: {
+        limitedEvent_5_timeSchedule_5: {
           eventDetailKey: "limitedEvent_5",
           time: "14:15-14:45",
         },
-        limitedEvent_6_timeSchedule_4: {
+        limitedEvent_6_timeSchedule_5: {
           eventDetailKey: "limitedEvent_6",
           time: "14:15-14:45",
         },

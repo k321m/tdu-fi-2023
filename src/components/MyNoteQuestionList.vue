@@ -16,8 +16,8 @@
       </div>
     </div>
     <div class="py-4">
-      <router-link class="routerLink" to="/questions">
-        <p>▶︎ おすすめ質問TOP10</p>
+      <router-link class="link" to="/questions-top10">
+        ▶︎ おすすめ質問TOP10
       </router-link>
     </div>
   </div>
@@ -47,9 +47,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.routerLink {
-  text-decoration: none;
-  color: var(--black);
-}
-</style>

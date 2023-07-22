@@ -34,13 +34,13 @@
       </section>
       <!-- end 講義動画一覧 -->
     </div>
-    <MyNoteIcon />
+    <FixedIcons />
   </div>
 </template>
 
 <script>
 import LectureVideoViewDialog from "../components/templates/LectureVideoViewDialog.vue";
-import MyNoteIcon from "../components/parts/MyNoteIcon.vue";
+import FixedIcons from "../components/templates/FixedIcons.vue";
 import ContentTitle from "../components/ContentTitle.vue";
 import Card from "../components/parts/Card.vue";
 export default {
@@ -56,7 +56,7 @@ export default {
   components: {
     LectureVideoViewDialog,
     ContentTitle,
-    MyNoteIcon,
+    FixedIcons,
     Card,
   },
   methods: {

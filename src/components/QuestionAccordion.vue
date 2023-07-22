@@ -98,7 +98,7 @@ export default {
       type: "questions",
       isOpen: false,
       isImageDialogVisible: false,
-      clickedImg: String,
+      clickedImg: {},
     };
   },
   methods: {
@@ -112,7 +112,7 @@ export default {
       });
     },
     openImgDialog(data) {
-      this.clickedImg = data;
+      this.clickedImg = [data];
       this.isImageDialogVisible = true;
     },
   },

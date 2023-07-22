@@ -132,6 +132,11 @@ small,
   font-weight: var(--bold);
   line-height: 1;
 }
+.vdl-logo {
+  font-family: "vdl-logojrblack", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
 
 /* Background */
 #particles-js {
@@ -207,7 +212,8 @@ small,
   border-radius: 0.8rem 0 0 0.8rem;
 }
 
-a {
+a,
+.link {
   text-decoration: none;
   color: var(--purple);
   word-break: break-all;
@@ -295,7 +301,6 @@ a {
 .btn-menu {
   position: relative;
   background: transparent;
-  /* background: #e345e6; */
   margin-right: 0.5rem;
   cursor: pointer;
   width: 2.5rem;
@@ -304,7 +309,7 @@ a {
 }
 .btn-menu span {
   display: inline-block;
-  transition: all 0.4s; /*アニメーションの設定*/
+  transition: all 0.2s; /*アニメーションの設定*/
   position: absolute;
   left: 12%;
   height: 2px;
@@ -326,26 +331,25 @@ a {
 }
 
 /*activeクラスが付与されると線が回転して×に*/
-.btn-menu.open {
-  z-index: 2000;
+.btn-menu.open span {
+  background: var(--white);
 }
 .btn-menu.open span:nth-of-type(1) {
   top: 18px;
-  left: 18px;
   transform: translateY(6px) rotate(-45deg);
-  width: 30%;
+  width: 70%;
 }
 .btn-menu.open span:nth-of-type(2) {
   opacity: 0; /*真ん中の線は透過*/
 }
 .btn-menu.open span:nth-of-type(3) {
   top: 30px;
-  left: 18px;
   transform: translateY(-6px) rotate(45deg);
-  width: 30%;
+  width: 70%;
 }
 
 /* ダイアログ */
+
 .dialog-info > div:not(.tags) {
   display: inline-flex;
   margin-right: 0.8rem;
@@ -442,4 +446,23 @@ router-link {
 #limited-event > .carousel__viewport,
 #limited-event > .carousel__viewport > * {
   padding-right: 1.2em !important;
+}
+
+/* アイコン */
+.fixed-icons {
+  box-sizing: border-box;
+  position: fixed;
+  right: 1em;
+  bottom: 1.4em;
+}
+
+.fixed-icon-img {
+  width: 2em;
+  height: auto;
+  transition: 0.2s;
+}
+.menu-round.open .fixed-icon-img {
+  width: 4.5em;
+  height: auto;
+  transition-delay: 0.4s;
 }

@@ -25,28 +25,22 @@
           </div>
           <div class="py-4">
             <h4 class="pb-3">終日開催</h4>
-            <!-- <div class=""> -->
             <Carousel
               id="all-day-event"
-              :itemsToShow="2.2"
+              :itemsToShow="1.2"
               :breakpoints="breakpoints_allDay"
               snapAlign="start"
               :transition="500"
             >
               <Slide v-for="(value, key) in this.allDayEventsData" :key="value">
-                <div
-                  class="carousel__item"
-                  :style="value.img"
-                  @click="openDialog(value, key)"
-                >
-                  <!-- <div></div> -->
+                <div class="carousel__item" @click="openDialog(value, key)">
+                  <div class="carousel-img" :style="value.img"></div>
                   <p :style="value.fontsize" class="white">
                     <b>{{ value.title }}</b>
                   </p>
                 </div>
               </Slide>
             </Carousel>
-            <!-- </div> -->
           </div>
           <div class="py-4" id="timeline">
             <h4 class="pb-3">限定プログラム</h4>
@@ -58,7 +52,7 @@
                   </template>
                 </v-timeline-item>
                 <template v-for="time in timesData" :key="time">
-                  <v-timeline-item height="32px" size="xx-small">
+                  <v-timeline-item height="48px" size="xx-small">
                     <template v-slot:opposite>
                       <span class="hack"
                         ><b>{{ time }}</b></span
@@ -67,7 +61,7 @@
                   </v-timeline-item>
                 </template>
 
-                <v-timeline-item height="132px" size="xx-small">
+                <v-timeline-item height="148px" size="xx-small">
                   <template v-slot:opposite>
                     <span class="hack"><b>16:00</b></span>
                   </template>
@@ -75,19 +69,21 @@
               </v-timeline>
               <div class="timeline-item pt-13 pl-1">
                 <p>入場開始</p>
-                <div style="padding-top: 94px">
+                <br />
+                <p>&#xFE19;</p>
+                <div style="padding-top: 74px">
                   <template
                     v-for="(timeSchedule, key) in this.timeScheduleData"
                     :key="timeSchedule"
                   >
                     <div
                       :style="
-                        key != lastTimeScheduleKey ? 'margin-bottom:48px' : ''
+                        key != lastTimeScheduleKey ? 'margin-bottom:42px' : ''
                       "
                     >
                       <Carousel
                         id="limited-event"
-                        :itemsToShow="2.4"
+                        :itemsToShow="1"
                         :breakpoints="breakpoints_limited"
                         snapAlign="center"
                         :transition="500"
@@ -110,10 +106,13 @@
                                 value.time
                               )
                             "
-                            :style="
-                              this.limitedEventsData[value.eventDetailKey].img
-                            "
                           >
+                            <div
+                              class="carousel-img"
+                              :style="
+                                this.limitedEventsData[value.eventDetailKey].img
+                              "
+                            ></div>
                             <div>
                               <p
                                 class="white"
@@ -133,7 +132,13 @@
                                 }}</b>
                               </p>
                               <p
-                                style="font-size: 0.9em; text-align: center"
+                                :style="
+                                  this.limitedEventsData[value.eventDetailKey]
+                                    .isLongTitle
+                                    ? 'font-size: 0.78em'
+                                    : 'font-size: 0.9em'
+                                "
+                                style="text-align: center"
                                 class="white"
                               >
                                 <b>{{
@@ -148,7 +153,8 @@
                     </div>
                   </template>
                 </div>
-                <p style="padding-top: 48px">オープンキャンパス終了</p>
+                <p style="padding-top: 35px; padding-bottom: 20px">&#xFE19;</p>
+                <p>オープンキャンパス終了</p>
               </div>
             </div>
           </div>
@@ -195,7 +201,7 @@ export default {
           itemsToShow: 1.6,
         },
         400: {
-          itemsToShow: 2.4,
+          itemsToShow: 2.0,
         },
         540: {
           itemsToShow: 3.2,
@@ -240,12 +246,8 @@ export default {
       this.clickedEventTime = time;
     },
     openMap(key) {
-      // console.log(key);
       this.$emit("open-map", key);
     },
-    // isLastTSData() {
-    //   return true;
-    // },
   },
   mounted() {
     this.allDayEventsData = this.$store.getters["eventsStore/getAllDayEvents"];
@@ -278,17 +280,30 @@ p {
   font-weight: var(--medium);
 }
 .carousel__item {
-  z-index: -1;
-  background-size: cover;
-  background-position: center center;
+  position: relative;
+  z-index: 0;
   height: 100%;
   width: 100%;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* vertical-align: top; */
   border-radius: 0.2rem;
+}
+
+.carousel-img {
+  content: "";
+  background-image: url("../images/bg.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 0.2rem;
+  filter: blur(0.1rem);
+  z-index: -1;
 }
 
 .carousel__item::after {
@@ -299,12 +314,13 @@ p {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     181deg,
     rgba(36, 7, 77, 0.6),
     rgba(23, 4, 48, 0.63) 68%,
     rgba(0, 0, 0, 0.68)
-  );
+  ); */
+  background-color: rgba(36, 7, 77, 0.5);
   border-radius: 0.2rem;
 }
 
@@ -318,11 +334,4 @@ p {
   flex-grow: 1;
   flex-wrap: nowrap;
 }
-/* .carousel__slide {
-  margin: 0 0.1em;
-}
-
-#timeline .carousel__slide {
-  align-items: baseline;
-} */
 </style>

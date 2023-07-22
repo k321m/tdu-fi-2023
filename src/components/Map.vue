@@ -9,12 +9,10 @@
     <div id="map">
       <div class="map py-4">
         <div class="v-container">
-          <!-- <div class="py-4 px-4"> -->
           <div class="py-4">
             <h4 class="pl-5 pb-2">地図</h4>
             <h1 class="hack-h1">>Map</h1>
           </div>
-          <!-- <div class="px-4 py-2"> -->
           <div class="py-2">
             <div v-for="(data, key) in allMapData" :key="key">
               <Card
@@ -53,11 +51,16 @@ export default {
   },
   methods: {
     openViewDialog(data) {
-      this.clickedMapData = data.img;
+      this.clickedMapData = [data.img];
       this.isViewDialogVisible = true;
     },
-    openViewDialogByKey(key) {
-      this.openViewDialog(this.allMapData[key]);
+    openViewDialogByKey(mapId) {
+      let mapData = [];
+      for (let key in mapId) {
+        mapData.push(this.allMapData[mapId[key]].img);
+      }
+      this.clickedMapData = mapData;
+      this.isViewDialogVisible = true;
     },
   },
   mounted() {
@@ -67,15 +70,6 @@ export default {
 </script>
 
 <style scoped>
-/* .background {
-  position: relative;
-  background-color: white;
-  background-size: cover;
-  z-index: 0;
-  width: calc(100% - 1.4em);
-  border-radius: 0.8rem 0 0 0.8rem;
-  left: 1.4em;
-} */
 .map {
   position: relative;
   text-align: end;

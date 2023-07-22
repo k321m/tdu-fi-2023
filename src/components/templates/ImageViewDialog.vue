@@ -6,7 +6,13 @@
           <v-icon style="color: var(--white)">mdi-close</v-icon>
         </div>
       </div>
-      <img style="width: 100%; height: auto" :src="imgData" />
+      <template v-for="data in imgData">
+        <img
+          style="width: 100%; height: auto; margin-bottom: 1em"
+          :src="data"
+        />
+      </template>
+      <!-- <img style="width: 100%; height: auto" :src="imgData" /> -->
     </div>
   </v-dialog>
 </template>

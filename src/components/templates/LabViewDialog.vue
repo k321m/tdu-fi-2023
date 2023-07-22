@@ -118,7 +118,6 @@ export default {
       });
     },
     openMapDialog() {
-      // console.log(this.labData.mapKey);
       this.$emit("open-map-dialog", this.labData.mapKey);
     },
   },

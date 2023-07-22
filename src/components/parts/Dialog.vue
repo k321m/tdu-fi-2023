@@ -54,10 +54,11 @@ export default {
   display: flex;
   flex-direction: column;
   width: 90dvw;
-  max-width: 600px;
-  min-height: 70dvh;
-  max-height: 90dvh;
+  max-width: 400px;
+  min-height: 400px;
+  max-height: 648px;
   background-color: white;
   border-radius: 0.8rem;
+  margin: auto;
 }
 </style>
