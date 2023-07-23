@@ -178,7 +178,7 @@ export const store = createStore({
         "doneMyNoteTutorial",
         "addQueCounter",
         "myNote",
-        "clearedMissionNum",
+        "missions",
       ],
     }),
   ],
