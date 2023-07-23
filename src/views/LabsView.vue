@@ -2,6 +2,7 @@
   <LabViewDialog
     :view="isViewDialogVisible"
     @update:view="isViewDialogVisible = $event"
+    @close-dialog="isViewDialogVisible = false"
     :labData="clickedLabData"
     :labKey="clickedLabKey"
     @open-map-dialog="openMapDialog"

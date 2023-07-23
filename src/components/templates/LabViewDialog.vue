@@ -2,7 +2,7 @@
   <Dialog
     :model-value="view"
     @update:model-value="$emit('update:view', $event)"
-    @close-dialog="view = false"
+    @close-dialog="$emit('close-dialog')"
   >
     <!-- アラート -->
     <template v-slot:alert>
@@ -18,6 +18,9 @@
       <template v-else>
         <span class="purple">展示なし</span>
       </template>
+      <template v-if="labData.caution"
+        ><span class="small pink"> {{ labData.caution }}</span></template
+      >
     </template>
     <!-- タイトル -->
     <template v-slot:title>

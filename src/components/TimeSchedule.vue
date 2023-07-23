@@ -3,6 +3,7 @@
     <TimeScheduleDialog
       :view="isDialogVisible"
       @update:view="isDialogVisible = $event"
+      @close-dialog="isDialogVisible = false"
       :eventData="clickedEventData"
       :eventKey="clickedEventKey"
       :eventTime="clickedEventTime"

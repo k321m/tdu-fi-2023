@@ -1,6 +1,6 @@
 <template>
-  <router-link to="/my-note">
-    <img src="/src/assets/mynote-3d-icon.png" class="fixed-icon-img" />
+  <router-link to="/my-note" :class="className">
+    <img src="/src/assets/mynote-3d-icon.png" class="menu-icon-img" />
   </router-link>
 </template>
 <!-- <transition :name="doneMyNoteTutorial ? 'fade' : ''">
@@ -18,28 +18,31 @@
 <script>
 export default {
   name: "MyNoteIcon",
+  props: {
+    className: String,
+  },
   data() {
     return {
       doneMyNoteTutorial: false,
-      isArrowVisible: true,
+      // isArrowVisible: true,
     };
   },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      if (this.isArrowVisible) {
-        this.isArrowVisible = window.scrollY <= 500;
-      }
-    },
-    iconAnimationStyleSet() {
-      return {
-        loudAnimation: this.doneMyNoteTutorial,
-        quietAnimation: !this.doneMyNoteTutorial,
-      };
-    },
-  },
+  // created() {
+  //   window.addEventListener("scroll", this.handleScroll);
+  // },
+  // methods: {
+  // handleScroll() {
+  //   if (this.isArrowVisible) {
+  //     this.isArrowVisible = window.scrollY <= 500;
+  //   }
+  // },
+  // iconAnimationStyleSet() {
+  //   return {
+  //     loudAnimation: this.doneMyNoteTutorial,
+  //     quietAnimation: !this.doneMyNoteTutorial,
+  //   };
+  // },
+  // },
   mounted() {
     this.doneMyNoteTutorial = !this.$store.getters.getDoneMyNoteTutorial;
     this.isArrowVisible = this.doneMyNoteTutorial;
