@@ -1,6 +1,6 @@
 <template>
   <a :class="className">
-    <img src="/src/assets/howto-3d-icon.png" class="fixed-icon-img" />
+    <img src="/src/assets/howto-3d-icon.png" class="menu-icon-img" />
   </a>
 </template>
 <script>

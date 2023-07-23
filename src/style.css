@@ -6,6 +6,7 @@
   --purple: #360a73;
   --light-purple: #d3d1ff;
   --pink: #e345e6;
+  --luminous-pink: #fa00ff;
   --gradient: linear-gradient(
     108deg,
     rgba(235, 87, 237, 1) 0%,
@@ -448,25 +449,16 @@ router-link {
   padding-right: 1.2em !important;
 }
 
-/* アイコン */
+/* 右下の固定アイコン */
+
+/* エリア */
 .fixed-icons {
   box-sizing: border-box;
   position: fixed;
   right: 1em;
   bottom: 1.4em;
 }
-
-.fixed-icon-img {
-  width: 2em;
-  height: auto;
-  transition: 0.2s;
-}
-.menu-round.toggle .fixed-icon-img {
-  width: 4.5em;
-  height: auto;
-  transition-delay: 0.4s;
-}
-
+/* ＋トグルボタン背景 */
 .menu-toggle {
   width: 3.5em;
   height: 3.5em;
@@ -474,7 +466,7 @@ router-link {
   bottom: 0;
   right: 0;
   border-radius: 50%;
-  background-color: #fa00ff;
+  background-color: var(--luminous-pink);
   box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
   z-index: 100;
   display: flex;
@@ -482,10 +474,12 @@ router-link {
   align-items: center;
   transition: 0.1s;
 }
+/* +トグルボタン背景 ON状態 */
 .menu-toggle.toggle {
   animation-name: menu-toggle-animation;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  filter: drop-shadow(0px 0px 1px var(--luminous-pink));
 }
 @keyframes menu-toggle-animation {
   50% {
@@ -495,7 +489,7 @@ router-link {
   80% {
     width: 3em;
     height: 3em;
-    background-color: #fa00ff;
+    background-color: var(--luminous-pink);
   }
   100% {
     width: 3em;
@@ -503,7 +497,7 @@ router-link {
     background-color: var(--black);
   }
 }
-
+/* +トグルボタン+ */
 .menu-toggle .plus {
   font-size: 2em;
   color: white;
@@ -511,7 +505,7 @@ router-link {
   z-index: 101;
   transition: 0.1s;
 }
-
+/* +トグルボタン+ ON状態 */
 .menu-toggle .plus.toggle {
   animation-name: plus-animation;
   animation-duration: 0.2s;
@@ -521,41 +515,50 @@ router-link {
 }
 @keyframes plus-animation {
   100% {
-    color: #fa00ff;
+    color: var(--luminous-pink);
     transform: rotate(135deg);
   }
 }
-
-.menu-icon {
-  position: absolute;
-}
-
+/* 扇状に展開するエリア */
 .menu-round {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 99;
 }
-
+/* +ボタンに隠れている時のアイコン */
 .menu-round .menu-icon {
+  position: absolute;
   right: 0.25em;
   bottom: 0.25em;
   transition: 0.1s;
 }
-
+/* 展開時のアイコン */
 .menu-round.toggle .menu-icon:nth-of-type(1) {
   right: 0.2em;
   bottom: 8em;
-  transition-delay: 0.44s;
+  transition-delay: 0.46s;
 }
 .menu-round.toggle .menu-icon:nth-of-type(2) {
   right: 5.8em;
   bottom: 5.8em;
-  transition-delay: 0.42s;
+  transition-delay: 0.44s;
 }
-
 .menu-round.toggle .menu-icon:nth-of-type(3) {
   right: 8.8em;
   bottom: 0em;
   transition-delay: 0.4s;
+}
+/* +トグルボタンに隠れている時のアイコン画像 */
+.menu-icon-img {
+  width: 2em;
+  height: auto;
+  transition: 0.2s;
+}
+/* +トグルボタンから出ている時のアイコン画像 */
+.menu-round.toggle .menu-icon-img {
+  width: 4.5em;
+  height: auto;
+  transition-delay: 0.4s;
+  filter: drop-shadow(0px 0px 2px var(--light-purple));
 }

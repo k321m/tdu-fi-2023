@@ -5,13 +5,13 @@
       <div class="status-of-achievement vdl-logo">
         <p
           style="
-            font-size: 1.02rem;
+            font-size: 1.1rem;
             color: var(--white);
             transform: translate(-50%, -50%);
             white-space: nowrap;
           "
         >
-          0<span style="font-size: 0.5rem">/4</span>
+          0<span style="font-size: 0.6rem">/4</span>
         </p>
       </div>
     </div>
@@ -25,8 +25,10 @@ export default {
 </script>
 
 <style scoped>
+/* 吹き出しエリア */
 .menu-round .balloon {
   opacity: 0;
+  z-index: 1;
 }
 .balloon-contents {
   position: relative;
@@ -36,18 +38,13 @@ export default {
 .balloon-contents img {
   width: 100%;
   height: auto;
+  filter: drop-shadow(0px 0px 1px var(--luminous-pink));
 }
-.status-of-achievement {
-  position: absolute;
-  top: 54%;
-  left: 52%;
-  display: flex;
-}
-
+/* 展開時の吹き出し */
 .menu-round.toggle .balloon {
   position: absolute;
-  top: -1em;
-  right: -1.5em;
+  top: -0.8em;
+  right: -1.7em;
   display: flex;
   justify-content: center;
   animation: balloon-animation 0.5s cubic-bezier(0.12, 0, 0.39, 0) 0.6s 1
@@ -55,7 +52,6 @@ export default {
   line-height: 1rem;
   align-items: center;
 }
-
 @keyframes balloon-animation {
   0% {
     transform: translateY(-30px);
@@ -74,5 +70,12 @@ export default {
   100% {
     opacity: 1;
   }
+}
+/* 達成度合いエリア */
+.status-of-achievement {
+  position: absolute;
+  top: 57%;
+  left: 52%;
+  display: flex;
 }
 </style>

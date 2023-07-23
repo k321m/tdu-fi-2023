@@ -1,6 +1,6 @@
 <template>
   <router-link to="/my-note" :class="className">
-    <img src="/src/assets/mynote-3d-icon.png" class="fixed-icon-img" />
+    <img src="/src/assets/mynote-3d-icon.png" class="menu-icon-img" />
   </router-link>
 </template>
 <!-- <transition :name="doneMyNoteTutorial ? 'fade' : ''">

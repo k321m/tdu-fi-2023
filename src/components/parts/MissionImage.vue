@@ -1,5 +1,5 @@
 <template>
-  <img src="../../assets/mission-3d-icon.png" class="fixed-icon-img" />
+  <img src="../../assets/mission-3d-icon.png" class="menu-icon-img" />
 </template>
 
 <script>
