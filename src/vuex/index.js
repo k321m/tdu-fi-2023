@@ -18,6 +18,12 @@ export const store = createStore({
       questions: {},
       anything: { memo: "" },
     },
+    missions: {
+      isClearedMission1: false,
+      isClearedMission2: false,
+      isClearedMission3: false,
+      isCLearedMission4: false,
+    },
   },
   mutations: {
     savePassword(state, password) {
@@ -74,6 +80,18 @@ export const store = createStore({
       }
       // 項目ごとの削除
       delete this.state.myNote[obj.type][obj.key];
+    },
+    updateIsClearedMission1() {
+      this.state.missions.isClearedMission1 = true;
+    },
+    updateIsClearedMission2() {
+      this.state.missions.isClearedMission2 = true;
+    },
+    updateIsClearedMission3() {
+      this.state.missions.isClearedMission3 = true;
+    },
+    updateIsClearedMission4() {
+      this.state.missions.isClearedMission4 = true;
     },
   },
   getters: {
@@ -138,6 +156,11 @@ export const store = createStore({
       // console.log(detailData);
       return detailData;
     },
+    // クリア済みMissionの総数
+    getClearedMissionNum(state, getters) {
+      var count = Object.values(state.missions).filter((n) => n == true).length;
+      return count;
+    },
   },
   modules: {
     eventsStore,
@@ -150,7 +173,13 @@ export const store = createStore({
     createPersistedstate({
       key: "tdu-fi-2023oc",
       // localStorageに格納するもの指定
-      paths: ["password", "doneMyNoteTutorial", "addQueCounter", "myNote"],
+      paths: [
+        "password",
+        "doneMyNoteTutorial",
+        "addQueCounter",
+        "myNote",
+        "clearedMissionNum",
+      ],
     }),
   ],
 });

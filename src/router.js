@@ -84,25 +84,25 @@ export const router = createRouter({
       path: "/programming/question1",
       name: "question1",
       component: Question1,
-      meta: { require: true },
+      meta: { require: true, unclocked1: true },
     },
     {
       path: "/programming/question2",
       name: "question2",
       component: Question2,
-      meta: { require: true },
+      meta: { require: true, unclocked2: true },
     },
     {
       path: "/programming/question3",
       name: "question3",
       component: Question3,
-      meta: { require: true },
+      meta: { require: true, unclocked3: true },
     },
     {
       path: "/programming/question4",
       name: "question4",
       component: Question4,
-      meta: { require: true },
+      meta: { require: true, unclocked4: true },
     },
   ],
   scrollBehavior(to) {
@@ -139,6 +139,21 @@ router.beforeEach((to, from, next) => {
       next();
     }
   });
+
+  // Missionのクリア数に合わせたアクセス権限の設定
+  if (to.meta.unclocked1 && store.getters.getClearedMissionNum < 1) {
+    next({ name: "programming" });
+  }
+  if (to.meta.unclocked2 && store.getters.getClearedMissionNum < 2) {
+    next({ name: "programming" });
+  }
+  if (to.meta.unclocked3 && store.getters.getClearedMissionNum < 3) {
+    next({ name: "programming" });
+  }
+  if (to.meta.unclocked4 && store.getters.getClearedMissionNum < 4) {
+    next({ name: "programming" });
+  }
+  next();
 });
 
 const sha256 = async (text) => {
