@@ -1,12 +1,23 @@
 <template>
   <router-link to="/my-note">
-    <div class="balloon vdl-logo">
-      <!-- <b style="font-size: 0.4rem">達成</b> -->
-      <p class="denominator" style="color: var(--white)">0</p>
-      <p class="numerator" style="color: var(--white); font-size: 0.5rem">
-        <sub>/4</sub>
-      </p>
+    <div class="balloon">
+      <div class="balloon-contents">
+        <img src="../../assets/mission-speech-bubble.png" />
+        <div class="status-of-achievement vdl-logo">
+          <p
+            style="
+              font-size: 1.02rem;
+              color: var(--white);
+              transform: translate(-50%, -50%);
+              white-space: nowrap;
+            "
+          >
+            1<span style="font-size: 0.5rem">/4</span>
+          </p>
+        </div>
+      </div>
     </div>
+
     <img src="../../assets/mission-3d-icon.png" class="fixed-icon-img" />
   </router-link>
 </template>
@@ -21,38 +32,34 @@ export default {
 </script>
 
 <style scoped>
-.denominator {
+.balloon-contents {
   position: relative;
-  padding-right: 0.85rem;
-  padding-bottom: 0.2rem;
-  font-size: 1.05rem;
+  width: 2.8em;
+  height: 2.8em;
 }
-.numerator {
+.balloon-contents > img {
+  width: 100%;
+  height: auto;
+}
+.status-of-achievement {
   position: absolute;
-  top: 0.9rem;
-  right: 0.3rem;
+  top: 54%;
+  left: 52%;
+  display: flex;
 }
 .menu-round .balloon > * {
   opacity: 0;
-  transition: 0.2s;
 }
-.menu-round.open .balloon > *,
-.menu-round.open .balloon::before {
+.menu-round.open .balloon > * {
   opacity: 1;
 }
+
 .menu-round.open .balloon {
   position: absolute;
-  top: -0.8em;
-  right: -1.6em;
-  width: 2.8em;
-  height: 2.8em;
-  border-radius: 50%;
-  color: #ffffff;
-  font-size: 14px;
-  background-color: #fa00ff;
+  top: -1em;
+  right: -1.5em;
   opacity: 0;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   animation: balloon-animation-a03a0136 0.5s cubic-bezier(0.12, 0, 0.39, 0) 0.6s
     1 forwards;
@@ -78,24 +85,5 @@ export default {
   100% {
     opacity: 1;
   }
-}
-
-.balloon::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  left: -5px;
-  bottom: 0px;
-  border-right: 20px solid #fa00ff;
-  border-top: 16px solid transparent;
-  border-bottom: 8px solid transparent;
-  transform: rotate(327deg);
-  z-index: -1;
-  opacity: 0;
-}
-.menu-round .balloon::before {
-  opacity: 0;
 }
 </style>
