@@ -9,7 +9,7 @@
         <v-icon class="plus" :class="{ toggle: isToggle }">mdi-plus</v-icon>
       </span>
       <div class="menu-round" :class="{ toggle: isToggle }">
-        <MyNoteIcon :class="'menu-icon'" />
+        <HowToIcon :class="'menu-icon'" />
         <MyNoteIcon :class="'menu-icon'" />
         <MissionIcon :class="'menu-icon'" />
       </div>
@@ -20,6 +20,7 @@
 <script>
 import MyNoteIcon from "../parts/MyNoteIcon.vue";
 import MissionIcon from "./MissionIcon.vue";
+import HowToIcon from "../parts/HowToIcon.vue";
 export default {
   name: "FixedIcons",
   data() {
@@ -30,6 +31,7 @@ export default {
   components: {
     MyNoteIcon,
     MissionIcon,
+    HowToIcon,
   },
 };
 </script>
