@@ -1,13 +1,20 @@
 <template>
   <a :class="className">
+    <MissionDialog
+      :view="isMissionDialogVisible"
+      @update:view="isMissionDialogVisible = $event"
+      @close-dialog="isMissionDialogVisible = false"
+    />
     <SpeechBubble />
-    <MissionImage />
+    <MissionImage @click="openMissionDialog" />
   </a>
 </template>
 
 <script>
 import SpeechBubble from "../parts/SpeechBubble.vue";
 import MissionImage from "../parts/MissionImage.vue";
+import MissionDialog from "./MissionDialog.vue";
+
 export default {
   name: "MissionIcon",
   props: {
@@ -16,6 +23,17 @@ export default {
   components: {
     SpeechBubble,
     MissionImage,
+    MissionDialog,
+  },
+  data() {
+    return {
+      isMissionDialogVisible: false,
+    };
+  },
+  methods: {
+    openMissionDialog() {
+      this.isMissionDialogVisible = true;
+    },
   },
 };
 </script>
