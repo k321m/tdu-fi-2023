@@ -60,7 +60,6 @@
 
       <a
         v-for="linkData in labData.links"
-        class=""
         style="font-size: 0.9em; display: block; margin-bottom: 0.2em"
         :href="linkData['url']"
         >{{ linkData["name"] }}</a

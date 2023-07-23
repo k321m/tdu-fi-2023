@@ -72,10 +72,21 @@ export const router = createRouter({
   ],
   scrollBehavior(to) {
     if (to.hash) {
-      return { el: to.hash };
+      // 特定のIDが指定された場合のみスクロール処理を行う
+      const element = document.querySelector(to.hash);
+      if (element) {
+        const offset = 72; // 72px下にスクロール
+        const y = element.getBoundingClientRect().top + window.scrollY - offset;
+        return { top: y, behavior: "smooth" };
+      }
     } else {
-      return { top: 0 };
+      return { top: 0, behavior: "smooth" };
     }
+    // if (to.hash) {
+    //   return { el: to.hash };
+    // } else {
+    //   return { top: 0 };
+    // }
   },
 });
 

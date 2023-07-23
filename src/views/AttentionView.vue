@@ -63,11 +63,11 @@
       </ul>
     </div>
 
-    <div
+    <!-- <div
       id="attention-mynote"
       style="padding-top: 72px; margin-top: -72px"
-    ></div>
-    <div class="item">
+    ></div> -->
+    <div id="attention-mynote" class="item">
       <h3>5. MyNoteについて</h3>
       <p>
         本ウェブサイトのMyNoteという機能では、登録した項目やメモなどのデータを保存するために「localStorage（ローカルストレージ）」と呼ばれる技術を使用しています。

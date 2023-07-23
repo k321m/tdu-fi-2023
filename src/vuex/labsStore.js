@@ -41,7 +41,7 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 寺田真敏教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/isl1/",
           },
           {
@@ -74,7 +74,7 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 大野誠寛教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/cll/",
           },
           {
@@ -110,7 +110,7 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 高橋時市郎教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/vcl/",
           },
           {
@@ -140,7 +140,7 @@ export default {
         placeOfEmployment: ["コモドソリューションズ", "ジャステック"],
         links: [
           {
-            name: "▶︎ 小玉周平助教（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/vcl-2/",
           },
           {
@@ -176,7 +176,7 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 鉄谷信二教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/mal/",
           },
           {
@@ -212,12 +212,20 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 井ノ上寛人助教（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
           },
           {
             name: "▶︎ おすすめ質問TOP10",
             url: "/questions-top10",
+          },
+          {
+            name: "▶︎ インタラクティブメディアとデザイン（講義動画）",
+            url: "/lecture-video#lecture_3",
+          },
+          {
+            name: "▶︎ コンピュータプログラミングⅠ・II（講義動画）",
+            url: "/lecture-video#lecture_5",
           },
         ],
         img: labo06Img,
@@ -242,7 +250,7 @@ export default {
         placeOfEmployment: ["KORG", "綜合警備保障(ALSOK)"],
         links: [
           {
-            name: "▶︎ 池田雄介教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/acl/",
           },
           {
@@ -278,12 +286,20 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 森谷友昭准教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/igl/",
           },
           {
             name: "▶︎ おすすめ質問TOP10",
             url: "/questions-top10",
+          },
+          {
+            name: "▶︎ CGモデリングおよび演習（講義動画）",
+            url: "/lecture-video#lecture_6",
+          },
+          {
+            name: "▶︎ CGレンダリングおよび演習（講義動画）",
+            url: "/lecture-video#lecture_7",
           },
         ],
         img: labo08Img,
@@ -314,7 +330,7 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 岩井将行教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/cps/",
           },
           {
@@ -350,12 +366,20 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 増田英孝教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/cdl/",
           },
           {
             name: "▶︎ おすすめ質問TOP10",
             url: "/questions-top10",
+          },
+          {
+            name: "▶︎ 情報メディア学基礎（講義動画）",
+            url: "/lecture-video#lecture_2",
+          },
+          {
+            name: "▶︎ データベースプログラミング演習（講義動画）",
+            url: "/lecture-video#lecture_4",
           },
         ],
         img: labo10Img,
@@ -385,7 +409,7 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 山田剛一講師（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/cll_lecturer/",
           },
           {
@@ -419,7 +443,7 @@ export default {
         ],
         links: [
           {
-            name: "▶︎ 中島克人教授（情報メディア学科公式HP）",
+            name: "",
             url: "https://www.im.dendai.ac.jp/laboratory/cal/",
           },
           {

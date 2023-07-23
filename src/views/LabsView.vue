@@ -79,6 +79,7 @@
             :key="key"
             @click="openLabViewDialog(key)"
             :img="allLabsData[key].img"
+            :id="key"
           >
             <template v-slot:title>
               {{ allLabsData[key].cardTitle }}
