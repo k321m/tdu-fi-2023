@@ -28,11 +28,11 @@
   }</code>
     </pre>
       </div>
-      <div v-for="value in this.choices" :key="value">
-        <QuestionSelectButton class="my-2" @click="selected(value.code)">
-          <template v-slot:code>{{ value.code }}</template>
-        </QuestionSelectButton>
-      </div>
+      <ProgrammingSelectButton
+        :choices="this.choices"
+        @selected-value="changeHoleValue"
+      >
+      </ProgrammingSelectButton>
       <div class="btn btn-pink my-5" @click="execute()">実行</div>
       <div class="p5-canvas ma-7">
         <div id="canvas"></div>
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import QuestionSelectButton from "../../components/QuestionSelectButton.vue";
+import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -55,7 +55,7 @@ import {
 export default {
   name: "ReturnBallView",
   components: {
-    QuestionSelectButton,
+    ProgrammingSelectButton,
   },
   data() {
     return {
@@ -87,9 +87,9 @@ export default {
     this.p5Value = new p5(p5Setup);
   },
   methods: {
-    selected(code) {
+    changeHoleValue(index) {
       if (!this.executedFlag) {
-        this.holeValue = code;
+        this.holeValue = this.choices[index].code;
       }
     },
     execute() {
