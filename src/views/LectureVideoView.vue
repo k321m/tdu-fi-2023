@@ -2,6 +2,7 @@
   <LectureVideoViewDialog
     :view="isDialogVisible"
     @update:view="isDialogVisible = $event"
+    @close-dialog="isDialogVisible = false"
     :lectureData="clickedLectureData"
   ></LectureVideoViewDialog>
   <div id="contents">

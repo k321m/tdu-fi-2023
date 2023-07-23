@@ -12,7 +12,6 @@
           :src="data"
         />
       </template>
-      <!-- <img style="width: 100%; height: auto" :src="imgData" /> -->
     </div>
   </v-dialog>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/my-note">
+  <a :class="className">
     <div class="balloon">
       <div class="balloon-contents">
         <img src="../../assets/mission-speech-bubble.png" />
@@ -12,19 +12,21 @@
               white-space: nowrap;
             "
           >
-            1<span style="font-size: 0.5rem">/4</span>
+            0<span style="font-size: 0.5rem">/4</span>
           </p>
         </div>
       </div>
     </div>
-
     <img src="../../assets/mission-3d-icon.png" class="fixed-icon-img" />
-  </router-link>
+  </a>
 </template>
 
 <script>
 export default {
   name: "MissionIcon",
+  props: {
+    className: String,
+  },
   created() {
     window.addEventListener("scroll", this.handleScroll);
   },
@@ -50,11 +52,11 @@ export default {
 .menu-round .balloon > * {
   opacity: 0;
 }
-.menu-round.open .balloon > * {
+.menu-round.toggle .balloon > * {
   opacity: 1;
 }
 
-.menu-round.open .balloon {
+.menu-round.toggle .balloon {
   position: absolute;
   top: -1em;
   right: -1.5em;

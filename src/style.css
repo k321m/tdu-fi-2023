@@ -461,7 +461,7 @@ router-link {
   height: auto;
   transition: 0.2s;
 }
-.menu-round.open .fixed-icon-img {
+.menu-round.toggle .fixed-icon-img {
   width: 4.5em;
   height: auto;
   transition-delay: 0.4s;

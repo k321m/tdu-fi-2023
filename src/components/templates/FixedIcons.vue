@@ -1,17 +1,22 @@
 <template>
-  <div :class="{ background: isOpen }">
+  <MissionDialog
+    :view="isMissionDialogVisible"
+    @update:view="isMissionDialogVisible = $event"
+    @close-dialog="isMissionDialogVisible = false"
+  />
+  <div :class="{ background: isToggle }">
     <div class="fixed-icons">
       <span
         class="menu-toggle"
-        :class="{ open: isOpen }"
-        @click="isOpen = !isOpen"
+        :class="{ toggle: isToggle }"
+        @click="isToggle = !isToggle"
       >
-        <v-icon class="plus" :class="{ open: isOpen }">mdi-plus</v-icon>
+        <v-icon class="plus" :class="{ toggle: isToggle }">mdi-plus</v-icon>
       </span>
-      <div class="menu-round" :class="{ open: isOpen }">
-        <MyNoteIcon class="menu-icon" />
-        <MyNoteIcon class="menu-icon" />
-        <MissionIcon class="menu-icon" />
+      <div class="menu-round" :class="{ toggle: isToggle }">
+        <MyNoteIcon :class="'menu-icon'" />
+        <MyNoteIcon :class="'menu-icon'" />
+        <MissionIcon :class="'menu-icon'" @click="openMissionDialog" />
       </div>
     </div>
   </div>
@@ -20,16 +25,24 @@
 <script>
 import MyNoteIcon from "../parts/MyNoteIcon.vue";
 import MissionIcon from "../parts/MissionIcon.vue";
+import MissionDialog from "./MissionDialog.vue";
 export default {
   name: "FixedIcons",
+  data() {
+    return {
+      isToggle: false,
+      isMissionDialogVisible: false,
+    };
+  },
   components: {
     MyNoteIcon,
     MissionIcon,
+    MissionDialog,
   },
-  data() {
-    return {
-      isOpen: false,
-    };
+  methods: {
+    openMissionDialog() {
+      this.isMissionDialogVisible = true;
+    },
   },
 };
 </script>
@@ -60,7 +73,7 @@ export default {
   align-items: center;
   transition: 0.1s;
 }
-.menu-toggle.open {
+.menu-toggle.toggle {
   animation-name: menu-toggle-animation;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
@@ -90,7 +103,7 @@ export default {
   transition: 0.1s;
 }
 
-.plus.open {
+.plus.toggle {
   animation-name: plus-animation;
   animation-duration: 0.2s;
   animation-delay: 0.4s;
@@ -121,19 +134,20 @@ export default {
   transition: 0.1s;
 }
 
-.menu-round.open .menu-icon:nth-of-type(1) {
+.menu-round.toggle .menu-icon:nth-of-type(1) {
   right: 0.2em;
   bottom: 8em;
   transition-delay: 0.44s;
 }
-.menu-round.open .menu-icon:nth-of-type(2) {
+.menu-round.toggle .menu-icon:nth-of-type(2) {
   right: 5.8em;
   bottom: 5.8em;
   transition-delay: 0.42s;
 }
-.menu-round.open .menu-icon:nth-of-type(3) {
+
+.menu-round.toggle .menu-icon:nth-of-type(3) {
   right: 8.8em;
-  bottom: 0.2em;
+  bottom: 0em;
   transition-delay: 0.4s;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/my-note">
+  <router-link to="/my-note" :class="className">
     <img src="/src/assets/mynote-3d-icon.png" class="fixed-icon-img" />
   </router-link>
 </template>
@@ -18,6 +18,9 @@
 <script>
 export default {
   name: "MyNoteIcon",
+  props: {
+    className: String,
+  },
   data() {
     return {
       doneMyNoteTutorial: false,

@@ -2,7 +2,7 @@
   <Dialog
     :model-value="view"
     @update:model-value="$emit('update:view', $event)"
-    @close-dialog="view = false"
+    @close-dialog="$emit('close-dialog')"
   >
     <!-- サブタイトル -->
     <template v-slot:sub-title>
