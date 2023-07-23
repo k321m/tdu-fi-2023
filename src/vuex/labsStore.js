@@ -327,7 +327,7 @@ export default {
       },
       labo_10: {
         eventType: "終日開催",
-        display: false,
+        display: true,
         cardTitle: "Web工学研究室",
         title: "Web工学研究室",
         professor: {
@@ -363,7 +363,7 @@ export default {
       },
       labo_11: {
         eventType: "終日開催",
-        display: false,
+        display: true,
         cardTitle: "知的メディア研究グループ",
         title: "知的メディア研究グループ",
         professor: {
@@ -399,6 +399,7 @@ export default {
       labo_12: {
         eventType: "終日開催",
         display: true,
+        caution: "※7/29のみ",
         cardTitle: "知的計算システム研究室",
         title: "知的計算システム研究室",
         professor: {

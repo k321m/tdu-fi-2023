@@ -186,7 +186,8 @@ small,
   }
 }
 /* 白いシート */
-.time-schedule::before {
+.time-schedule::before,
+.department-video::before {
   content: "";
   display: block;
   width: 94%;

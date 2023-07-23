@@ -1,76 +1,55 @@
 <template>
-  <LectureVideoViewDialog
-    :view="isDialogVisible"
-    @update:view="isDialogVisible = $event"
-    :lectureData="clickedLectureData"
-  ></LectureVideoViewDialog>
   <div id="contents">
-    <div class="pa-4">
+    <div class="py-4">
       <!-- ページタイトル -->
-      <ContentTitle>
+      <ContentTitle class="px-4 pb-6">
         <template v-slot:jp-title>学科紹介</template>
         <template v-slot:title>>Department</template>
         <template v-slot:info>
-          情報メディア学科で実際に行われたオンライン講義を約10~15分ほどにまとめた動画です。気になる講義の体験はもちろん、オンライン／ハイブリッド講義の感覚を掴むことができます。情報メディア学科で受講できるその他の講義は、配布パンプレットまたは展示ポスターをご覧ください。
+          情報メディア学科では、ITサービスを研究・開発するために必要とされるコンピュータサイエンスと、多様性の時代に求められる創造力、表現力、感性を養うデジタルメディア技術について学ぶことができます。
         </template>
       </ContentTitle>
       <!-- end ページタイトル -->
-      <!-- 講義動画一覧 -->
-      <section class="pt-6">
-        <h3 class="pb-4">
-          講義動画一覧<span class="pl-3"
-            >{{ Object.keys(allLecturesData).length }}件</span
-          >
-        </h3>
-        <!-- 講義動画カード -->
-        <div v-for="(data, key) in allLecturesData" :key="key">
-          <Card :key="key" @click="openViewDialog(key)" :img="data.img">
-            <template v-slot:title>
-              {{ data.cardTitle }}
-            </template>
-          </Card>
+      <section>
+        <div class="department-video py-6">
+          <div class="v-container">
+            <h2 class="pb-3">カリキュラム紹介動画</h2>
+            <p>
+              情報メディア学科のカリキュラムの特色と卒業後の進路に関して、井ノ上
+              寛人助教から受験生へのメッセージを聞くことができます（この動画は、現在、電大YouTubeキャンパスに公開されていません）。
+            </p>
+            <iframe
+              width="100%"
+              height="auto"
+              src="https://www.youtube-nocookie.com/embed/r2HoMUIYbKc"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="pt-4"
+            ></iframe>
+          </div>
         </div>
-        <!-- end 講義動画カード -->
       </section>
-      <!-- end 講義動画一覧 -->
     </div>
     <FixedIcons />
   </div>
 </template>
 
 <script>
-import LectureVideoViewDialog from "../components/templates/LectureVideoViewDialog.vue";
 import FixedIcons from "../components/templates/FixedIcons.vue";
 import ContentTitle from "../components/ContentTitle.vue";
-import Card from "../components/parts/Card.vue";
 export default {
   name: "DepartmentView",
-  data() {
-    return {
-      allLecturesData: {}, //全講義動画のデータ辞書
-      isDialogVisible: false, //講義動画詳細モーダルの可視状態
-      clickedLectureData: Array, //選択された講義動画のデータ
-      clickedLectureKey: String, //選択された講義動画のデータのkey
-    };
-  },
   components: {
-    LectureVideoViewDialog,
     ContentTitle,
     FixedIcons,
-    Card,
-  },
-  methods: {
-    openViewDialog(key) {
-      this.isDialogVisible = true;
-      this.clickedLectureData = this.allLecturesData[key];
-      this.clickedLectureKey = key;
-    },
-  },
-  mounted() {
-    // jsonから全講義動画のデータを取得して変数に格納
-    this.allLecturesData =
-      this.$store.getters["lectureStore/getAllLecturesData"];
-    // console.log(this.allLecturesData);
   },
 };
 </script>
+
+<style scoped>
+.department-video {
+  position: relative;
+}
+</style>

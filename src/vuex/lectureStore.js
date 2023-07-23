@@ -1,5 +1,4 @@
 import { store } from "./index";
-import lectureImg1 from "/src/assets/lectures/カリキュラム紹介.svg";
 import lectureImg2 from "/src/assets/lectures/情報メディア学基礎.svg";
 import lectureImg3 from "/src/assets/lectures/インタラクティブメディアとデザイン.svg";
 import lectureImg4 from "/src/assets/lectures/データペースプログラミング演習.svg";
@@ -10,22 +9,6 @@ export default {
   namespaced: true,
   state: {
     lecture: {
-      lecture_1: {
-        cardTitle: "情報メディア学科\nカリキュラム紹介",
-        mordalTitle: "情報メディア学科\nカリキュラム紹介",
-        year_of_enrollment: "",
-        professor: [],
-        info: "情報メディア学科では、ITサービスを研究・開発するために必要とされるコンピュータサイエンスと、多様性の時代に求められる創造力、表現力、感性を養うデジタルメディア技術について学ぶことができます。この動画では、情報メディア学科のカリキュラムの特色と、卒業後の進路に関して、井ノ上 寛人助教から受験生へのメッセージを聞くことができます（この動画は、現在、電大YouTubeキャンパスに公開されていません）。",
-        links: [
-          {
-            name: "▶︎ 井ノ上寛人助教（情報メディア学科公式HP）",
-            url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
-          },
-        ],
-        img: lectureImg1,
-        video:
-          '<iframe width="100%" height="auto" src="https://www.youtube-nocookie.com/embed/r2HoMUIYbKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-      },
       lecture_2: {
         cardTitle: "情報メディア学基礎",
         mordalTitle: "情報メディア学基礎",
