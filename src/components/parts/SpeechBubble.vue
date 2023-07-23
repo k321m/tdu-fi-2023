@@ -4,6 +4,7 @@
       <img src="../../assets/mission-speech-bubble.png" />
       <div class="status-of-achievement vdl-logo">
         <p
+          class="flex-end"
           style="
             font-size: 1.1rem;
             color: var(--white);
@@ -11,7 +12,8 @@
             white-space: nowrap;
           "
         >
-          0<span style="font-size: 0.6rem">/4</span>
+          0
+          <span style="font-size: 0.6rem; line-height: 0.6rem">/4</span>
         </p>
       </div>
     </div>
