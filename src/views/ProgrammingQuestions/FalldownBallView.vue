@@ -8,13 +8,15 @@
       <div class="code-box">
         <pre>
     <code>
-  int x = 150;
-  int y = 100;
-  int d = 50;
+  int x, y; <span class="small">//ボールの中心座標</span>
+  int d;    <span class="small">//ボールの半径</span>
   void setup() { <span class="small">//一番初めに一度だけ実行される</span>
     size(300, 300); 
+    x = 150;
+    y = 100;
+    d = 50;
   } 
-  void draw() {  <span class="small">//毎フレーム実行される</span>
+  void draw() { <span class="small">//毎フレーム実行される</span>
     background(220);
     ellipse(x, <span class="hole-box">{{ holeValue }}</span>, d, d);
     y = y + 1;

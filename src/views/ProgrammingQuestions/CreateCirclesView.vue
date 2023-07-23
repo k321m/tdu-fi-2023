@@ -7,9 +7,9 @@
         <pre>
 <code>
   size(300, 300);
-  int x = 60;
-  int y = 150;
-  int d = 50;
+  int x = 60;  <span class="small">//円の中心のx座標</span>
+  int y = 150; <span class="small">//円の中心のy座標</span>
+  int d = 50;  <span class="small">//円の半径</span>
   for (int i = 1; <span class="hole-box">{{ holeValue }}</span>; i = i + 1) {
     ellipse(x, y, d, d);
     x = x + 60;
@@ -39,9 +39,9 @@ import {
   p5Slect2,
   p5Slect3,
   p5Slect4,
-} from "../../js/p5/createFourCircles";
+} from "../../js/p5/createCircles";
 export default {
-  name: "CreateFourCirclesView",
+  name: "CreateCirclesView",
   components: {
     QuestionSelectButton,
   },
