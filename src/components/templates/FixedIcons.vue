@@ -24,7 +24,7 @@
 
 <script>
 import MyNoteIcon from "../parts/MyNoteIcon.vue";
-import MissionIcon from "../parts/MissionIcon.vue";
+import MissionIcon from "./MissionIcon.vue";
 import MissionDialog from "./MissionDialog.vue";
 export default {
   name: "FixedIcons",

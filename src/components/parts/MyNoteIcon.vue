@@ -24,25 +24,25 @@ export default {
   data() {
     return {
       doneMyNoteTutorial: false,
-      isArrowVisible: true,
+      // isArrowVisible: true,
     };
   },
-  created() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    handleScroll() {
-      if (this.isArrowVisible) {
-        this.isArrowVisible = window.scrollY <= 500;
-      }
-    },
-    iconAnimationStyleSet() {
-      return {
-        loudAnimation: this.doneMyNoteTutorial,
-        quietAnimation: !this.doneMyNoteTutorial,
-      };
-    },
-  },
+  // created() {
+  //   window.addEventListener("scroll", this.handleScroll);
+  // },
+  // methods: {
+  // handleScroll() {
+  //   if (this.isArrowVisible) {
+  //     this.isArrowVisible = window.scrollY <= 500;
+  //   }
+  // },
+  // iconAnimationStyleSet() {
+  //   return {
+  //     loudAnimation: this.doneMyNoteTutorial,
+  //     quietAnimation: !this.doneMyNoteTutorial,
+  //   };
+  // },
+  // },
   mounted() {
     this.doneMyNoteTutorial = !this.$store.getters.getDoneMyNoteTutorial;
     this.isArrowVisible = this.doneMyNoteTutorial;
