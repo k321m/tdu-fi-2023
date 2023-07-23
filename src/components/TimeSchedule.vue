@@ -10,8 +10,8 @@
       @open-map="openMap"
     />
 
-    <div id="time-schedule" style="padding-top: 72px; margin-top: -72px"></div>
-    <div>
+    <!-- <div id="time-schedule" style="padding-top: 72px; margin-top: -72px"></div> -->
+    <div id="time-schedule">
       <div class="time-schedule py-4">
         <div class="v-container">
           <div class="py-4">

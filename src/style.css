@@ -427,6 +427,14 @@ div.v-dialog.v-overlay--active.v-theme--light > div.v-overlay__content {
   justify-content: center !important;
   align-items: center !important;
 }
+.v-dialog > .v-overlay__content {
+  max-height: calc(100% - 48px);
+  width: 100%;
+  max-width: 100%;
+  margin: 24px;
+  display: flex;
+  flex-direction: column;
+}
 
 .v-toolbar__content {
   justify-content: space-between;

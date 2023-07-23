@@ -22,6 +22,10 @@ export default {
         info: "毎週担当講師が変わり、情報メディア学科の専門分野について学ぶ必修科目です。\nこの動画では増田 英孝教授が「インターネットWeb検索のしくみ」について説明しています。",
         links: [
           {
+            name: "▶︎ Web工学研究室（研究室公開）",
+            url: "/labs#labo_10",
+          },
+          {
             name: "▶︎ 増田英孝教授（情報メディア学科公式HP）",
             url: "https://www.im.dendai.ac.jp/laboratory/cdl/",
           },
@@ -42,6 +46,10 @@ export default {
         ],
         info: "デザインの基礎を学ぶとともに、HTML、CSS、JavaScript、Node.jsなどのWebフロントエンドに関する技術を学ぶ科目です。\nこの動画では講義の概要や具体的なデザイン技術の基礎について説明しています。",
         links: [
+          {
+            name: "▶︎ (メディア応用研究室)（研究室公開）",
+            url: "/labs#labo_6",
+          },
           {
             name: "▶︎ 井ノ上寛人助教（情報メディア学科公式HP）",
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
@@ -64,6 +72,10 @@ export default {
         info: "SQL文を使ってデータベースの基礎や管理方法、アプリケーションとの連携方法などを学ぶ科目です。\nこの動画では表の作成、データの挿入、参照、上書き、削除の方法などを説明しています。",
         links: [
           {
+            name: "▶︎ Web工学研究室（研究室公開）",
+            url: "/labs#labo_10",
+          },
+          {
             name: "▶︎ 増田英孝教授（情報メディア学科公式HP）",
             url: "https://www.im.dendai.ac.jp/laboratory/cdl/",
           },
@@ -84,6 +96,10 @@ export default {
         ],
         info: "Processingというプログラミング言語、開発環境を用いてプログラミングの基礎を学ぶ必修科目です。\nこの動画では、井ノ上 寛人助教が魚を泳がせる演習課題の概要を説明しています。",
         links: [
+          {
+            name: "▶︎ (メディア応用研究室)（研究室公開）",
+            url: "/labs#labo_6",
+          },
           {
             name: "▶︎ 井ノ上寛人助教（情報メディア学科公式HP）",
             url: "https://www.im.dendai.ac.jp/laboratory/mal-2/",
@@ -109,6 +125,10 @@ export default {
         ],
         info: "CGの基礎となる平面図形および三次元立体をコンピュータ内で表現するモデリング技術を、講義と演習を通じて学ぶ科目です。\nこの動画では森谷 友昭准教授が行列計算を使った移動の方法について説明しています。",
         links: [
+          {
+            name: "▶︎ インタラクティブグラフィックス研究室（研究室公開）",
+            url: "/labs#labo_8",
+          },
           {
             name: "▶︎ 池田雄介教授（情報メディア学科公式HP）",
             url: "https://www.im.dendai.ac.jp/laboratory/acl/",
@@ -138,6 +158,10 @@ export default {
         ],
         info: "講義では画像生成（レンダリング）技術の理論とアルゴリズムを学び、演習で代表的なレンダリング技術であるZ-buffer法および光線追跡法を用いたプログラミングを学ぶ科目です。\nこの動画では森谷 友昭准教授がShaderを使って球体に光や影をレンダリングする方法を説明しています。",
         links: [
+          {
+            name: "▶︎ インタラクティブグラフィックス研究室（研究室公開）",
+            url: "/labs#labo_8",
+          },
           {
             name: "▶︎ 高橋時市郎教授（情報メディア学科公式HP）",
             url: "https://www.im.dendai.ac.jp/laboratory/vcl/",

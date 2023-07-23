@@ -50,9 +50,9 @@
 import { Carousel, Navigation, Pagination, Slide } from "vue3-carousel";
 import Button from "./parts/Button.vue";
 import "vue3-carousel/dist/carousel.css";
-import tutorialImg1 from "../assets/tutorial/tutorial01.svg";
+import tutorialImg1 from "../assets/tutorial/tutorial01.png";
 import tutorialImg2 from "../assets/tutorial/tutorial02.svg";
-import tutorialImg3 from "../assets/tutorial/tutorial03.svg";
+import tutorialImg3 from "../assets/tutorial/tutorial03.png";
 import tutorialImg4 from "../assets/tutorial/tutorial04.svg";
 
 export default {
@@ -119,12 +119,14 @@ export default {
 
 <style scoped>
 .background-dialog {
-  min-height: 88dvh;
-  max-height: 90dvh;
-  background-color: white;
-  border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
+  min-height: 586px;
+  max-height: 780px;
+  max-width: 480px;
+  background-color: white;
+  border-radius: 0.8rem;
+  margin: auto;
 }
 
 p {

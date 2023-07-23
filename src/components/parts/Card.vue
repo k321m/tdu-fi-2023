@@ -1,5 +1,5 @@
 <template>
-  <div id="card" class="mb-2 align-end">
+  <div class="card mb-2 align-end">
     <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
     <div class="card-img blur" :style="setImgStyle()"></div>
     <h3 class="card-title white v-responsive__sizer v-responsive__content">
@@ -34,7 +34,7 @@ export default {
 };
 </script>
 <style scoped>
-#card {
+.card {
   z-index: 0;
   height: 14em;
   display: flex;
@@ -47,7 +47,7 @@ export default {
     0px 1px 3px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));
   border-radius: 0.2rem;
 }
-#card .card-img {
+.card .card-img {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -59,7 +59,7 @@ export default {
   background-position: center center;
 }
 
-#card .card-img::after {
+.card .card-img::after {
   content: "";
   position: absolute;
   width: 100%;

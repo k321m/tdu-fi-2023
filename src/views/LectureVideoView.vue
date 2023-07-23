@@ -25,7 +25,12 @@
         </h3>
         <!-- 講義動画カード -->
         <div v-for="(data, key) in allLecturesData" :key="key">
-          <Card :key="key" @click="openViewDialog(key)" :img="data.img">
+          <Card
+            :key="key"
+            @click="openViewDialog(key)"
+            :img="data.img"
+            :id="key"
+          >
             <template v-slot:title>
               {{ data.cardTitle }}
             </template>
