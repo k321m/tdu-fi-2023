@@ -162,8 +162,7 @@ export default {
 }
 .carousel__item.carousel_image::after {
   content: "";
-  background: transparent
-    linear-gradient(0deg, #010326 0%, #a571d92f 100%, #55566e4e 100%) 0% 0%
+  background: transparent linear-gradient(0deg, #010440 0%, #ead1ff5e 80%) 0% 0%
     no-repeat padding-box;
   opacity: 0.8;
 }

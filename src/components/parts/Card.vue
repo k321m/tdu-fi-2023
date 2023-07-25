@@ -1,5 +1,5 @@
 <template>
-  <div class="card mb-2 align-end">
+  <div class="card mb-2 align-end mx-1">
     <div class="v-responsive__sizer" style="padding-bottom: 75%"></div>
     <div class="card-img blur" :style="setImgStyle()"></div>
     <h3 class="card-title white v-responsive__sizer v-responsive__content">
@@ -66,7 +66,10 @@ export default {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(36, 7, 77, 0.5);
+  background: transparent
+    linear-gradient(0deg, rgb(6 9 61 / 70%) 0%, rgba(36, 7, 77, 0.5) 50%) 0% 0%
+    no-repeat padding-box;
+  /* background-color: rgba(36, 7, 77, 0.5); */
 }
 .card-title {
   display: inline-grid;

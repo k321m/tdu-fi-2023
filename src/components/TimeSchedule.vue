@@ -321,7 +321,13 @@ p {
     rgba(23, 4, 48, 0.63) 68%,
     rgba(0, 0, 0, 0.68)
   ); */
-  background-color: rgba(36, 7, 77, 0.5);
+  /* background-color: rgba(36, 7, 77, 0.5); */
+  background-color: rgb(1 4 64 / 50%);
+
+  /* background-color: rgb(22 31 103 / 50%); */
+  /* background: transparent
+    linear-gradient(0deg, #010440b3 0%, rgb(61 49 118 / 73%) 40%, #d1a2ff5e 80%)
+    0% 0% no-repeat padding-box; */
   border-radius: 0.2rem;
 }
 

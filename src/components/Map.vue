@@ -13,19 +13,27 @@
             <h4 class="pl-5 pb-2">地図</h4>
             <h1 class="hack-h1">>Map</h1>
           </div>
-          <div class="py-2">
-            <div v-for="(data, key) in allMapData" :key="key">
-              <Card
+          <div class="my-2 v-container" style="padding: 0">
+            <v-row no-gutters style="width: 100%">
+              <v-col
+                v-for="(data, key) in allMapData"
                 :key="key"
-                @click="openViewDialog(data, key)"
-                :img="data.img"
+                cols="12"
+                sm="6"
+                lg="4"
               >
-                <template v-slot:sub-title>{{ data.site }}</template>
-                <template v-slot:title>
-                  {{ data.title }}
-                </template>
-              </Card>
-            </div>
+                <Card
+                  :key="key"
+                  @click="openViewDialog(data, key)"
+                  :img="data.img"
+                >
+                  <template v-slot:sub-title>{{ data.site }}</template>
+                  <template v-slot:title>
+                    {{ data.title }}
+                  </template>
+                </Card>
+              </v-col>
+            </v-row>
           </div>
         </div>
       </div>
