@@ -1,6 +1,9 @@
 import { store } from "./index";
 import schedule01 from "../assets/scheduleEx/schedule01.png";
 import schedule02 from "../assets/scheduleEx/schedule02.png";
+import schedule03 from "../assets/scheduleEx/schedule03.png";
+import schedule04 from "../assets/scheduleEx/schedule04.png";
+
 export default {
   namespaced: true,
   state: {
@@ -142,7 +145,7 @@ export default {
       },
       faq_9: {
         ques: "この学科に入ればゲーム会社に就職できますか？ゲームを作れるようになりますか？",
-        ans: "2022年3月卒業実績における情報メディア学科の「ゲーム開発/インターネットサービス」業界への就職割合は5%です。1年次必修科目の「コンピュータプログラミングI/II」の最終課題でProcessing（Java）を用いたゲーム作りを、4年時選択科目の「コンピュータアニメーションおよび演習」でゲーム制作エンジンUnityを用いた作品作りを行いますが、これらの経験でゲーム会社に就職することは難しいです。就職した学生の多くは、「ソフトウェア研究会」というサークルに所属し、チームでゲーム作りに取り組んだり、ゲームやCGに関連する研究室に所属して、より専門的な知識や技術を身につけています。是非研究室展示場所に足を運び、どのようなことに取り組んできたのか学生に直接尋ねてみてください。",
+        ans: "2022年3月卒業実績における情報メディア学科の「ゲーム開発/インターネットサービス」業界への就職割合は5%です。1年次必修科目の「コンピュータプログラミングI/II」の最終課題でProcessing（Java）を用いたゲーム作りを、4年時選択科目の「コンピュータアニメーションおよび演習」でゲーム制作エンジンUnityを用いた作品作りを行いますが、これらの経験のみでゲーム会社に就職することは難しいです。就職した学生の多くは、「ソフトウェア研究会」やゲーム・CGに関連する研究室に所属して、チームでゲーム作りに取り組んだり、より専門的な知識や技術を身につけています。是非研究室展示場所に足を運び、どのようなことに取り組んできたのか学生に直接尋ねてみてください。",
         links: [
           {
             name: "▶︎ 就職実績（東京電機大学公式サイト）",
@@ -158,7 +161,7 @@ export default {
         ques: "忙しさはどのくらいですか？一週間のスケジュール例を教えてください。",
         ans: "下記に「電大生のとある一週間」を掲載します。是非ご覧ください。",
         links: [],
-        images: [schedule01, schedule02],
+        images: [schedule01, schedule02, schedule03, schedule04],
       },
     },
   },
