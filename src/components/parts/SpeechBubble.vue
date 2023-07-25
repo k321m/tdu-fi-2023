@@ -12,7 +12,7 @@
             white-space: nowrap;
           "
         >
-          0
+          {{ this.$store.getters.getClearedMissionNum }}
           <span style="font-size: 0.6rem; line-height: 0.6rem">/4</span>
         </p>
       </div>

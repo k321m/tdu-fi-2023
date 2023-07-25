@@ -8,6 +8,11 @@ import QuestionsTop10 from "./views/QuestionsTop10View.vue";
 import Faq from "./views/FaqView.vue";
 import Login from "./views/LoginView.vue";
 import Attention from "./views/AttentionView.vue";
+import ProgrammingEXP from "./views/ProgrammingExperienceView.vue";
+import Question1 from "./views/ProgrammingQuestions/CreateCirclesView.vue";
+import Question2 from "./views/ProgrammingQuestions/FalldownBallView.vue";
+import Question3 from "./views/ProgrammingQuestions/ReturnBallView.vue";
+import Question4 from "./views/ProgrammingQuestions/BouncingBallView.vue";
 import { store } from "./vuex/index.js";
 
 const PASSWORD =
@@ -69,6 +74,36 @@ export const router = createRouter({
       component: Attention,
       meta: { require: true },
     },
+    {
+      path: "/programming",
+      name: "programming",
+      component: ProgrammingEXP,
+      meta: { require: true },
+    },
+    {
+      path: "/programming/question1",
+      name: "question1",
+      component: Question1,
+      meta: { require: true, unclocked1: true },
+    },
+    {
+      path: "/programming/question2",
+      name: "question2",
+      component: Question2,
+      meta: { require: true, unclocked2: true },
+    },
+    {
+      path: "/programming/question3",
+      name: "question3",
+      component: Question3,
+      meta: { require: true, unclocked3: true },
+    },
+    {
+      path: "/programming/question4",
+      name: "question4",
+      component: Question4,
+      meta: { require: true, unclocked4: true },
+    },
   ],
   scrollBehavior(to) {
     if (to.hash) {
@@ -115,6 +150,21 @@ router.beforeEach((to, from, next) => {
       next();
     }
   });
+
+  // Missionのクリア数に合わせたアクセス権限の設定
+  if (to.meta.unclocked1 && store.getters.getClearedMissionNum < 1) {
+    next({ name: "programming" });
+  }
+  if (to.meta.unclocked2 && store.getters.getClearedMissionNum < 2) {
+    next({ name: "programming" });
+  }
+  if (to.meta.unclocked3 && store.getters.getClearedMissionNum < 3) {
+    next({ name: "programming" });
+  }
+  if (to.meta.unclocked4 && store.getters.getClearedMissionNum < 4) {
+    next({ name: "programming" });
+  }
+  next();
 });
 
 const sha256 = async (text) => {
