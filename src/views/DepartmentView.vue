@@ -59,6 +59,9 @@ export default {
     ContentTitle,
     FixedIcons,
   },
+  mounted() {
+    this.$store.commit("updateIsClearedMission1");
+  },
 };
 </script>
 
