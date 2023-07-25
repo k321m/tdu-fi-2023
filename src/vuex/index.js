@@ -161,6 +161,18 @@ export const store = createStore({
       var count = Object.values(state.missions).filter((n) => n == true).length;
       return count;
     },
+    getIsClearedMission1(state) {
+      return state.missions.isClearedMission1;
+    },
+    getIsClearedMission2(state) {
+      return state.missions.isClearedMission2;
+    },
+    getIsClearedMission3(state) {
+      return state.missions.isClearedMission3;
+    },
+    getIsClearedMission4(state) {
+      return state.missions.isClearedMission4;
+    },
   },
   modules: {
     eventsStore,
