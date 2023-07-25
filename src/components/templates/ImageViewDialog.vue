@@ -1,11 +1,13 @@
 <template>
   <v-dialog>
     <div class="background-dialog">
+      <!-- × -->
       <div class="pb-2" style="display: flex" @click="$emit('close-dialog')">
         <div style="margin: 0 0 0 auto">
           <v-icon style="color: var(--white)">mdi-close</v-icon>
         </div>
       </div>
+      <!-- 画像 -->
       <template v-for="data in imgData">
         <img
           style="width: 100%; height: auto; margin-bottom: 1em"
@@ -29,12 +31,9 @@ export default {
 
 <style scoped>
 .background-dialog {
-  display: flex;
-  flex-direction: column;
+  max-width: 580px;
   width: 100%;
-  max-height: 90dvh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+  height: auto;
+  margin: 0 auto;
 }
 </style>
