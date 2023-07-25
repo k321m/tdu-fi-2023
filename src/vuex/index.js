@@ -43,10 +43,15 @@ export const store = createStore({
     // TODO: Type与えなくても処理する方法に修正
     addMyNote(state, obj) {
       // [questions]の場合はkeyをquestionとした質問内容を格納(現時点でユーザが質問を追加した場合のみの対応であるため，おすすめ質問TOP10を実装する場合にはmodule(Store)のKeyを入れるなどの対応が必要)
-      if (obj.type == "questions")
+      if (obj.type == "questions") {
         var addDataTemplate = { title: obj.question, memo: "" };
-      // objの中身は{ type:value("events" or "questions"), key:value ,(questionのみ)question:value]を想定
-      else var addDataTemplate = { memo: "", done: false, title: obj.title };
+        this.state.missions.isClearedMission3 = true; // TODO: メソッドで実行するように修正
+      } else {
+        // objの中身は{ type:value("events" or "questions"), key:value ,(questionのみ)question:value]を想定
+        var addDataTemplate = { memo: "", done: false, title: obj.title };
+
+        this.state.missions.isClearedMission2 = true; // TODO: メソッドで実行するように修正
+      }
       // MyNoteにデータを追加
       this.state.myNote[obj.type] = Object.assign(this.state.myNote[obj.type], {
         [obj.key]: addDataTemplate,
@@ -84,12 +89,12 @@ export const store = createStore({
     updateIsClearedMission1() {
       this.state.missions.isClearedMission1 = true;
     },
-    updateIsClearedMission2() {
-      this.state.missions.isClearedMission2 = true;
-    },
-    updateIsClearedMission3() {
-      this.state.missions.isClearedMission3 = true;
-    },
+    // updateIsClearedMission2() {
+    //   this.state.missions.isClearedMission2 = true;
+    // },
+    // updateIsClearedMission3() {
+    //   this.state.missions.isClearedMission3 = true;
+    // },
     updateIsClearedMission4() {
       this.state.missions.isClearedMission4 = true;
     },
