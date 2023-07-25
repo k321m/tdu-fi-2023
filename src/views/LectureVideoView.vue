@@ -23,19 +23,28 @@
             >{{ Object.keys(allLecturesData).length }}件</span
           >
         </h3>
-        <!-- 講義動画カード -->
-        <div v-for="(data, key) in allLecturesData" :key="key">
-          <Card
+        <v-row no-gutters style="width: 100%">
+          <!-- 講義動画カード -->
+          <v-col
+            v-for="(data, key) in allLecturesData"
             :key="key"
-            @click="openViewDialog(key)"
-            :img="data.img"
-            :id="key"
+            cols="12"
+            sm="6"
+            lg="4"
+            xl="3"
           >
-            <template v-slot:title>
-              {{ data.cardTitle }}
-            </template>
-          </Card>
-        </div>
+            <Card
+              :key="key"
+              @click="openViewDialog(key)"
+              :img="data.img"
+              :id="key"
+            >
+              <template v-slot:title>
+                {{ data.cardTitle }}
+              </template>
+            </Card>
+          </v-col>
+        </v-row>
         <!-- end 講義動画カード -->
       </section>
       <!-- end 講義動画一覧 -->

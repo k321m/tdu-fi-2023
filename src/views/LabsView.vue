@@ -73,19 +73,28 @@
             </template>
           </ul>
         </div>
-        <!-- 研究室カード -->
-        <div v-for="key in filteredLabs" :key="key">
-          <Card
+        <v-row no-gutters style="width: 100%">
+          <!-- 研究室カード -->
+          <v-col
+            v-for="key in filteredLabs"
             :key="key"
-            @click="openLabViewDialog(key)"
-            :img="allLabsData[key].img"
-            :id="key"
+            cols="12"
+            sm="6"
+            lg="4"
+            xl="3"
           >
-            <template v-slot:title>
-              {{ allLabsData[key].cardTitle }}
-            </template>
-          </Card>
-        </div>
+            <Card
+              :key="key"
+              @click="openLabViewDialog(key)"
+              :img="allLabsData[key].img"
+              :id="key"
+            >
+              <template v-slot:title>
+                {{ allLabsData[key].cardTitle }}
+              </template>
+            </Card>
+          </v-col>
+        </v-row>
       </section>
       <!-- end 研究室一覧 -->
     </div>
