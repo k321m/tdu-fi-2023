@@ -14,14 +14,17 @@
       </ContentTitle>
       <!-- end ページタイトル -->
       <section>
-        <img
-          class="pb-8 banner-mobile"
-          src="/src/assets/school-information-session-banner-mobile.svg"
-        />
-        <img
-          class="pb-8 banner-tablet"
-          src="/src/assets/school-information-session-banner-tablet.svg"
-        />
+        <a href="/#timeline">
+          <img
+            class="mb-8 banner-mobile"
+            src="/src/assets/school-information-session-banner-mobile.svg"
+          />
+          <img
+            class="mb-8 banner-tablet"
+            src="/src/assets/school-information-session-banner-tablet.svg"
+          />
+        </a>
+
         <div class="department-video py-8">
           <div class="v-container">
             <h2 class="pb-6">カリキュラム紹介動画</h2>
