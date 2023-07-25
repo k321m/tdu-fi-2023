@@ -147,22 +147,20 @@ router.beforeEach((to, from, next) => {
       }
       next({ name: "login" });
     } else {
-      next();
+      // Missionのクリア数に合わせたアクセス権限の設定
+      if (to.meta.unclocked1 && store.getters.getClearedMissionNum < 1) {
+        next({ name: "programming" });
+      } else if (to.meta.unclocked2 && store.getters.getClearedMissionNum < 2) {
+        next({ name: "programming" });
+      } else if (to.meta.unclocked3 && store.getters.getClearedMissionNum < 3) {
+        next({ name: "programming" });
+      } else if (to.meta.unclocked4 && store.getters.getClearedMissionNum < 4) {
+        next({ name: "programming" });
+      } else {
+        next();
+      }
     }
   });
-
-  // Missionのクリア数に合わせたアクセス権限の設定
-  if (to.meta.unclocked1 && store.getters.getClearedMissionNum < 1) {
-    next({ name: "programming" });
-  } else if (to.meta.unclocked2 && store.getters.getClearedMissionNum < 2) {
-    next({ name: "programming" });
-  } else if (to.meta.unclocked3 && store.getters.getClearedMissionNum < 3) {
-    next({ name: "programming" });
-  } else if (to.meta.unclocked4 && store.getters.getClearedMissionNum < 4) {
-    next({ name: "programming" });
-  } else {
-    next();
-  }
 });
 
 const sha256 = async (text) => {
