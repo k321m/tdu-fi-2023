@@ -1,7 +1,7 @@
 <template>
   <div class="menu pa-5" v-click-outside="onClickOutside">
     <div class="pa-5 scroll-contents">
-      <div class="py-5">
+      <div class="py-4">
         <div class="top-box">
           <router-link to="/" @click="closeHamburgerMenu">
             <div>
@@ -17,7 +17,7 @@
           </div>
         </div>
         <transition name="open">
-          <div class="pt-6 pl-5" v-if="isOpen">
+          <div class="pt-3 pl-5" v-if="isOpen">
             <router-link to="/#time-schedule" @click="closeHamburgerMenu">
               <h3 class="py-2">タイムスケジュール</h3>
             </router-link>
@@ -29,36 +29,41 @@
       </div>
 
       <router-link to="/department" @click="closeHamburgerMenu">
-        <div class="py-5">
+        <div class="py-4">
           <h2>学科紹介</h2>
         </div>
       </router-link>
       <router-link to="/labs" @click="closeHamburgerMenu">
-        <div class="py-5">
+        <div class="py-4">
           <h2>研究室公開</h2>
         </div>
       </router-link>
+      <router-link to="/my-note" @click="closeHamburgerMenu">
+        <div class="py-4">
+          <h2 class="hack">MyNote</h2>
+        </div>
+      </router-link>
       <router-link to="/lecture-video" @click="closeHamburgerMenu">
-        <div class="py-5">
+        <div class="py-4">
           <h2>講義動画</h2>
         </div>
       </router-link>
       <router-link to="/questions-top10" @click="closeHamburgerMenu">
-        <div class="py-5">
-          <h2>おすすめ質問TOP10</h2>
+        <div class="py-4">
+          <h2>おすすめ質問<span class="hack">TOP10</span></h2>
         </div>
       </router-link>
       <router-link to="/faq" @click="closeHamburgerMenu">
-        <div class="py-5">
+        <div class="py-4">
           <h2>よくある質問</h2>
         </div>
       </router-link>
-      <router-link to="/my-note" @click="closeHamburgerMenu">
-        <div class="py-5">
-          <h2>MyNote</h2>
+      <router-link to="/programming" @click="closeHamburgerMenu">
+        <div class="py-4">
+          <h2>プログラミング体験</h2>
         </div>
       </router-link>
-      <div class="py-5">
+      <div class="py-4">
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSeQ5ru-Mzc-gULHow6ZkxNjnRPP6I7i6aUTtTJitU7GpdYWWQ/viewform"
           style="text-decoration: none; color: white"
@@ -72,7 +77,7 @@
 
       <div class="social py-15">
         <h3 class="hack-h3">OFFICIAL SITE AND SNS:</h3>
-        <div style="display: flex" class="py-5">
+        <div style="display: flex" class="py-4">
           <a class="pr-4" href="https://www.dendai.ac.jp">
             <img src="../assets/icon-web.svg" />
           </a>
