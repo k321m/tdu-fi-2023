@@ -1,6 +1,6 @@
 <template>
   <a
-    class="btn btn-default btn-animation"
+    class="btn btn-default"
     :class="setButtonStyle()"
     :href="to"
     @click="handleClick()"
@@ -62,6 +62,7 @@ export default {
         "btn-circle-border": this.circleBorder,
         "btn-pink": this.pink,
         "btn-pink-border": this.pinkBorder,
+        "btn-animation": !this.desable,
       };
     },
   },
