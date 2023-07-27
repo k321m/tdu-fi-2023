@@ -77,9 +77,9 @@ export default {
   min-height: 1em;
   padding: 1em;
   display: flex;
+  justify-content: center;
   align-items: center;
   border-radius: 0.2em;
-  position: relative;
 }
 p {
   font-weight: var(--bold);
@@ -128,7 +128,5 @@ a {
 .lock-icon {
   z-index: 10;
   position: absolute;
-  display: flex;
-  right: 50%;
 }
 </style>
