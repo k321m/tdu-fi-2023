@@ -5,7 +5,9 @@
         <template v-slot:questionNo>Q2</template>
         <template v-slot:name>MakeFourCircles</template>
       </ProgrammingTitle>
-      <p>白い円を4つ作るには空欄にどのコードを当てはめれば良いでしょうか？</p>
+      <div class="py-2">
+        <p>白い円を4つ作るには空欄にどのコードを当てはめれば良いでしょうか？</p>
+      </div>
       <div class="code-box">
         <pre>
 <code>

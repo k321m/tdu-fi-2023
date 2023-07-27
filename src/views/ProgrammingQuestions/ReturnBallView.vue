@@ -5,9 +5,11 @@
         <template v-slot:questionNo>Q4</template>
         <template v-slot:name>ReboundBall</template>
       </ProgrammingTitle>
-      <p>
-        白いボールが地面(下側の枠線)で跳ね返るようにするには空欄にどのコードを当てはめれば良いでしょうか？
-      </p>
+      <div>
+        <p>
+          白いボールが地面(下側の枠線)で跳ね返るようにするには空欄にどのコードを当てはめれば良いでしょうか？
+        </p>
+      </div>
       <div class="code-box">
         <pre>
   <code>

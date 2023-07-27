@@ -22,10 +22,15 @@
         @selected-value="changeHoleValue"
       >
       </ProgrammingSelectButton>
-      <ProgrammingExecuteButton />
+      <ProgrammingExecuteButton @executed="execute" />
       <div class="p5-canvas ma-7">
         <div id="canvas"></div>
-        <p v-if="executedFlag">{{ answerText }}</p>
+        <transition :name="isCorrect ? 'correct' : 'incorrect'">
+          <img
+            v-show="executedFlag"
+            :src="isCorrect ? correctImg : incorrectImg"
+          />
+        </transition>
       </div>
     </div>
   </div>
@@ -35,6 +40,8 @@
 import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
+import CorrectImg from "../../assets/icon-correct.svg";
+import IncorrectImg from "../../assets/icon-incorrect.svg";
 import p5 from "p5";
 import {
   p5Setup,
@@ -71,9 +78,11 @@ export default {
         },
       ],
       holeValue: "       ",
-      answerText: "不正解",
+      isCorrect: false,
       executedFlag: false,
       p5Value: Object,
+      correctImg: CorrectImg,
+      incorrectImg: IncorrectImg,
     };
   },
   mounted() {
@@ -91,7 +100,8 @@ export default {
           this.selectP5code(i);
           this.executedFlag = true;
           if (this.choices[i].judge) {
-            this.answerText = "正解";
+            this.$store.commit("updateIsClearedMission4");
+            this.isCorrect = true;
           }
         }
       }
@@ -109,6 +119,9 @@ export default {
       if (index == 3) {
         p5Slect4(this.p5Value);
       }
+    },
+    beforeEnter(el) {
+      el.style.transitionDelay = 1000 * parseInt(el.dataset.index, 10) + "ms";
     },
   },
 };
@@ -154,12 +167,35 @@ code {
   position: relative;
 }
 
-.p5-canvas p {
+.p5-canvas img {
   position: absolute;
+  width: 17rem;
   color: black;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5rem;
+  transition-delay: 3s;
+}
+
+.incorrect-enter-active {
+  transition: opacity 5s ease;
+}
+
+.incorrect-enter-from {
+  opacity: 0;
+}
+
+.correct-enter-active {
+  animation: correct-in 1s;
+}
+@keyframes correct-in {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 </style>

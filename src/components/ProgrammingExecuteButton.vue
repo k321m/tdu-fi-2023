@@ -1,13 +1,21 @@
 <template>
-  <div class="btn btn-execute" @click="execute()">
-    <v-icon>mdi-play-circle-outline</v-icon>
-    実行<span class="hack">（Run Code）</span>
+  <div class="py-2">
+    <div class="btn btn-execute" @click="clicked()">
+      <v-icon>mdi-play-circle-outline</v-icon>
+      実行<span class="hack">（Run Code）</span>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "ProgrammingExecuteButton",
+  emits: ["executed"],
+  methods: {
+    clicked() {
+      this.$emit("executed");
+    },
+  },
 };
 </script>
 <style scoped>

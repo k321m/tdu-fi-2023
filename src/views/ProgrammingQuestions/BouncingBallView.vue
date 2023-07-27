@@ -5,9 +5,10 @@
         <template v-slot:questionNo>Q5</template>
         <template v-slot:name>BouncingBall</template>
       </ProgrammingTitle>
-      <p>
+      <div class="py-2">
         白いボールが重力を受けて落下するには空欄にどのコードを当てはめれば良いでしょうか？
-      </p>
+      </div>
+      <p></p>
       <div class="code-box">
         <pre>
   <code>

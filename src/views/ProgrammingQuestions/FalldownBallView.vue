@@ -5,10 +5,12 @@
         <template v-slot:questionNo>Q3</template>
         <template v-slot:name>FalldownBall</template>
       </ProgrammingTitle>
+      <div class="py-2">
+        <p>
+          白い円を下方向に連続して動かすには空欄にどのコードを当てはめれば良いでしょうか？
+        </p>
+      </div>
 
-      <p>
-        白い円を下方向に連続して動かすには空欄にどのコードを当てはめれば良いでしょうか？
-      </p>
       <div class="code-box">
         <pre>
     <code>
