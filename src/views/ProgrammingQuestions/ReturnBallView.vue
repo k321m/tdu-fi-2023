@@ -1,7 +1,10 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <h2><span>04</span>ReturnBall</h2>
+      <ProgrammingTitle question4>
+        <template v-slot:questionNo>Q4</template>
+        <template v-slot:name>ReboundBall</template>
+      </ProgrammingTitle>
       <p>
         白いボールが地面(下側の枠線)で跳ね返るようにするには空欄にどのコードを当てはめれば良いでしょうか？
       </p>
@@ -33,7 +36,7 @@
         @selected-value="changeHoleValue"
       >
       </ProgrammingSelectButton>
-      <div class="btn btn-pink my-5" @click="execute()">実行</div>
+      <ProgrammingExecuteButton />
       <div class="p5-canvas ma-7">
         <div id="canvas"></div>
         <p v-if="executedFlag">{{ answerText }}</p>
@@ -43,7 +46,9 @@
 </template>
 
 <script>
+import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
+import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -55,7 +60,9 @@ import {
 export default {
   name: "ReturnBallView",
   components: {
+    ProgrammingTitle,
     ProgrammingSelectButton,
+    ProgrammingExecuteButton,
   },
   data() {
     return {
@@ -126,38 +133,6 @@ export default {
   background-color: white;
   min-height: 100dvh;
 }
-h2 {
-  position: relative;
-  overflow: hidden;
-  padding: 1.5rem 2rem 1.5rem 130px;
-  border-top: 3px solid var(--pink);
-}
-
-h2:before {
-  position: absolute;
-  top: -150%;
-  left: -100px;
-  width: 200px;
-  height: 300%;
-  content: "";
-  -webkit-transform: rotate(25deg);
-  transform: rotate(25deg);
-  background: var(--pink);
-}
-
-h2 span {
-  font-size: 40px;
-  font-size: 4rem;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  display: block;
-  padding-top: 3px;
-  padding-left: 16px;
-  color: var(--white);
-}
-
 .code-box {
   background-color: #010440;
   margin: 1rem 0;

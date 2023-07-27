@@ -105,6 +105,7 @@ p {
 }
 
 a {
+  z-index: 10;
   display: block;
   position: absolute;
   top: 0;
