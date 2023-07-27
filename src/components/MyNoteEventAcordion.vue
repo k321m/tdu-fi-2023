@@ -24,19 +24,17 @@
             <div :class="checkboxStyleSet()" :key="eventKey"></div>
           </transition-group>
         </div>
-        <div
-          class="pl-3 mr-3"
+        <p
+          class="pl-3 mr-3 sub-strong"
+          :class="{ 'text-ellipsis': !isOpen }"
           style="line-height: 1.3em; padding-top: 0.2em"
           @click="isOpen = !isOpen"
-          :class="{ 'text-ellipsis': !isOpen }"
         >
-          <p class="sub-strong">
-            <span v-if="eventValue.subTitle != null" class="pr-1">{{
-              eventValue.subTitle
-            }}</span>
-            <span>{{ eventValue.title }}</span>
-          </p>
-        </div>
+          <span v-if="eventValue.subTitle != null" class="pr-1">{{
+            eventValue.subTitle
+          }}</span>
+          <span>{{ eventValue.title }}</span>
+        </p>
       </div>
 
       <div class="pulldown-button py-1" @click="isOpen = !isOpen">
