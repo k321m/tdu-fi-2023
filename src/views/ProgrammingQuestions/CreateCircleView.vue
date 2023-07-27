@@ -23,15 +23,11 @@
       >
       </ProgrammingSelectButton>
       <ProgrammingExecuteButton @executed="execute" />
-      <div class="p5-canvas ma-7">
-        <div id="canvas"></div>
-        <transition :name="isCorrect ? 'correct' : 'incorrect'">
-          <img
-            v-show="executedFlag"
-            :src="isCorrect ? correctImg : incorrectImg"
-          />
-        </transition>
-      </div>
+      <ProgrammingResultCanvas
+        :isCorrect="isCorrect"
+        :executedFlag="executedFlag"
+        :delay="resultDelay"
+      />
     </div>
   </div>
 </template>
@@ -40,8 +36,7 @@
 import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
-import CorrectImg from "../../assets/icon-correct.svg";
-import IncorrectImg from "../../assets/icon-incorrect.svg";
+import ProgrammingResultCanvas from "../../components/ProgrammingResultCanvas.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -50,12 +45,14 @@ import {
   p5Slect3,
   p5Slect4,
 } from "../../js/p5/createCircle";
+import ProgrammingResultCanvasVue from "../../components/ProgrammingResultCanvas.vue";
 export default {
   name: "CreateCircleView",
   components: {
     ProgrammingTitle,
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
+    ProgrammingResultCanvas,
   },
   data() {
     return {
@@ -81,8 +78,7 @@ export default {
       isCorrect: false,
       executedFlag: false,
       p5Value: Object,
-      correctImg: CorrectImg,
-      incorrectImg: IncorrectImg,
+      resultDelay: "1s",
     };
   },
   mounted() {
@@ -120,9 +116,6 @@ export default {
         p5Slect4(this.p5Value);
       }
     },
-    beforeEnter(el) {
-      el.style.transitionDelay = 1000 * parseInt(el.dataset.index, 10) + "ms";
-    },
   },
 };
 </script>
@@ -159,43 +152,5 @@ code {
   font-size: 0.8rem;
   border: 1px solid #adadad;
   color: #010440;
-}
-
-.p5-canvas {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.p5-canvas img {
-  position: absolute;
-  width: 17rem;
-  color: black;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
-  transition-delay: 3s;
-}
-
-.incorrect-enter-active {
-  transition: opacity 5s ease;
-}
-
-.incorrect-enter-from {
-  opacity: 0;
-}
-
-.correct-enter-active {
-  animation: correct-in 1s;
-}
-@keyframes correct-in {
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
 }
 </style>

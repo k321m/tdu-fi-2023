@@ -6,7 +6,7 @@
         <template v-slot:name>ReboundBall</template>
       </ProgrammingTitle>
       <div>
-        <p>
+        <p class="py-2">
           白いボールが地面(下側の枠線)で跳ね返るようにするには空欄にどのコードを当てはめれば良いでしょうか？
         </p>
       </div>
@@ -38,11 +38,12 @@
         @selected-value="changeHoleValue"
       >
       </ProgrammingSelectButton>
-      <ProgrammingExecuteButton />
-      <div class="p5-canvas ma-7">
-        <div id="canvas"></div>
-        <p v-if="executedFlag">{{ answerText }}</p>
-      </div>
+      <ProgrammingExecuteButton @executed="execute" />
+      <ProgrammingResultCanvas
+        :isCorrect="isCorrect"
+        :executedFlag="executedFlag"
+        :delay="resultDelay"
+      />
     </div>
   </div>
 </template>
@@ -51,6 +52,7 @@
 import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
+import ProgrammingResultCanvas from "../../components/ProgrammingResultCanvas.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -65,6 +67,7 @@ export default {
     ProgrammingTitle,
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
+    ProgrammingResultCanvas,
   },
   data() {
     return {
@@ -87,9 +90,10 @@ export default {
         },
       ],
       holeValue: "       ",
-      answerText: "不正解",
+      isCorrect: false,
       executedFlag: false,
       p5Value: Object,
+      resultDelay: "4s",
     };
   },
   mounted() {
@@ -107,7 +111,7 @@ export default {
           this.selectP5code(i);
           this.executedFlag = true;
           if (this.choices[i].judge) {
-            this.answerText = "正解";
+            this.isCorrect = true;
           }
         }
       }
