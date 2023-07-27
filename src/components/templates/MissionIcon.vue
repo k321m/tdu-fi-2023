@@ -6,13 +6,13 @@
       @close-dialog="isMissionDialogVisible = false"
     />
     <SpeechBubble />
-    <MissionImage @click="openMissionDialog" />
+    <MissionIconImage @click="openMissionDialog" />
   </a>
 </template>
 
 <script>
 import SpeechBubble from "../parts/SpeechBubble.vue";
-import MissionImage from "../parts/MissionImage.vue";
+import MissionIconImage from "../parts/MissionIconImage.vue";
 import MissionDialog from "./MissionDialog.vue";
 
 export default {
@@ -22,7 +22,7 @@ export default {
   },
   components: {
     SpeechBubble,
-    MissionImage,
+    MissionIconImage,
     MissionDialog,
   },
   data() {

@@ -46,6 +46,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    none: {
+      type: Boolean,
+      default: false,
+    },
   },
   methods: {
     handleClick() {
@@ -62,7 +66,8 @@ export default {
         "btn-circle-border": this.circleBorder,
         "btn-pink": this.pink,
         "btn-pink-border": this.pinkBorder,
-        "btn-animation": !this.desable,
+        "btn-none": this.none,
+        "btn-animation": !this.desable && !this.none,
       };
     },
   },

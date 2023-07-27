@@ -6,6 +6,24 @@
   >
     <!-- タイトル -->
     <template v-slot:title> INUE研からの挑戦状 </template>
+    <!-- 画像 -->
+    <template v-slot:info>
+      <v-row no-gutters justify="center" style="align-items: center; margin: 0">
+        <MissionImage
+          :imgSrc="'/src/assets/missions/Mission01.png'"
+        ></MissionImage>
+        <MissionImage
+          :imgSrc="'/src/assets/missions/Mission02.png'"
+        ></MissionImage>
+        <MissionImage
+          :imgSrc="'/src/assets/missions/Mission03.png'"
+        ></MissionImage>
+        <MissionImage
+          :imgSrc="'/src/assets/missions/Mission04.png'"
+          isLast
+        ></MissionImage>
+      </v-row>
+    </template>
     <!-- 本文 -->
     <template v-slot:body>
       <h4 class="mb-2">
@@ -25,6 +43,7 @@
 <script>
 import Dialog from "../parts/Dialog.vue";
 import MissionItem from "./MissionItem.vue";
+import MissionImage from "../parts/MissionImage .vue";
 export default {
   name: "MissionDialog",
   props: {
@@ -37,7 +56,7 @@ export default {
   components: {
     Dialog,
     MissionItem,
-    MissionItem,
+    MissionImage,
   },
   computed: {
     missionItems() {
@@ -67,3 +86,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.mission-img {
+  width: 4em;
+  height: auto;
+}
+</style>

@@ -3,18 +3,9 @@
     <p class="item">
       <b><slot /></b>
     </p>
-    <template v-if="isClear"><Button desable>達成済み</Button></template>
+    <template v-if="isClear"><Button none>達成済み</Button></template>
     <template v-else><Button pink :to="to">挑戦する</Button></template>
   </div>
-
-  <!-- <a
-    class="btn btn-default btn-animation"
-    :class="setButtonStyle()"
-    :href="to"
-    @click="handleClick()"
-  >
-    <slot />
-  </a> -->
 </template>
 <script>
 import Button from "../parts/Button.vue";
