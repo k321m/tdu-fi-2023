@@ -5,7 +5,12 @@
     @close-dialog="$emit('close-dialog')"
   >
     <!-- タイトル -->
-    <template v-slot:title> INUE研からの挑戦状 </template>
+    <template v-slot:title>
+      INUE研からの挑戦状
+      <span style="display: block; font-size: 0.8rem; padding-top: 0.2rem">
+        ミッションを達成して、「プログラミング体験」の追加問題をゲットしよう！
+      </span>
+    </template>
 
     <!-- 画像 -->
     <template v-slot:info>
@@ -22,9 +27,10 @@
     <!-- 本文 -->
     <template v-slot:body>
       <h4 class="mb-2">
-        達成したミッション<span class="hack pl-2"
-          >{{ this.$store.getters.getClearedMissionNum }}/4</span
-        >
+        達成したミッション
+        <span class="hack pl-2">
+          {{ this.$store.getters.getClearedMissionNum }}/4
+        </span>
       </h4>
       <div v-for="item in missionItems" :key="item.to">
         <MissionItem :to="item.to" :isClear="item.clear">{{
@@ -86,7 +92,7 @@ export default {
     missionItems() {
       return [
         {
-          content: "学科紹介ページを閲覧しよう",
+          content: "「学科紹介」ページを閲覧しよう",
           to: "/department",
           clear: this.$store.getters.getIsClearedMission1,
         },
@@ -101,7 +107,7 @@ export default {
           clear: this.$store.getters.getIsClearedMission3,
         },
         {
-          content: "プログラミング体験の一問目を解こう",
+          content: "「プログラミング体験」の問題1を解こう",
           to: "/programming",
           clear: this.$store.getters.getIsClearedMission4,
         },

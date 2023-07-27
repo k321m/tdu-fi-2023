@@ -432,12 +432,8 @@ div.v-dialog.v-overlay--active.v-theme--light > div.v-overlay__content {
   align-items: center !important;
 }
 .v-dialog > .v-overlay__content {
-  max-height: calc(100% - 48px);
-  width: 100%;
-  max-width: 100%;
-  margin: 24px;
-  display: flex;
-  flex-direction: column;
+  width: auto !important;
+  max-width: auto !important;
 }
 
 .v-toolbar__content {
@@ -599,7 +595,7 @@ router-link {
 @keyframes stamp-animation {
   0% {
     opacity: 0;
-    transform: scale(2);
+    transform: scale(2) rotate(10deg);
   }
   30% {
     opacity: 0.8;
