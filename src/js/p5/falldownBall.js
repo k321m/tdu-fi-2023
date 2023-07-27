@@ -15,9 +15,12 @@ const p5Setup = function (p5) {
 };
 
 const p5Slect1 = function (p5) {
+  var x = 150;
+  var y = 100;
+  var d = 50;
   p5.draw = () => {
     p5.background(220);
-    p5.ellipse(150, 100, 50, 50);
+    p5.ellipse(x, y, d, d);
     if (p5.frameCount > 500) {
       p5.noLoop();
     }
@@ -25,10 +28,13 @@ const p5Slect1 = function (p5) {
 };
 
 const p5Slect2 = function (p5) {
+  var x = 150;
+  var y = 100;
+  var d = 50;
   var i = 0;
   p5.draw = () => {
     p5.background(220);
-    p5.ellipse(150, 100 + i, 50, 50);
+    p5.ellipse(x, y + i, d, d);
     i++;
     if (p5.frameCount > 500) {
       p5.noLoop();
@@ -37,19 +43,25 @@ const p5Slect2 = function (p5) {
 };
 
 const p5Slect3 = function (p5) {
+  var x = 150;
+  var y = 100;
+  var d = 50;
   p5.draw = () => {
     p5.background(220);
-    p5.ellipse(150, 150, 50, 50);
+    p5.ellipse(x, y + 1, d, d);
     if (p5.frameCount > 500) {
       p5.noLoop();
     }
   };
 };
 const p5Slect4 = function (p5) {
+  var x = 150;
+  var y = 100;
+  var d = 50;
   var i = 0;
   p5.draw = () => {
     p5.background(220);
-    p5.ellipse(150, 100 + i, 50, 50);
+    p5.ellipse(x, y - i, d, d);
     i++;
     if (p5.frameCount > 500) {
       p5.noLoop();

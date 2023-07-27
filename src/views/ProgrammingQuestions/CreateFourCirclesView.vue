@@ -1,27 +1,18 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <h2><span>03</span>FalldownBall</h2>
-      <p>
-        白い円を下方向に連続して動かすには空欄にどのコードを当てはめれば良いでしょうか？
-      </p>
+      <h2><span>02</span>CreateFourCircles</h2>
+      <p>白い円を4つ作るには空欄にどのコードを当てはめれば良いでしょうか？</p>
       <div class="code-box">
         <pre>
-    <code>
-  int x, y; <span class="small">//ボールの中心座標</span>
-  int d;    <span class="small">//ボールの半径</span>
-  int v;    <span class="small">//ボールの速度</span>
-  void setup() { <span class="small">//一番初めに一度だけ実行される</span>
-    size(300, 300); 
-    x = 150;
-    y = 100;
-    d = 50;
-    v = 0;
-  } 
-  void draw() { <span class="small">//毎フレーム実行される</span>
-    background(220);
-    ellipse(x, <span class="hole-box">{{ holeValue }}</span>, d, d);
-    v = v + 1;
+<code>
+  size(300, 300);
+  int x = 60;  <span class="small">//円の中心のx座標</span>
+  int y = 150; <span class="small">//円の中心のy座標</span>
+  int d = 50;  <span class="small">//円の半径</span>
+  for (int i = 1; <span class="hole-box">{{ holeValue }}</span>; i = i + 1) {
+    ellipse(x, y, d, d);
+    x = x + 60;
   }</code>
     </pre>
       </div>
@@ -48,9 +39,9 @@ import {
   p5Slect2,
   p5Slect3,
   p5Slect4,
-} from "../../js/p5/falldownBall";
+} from "../../js/p5/createFourCircles";
 export default {
-  name: "FalldownBall",
+  name: "CreateFourCirclesView",
   components: {
     ProgrammingSelectButton,
   },
@@ -58,20 +49,20 @@ export default {
     return {
       choices: [
         {
-          code: "y",
+          code: "i < 4",
           judge: false,
         },
         {
-          code: "y + v",
+          code: "i <= 3",
+          judge: false,
+        },
+        {
+          code: "i > 4",
+          judge: false,
+        },
+        {
+          code: "i <= 4",
           judge: true,
-        },
-        {
-          code: "y + 1",
-          judge: false,
-        },
-        {
-          code: "y - v",
-          judge: false,
         },
       ],
       holeValue: "       ",

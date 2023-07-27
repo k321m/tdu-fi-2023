@@ -10,8 +10,7 @@
         @change="selected()"
       />
       <label :for="key" class="btn btn-default-border">
-        <v-icon class="icon">mdi-radiobox-marked</v-icon
-        ><code>{{ value.code }}</code>
+        <v-icon>mdi-radiobox-marked</v-icon><code>{{ value.code }}</code>
       </label>
     </div>
   </div>
@@ -44,7 +43,7 @@ export default {
   border: solid var(--light-purple);
 }
 
-.icon {
+i {
   position: absolute;
   left: 0.3em;
   color: var(--light-purple);
@@ -64,7 +63,7 @@ input:checked + label {
   color: var(--dark);
 }
 
-input:checked ~ label .icon {
+input:checked ~ label i {
   color: var(--dark);
 }
 

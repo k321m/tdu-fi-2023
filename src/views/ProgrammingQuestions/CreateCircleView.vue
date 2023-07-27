@@ -1,19 +1,14 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <h2><span>01</span>CreateCircles</h2>
-      <p>白い円を4つ作るには空欄にどのコードを当てはめれば良いでしょうか？</p>
+      <h2><span>01</span>CreateCircle</h2>
+      <p>白い円を1つ作るには空欄にどのコードを当てはめれば良いでしょうか？</p>
       <div class="code-box">
         <pre>
 <code>
   size(300, 300);
-  int x = 60;  <span class="small">//円の中心のx座標</span>
-  int y = 150; <span class="small">//円の中心のy座標</span>
-  int d = 50;  <span class="small">//円の半径</span>
-  for (int i = 1; <span class="hole-box">{{ holeValue }}</span>; i = i + 1) {
-    ellipse(x, y, d, d);
-    x = x + 60;
-  }</code>
+  <span class="hole-box">{{ holeValue }}</span>;
+</code>
     </pre>
       </div>
       <ProgrammingSelectButton
@@ -39,9 +34,9 @@ import {
   p5Slect2,
   p5Slect3,
   p5Slect4,
-} from "../../js/p5/createCircles";
+} from "../../js/p5/createCircle";
 export default {
-  name: "CreateCirclesView",
+  name: "CreateCircleView",
   components: {
     ProgrammingSelectButton,
   },
@@ -49,20 +44,20 @@ export default {
     return {
       choices: [
         {
-          code: "i < 4",
+          code: "rect(80, 80, 140, 140)",
           judge: false,
         },
         {
-          code: "i <= 3",
+          code: "triangle(150, 80, 80, 220, 220, 220)",
           judge: false,
         },
         {
-          code: "i > 4",
-          judge: false,
-        },
-        {
-          code: "i <= 4",
+          code: "ellipse(150, 150, 140, 140)",
           judge: true,
+        },
+        {
+          code: "line(80, 80, 220, 220)",
+          judge: false,
         },
       ],
       holeValue: "       ",

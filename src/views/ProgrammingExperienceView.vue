@@ -9,55 +9,9 @@
         </template>
       </ContentTitle>
       <Button class="my-5" defaultBorder>Processing基本知識</Button>
-
-      <div class="question-button my-2">
-        <router-link :to="{ name: 'question1' }"></router-link>
-        <div class="text-area">
-          <p class="hack" style="font-size: 1.5em; line-height: 1em">Q1</p>
-          <p class="hack" style="line-height: 1em; padding: 0.3em 0 0 1.5em">
-            CreateFourCircles
-          </p>
-        </div>
-        <div class="nextpage-button">
-          <img src="../assets/pulldown-button-white.svg" />
-        </div>
-      </div>
-      <div class="question-button my-2">
-        <router-link :to="{ name: 'question2' }"></router-link>
-        <div class="text-area">
-          <p class="hack" style="font-size: 1.5em; line-height: 1em">Q2</p>
-          <p class="hack" style="line-height: 1em; padding: 0.3em 0 0 1.5em">
-            FalldownBall
-          </p>
-        </div>
-        <div class="nextpage-button">
-          <img src="../assets/pulldown-button-white.svg" />
-        </div>
-      </div>
-      <div class="question-button my-2">
-        <router-link :to="{ name: 'question3' }"></router-link>
-        <div class="text-area">
-          <p class="hack" style="font-size: 1.5em; line-height: 1em">Q3</p>
-          <p class="hack" style="line-height: 1em; padding: 0.3em 0 0 1.5em">
-            ReturnBall
-          </p>
-        </div>
-        <div class="nextpage-button">
-          <img src="../assets/pulldown-button-white.svg" />
-        </div>
-      </div>
-      <div class="question-button my-2">
-        <router-link :to="{ name: 'question4' }"></router-link>
-        <div class="text-area">
-          <p class="hack" style="font-size: 1.5em; line-height: 1em">Q4</p>
-          <p class="hack" style="line-height: 1em; padding: 0.3em 0 0 1.5em">
-            BouncingBall
-          </p>
-        </div>
-        <div class="nextpage-button">
-          <img src="../assets/pulldown-button-white.svg" />
-        </div>
-      </div>
+      <ProgrammingQuestionButton
+        :questionButtonData="this.questionButtonData"
+      />
     </div>
   </div>
 </template>
@@ -65,46 +19,56 @@
 <script>
 import ContentTitle from "../components/ContentTitle.vue";
 import Button from "../components/parts/Button.vue";
+import ProgrammingQuestionButton from "../components/ProgrammingQuestionButton.vue";
 export default {
   name: "ProgrammingExperenceView",
   components: {
     ContentTitle,
     Button,
+    ProgrammingQuestionButton,
+  },
+  data() {
+    return {
+      questionButtonData: {
+        Q1: {
+          questionNo: 1,
+          name: "MakeCircle",
+          backgroundColor: "background-color: var(--pink)",
+          fireNum: 0,
+          linkName: "question1",
+        },
+        Q2: {
+          questionNo: 2,
+          name: "MakeFourCircles",
+          backgroundColor: "background-color: #ba37ca",
+          fireNum: 1,
+          linkName: "question2",
+        },
+        Q3: {
+          questionNo: 3,
+          name: "FalldownBall",
+          backgroundColor: "background-color: #8f29ae",
+          fireNum: 2,
+          linkName: "question3",
+        },
+        Q4: {
+          questionNo: 4,
+          name: "ReboundBall",
+          backgroundColor: "background-color: #661b93",
+          fireNum: 3,
+          linkName: "question4",
+        },
+        Q5: {
+          questionNo: 5,
+          name: "BouncingBall",
+          backgroundColor: "background-color: var(--purple)",
+          fireNum: 4,
+          linkName: "question5",
+        },
+      },
+    };
   },
 };
 </script>
 
-<style scoped>
-p {
-  font-weight: var(--bold);
-  color: var(--white);
-}
-.question-button {
-  position: relative;
-  min-height: 1em;
-  padding: 1em;
-  background-color: var(--pink);
-  display: flex;
-  align-items: center;
-  border-radius: 0.2em;
-}
-.question-button a {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.text-area {
-  display: flex;
-  align-items: flex-start;
-  flex-grow: 1;
-  overflow: hidden;
-  border-radius: 0.3em;
-}
-
-.nextpage-button {
-  transform: rotate(-90deg);
-}
-</style>
+<style scoped></style>

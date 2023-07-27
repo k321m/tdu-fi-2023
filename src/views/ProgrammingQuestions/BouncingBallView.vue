@@ -1,7 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <h2><span>04</span>BouncingBall</h2>
+      <h2><span>05</span>BouncingBall</h2>
       <p>
         白いボールが重力を受けて落下するには空欄にどのコードを当てはめれば良いでしょうか？
       </p>

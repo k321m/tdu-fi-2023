@@ -23,9 +23,6 @@ const p5Slect1 = function (p5) {
     p5.ellipse(x, y, d, d);
     x += 60;
   }
-  if (p5.frameCount > 500) {
-    p5.noLoop();
-  }
 };
 
 const p5Slect2 = function (p5) {
@@ -33,9 +30,6 @@ const p5Slect2 = function (p5) {
   for (var i = 1; i <= 3; i++) {
     p5.ellipse(x, y, d, d);
     x += 60;
-  }
-  if (p5.frameCount > 500) {
-    p5.noLoop();
   }
 };
 
@@ -45,18 +39,12 @@ const p5Slect3 = function (p5) {
     p5.ellipse(x, y, d, d);
     x += 60;
   }
-  if (p5.frameCount > 500) {
-    p5.noLoop();
-  }
 };
 const p5Slect4 = function (p5) {
   p5.background(220);
   for (var i = 1; i <= 4; i++) {
     p5.ellipse(x, y, d, d);
     x += 60;
-  }
-  if (p5.frameCount > 500) {
-    p5.noLoop();
   }
 };
 
