@@ -6,8 +6,8 @@
   >
     <!-- タイトル -->
     <template v-slot:title>
-      INUE研からの挑戦状
-      <span style="display: block; font-size: 0.8rem; padding-top: 0.2rem">
+      <span class="hack">inue</span>研からの挑戦状
+      <span style="display: block; font-size: 0.8rem; padding-top: 0.6rem">
         ミッションを達成して、「プログラミング体験」の追加問題をゲットしよう！
       </span>
     </template>
