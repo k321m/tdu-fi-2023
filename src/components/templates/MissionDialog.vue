@@ -97,13 +97,13 @@ export default {
           clear: this.$store.getters.getIsClearedMission1,
         },
         {
-          content: "MyNoteに「質問項目」を追加しよう",
-          to: "/questions-top10",
+          content: "MyNoteに「訪問項目」を追加しよう",
+          to: "/#time-schedule",
           clear: this.$store.getters.getIsClearedMission2,
         },
         {
-          content: "MyNoteに「訪問項目」を追加しよう",
-          to: "/#time-schedule",
+          content: "MyNoteに「質問項目」を追加しよう",
+          to: "/questions-top10",
           clear: this.$store.getters.getIsClearedMission3,
         },
         {
