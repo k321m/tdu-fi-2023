@@ -1,7 +1,17 @@
 <template>
-  <v-col cols="2.25">
-    <img class="mission-img" :src="imgSrc" style="width: 100%; height: auto"
-  /></v-col>
+  <v-col cols="2.25" style="position: relative">
+    <template v-if="isPlay">
+      <img class="mission-img" :src="imgData" />
+      <img
+        class="mission-stamp"
+        :class="{ play: isPlay }"
+        src="/src/assets/missions/GetStamp.png"
+      />
+    </template>
+    <template v-else>
+      <img class="mission-img" :src="imgData" />
+    </template>
+  </v-col>
   <template v-if="!isLast">
     <v-col cols="1" style="display: flex; justify-content: center"
       ><img
@@ -15,10 +25,14 @@
 export default {
   name: "MissionImage",
   props: {
-    imgSrc: {
-      type: String,
+    imgData: {
+      type: [Object, String, Function],
     },
     isLast: {
+      type: Boolean,
+      default: false,
+    },
+    isPlay: {
       type: Boolean,
       default: false,
     },

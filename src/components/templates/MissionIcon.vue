@@ -2,6 +2,7 @@
   <a :class="className">
     <MissionDialog
       :view="isMissionDialogVisible"
+      :playAnimation="playedAnimation"
       @update:view="isMissionDialogVisible = $event"
       @close-dialog="isMissionDialogVisible = false"
     />
@@ -28,6 +29,7 @@ export default {
   data() {
     return {
       isMissionDialogVisible: false,
+      playedAnimation: [],
     };
   },
   methods: {

@@ -6,22 +6,17 @@
   >
     <!-- タイトル -->
     <template v-slot:title> INUE研からの挑戦状 </template>
+
     <!-- 画像 -->
     <template v-slot:info>
       <v-row no-gutters justify="center" style="align-items: center; margin: 0">
-        <MissionImage
-          :imgSrc="'/src/assets/missions/Mission01.png'"
-        ></MissionImage>
-        <MissionImage
-          :imgSrc="'/src/assets/missions/Mission02.png'"
-        ></MissionImage>
-        <MissionImage
-          :imgSrc="'/src/assets/missions/Mission03.png'"
-        ></MissionImage>
-        <MissionImage
-          :imgSrc="'/src/assets/missions/Mission04.png'"
-          isLast
-        ></MissionImage>
+        <template v-for="(image, index) in missionImages">
+          <MissionImage
+            :imgData="getIsPlay(index) ? image.clearImgData : image.imgData"
+            :isLast="index == missionImages.length - 1"
+            :isPlay="getIsPlay(index)"
+          />
+        </template>
       </v-row>
     </template>
     <!-- 本文 -->
@@ -44,6 +39,15 @@
 import Dialog from "../parts/Dialog.vue";
 import MissionItem from "./MissionItem.vue";
 import MissionImage from "../parts/MissionImage .vue";
+import MissionImage01 from "/src/assets/missions/Mission01.png";
+import MissionImage02 from "/src/assets/missions/Mission02.png";
+import MissionImage03 from "/src/assets/missions/Mission03.png";
+import MissionImage04 from "/src/assets/missions/Mission04.png";
+import ClearMissionImage01 from "/src/assets/missions/Mission01-clear.png";
+import ClearMissionImage02 from "/src/assets/missions/Mission02-clear.png";
+import ClearMissionImage03 from "/src/assets/missions/Mission03-clear.png";
+import ClearMissionImage04 from "/src/assets/missions/Mission04-clear.png";
+
 export default {
   name: "MissionDialog",
   props: {
@@ -59,6 +63,26 @@ export default {
     MissionImage,
   },
   computed: {
+    missionImages() {
+      return [
+        {
+          imgData: MissionImage01,
+          clearImgData: ClearMissionImage01,
+        },
+        {
+          imgData: MissionImage02,
+          clearImgData: ClearMissionImage02,
+        },
+        {
+          imgData: MissionImage03,
+          clearImgData: ClearMissionImage03,
+        },
+        {
+          imgData: MissionImage04,
+          clearImgData: ClearMissionImage04,
+        },
+      ];
+    },
     missionItems() {
       return [
         {
@@ -84,12 +108,10 @@ export default {
       ];
     },
   },
+  methods: {
+    getIsPlay(index) {
+      return index < this.$store.getters.getClearedMissionNum;
+    },
+  },
 };
 </script>
-
-<style scoped>
-.mission-img {
-  width: 4em;
-  height: auto;
-}
-</style>
