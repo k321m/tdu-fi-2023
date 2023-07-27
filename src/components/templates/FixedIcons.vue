@@ -11,7 +11,7 @@
       <div class="menu-round" :class="{ toggle: isToggle }">
         <HowToIcon :class="'menu-icon'" />
         <MyNoteIcon :class="'menu-icon'" />
-        <MissionIcon :class="'menu-icon'" />
+        <MissionIcon :class="'menu-icon'" @close-toggle="isToggle = false" />
       </div>
     </div>
   </div>
@@ -28,6 +28,7 @@ export default {
       isToggle: false,
     };
   },
+  emits: ["close-toggle"],
   components: {
     MyNoteIcon,
     MissionIcon,

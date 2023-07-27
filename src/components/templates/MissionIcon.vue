@@ -4,7 +4,7 @@
       :view="isMissionDialogVisible"
       :playAnimation="playedAnimation"
       @update:view="isMissionDialogVisible = $event"
-      @close-dialog="isMissionDialogVisible = false"
+      @close-dialog="closeMissionDialog"
     />
     <SpeechBubble />
     <MissionIconImage @click="openMissionDialog" />
@@ -35,6 +35,10 @@ export default {
   methods: {
     openMissionDialog() {
       this.isMissionDialogVisible = true;
+    },
+    closeMissionDialog() {
+      this.isMissionDialogVisible = false;
+      this.$emit("close-toggle");
     },
   },
 };

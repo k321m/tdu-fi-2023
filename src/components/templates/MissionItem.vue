@@ -4,7 +4,11 @@
       <b><slot /></b>
     </p>
     <template v-if="isClear"><Button none>達成済み</Button></template>
-    <template v-else><Button pink :to="to">挑戦する</Button></template>
+    <template v-else
+      ><Button pink :to="to" @click="$emit('close-dialog')"
+        >挑戦する</Button
+      ></template
+    >
   </div>
 </template>
 <script>
@@ -23,20 +27,9 @@ export default {
       default: false,
     },
   },
+  emits: ["close-dialog"],
   components: {
     Button,
-  },
-  methods: {
-    handleClick() {
-      if (this.clickEvent) {
-        this.clickEvent();
-      }
-    },
-    setButtonStyle() {
-      return {
-        "btn-myNote": this.myNote,
-      };
-    },
   },
 };
 </script>

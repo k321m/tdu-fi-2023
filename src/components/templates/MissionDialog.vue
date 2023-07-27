@@ -6,7 +6,7 @@
   >
     <!-- タイトル -->
     <template v-slot:title>
-      <span class="hack">inue</span>研からの挑戦状
+      チュートリアルミッション
       <span style="display: block; font-size: 0.8rem; padding-top: 0.6rem">
         ミッションを達成して、「プログラミング体験」の追加問題をゲットしよう！
       </span>
@@ -26,16 +26,19 @@
     </template>
     <!-- 本文 -->
     <template v-slot:body>
-      <h4 class="mb-2">
+      <h4 class="mb-2 mt-4">
         達成したミッション
         <span class="hack pl-2">
           {{ this.$store.getters.getClearedMissionNum }}/4
         </span>
       </h4>
       <div v-for="item in missionItems" :key="item.to">
-        <MissionItem :to="item.to" :isClear="item.clear">{{
-          item.content
-        }}</MissionItem>
+        <MissionItem
+          :to="item.to"
+          :isClear="item.clear"
+          @close-dialog="$emit('close-dialog')"
+          >{{ item.content }}</MissionItem
+        >
       </div>
     </template>
   </Dialog>
