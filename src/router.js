@@ -9,10 +9,11 @@ import Faq from "./views/FaqView.vue";
 import Login from "./views/LoginView.vue";
 import Attention from "./views/AttentionView.vue";
 import ProgrammingEXP from "./views/ProgrammingExperienceView.vue";
-import Question1 from "./views/ProgrammingQuestions/CreateCirclesView.vue";
-import Question2 from "./views/ProgrammingQuestions/FalldownBallView.vue";
-import Question3 from "./views/ProgrammingQuestions/ReturnBallView.vue";
-import Question4 from "./views/ProgrammingQuestions/BouncingBallView.vue";
+import Question1 from "./views/ProgrammingQuestions/CreateCircleView.vue";
+import Question2 from "./views/ProgrammingQuestions/CreateFourCirclesView.vue";
+import Question3 from "./views/ProgrammingQuestions/FalldownBallView.vue";
+import Question4 from "./views/ProgrammingQuestions/ReturnBallView.vue";
+import Question5 from "./views/ProgrammingQuestions/BouncingBallView.vue";
 import { store } from "./vuex/index.js";
 
 const PASSWORD =
@@ -84,7 +85,7 @@ export const router = createRouter({
       path: "/programming/question1",
       name: "question1",
       component: Question1,
-      meta: { require: true, unclocked1: true },
+      meta: { require: true },
     },
     {
       path: "/programming/question2",
@@ -103,6 +104,12 @@ export const router = createRouter({
       name: "question4",
       component: Question4,
       meta: { require: true, unclocked4: true },
+    },
+    {
+      path: "/programming/question5",
+      name: "question5",
+      component: Question5,
+      meta: { require: true, unclocked5: true },
     },
   ],
   scrollBehavior(to) {
@@ -148,13 +155,13 @@ router.beforeEach((to, from, next) => {
       next({ name: "login" });
     } else {
       // Missionのクリア数に合わせたアクセス権限の設定
-      if (to.meta.unclocked1 && store.getters.getClearedMissionNum < 1) {
+      if (to.meta.unclocked2 && store.getters.getClearedMissionNum < 1) {
         next({ name: "programming" });
-      } else if (to.meta.unclocked2 && store.getters.getClearedMissionNum < 2) {
+      } else if (to.meta.unclocked3 && store.getters.getClearedMissionNum < 2) {
         next({ name: "programming" });
-      } else if (to.meta.unclocked3 && store.getters.getClearedMissionNum < 3) {
+      } else if (to.meta.unclocked4 && store.getters.getClearedMissionNum < 3) {
         next({ name: "programming" });
-      } else if (to.meta.unclocked4 && store.getters.getClearedMissionNum < 4) {
+      } else if (to.meta.unclocked5 && store.getters.getClearedMissionNum < 4) {
         next({ name: "programming" });
       } else {
         next();

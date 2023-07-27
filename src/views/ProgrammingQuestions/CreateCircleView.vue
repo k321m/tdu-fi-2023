@@ -1,37 +1,20 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <ProgrammingTitle question5>
-        <template v-slot:questionNo>Q5</template>
-        <template v-slot:name>BouncingBall</template>
+      <ProgrammingTitle question1>
+        <template v-slot:questionNo>Q1</template>
+        <template v-slot:name>MakeCircle</template>
       </ProgrammingTitle>
       <div class="py-2">
-        白いボールが重力を受けて落下するには空欄にどのコードを当てはめれば良いでしょうか？
+        <p>白い円を1つ作るには空欄にどのコードを当てはめれば良いでしょうか？</p>
       </div>
-      <p></p>
+
       <div class="code-box">
         <pre>
-  <code>
-  float x, y; <span class="small">//ボールの中心座標</span>
-  int d;      <span class="small">//ボールの半径</span>
-  float v;    <span class="small">//ボールの速度</span>
-  void setup() { <span class="small">//一番初めに一度だけ実行される</span>
-    size(300, 300); 
-    x = 150;
-    y = 100;
-    d = 50;
-    v = 0;
-  } 
-  void draw() { <span class="small">//毎フレーム実行される</span>
-    background(220);
-    ellipse(x, y, d, d);
-    v = <span class="hole-box">{{ holeValue }}</span>;
-    y = y + v;  
-    if (y + d/2 > height) {
-      y = height - d/2;
-      v = -v * 0.8; <span class="small">//反射係数0.8で上昇速度を落とす</span>
-    }
-  }</code>
+<code>
+  size(300, 300);
+  <span class="hole-box">{{ holeValue }}</span>;
+</code>
     </pre>
       </div>
       <ProgrammingSelectButton
@@ -39,10 +22,15 @@
         @selected-value="changeHoleValue"
       >
       </ProgrammingSelectButton>
-      <ProgrammingExecuteButton />
+      <ProgrammingExecuteButton @executed="execute" />
       <div class="p5-canvas ma-7">
         <div id="canvas"></div>
-        <p v-if="executedFlag">{{ answerText }}</p>
+        <transition :name="isCorrect ? 'correct' : 'incorrect'">
+          <img
+            v-show="executedFlag"
+            :src="isCorrect ? correctImg : incorrectImg"
+          />
+        </transition>
       </div>
     </div>
   </div>
@@ -52,6 +40,8 @@
 import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
+import CorrectImg from "../../assets/icon-correct.svg";
+import IncorrectImg from "../../assets/icon-incorrect.svg";
 import p5 from "p5";
 import {
   p5Setup,
@@ -59,9 +49,9 @@ import {
   p5Slect2,
   p5Slect3,
   p5Slect4,
-} from "../../js/p5/bouncingBall";
+} from "../../js/p5/createCircle";
 export default {
-  name: "BouncingBallView",
+  name: "CreateCircleView",
   components: {
     ProgrammingTitle,
     ProgrammingSelectButton,
@@ -71,26 +61,28 @@ export default {
     return {
       choices: [
         {
-          code: "v + 9.8",
+          code: "rect(80, 80, 140, 140)",
           judge: false,
         },
         {
-          code: "9.8",
+          code: "triangle(150, 80, 80, 220, 220, 220)",
           judge: false,
         },
         {
-          code: "v + 9.8 / 60",
+          code: "ellipse(150, 150, 140, 140)",
           judge: true,
         },
         {
-          code: "v * 9.8",
+          code: "line(80, 80, 220, 220)",
           judge: false,
         },
       ],
       holeValue: "       ",
-      answerText: "不正解",
+      isCorrect: false,
       executedFlag: false,
       p5Value: Object,
+      correctImg: CorrectImg,
+      incorrectImg: IncorrectImg,
     };
   },
   mounted() {
@@ -108,7 +100,8 @@ export default {
           this.selectP5code(i);
           this.executedFlag = true;
           if (this.choices[i].judge) {
-            this.answerText = "正解";
+            this.$store.commit("updateIsClearedMission4");
+            this.isCorrect = true;
           }
         }
       }
@@ -127,6 +120,9 @@ export default {
         p5Slect4(this.p5Value);
       }
     },
+    beforeEnter(el) {
+      el.style.transitionDelay = 1000 * parseInt(el.dataset.index, 10) + "ms";
+    },
   },
 };
 </script>
@@ -135,6 +131,7 @@ export default {
 #contents {
   background-color: white;
   min-height: 100dvh;
+  border-radius: 0.2rem;
 }
 
 .code-box {
@@ -170,12 +167,35 @@ code {
   position: relative;
 }
 
-.p5-canvas p {
+.p5-canvas img {
   position: absolute;
+  width: 17rem;
   color: black;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5rem;
+  transition-delay: 3s;
+}
+
+.incorrect-enter-active {
+  transition: opacity 5s ease;
+}
+
+.incorrect-enter-from {
+  opacity: 0;
+}
+
+.correct-enter-active {
+  animation: correct-in 1s;
+}
+@keyframes correct-in {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 </style>
