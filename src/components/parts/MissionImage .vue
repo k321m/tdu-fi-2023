@@ -5,7 +5,7 @@
       <img
         class="mission-stamp"
         :class="{ play: isPlay }"
-        src="/src/assets/missions/GetStamp.png"
+        src="/src/assets/missions/GetStamp.svg"
       />
     </template>
     <template v-else>
