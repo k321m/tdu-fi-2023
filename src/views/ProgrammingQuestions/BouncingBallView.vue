@@ -1,6 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
+      <ProgrammingBackPageButton />
       <ProgrammingTitle question5>
         <template v-slot:questionNo>Q5</template>
         <template v-slot:name>BouncingBall</template>
@@ -50,6 +51,7 @@
 </template>
 
 <script>
+import ProgrammingBackPageButton from "../../components/ProgrammingBackPageButton.vue";
 import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
@@ -65,6 +67,7 @@ import {
 export default {
   name: "BouncingBallView",
   components: {
+    ProgrammingBackPageButton,
     ProgrammingTitle,
     ProgrammingSelectButton,
     ProgrammingExecuteButton,

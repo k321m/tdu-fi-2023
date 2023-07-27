@@ -1,6 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
+      <ProgrammingBackPageButton />
       <ProgrammingTitle question2>
         <template v-slot:questionNo>Q2</template>
         <template v-slot:name>MakeFourCircles</template>
@@ -37,6 +38,7 @@
 </template>
 
 <script>
+import ProgrammingBackPageButton from "../../components/ProgrammingBackPageButton.vue";
 import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
@@ -52,6 +54,7 @@ import {
 export default {
   name: "CreateFourCirclesView",
   components: {
+    ProgrammingBackPageButton,
     ProgrammingTitle,
     ProgrammingSelectButton,
     ProgrammingExecuteButton,

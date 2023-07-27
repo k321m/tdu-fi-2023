@@ -1,6 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
+      <ProgrammingBackPageButton />
       <ProgrammingTitle question4>
         <template v-slot:questionNo>Q4</template>
         <template v-slot:name>ReboundBall</template>
@@ -49,6 +50,7 @@
 </template>
 
 <script>
+import ProgrammingBackPageButton from "../../components/ProgrammingBackPageButton.vue";
 import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
@@ -64,6 +66,7 @@ import {
 export default {
   name: "ReturnBallView",
   components: {
+    ProgrammingBackPageButton,
     ProgrammingTitle,
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
