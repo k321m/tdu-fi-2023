@@ -1,7 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <ProgrammingBackPageButton />
+      <ProgrammingBackPageButton :color="questionColor" />
       <ProgrammingTitle question4>
         <template v-slot:questionNo>Q4</template>
         <template v-slot:name>ReboundBall</template>
@@ -98,6 +98,7 @@ export default {
       executedFlag: false,
       p5Value: Object,
       resultDelay: "4s",
+      questionColor: "#661b93",
     };
   },
   mounted() {

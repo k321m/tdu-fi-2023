@@ -1,7 +1,7 @@
 <template>
   <div class="btn-back my-2">
     <router-link to="/programming"></router-link>
-    <img src="../assets/chevron-left.svg" style="color: var(--purple)" />
+    <v-icon>mdi-chevron-triple-left</v-icon>
     <span>もどる</span>
   </div>
 </template>
@@ -9,11 +9,15 @@
 <script>
 export default {
   name: "ProgrammingBackPageButton",
+  props: ["color"],
   emits: ["back-page"],
 };
 </script>
 
 <style scoped>
+i {
+  color: v-bind(color);
+}
 .btn-back {
   position: relative;
 }
@@ -25,7 +29,7 @@ export default {
   font-weight: var(--medium);
   vertical-align: middle;
   margin: 0 0 0 0.2rem;
-  color: var(--pink);
+  color: v-bind(color);
 }
 a {
   display: block;
