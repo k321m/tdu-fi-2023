@@ -142,6 +142,7 @@ export default {
 #contents {
   background-color: white;
   min-height: 100dvh;
+  border-radius: 0.2rem;
 }
 
 .code-box {

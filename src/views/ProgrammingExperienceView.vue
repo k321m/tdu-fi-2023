@@ -8,7 +8,9 @@
           情報メディア学科1年次の「コンピュータプログラミングI/Ⅱ」の授業で勉強する、Processingというプログラミング言語を使って、実際にプログラミングを体験することができます。全くプログラミング経験がない人も楽しめる問題になっているので、ぜひ入学後のイメージ固めにお役立てください。
         </template>
       </ContentTitle>
-      <Button class="my-5" defaultBorder>Processing基本知識</Button>
+      <Button class="my-5" to="/programming/basics" defaultBorder
+        >Processing基本知識</Button
+      >
       <ProgrammingQuestionButton
         :questionButtonData="this.questionButtonData"
       />

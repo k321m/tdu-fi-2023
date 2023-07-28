@@ -14,8 +14,7 @@
         <pre>
 <code>
   size(300, 300);
-  <span class="hole-box">{{ holeValue }}</span>;
-</code>
+  <span class="hole-box">{{ holeValue }}</span>;</code>
     </pre>
       </div>
       <ProgrammingSelectButton
@@ -47,7 +46,6 @@ import {
   p5Slect3,
   p5Slect4,
 } from "../../js/p5/createCircle";
-import ProgrammingResultCanvasVue from "../../components/ProgrammingResultCanvas.vue";
 export default {
   name: "CreateCircleView",
   components: {
