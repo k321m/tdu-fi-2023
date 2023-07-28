@@ -25,13 +25,15 @@
       </v-row>
     </template>
     <!-- 本文 -->
-    <template v-slot:body>
+    <template v-slot:body-title>
       <h4 class="mb-2 mt-4">
         達成したミッション
         <span class="hack pl-2">
           {{ this.$store.getters.getClearedMissionNum }}/4
         </span>
       </h4>
+    </template>
+    <template v-slot:body>
       <div v-for="item in missionItems" :key="item.to">
         <MissionItem
           :to="item.to"

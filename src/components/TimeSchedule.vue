@@ -31,7 +31,7 @@
               :itemsToShow="1.2"
               :breakpoints="breakpoints_allDay"
               snapAlign="start"
-              :transition="500"
+              :transition="0"
             >
               <Slide v-for="(value, key) in this.allDayEventsData" :key="value">
                 <div class="carousel__item" @click="openDialog(value, key)">
@@ -87,7 +87,7 @@
                         :itemsToShow="1"
                         :breakpoints="breakpoints_limited"
                         snapAlign="center"
-                        :transition="500"
+                        :transition="0"
                       >
                         <Slide
                           v-for="(value, key) in timeSchedule"

@@ -12,6 +12,8 @@
       <div class="dialog-info pb-4">
         <slot name="info" />
       </div>
+
+      <slot name="body-title" />
       <div
         class="scroll-contents"
         style="font-size: 0.9em; padding-bottom: 1em"

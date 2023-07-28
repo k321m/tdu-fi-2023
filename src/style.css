@@ -433,7 +433,7 @@ div.v-dialog.v-overlay--active.v-theme--light > div.v-overlay__content {
 }
 .v-dialog > .v-overlay__content {
   width: auto !important;
-  max-width: auto !important;
+  max-width: 100% !important;
 }
 
 .v-toolbar__content {
