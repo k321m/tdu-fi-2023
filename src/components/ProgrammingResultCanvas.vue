@@ -29,7 +29,7 @@ export default {
       return "background-color: " + this.color;
     },
     reloadPage() {
-      location.reload();
+      location.href = location.pathname;
     },
   },
 };
