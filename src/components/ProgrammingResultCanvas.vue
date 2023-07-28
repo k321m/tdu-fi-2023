@@ -6,7 +6,9 @@
       <img v-else v-show="executedFlag" :src="incorrectImg" />
     </transition>
   </div>
-  <Button :style="setButtonStyle(color)">もう一度挑戦する</Button>
+  <Button :style="setButtonStyle(color)" @click="reloadPage"
+    >もう一度挑戦する</Button
+  >
 </template>
 
 <script>
@@ -25,6 +27,9 @@ export default {
   methods: {
     setButtonStyle(color) {
       return "background-color: " + this.color;
+    },
+    reloadPage() {
+      location.reload();
     },
   },
 };
