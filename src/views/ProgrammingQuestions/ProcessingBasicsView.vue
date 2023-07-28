@@ -164,7 +164,7 @@
 <code>
   size(250, 250);
   int x = 80;
-  for(int i = 1; i <= 10; i++){
+  for(int i = 1; i&lt;10; i++){
     line(x , 80, x , 170);
     x += 10;
   }
