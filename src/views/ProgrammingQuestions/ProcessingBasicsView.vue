@@ -158,19 +158,21 @@
           </div>
 
           例として、上記の<code>for文</code>で、線を描く<code>line()</code>を使って、10本の線を書いてみます。
+          line()は、「始点のx座標、始点のy座標、終点のx座標、終点のy座標」の順で描くことができます。
           コードは以下のようになります。
           <div class="code-box">
             <pre>
 <code>
   size(250, 250);
   int x = 80;
-  for(int i = 1; i <= 10; i++){
+  for(int i = 1; i &lt;= 10; i++){
     line(x , 80, x , 170);
-    x += 10;
+    x = x +  10;
   }
 </code>
 </pre>
           </div>
+          実行した結果は以下のようになります。
         </div>
       </div>
     </div>
@@ -180,7 +182,7 @@
 <script>
 import ContentTitle from "../../components/ContentTitle.vue";
 import p5 from "p5";
-import { p5Setup1, p5Setup2 } from "../../js/p5/basics/2-1_circle";
+import { p5Setup1, p5Setup2, p5Setup3 } from "../../js/p5/basics/2-1_circle";
 export default {
   name: "ProcessingBasicView",
   components: {
@@ -189,6 +191,7 @@ export default {
   mounted() {
     new p5(p5Setup1);
     new p5(p5Setup2);
+    new p5(p5Setup3);
   },
 };
 </script>
