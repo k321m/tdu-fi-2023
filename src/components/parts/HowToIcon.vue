@@ -1,13 +1,19 @@
 <template>
   <a :class="className">
-    <img src="/src/assets/howto-3d-icon.png" class="menu-icon-img" />
+    <img :src="HowToIcon" class="menu-icon-img" />
   </a>
 </template>
 <script>
+import HowToIcon from "/src/assets/howto-3d-icon.svg";
 export default {
   name: "HowToIcon",
   props: {
     className: String,
+  },
+  data() {
+    return {
+      HowToIcon,
+    };
   },
 };
 </script>
