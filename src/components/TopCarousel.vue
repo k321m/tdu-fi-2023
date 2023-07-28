@@ -37,6 +37,7 @@ import MenuImg03 from "/src/assets/top-crousel/questionstop10.png";
 import MenuImg04 from "/src/assets/top-crousel/faq.png";
 import MenuImg05 from "/src/assets/top-crousel/myNote.png";
 import MenuImg06 from "/src/assets/top-crousel/survey.png";
+import MenuImg07 from "/src/assets/top-crousel/programming.png";
 
 import "vue3-carousel/dist/carousel.css";
 export default {
@@ -62,6 +63,12 @@ export default {
           to: "/labs",
         },
         {
+          text: "MyNote",
+          jptext: "マイノート",
+          img: "background-image: url(" + MenuImg05 + ")",
+          to: "/my-note",
+        },
+        {
           text: "Lecture",
           jptext: "講義動画",
           img: "background-image: url(" + MenuImg02 + ")",
@@ -80,10 +87,10 @@ export default {
           to: "/faq",
         },
         {
-          text: "MyNote",
-          jptext: "マイノート",
-          img: "background-image: url(" + MenuImg05 + ")",
-          to: "/my-note",
+          text: "Programming",
+          jptext: "プログラミング体験",
+          img: "background-image: url(" + MenuImg07 + ")",
+          to: "/programming",
         },
         {
           text: "Survey",
