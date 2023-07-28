@@ -11,6 +11,7 @@ import limitedEventImg3 from "../assets/情報システム工学科.svg";
 import limitedEventImg4 from "../assets/情報通信工学科.svg";
 import limitedEventImg5 from "../assets/一般・共通テスト入試ガイダンス.svg";
 import limitedEventImg6 from "../assets/推薦・AO入試ガイダンス.svg";
+import limitedEventImg7 from "../assets/女子高校生向け.svg";
 export default {
   namespaced: true,
 
@@ -268,7 +269,7 @@ export default {
         place: "5号館3階 5302教室",
         peopleNum: "153名",
         info: "",
-        img: "background-image: url(" + limitedEventImg6 + ")",
+        img: "background-image: url(" + limitedEventImg7 + ")",
         links: [
           {
             name: "▶︎ 受験生・高校生の方（東京電機大学公式HP）",
