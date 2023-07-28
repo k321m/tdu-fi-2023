@@ -1,7 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <ProgrammingBackPageButton />
+      <ProgrammingBackPageButton :color="questionColor" />
       <ProgrammingTitle question3>
         <template v-slot:questionNo>Q3</template>
         <template v-slot:name>FalldownBall</template>
@@ -96,6 +96,7 @@ export default {
       executedFlag: false,
       p5Value: Object,
       resultDelay: "3s",
+      questionColor: "#8f29ae",
     };
   },
   mounted() {

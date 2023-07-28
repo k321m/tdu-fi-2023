@@ -1,7 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
-      <ProgrammingBackPageButton />
+      <ProgrammingBackPageButton :color="questionColor" />
       <ProgrammingTitle question1>
         <template v-slot:questionNo>Q1</template>
         <template v-slot:name>MakeCircle</template>
@@ -81,6 +81,7 @@ export default {
       executedFlag: false,
       p5Value: Object,
       resultDelay: "1s",
+      questionColor: "var(--pink)",
     };
   },
   mounted() {

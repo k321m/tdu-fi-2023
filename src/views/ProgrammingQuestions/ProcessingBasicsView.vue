@@ -1,6 +1,7 @@
 <template>
   <div id="contents">
     <div class="pa-3">
+      <ProgrammingBackPageButton />
       <ContentTitle>
         <template v-slot:jp-title>Processing基本知識</template>
         <template v-slot:title>>Processing Basics</template>
@@ -244,6 +245,7 @@
 </template>
 
 <script>
+import ProgrammingBackPageButton from "../../components/ProgrammingBackPageButton.vue";
 import ContentTitle from "../../components/ContentTitle.vue";
 import p5 from "p5";
 import { p5Setup1, p5Setup2, p5Setup3 } from "../../js/p5/basics/2-1_circle";
@@ -251,6 +253,7 @@ export default {
   name: "ProcessingBasicView",
   components: {
     ContentTitle,
+    ProgrammingBackPageButton,
   },
   mounted() {
     new p5(p5Setup1);
