@@ -26,7 +26,7 @@ export default {
     simulateLoading() {
       const interval = setInterval(() => {
         this.progressPercentage++;
-        if (this.progressPercentage >= 100) {
+        if (this.progressPercentage >= 101) {
           // 100%に達したら点滅アニメーション
           clearInterval(interval);
           this.playAnimation = true;
@@ -71,7 +71,6 @@ export default {
 .progress-bar::after {
   content: "";
   position: absolute;
-  width: 100%;
   height: 100%;
   width: v-bind(progressPercentage + "%");
   max-width: 100%;

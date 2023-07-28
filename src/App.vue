@@ -1,10 +1,7 @@
 <template>
   <v-app>
     <div id="particles-js"></div>
-    <ProgressBar
-      v-if="isLoading && this.$store.getters.getPassword != ''"
-      @end-loading="isLoading = false"
-    />
+    <ProgressBar v-if="checkLoading()" @end-loading="isLoading = false" />
     <template v-else>
       <div>
         <transition name="fade">
@@ -85,6 +82,15 @@ export default {
       LogoDark,
       isLoading: true, // 初期値としてローディング画面を表示するためのフラグ
     };
+  },
+  methods: {
+    checkLoading() {
+      return (
+        this.isLoading &&
+        this.$store.getters.getPassword != "" &&
+        (location.pathname == "/" || location.pathname == "/login")
+      );
+    },
   },
 };
 </script>
