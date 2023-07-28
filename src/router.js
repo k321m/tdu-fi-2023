@@ -14,7 +14,7 @@ import Question2 from "./views/ProgrammingQuestions/CreateFourCirclesView.vue";
 import Question3 from "./views/ProgrammingQuestions/FalldownBallView.vue";
 import Question4 from "./views/ProgrammingQuestions/ReturnBallView.vue";
 import Question5 from "./views/ProgrammingQuestions/BouncingBallView.vue";
-import basics from "./views/ProgrammingQuestions/ProcessingbasicsView.vue";
+import basics from "./views/ProgrammingQuestions/ProcessingBasicsView.vue";
 import { store } from "./vuex/index.js";
 
 const PASSWORD =
