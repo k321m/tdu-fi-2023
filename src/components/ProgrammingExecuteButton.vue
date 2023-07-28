@@ -28,7 +28,7 @@ export default {
 }
 i {
   position: absolute;
-  left: 0.35em;
+  left: 1.3rem;
   color: var(--white);
   font-size: 2rem;
 }

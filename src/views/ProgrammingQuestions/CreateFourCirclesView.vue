@@ -1,6 +1,7 @@
 <template>
   <div id="contents" class="my-4 mx-1">
     <div class="pa-3">
+      <ProgrammingBackPageButton />
       <ProgrammingTitle question2>
         <template v-slot:questionNo>Q2</template>
         <template v-slot:name>MakeFourCircles</template>
@@ -26,19 +27,22 @@
         @selected-value="changeHoleValue"
       >
       </ProgrammingSelectButton>
-      <ProgrammingExecuteButton />
-      <div class="p5-canvas ma-7">
-        <div id="canvas"></div>
-        <p v-if="executedFlag">{{ answerText }}</p>
-      </div>
+      <ProgrammingExecuteButton @executed="execute" />
+      <ProgrammingResultCanvas
+        :isCorrect="isCorrect"
+        :executedFlag="executedFlag"
+        :delay="resultDelay"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import ProgrammingBackPageButton from "../../components/ProgrammingBackPageButton.vue";
 import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
+import ProgrammingResultCanvas from "../../components/ProgrammingResultCanvas.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -50,9 +54,11 @@ import {
 export default {
   name: "CreateFourCirclesView",
   components: {
+    ProgrammingBackPageButton,
     ProgrammingTitle,
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
+    ProgrammingResultCanvas,
   },
   data() {
     return {
@@ -75,9 +81,10 @@ export default {
         },
       ],
       holeValue: "       ",
-      answerText: "不正解",
+      isCorrect: false,
       executedFlag: false,
       p5Value: Object,
+      resultDelay: "1s",
     };
   },
   mounted() {
@@ -95,7 +102,7 @@ export default {
           this.selectP5code(i);
           this.executedFlag = true;
           if (this.choices[i].judge) {
-            this.answerText = "正解";
+            this.isCorrect = true;
           }
         }
       }
@@ -122,6 +129,7 @@ export default {
 #contents {
   background-color: white;
   min-height: 100dvh;
+  border-radius: 0.2rem;
 }
 
 .code-box {
@@ -149,20 +157,5 @@ code {
   font-size: 0.8rem;
   border: 1px solid #adadad;
   color: #010440;
-}
-
-.p5-canvas {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.p5-canvas p {
-  position: absolute;
-  color: black;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 5rem;
 }
 </style>
