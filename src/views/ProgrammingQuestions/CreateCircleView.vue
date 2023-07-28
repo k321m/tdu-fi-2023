@@ -27,6 +27,7 @@
         :isCorrect="isCorrect"
         :executedFlag="executedFlag"
         :delay="resultDelay"
+        :color="'#e345e6'"
       />
     </div>
   </div>

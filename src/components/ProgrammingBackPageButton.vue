@@ -1,7 +1,7 @@
 <template>
   <div class="btn-back my-2">
     <router-link to="/programming"></router-link>
-    <img src="../assets/chevron-left.svg" />
+    <img src="../assets/chevron-left.svg" style="color: var(--purple)" />
     <span>もどる</span>
   </div>
 </template>

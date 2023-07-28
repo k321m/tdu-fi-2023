@@ -6,17 +6,26 @@
       <img v-else v-show="executedFlag" :src="incorrectImg" />
     </transition>
   </div>
+  <Button :style="setButtonStyle(color)">もう一度挑戦する</Button>
 </template>
 
 <script>
 import CorrectImg from "../assets/icon-correct.svg";
 import IncorrectImg from "../assets/icon-incorrect.svg";
-
+import Button from "../components/parts/Button.vue";
 export default {
   name: "ProgrammingResultCanvas",
-  props: ["isCorrect", "executedFlag", "delay"],
+  props: ["isCorrect", "executedFlag", "delay", "color"],
   data() {
     return { correctImg: CorrectImg, incorrectImg: IncorrectImg };
+  },
+  components: {
+    Button,
+  },
+  methods: {
+    setButtonStyle(color) {
+      return "background-color: " + this.color;
+    },
   },
 };
 </script>
