@@ -108,6 +108,10 @@ small,
   color: var(--purple);
 }
 
+.dark {
+  color: var(--dark);
+}
+
 .white {
   color: var(--white);
 }
@@ -200,7 +204,8 @@ small,
   left: 0;
   border-radius: 0 0.8rem 0.8rem 0;
 }
-.map::before {
+.map::before,
+.department-data::before {
   content: "";
   display: block;
   width: 94%;

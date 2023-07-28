@@ -16,16 +16,16 @@
       <section>
         <a href="/#timeline">
           <img
-            class="mb-8 banner-mobile"
+            class="banner-mobile"
             src="/src/assets/school-information-session-banner-mobile.svg"
           />
           <img
-            class="mb-8 banner-tablet"
+            class="banner-tablet"
             src="/src/assets/school-information-session-banner-tablet.svg"
           />
         </a>
 
-        <div class="department-video py-8">
+        <div class="department-video py-8 my-8">
           <div class="v-container">
             <h2 class="pb-6">カリキュラム紹介動画</h2>
             <p>
@@ -40,8 +40,120 @@
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
-              class="pt-6"
+              class="pt-6 mb-3"
             ></iframe>
+            <a
+              style="font-size: 0.8em"
+              href="https://www.im.dendai.ac.jp/curriculum/"
+              >▶︎ カリキュラムの特色（情報メディア学科公式サイト）</a
+            >
+          </div>
+        </div>
+        <div class="department-data py-8">
+          <div class="v-container">
+            <h2 class="pb-7">学科データ</h2>
+            <v-row no-gutters style="width: 100%">
+              <!-- 入学者定員 -->
+              <v-col
+                cols="6"
+                sm="4"
+                class="pb-5"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+              >
+                <v-icon class="dark">mdi-account-group</v-icon>
+                <h3 class="pb-3 dark"><b>入学者定員</b></h3>
+                <p>
+                  <span
+                    class="hack"
+                    style="font-size: 3.2rem; padding: 0 0.4rem 0 0.8rem"
+                    >110</span
+                  >名
+                </p>
+              </v-col>
+              <!-- 卒業者数 -->
+              <v-col
+                cols="6"
+                sm="4"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+                class="pb-5"
+              >
+                <v-icon class="dark">mdi-school</v-icon>
+                <h3 class="pb-3 dark"><b>卒業者数</b></h3>
+                <p>
+                  <span
+                    class="hack"
+                    style="font-size: 3.2rem; padding: 0 0.4rem 0 0.8rem"
+                    >116</span
+                  >名
+                </p>
+              </v-col>
+              <v-col
+                cols="6"
+                sm="4"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+                class="pb-5"
+              >
+                <v-icon class="dark">mdi-account-group</v-icon>
+                <h3 class="pb-3 dark"><b>進学者数</b></h3>
+                <p>
+                  <span
+                    class="hack"
+                    style="font-size: 3.2rem; padding: 0 0.4rem 0 0.8rem"
+                    >38</span
+                  >名<span class="hack">(32.8%) </span>
+                </p>
+              </v-col>
+              <v-col
+                cols="6"
+                sm="4"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                "
+                class="pb-5"
+              >
+                <v-icon class="dark">mdi-domain</v-icon>
+                <h3 class="pb-3 dark"><b>就職内定率</b></h3>
+                <p>
+                  <span
+                    class="hack"
+                    style="font-size: 3.2rem; padding: 0 0.4rem 0 0.8rem"
+                    >98.7</span
+                  >%
+                </p>
+              </v-col>
+            </v-row>
+            <a
+              style="font-size: 0.8em; display: inline-block"
+              href="https://www.dendai.ac.jp/about/admission/undergraduate/shiken-nittei.html"
+            >
+              ▶︎ 入試種別・募集人員一覧（東京電機大学公式サイト）
+            </a>
+            <a
+              style="font-size: 0.8em; display: inline-block"
+              href="https://www.im.dendai.ac.jp/qualif/#career"
+            >
+              ▶︎ 就職先（情報メディア学科公式サイト）
+            </a>
+            <a
+              style="font-size: 0.8em; display: inline-block"
+              href="https://www.im.dendai.ac.jp/qualif/#career"
+            >
+              ▶︎ 就職実績（東京電機大学公式サイト）
+            </a>
           </div>
         </div>
       </section>
@@ -66,9 +178,14 @@ export default {
 </script>
 
 <style scoped>
-.department-video {
+.department-video,
+.department-data {
   position: relative;
 }
+.department-data {
+  text-align: end;
+}
+
 .banner-mobile {
   display: none;
 }
