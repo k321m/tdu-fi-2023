@@ -14,6 +14,7 @@ export default {
   methods: {
     clicked() {
       this.$emit("executed");
+      location.href = location.href + "#canvas";
     },
   },
 };
