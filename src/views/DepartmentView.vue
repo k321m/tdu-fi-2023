@@ -155,6 +155,12 @@
             >
               ▶︎ 就職実績（東京電機大学公式サイト）
             </a>
+            <a
+              style="font-size: 0.8em; display: inline-block"
+              href="https://www.im.dendai.ac.jp/student/"
+            >
+              ▶︎ 学生の声（情報メディア学科公式サイト）
+            </a>
           </div>
         </div>
       </section>
