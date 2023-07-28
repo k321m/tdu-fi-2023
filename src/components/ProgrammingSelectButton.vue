@@ -52,9 +52,8 @@ i {
 code {
   font-size: 1rem;
   flex-grow: 1;
-  /* text-align: center; */
-  /* margin: 0 0.4rem; */
   margin-left: 0.4rem;
+  padding-top: 0.2rem;
 }
 input:checked + label {
   border: solid var(--dark);
