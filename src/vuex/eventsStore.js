@@ -268,7 +268,7 @@ export default {
         isLongTitle: true,
         place: "5号館3階 5302教室",
         peopleNum: "153名",
-        info: "",
+        info: "電大女子の大学生活、研究内容、就職先等について教員と実際に電大で学んでいる女子学生が全てお話しします！説明会終了後には、教員・学生とのフリートークタイムも設けておりますので、聞きたいことを積極的に聞いてみてください！",
         img: "background-image: url(" + limitedEventImg7 + ")",
         links: [
           {
