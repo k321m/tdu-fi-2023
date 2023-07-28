@@ -3,6 +3,10 @@
     <h2 class="hack">
       <span><slot name="questionNo"></slot></span><slot name="name"></slot>
       <slot />
+      <img
+        src="/src/assets/fire-numbg.svg"
+        style="position: absolute; top: 0; left: 0; height: 100%; width: auto"
+      />
     </h2>
   </div>
 </template>
