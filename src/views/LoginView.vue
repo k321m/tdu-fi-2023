@@ -11,7 +11,13 @@
       </div>
       <p class="sub-strong pink" v-show="updateMiss">パスワードが違います</p>
       <div class="py-3">
-        <Button :default="pass" :desable="!pass" @click="send"> 送信 </Button>
+        <Button
+          :default="inputHasValue"
+          :desable="!inputHasValue"
+          @click="send"
+        >
+          送信
+        </Button>
       </div>
     </div>
   </div>
@@ -45,6 +51,10 @@ export default {
     // VueRouterのrouter.js内でmissedPasswordが変更されたら発火
     updateMiss() {
       return this.$store.getters.getMissedPassword;
+    },
+    // 空文字列ならfalse、何かしらの値が入力されていればtrueを返すcomputedプロパティ
+    inputHasValue() {
+      return this.pass !== "";
     },
   },
 };
