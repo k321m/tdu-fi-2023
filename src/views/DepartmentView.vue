@@ -112,8 +112,9 @@
                     class="hack"
                     style="font-size: 3.2rem; padding: 0 0.4rem 0 0.8rem"
                     >38</span
-                  >名<span class="hack">(32.8%) </span>
+                  >名
                 </p>
+                <p class="hack">（32.8%）</p>
               </v-col>
               <v-col
                 cols="6"
@@ -125,15 +126,15 @@
                 "
                 class="pb-5"
               >
-                <v-icon class="dark">mdi-domain</v-icon>
-                <h3 class="pb-3 dark"><b>就職内定率</b></h3>
-                <p>
-                  <span
-                    class="hack"
-                    style="font-size: 3.2rem; padding: 0 0.4rem 0 0.8rem"
-                    >98.7</span
-                  >%
+                <v-icon class="dark">mdi-human-male-female</v-icon>
+                <h3 class="pb-3 dark"><b>男女比</b></h3>
+                <p
+                  class="hack"
+                  style="font-size: 3.2rem; padding: 0 0.4rem 0 0.8rem"
+                >
+                  8:2
                 </p>
+                <p>※<span class="hack">2023</span>年度入学</p>
               </v-col>
             </v-row>
             <a
