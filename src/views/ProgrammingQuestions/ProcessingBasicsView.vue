@@ -5,7 +5,7 @@
         <template v-slot:jp-title>Processing基本知識</template>
         <template v-slot:title>>Processing Basics</template>
         <template v-slot:info>
-          プログラミング体験の問題を解く上で必要となるProcessingの基本知識をまとめました。プログラミング体験の問題に挑戦する前に一読すると問題が解きやすくなります
+          プログラミング体験の問題を解く上で必要となるProcessingの基本知識をまとめました。プログラミング体験の問題に挑戦する前に一読すると問題が解きやすくなります。
         </template>
       </ContentTitle>
       <div class="content pa-3 mt-5">
@@ -158,22 +158,86 @@
           </div>
 
           例として、上記の<code>for文</code>で、線を描く<code>line()</code>を使って、10本の線を書いてみます。
-          line()は、「始点のx座標、始点のy座標、終点のx座標、終点のy座標」の順で描くことができます。
+          <code>line()</code
+          >は、「始点のx座標、始点のy座標、終点のx座標、終点のy座標」の順で描くことができます。
           コードは以下のようになります。
           <div class="code-box">
             <pre>
 <code>
   size(250, 250);
-  int x = 80;
+  int x = 80;   <span class="small">//線の始点と終点のx座標</span>
   for(int i = 1; i &lt;= 10; i++){
-    line(x , 80, x , 170);
-    x = x +  10;
+    line(x, 80, x, 170); <span class="small">//線を描画</span>
+    x = x + 10; <span class="small">//xの値を10ずつ増やす</span>
   }
 </code>
 </pre>
           </div>
           実行した結果は以下のようになります。
+          <div class="min-item">
+            <div class="canvas" id="canvas4-1"></div>
+          </div>
+          <div class="min-item">
+            上記のコードでは<code>line()</code>のx座標の値を10ずつ増やす処理を10回行なっている、10ずつずれた線が10本描かれています。
+          </div>
+          <h3>
+            4-2. <code style="font-weight: var(--bold)">setup()</code>と<code
+              style="font-weight: var(--bold)"
+              >draw()</code
+            >
+          </h3>
+          <div class=""></div>
+          Processingでは<code>setup()</code>、<code>draw()</code>という関数を使うことでアニメーションを作成することができます。
+          実際の使い方は以下の通りです。
+          <div class="code-box">
+            <pre>
+<code>
+  void setup() {
+    <span class="small">//最初に一度だけ実行したい処理を記述</span>
+  }
+  void draw() {
+    <span class="small">//毎フレーム実行したい処理を記述</span>
+  }
+</code>
+</pre>
+          </div>
+          上記のように、<code>setup()</code>内に書かれた処理は実行直後に一度だけ実行され、<code>draw()</code>は、毎フレーム(1フレーム
+          =
+          1/60秒)実行されます。そのため、繰り返し実行したい処理は<code>draw()</code>の中に書く必要があります。
         </div>
+        <div class="item">
+          <h2>5. 条件分岐処理</h2>
+          プログラミングにおける条件分岐処理では、<code>if</code>文と呼ばれる構文を使用します。<br />
+          つまり、「もし ◯◯◯ だったら ×××する」という処理が実装できます。
+          実際の使い方は以下の通りです。
+
+          <div class="code-box">
+            <pre>
+<code>
+  if (条件式){
+    <span class="small">//条件式が真(true)であれば実行する処理</span>
+  }
+</code>
+</pre>
+          </div>
+          <code>if</code
+          >文内の処理は条件式の真偽によって実行されるか、されないかが決定します。条件式には、「&lt;、>、&lt;=、>=、==」といった比較演算子を用います。具体的な例は以下の通りです。
+          <div class="code-box">
+            <pre>
+<code>
+  if (1 > 2)  <span class="small">//1は2より大きいか判定:偽(false)</span>
+  if (1 &lt; 2)  <span class="small">//1は2より小さいか判定:真(true)</span>
+  if (1 >= 1) <span class="small">//1は1以上か判定:真(true)</span>
+  if (2 &lt;= 1) <span class="small">//2は1以上か判定:偽(false)</span>
+  if (1 == 1) <span class="small">//1は1と等しいか判定:真(true)</span>
+</code>
+</pre>
+          </div>
+          上記では整数値のみの比較を例として挙げましたが、変数の比較も同じように比較演算子を用いて記述できます。
+        </div>
+        以上がProcessingの簡単な説明になります。本ページでは説明しきれていない内容が沢山あります。<br />
+        この機会がプログラミングに興味を持つきっかけになれば幸いです。<br />
+        <a href="https://processing.org/">▶︎Processing公式</a>
       </div>
     </div>
   </div>
