@@ -14,7 +14,7 @@
       </ContentTitle>
       <!-- end ページタイトル -->
       <section>
-        <a href="/#timeline">
+        <router-link to="/#timeline">
           <img
             class="banner-mobile"
             src="/src/assets/school-information-session-banner-mobile.svg"
@@ -23,7 +23,7 @@
             class="banner-tablet"
             src="/src/assets/school-information-session-banner-tablet.svg"
           />
-        </a>
+        </router-link>
 
         <div class="department-video py-8 my-8">
           <div class="v-container">

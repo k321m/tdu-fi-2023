@@ -1,12 +1,12 @@
 <template>
-  <a
+  <router-link
     class="btn btn-default"
     :class="setButtonStyle()"
-    :href="to"
+    :to="`${to}`"
     @click="handleClick()"
   >
     <slot />
-  </a>
+  </router-link>
 </template>
 <script>
 export default {
@@ -14,6 +14,7 @@ export default {
   props: {
     to: {
       type: String,
+      default: "",
     },
     clickEvent: {
       type: Function,
