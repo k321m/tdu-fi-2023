@@ -23,6 +23,9 @@
           />
         </template>
       </v-row>
+      <Button programming class="mt-3" :to="'/programming'"
+        >プログラミング体験へ</Button
+      >
     </template>
     <!-- 本文 -->
     <template v-slot:body-title>
@@ -48,6 +51,7 @@
 
 <script>
 import Dialog from "../parts/Dialog.vue";
+import Button from "../parts/Button.vue";
 import MissionItem from "./MissionItem.vue";
 import MissionImage from "../parts/MissionImage .vue";
 import MissionImage01 from "/src/assets/missions/Mission01.png";
@@ -70,6 +74,7 @@ export default {
   emits: ["close-dialog", "update:view"],
   components: {
     Dialog,
+    Button,
     MissionItem,
     MissionImage,
   },

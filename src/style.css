@@ -256,6 +256,10 @@ a,
   border-radius: 100vh;
   color: var(--purple);
 }
+.btn-programming {
+  background: linear-gradient(to right, var(--pink), var(--purple));
+  color: var(--white);
+}
 .btn-desable {
   background-color: var(--light-purple);
   color: var(--white);
