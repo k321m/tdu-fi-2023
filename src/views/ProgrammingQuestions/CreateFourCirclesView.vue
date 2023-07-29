@@ -151,13 +151,4 @@ code {
 .code-box code {
   color: #e1e1e1;
 }
-.hole-box {
-  width: 200px;
-  padding: 0.3rem;
-  background-color: #e1e1e1;
-  border-radius: 0.2rem;
-  font-size: 0.8rem;
-  border: 1px solid #adadad;
-  color: #010440;
-}
 </style>

@@ -613,3 +613,16 @@ router-link {
     opacity: 1;
   }
 }
+
+/*  */
+.hole-box {
+  width: 200px;
+  padding: 0.3rem;
+  background-color: var(--white);
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--light-purple);
+  color: #010440;
+  font-weight: 700;
+  line-height: 2rem;
+}
