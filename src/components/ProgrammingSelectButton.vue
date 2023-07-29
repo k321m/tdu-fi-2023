@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     selected() {
-      console.log("呼び出し");
+      // console.log("呼び出し");
       this.$emit("selected-value", this.selectedValue);
     },
   },

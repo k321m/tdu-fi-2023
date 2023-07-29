@@ -85,12 +85,16 @@ export default {
   },
   methods: {
     checkLoading() {
+      console.log("checkLoading()");
       return (
         this.isLoading &&
         this.$store.getters.getPassword != "" &&
         (location.pathname == "/" || location.pathname == "/login")
       );
     },
+  },
+  mounted() {
+    console.log("mounted()");
   },
 };
 </script>
