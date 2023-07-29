@@ -30,7 +30,7 @@
     y = y + v;  
     if (y + d/2 > height) {
       y = height - d/2;
-      v = -v * 0.8; <span class="small">//反射係数0.8で上昇速度を落とす</span>
+      v = -v * 0.8; <span class="small">//反発係数0.8で速度を落とす</span>
     }
   }</code>
     </pre>

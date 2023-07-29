@@ -5,7 +5,7 @@
         <template v-slot:jp-title>プログラミング体験</template>
         <template v-slot:title>>Programming</template>
         <template v-slot:info>
-          情報メディア学科1年次の「コンピュータプログラミングI/Ⅱ」の授業で勉強する、Processingというプログラミング言語を使って、実際にプログラミングを体験することができます。全くプログラミング経験がない人も楽しめる問題になっているので、ぜひ入学後のイメージ固めにお役立てください。
+          情報メディア学科1年次の「コンピュータプログラミングI/Ⅱ」の授業で勉強するProcessing（Java）でプログラミングを体験するコーナーを設けました。プログラミングが初めての人も楽しめる問題になっているので、ぜひ入学後のイメージ固めにお役立てください。
         </template>
       </ContentTitle>
       <Button class="my-5" to="/basics" defaultBorder
