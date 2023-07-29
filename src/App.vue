@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div id="particles-js"></div>
-    <ProgressBar v-if="checkLoading()" @end-loading="isLoading = false" />
+    <ProgressBar v-if="isLoading" @end-loading="isLoading = false" />
     <template v-else>
       <div>
         <transition name="fade">
@@ -80,23 +80,32 @@ export default {
       ],
       LogoLight,
       LogoDark,
-      isLoading: true, // 初期値としてローディング画面を表示するためのフラグ
+      isLoading: false,
     };
   },
-  methods: {
-    checkLoading() {
-      // console.log(
-      //   this.isLoading,
-      //   this.$store.getters.getPassword != "",
-      //   location.pathname
-      // );
-      // console.log("checkLoading()");
-      return (
-        this.isLoading &&
-        this.$store.getters.getPassword != "" &&
-        (location.pathname == "/" || location.pathname == "/login")
-      );
+  computed: {
+    shouldShowProgressBar() {
+      return this.$store.getters.getPassword !== "";
     },
+  },
+  created() {
+    this.$router.beforeEach((to, from, next) => {
+      // console.log("from", from);
+      // console.log("to", to);
+      if (
+        (from.name === null ||
+          from.name === undefined ||
+          from.name === "login") &&
+        to.name == "index"
+      ) {
+        // aタグでindexに遷移した場合の処理
+        this.isLoading = this.shouldShowProgressBar;
+      }
+      // else {
+      //   console.log("その他");
+      // }
+      next();
+    });
   },
 };
 </script>
