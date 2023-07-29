@@ -46,6 +46,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    programming: {
+      type: Boolean,
+      default: false,
+    },
     none: {
       type: Boolean,
       default: false,
@@ -66,6 +70,7 @@ export default {
         "btn-circle-border": this.circleBorder,
         "btn-pink": this.pink,
         "btn-pink-border": this.pinkBorder,
+        "btn-programming": this.programming,
         "btn-none": this.none,
         "btn-animation": !this.desable && !this.none,
       };
