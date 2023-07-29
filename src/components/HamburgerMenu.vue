@@ -65,7 +65,7 @@
       </router-link>
       <div class="py-4">
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSeQ5ru-Mzc-gULHow6ZkxNjnRPP6I7i6aUTtTJitU7GpdYWWQ/viewform"
+          href="https://forms.gle/9Pfb36wU8purKapB7"
           style="text-decoration: none; color: white"
         >
           <h3 class="mb-4">> アンケート</h3>
