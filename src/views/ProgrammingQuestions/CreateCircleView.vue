@@ -29,6 +29,10 @@
         :delay="resultDelay"
         :color="'#e345e6'"
       />
+      <ProgrammingExplainBox
+        v-if="isExpalin"
+        :explainData="explainData"
+      ></ProgrammingExplainBox>
     </div>
   </div>
 </template>
@@ -39,6 +43,7 @@ import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vu
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
 import ProgrammingResultCanvas from "../../components/ProgrammingResultCanvas.vue";
 import ProgrammingBackPageButton from "../../components/ProgrammingBackPageButton.vue";
+import ProgrammingExplainBox from "../../components/ProgrammingExplainBox.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -55,6 +60,7 @@ export default {
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
     ProgrammingResultCanvas,
+    ProgrammingExplainBox,
   },
   data() {
     return {
@@ -62,18 +68,49 @@ export default {
         {
           code: "rect(80, 80, 140, 140)",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">rect()</span>は長方形を描く関数です。',
+            refer: {
+              text: "2. 図形",
+              link: "/basics#basics-2",
+            },
+          },
         },
         {
           code: "triangle(150, 80, 80, 220, 220, 220)",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">triangle()</span>は三角形を描く関数です。',
+            refer: {
+              text: "2. 図形",
+              link: "/basics#basics-2",
+            },
+          },
         },
         {
           code: "ellipse(150, 150, 140, 140)",
           judge: true,
+          explain: {
+            explainText:
+              '<span class="hack">ellipse()</span>は円を描く関数です。',
+            refer: {
+              text: "2. 図形",
+              link: "/basics#basics-2",
+            },
+          },
         },
         {
           code: "line(80, 80, 220, 220)",
           judge: false,
+          explain: {
+            explainText: '<span class="hack">line()</span>は線を描く関数です。',
+            refer: {
+              text: "2. 図形",
+              link: "/basics#basics-2",
+            },
+          },
         },
       ],
       holeValue: "       ",
@@ -82,6 +119,8 @@ export default {
       p5Value: Object,
       resultDelay: "1s",
       questionColor: "var(--pink)",
+      explainData: Object,
+      isExpalin: false,
     };
   },
   mounted() {
@@ -97,6 +136,7 @@ export default {
       for (var i = 0; i < this.choices.length; i++) {
         if (this.holeValue == this.choices[i].code && !this.executedFlag) {
           this.selectP5code(i);
+          this.explainData = this.choices[i].explain;
           this.executedFlag = true;
           if (this.choices[i].judge) {
             this.$store.commit("updateIsClearedMission4");
@@ -104,6 +144,10 @@ export default {
           }
         }
       }
+      window.setTimeout(() => {
+        this.isExpalin = true;
+        location.href = "/question1#explain-box";
+      }, 3000);
     },
     selectP5code(index) {
       if (index == 0) {

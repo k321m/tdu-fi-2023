@@ -46,6 +46,10 @@
         :delay="resultDelay"
         :color="'#661b93'"
       />
+      <ProgrammingExplainBox
+        v-if="isExpalin"
+        :explainData="explainData"
+      ></ProgrammingExplainBox>
     </div>
   </div>
 </template>
@@ -56,6 +60,7 @@ import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
 import ProgrammingResultCanvas from "../../components/ProgrammingResultCanvas.vue";
+import ProgrammingExplainBox from "../../components/ProgrammingExplainBox.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -72,6 +77,7 @@ export default {
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
     ProgrammingResultCanvas,
+    ProgrammingExplainBox,
   },
   data() {
     return {
@@ -79,26 +85,60 @@ export default {
         {
           code: "y + d/2 > height",
           judge: true,
+          explain: {
+            explainText:
+              '<span class="hack">y + d/2 > height</span>は、「円の中心のy座標 + 円の半径」が「キャンバスの高さ」より大きくなった時に<span class="hack">if</span>文の中の処理が実行されます。',
+            refer: {
+              text: "5. 条件分岐処理",
+              link: "/basics#basics-5",
+            },
+          },
         },
         {
           code: "y > height",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">y > height</span>は、「円の中心のy座標」が「キャンバスの高さ」より大きくなった時に<span class="hack">if</span>文の中の処理が実行されます。<span class="hack">y</span>は円の"中心"のy座標であることに注意する必要があります',
+            refer: {
+              text: "5. 条件分岐処理",
+              link: "/basics#basics-5",
+            },
+          },
         },
         {
           code: "x + d > width",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">x + d > width</span>は、「円の中心のx座標 + 円の直径」が「キャンバスの幅」より大きくなった時に<span class="hack">if</span>文の中の処理が実行されます。今回はy軸方向(縦の動きの制御)になるため、<span class="hack">y</span>に関する条件式を記述する必要があります',
+            refer: {
+              text: "5. 条件分岐処理",
+              link: "/basics#basics-5",
+            },
+          },
         },
         {
           code: "y + d > height",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">y + d > height</span>は、「円の中心のy座標 + 円の直径」が「キャンバスの高さ」より大きくなった時に<span class="hack">if</span>文の中の処理が実行されます。<span class="hack">d</span>は円の"直径"であることに注意する必要があります',
+            refer: {
+              text: "5. 条件分岐処理",
+              link: "/basics#basics-5",
+            },
+          },
         },
       ],
       holeValue: "       ",
       isCorrect: false,
       executedFlag: false,
       p5Value: Object,
-      resultDelay: "4s",
+      resultDelay: "3s",
       questionColor: "#661b93",
+      explainData: Object,
+      isExpalin: false,
     };
   },
   mounted() {
@@ -115,11 +155,16 @@ export default {
         if (this.holeValue == this.choices[i].code && !this.executedFlag) {
           this.selectP5code(i);
           this.executedFlag = true;
+          this.explainData = this.choices[i].explain;
           if (this.choices[i].judge) {
             this.isCorrect = true;
           }
         }
       }
+      window.setTimeout(() => {
+        this.isExpalin = true;
+        location.href = "/question4#explain-box";
+      }, 5000);
     },
     selectP5code(index) {
       if (index == 0) {
