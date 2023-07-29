@@ -15,6 +15,7 @@
         :questionButtonData="this.questionButtonData"
       />
     </div>
+    <FixedIcons />
   </div>
 </template>
 
@@ -22,12 +23,14 @@
 import ContentTitle from "../components/ContentTitle.vue";
 import Button from "../components/parts/Button.vue";
 import ProgrammingQuestionButton from "../components/ProgrammingQuestionButton.vue";
+import FixedIcons from "../components/templates/FixedIcons.vue";
 export default {
   name: "ProgrammingExperenceView",
   components: {
     ContentTitle,
     Button,
     ProgrammingQuestionButton,
+    FixedIcons,
   },
   data() {
     return {

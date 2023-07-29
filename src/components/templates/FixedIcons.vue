@@ -46,5 +46,6 @@ export default {
   left: 0;
   background: rgba(1, 3, 38, 0.8);
   transition-delay: 0.4s;
+  z-index: 100;
 }
 </style>
