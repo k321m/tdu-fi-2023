@@ -53,7 +53,8 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(1, 4, 64, 0.9);
+  /* background-color: rgba(1, 4, 64, 0.9); */
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,11 +75,13 @@ export default {
   height: 100%;
   width: v-bind(progressPercentage + "%");
   max-width: 100%;
-  background: var(--light-purple);
+  /* background: var(--light-purple); */
+  background: var(--dark);
 }
 
 .progress-percentage {
-  color: var(--white);
+  /* color: var(--white); */
+  color: var(--dark);
   margin: 1rem auto 0 auto;
   font-size: 1.2rem;
 }

@@ -85,6 +85,11 @@ export default {
   },
   methods: {
     checkLoading() {
+      console.log(
+        this.isLoading,
+        this.$store.getters.getPassword != "",
+        location.pathname
+      );
       console.log("checkLoading()");
       return (
         this.isLoading &&
