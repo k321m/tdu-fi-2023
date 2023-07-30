@@ -50,6 +50,7 @@
         v-if="isExpalin"
         :explainData="explainData"
       ></ProgrammingExplainBox>
+      <ProgrammingBackPageButton :color="questionColor" />
     </div>
   </div>
 </template>
