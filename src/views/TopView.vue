@@ -9,8 +9,6 @@
 </template>
 
 <script>
-import Button from "../components/parts/Button.vue";
-import Card from "../components/parts/Card.vue";
 import FixedIcons from "../components/templates/FixedIcons.vue";
 import TimeSchedule from "../components/TimeSchedule.vue";
 import TopCarousel from "../components/TopCarousel.vue";
@@ -26,8 +24,6 @@ export default {
     FixedIcons,
     TopTitle,
     Map,
-    Button,
-    Card,
   },
   methods: {
     openMap(key) {

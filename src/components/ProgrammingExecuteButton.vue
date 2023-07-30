@@ -1,37 +1,36 @@
 <template>
   <div class="py-2">
-    <div class="btn btn-execute" @click="clicked()">
-      <v-icon>mdi-play-circle-outline</v-icon>
-      実行<span class="hack">（Run Code）</span>
-    </div>
+    <Button programming @click="$emit('executed')" :to="returnHref()">
+      <div class="btn-execute">
+        <v-icon>mdi-play-circle-outline</v-icon>
+        実行<span class="hack">（Run Code）</span>
+      </div>
+    </Button>
   </div>
 </template>
 
 <script>
+import Button from "./parts/Button.vue";
 export default {
   name: "ProgrammingExecuteButton",
   emits: ["executed"],
+  components: {
+    Button,
+  },
   methods: {
-    clicked() {
-      this.$emit("executed");
-      location.href = location.href + "#canvas";
+    returnHref() {
+      return location.pathname + "#canvas";
     },
   },
 };
 </script>
 <style scoped>
-.btn-execute {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  background: linear-gradient(to right, var(--pink), var(--purple));
-  color: var(--white);
-}
-i {
+.btn-execute > i {
   position: absolute;
   left: 1.3rem;
   color: var(--white);
   font-size: 2rem;
+  padding-bottom: 0.8rem;
 }
 span {
   padding-top: 0.15rem;

@@ -8,6 +8,11 @@
               <h2>トップ</h2>
             </div>
           </router-link>
+          <!-- <a href="/" @click="closeHamburgerMenu">
+            <div>
+              <h2>トップ</h2>
+            </div>
+          </a> -->
 
           <div class="pulldown-button px-2" @click="isOpen = !isOpen">
             <img
