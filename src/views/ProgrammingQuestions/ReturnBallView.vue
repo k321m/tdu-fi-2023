@@ -112,7 +112,7 @@ export default {
           judge: false,
           explain: {
             explainText:
-              '<span class="hack">x + d > width</span>は、「円の中心のx座標 + 円の直径」が「キャンバスの幅」より大きくなった時に<span class="hack">if</span>文の中の処理が実行されます。今回はy軸方向(縦の動きの制御)になるため、<span class="hack">y</span>に関する条件式を記述する必要があります',
+              '<span class="hack">x + d > width</span>は、「円の中心のx座標 + 円の直径」が「キャンバスの幅」より大きくなった時に<span class="hack">if</span>文の中の処理が実行されます。今回はy軸方向(縦の動き)の制御になるため、<span class="hack">y</span>に関する条件式を記述する必要があります',
             refer: {
               text: "5. 条件分岐処理",
               link: "/basics#basics-5",

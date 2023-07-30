@@ -475,6 +475,7 @@ router-link {
   position: fixed;
   right: 1em;
   bottom: 1.4em;
+  z-index: 11;
 }
 /* ＋トグルボタン背景 */
 .menu-toggle {
