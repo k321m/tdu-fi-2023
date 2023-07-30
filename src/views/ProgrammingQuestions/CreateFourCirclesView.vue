@@ -34,6 +34,11 @@
         :delay="resultDelay"
         :color="'#ba37ca'"
       />
+      <ProgrammingExplainBox
+        v-if="isExpalin"
+        :explainData="explainData"
+      ></ProgrammingExplainBox>
+      <ProgrammingBackPageButton :color="questionColor" />
     </div>
   </div>
 </template>
@@ -44,6 +49,7 @@ import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
 import ProgrammingResultCanvas from "../../components/ProgrammingResultCanvas.vue";
+import ProgrammingExplainBox from "../../components/ProgrammingExplainBox.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -60,6 +66,7 @@ export default {
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
     ProgrammingResultCanvas,
+    ProgrammingExplainBox,
   },
   data() {
     return {
@@ -67,18 +74,50 @@ export default {
         {
           code: "i < 4",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">i < 4</span>は、<span class="hack">i = 4</span>となる場合を含まないため、3回のみ<span class="hack">for文</span>の中の処理が実行されます。',
+            refer: {
+              text: "4-1. for文",
+              link: "/basics#basics-4-1",
+            },
+          },
         },
         {
           code: "i <= 3",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">i <= 3</span>は、<span class="hack">i</span>が「1、2、3」となる時、すなわち3回<span class="hack">for文</span>の中の処理が実行されます。',
+            refer: {
+              text: "4-1. for文",
+              link: "/basics#basics-4-1",
+            },
+          },
         },
         {
           code: "i > 4",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">i > 4</span>は、初期値として設定されている<span class="hack">int i = 1</span>の時点で条件を満たしていないため、<span class="hack">for文</span>の中の処理は実行されません。',
+            refer: {
+              text: "4-1. for文",
+              link: "/basics#basics-4-1",
+            },
+          },
         },
         {
           code: "i <= 4",
           judge: true,
+          explain: {
+            explainText:
+              '<span class="hack">i <= 4</span>は、<span class="hack">i</span>が「1、2、3、4」となる時、すなわち4回<span class="hack">for文</span>の中の処理が実行されます。',
+            refer: {
+              text: "4-1. for文",
+              link: "/basics#basics-4-1",
+            },
+          },
         },
       ],
       holeValue: "       ",
@@ -87,6 +126,8 @@ export default {
       p5Value: Object,
       resultDelay: "1s",
       questionColor: "#ba37ca",
+      explainData: Object,
+      isExpalin: false,
     };
   },
   mounted() {
@@ -102,12 +143,17 @@ export default {
       for (var i = 0; i < this.choices.length; i++) {
         if (this.holeValue == this.choices[i].code && !this.executedFlag) {
           this.selectP5code(i);
+          this.explainData = this.choices[i].explain;
           this.executedFlag = true;
           if (this.choices[i].judge) {
             this.isCorrect = true;
           }
         }
       }
+      window.setTimeout(() => {
+        this.isExpalin = true;
+        location.href = "/question2#explain-box";
+      }, 3000);
     },
     selectP5code(index) {
       if (index == 0) {

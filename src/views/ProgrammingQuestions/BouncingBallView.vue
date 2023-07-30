@@ -47,6 +47,11 @@
         :delay="resultDelay"
         :color="'#360a73'"
       />
+      <ProgrammingExplainBox
+        v-if="isExpalin"
+        :explainData="explainData"
+      ></ProgrammingExplainBox>
+      <ProgrammingBackPageButton :color="questionColor" />
     </div>
   </div>
 </template>
@@ -57,6 +62,7 @@ import ProgrammingTitle from "../../components/ProgrammingTitle.vue";
 import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vue";
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
 import ProgrammingResultCanvas from "../../components/ProgrammingResultCanvas.vue";
+import ProgrammingExplainBox from "../../components/ProgrammingExplainBox.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -73,6 +79,7 @@ export default {
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
     ProgrammingResultCanvas,
+    ProgrammingExplainBox,
   },
   data() {
     return {
@@ -80,26 +87,61 @@ export default {
         {
           code: "v + 9.8",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">v + 9.8</span>は、<span class="hack">v</span>(速度)が毎フレーム9.8ずつ追加されます。重力加速度は「9.8m/s^2」であるため、1秒間に速度は「9.8m/s」ずつ増えること、<span class="hack">draw()</span>内の処理は1秒間に60回行われることに注意する必要があります。',
+            refer: {
+              text: "4. 繰り返し処理",
+              link: "/basics#basics-4",
+            },
+          },
         },
         {
           code: "9.8",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">9.8</span>は、<span class="hack">v</span>の値が変更されないため、速度9.8で等速直線運動をします。',
+            refer: {
+              text: "4. 繰り返し処理",
+              link: "/basics#basics-4",
+            },
+          },
         },
         {
           code: "v + 9.8 / 60",
           judge: true,
+          explain: {
+            explainText:
+              '<span class="hack">v + 9.8 / 60</span>は、<span class="hack">v</span>(速度)が毎フレーム9.8 / 60ずつ追加されます。60で割ることで、1秒間に速度が「9.8m/s」ずつ増える重力加速度を再現することができます。',
+            refer: {
+              text: "4. 繰り返し処理",
+              link: "/basics#basics-4",
+            },
+          },
         },
         {
           code: "v * 9.8",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">v * 9.8</span>は、<span class="hack">v</span>(速度)に毎フレーム9.8ずつかけています。<span class="hack">v</span>は初期値が0であり、値をかけても0のままなので円は初期位置から動きません。',
+            refer: {
+              text: "4. 繰り返し処理",
+              link: "/basics#basics-4",
+            },
+          },
         },
       ],
+
       holeValue: "       ",
       isCorrect: false,
       executedFlag: false,
       p5Value: Object,
       resultDelay: "3s",
       questionColor: "var(--purple)",
+      explainData: Object,
+      isExpalin: false,
     };
   },
   mounted() {
@@ -116,11 +158,16 @@ export default {
         if (this.holeValue == this.choices[i].code && !this.executedFlag) {
           this.selectP5code(i);
           this.executedFlag = true;
+          this.explainData = this.choices[i].explain;
           if (this.choices[i].judge) {
             this.isCorrect = true;
           }
         }
       }
+      window.setTimeout(() => {
+        this.isExpalin = true;
+        location.href = "/question5#explain-box";
+      }, 5000);
     },
     selectP5code(index) {
       if (index == 0) {

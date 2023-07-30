@@ -44,6 +44,11 @@
         :delay="resultDelay"
         :color="'#8f29ae'"
       />
+      <ProgrammingExplainBox
+        v-if="isExpalin"
+        :explainData="explainData"
+      ></ProgrammingExplainBox>
+      <ProgrammingBackPageButton :color="questionColor" />
     </div>
   </div>
 </template>
@@ -54,6 +59,7 @@ import ProgrammingSelectButton from "../../components/ProgrammingSelectButton.vu
 import ProgrammingExecuteButton from "../../components/ProgrammingExecuteButton.vue";
 import ProgrammingResultCanvas from "../../components/ProgrammingResultCanvas.vue";
 import ProgrammingBackPageButton from "../../components/ProgrammingBackPageButton.vue";
+import ProgrammingExplainBox from "../../components/ProgrammingExplainBox.vue";
 import p5 from "p5";
 import {
   p5Setup,
@@ -70,6 +76,7 @@ export default {
     ProgrammingSelectButton,
     ProgrammingExecuteButton,
     ProgrammingResultCanvas,
+    ProgrammingExplainBox,
   },
   data() {
     return {
@@ -77,26 +84,60 @@ export default {
         {
           code: "y",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">y</span>の値は初期値から変更されないため、ボールは初期位置のままになります。',
+            refer: {
+              text: "4-2. setup()とdraw()",
+              link: "/basics#basics-4-2",
+            },
+          },
         },
         {
           code: "y + v",
           judge: true,
+          explain: {
+            explainText:
+              '<span class="hack">y + v</span>は、繰り返し1ずつ値が増える<span class="hack">v</span>を<span class="hack">y</span>に足すことで、円の中心のy座標が繰り返し変更された円が描画されます。',
+            refer: {
+              text: "4-2. setup()とdraw()",
+              link: "/basics#basics-4-2",
+            },
+          },
         },
         {
           code: "y + 1",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">y + 1</span>は、<span class="hack">y</span>の初期値に1が追加された値から変化することがないため、円の中心のy座標が同じ円が繰り返し描画されます。',
+            refer: {
+              text: "4-2. setup()とdraw()",
+              link: "/basics#basics-4-2",
+            },
+          },
         },
         {
           code: "y - v",
           judge: false,
+          explain: {
+            explainText:
+              '<span class="hack">y - v</span>は、繰り返し1ずつ値が増える<span class="hack">v</span>を<span class="hack">y</span>から引くことで、円の中心のy座標が繰り返し変更された円が描画され、上に移動したようになります。',
+            refer: {
+              text: "4-2. setup()とdraw()",
+              link: "/basics#basics-4-2",
+            },
+          },
         },
       ],
       holeValue: "       ",
       isCorrect: false,
       executedFlag: false,
       p5Value: Object,
-      resultDelay: "3s",
+      resultDelay: "2s",
       questionColor: "#8f29ae",
+      explainData: Object,
+      isExpalin: false,
     };
   },
   mounted() {
@@ -112,12 +153,17 @@ export default {
       for (var i = 0; i < this.choices.length; i++) {
         if (this.holeValue == this.choices[i].code && !this.executedFlag) {
           this.selectP5code(i);
+          this.explainData = this.choices[i].explain;
           this.executedFlag = true;
           if (this.choices[i].judge) {
             this.isCorrect = true;
           }
         }
       }
+      window.setTimeout(() => {
+        this.isExpalin = true;
+        location.href = "/question3#explain-box";
+      }, 4000);
     },
     selectP5code(index) {
       if (index == 0) {

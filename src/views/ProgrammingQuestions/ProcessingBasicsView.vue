@@ -20,7 +20,7 @@
         </div>
         <div class="item">
           <div class="min-item">
-            <h2>2. 図形を描く</h2>
+            <h2 id="basics-2">2. 図形を描く</h2>
             Processingでは、絵を描くキャンバスのサイズを決めてから、図形を描く命令を出します。<br />
             それでは実際に図形を描いてみます。
           </div>
@@ -128,7 +128,7 @@
           </div>
           また、どちらの方も許容できる値の範囲が限られているため、注意する必要があります。
         </div>
-        <div class="item">
+        <div id="basics-4" class="item">
           <h2>4. 繰り返し処理</h2>
           <div class="min-item">
             プログラミングでは、同じ処理を行うような場合、「繰り返し処理」を行います。<br />
@@ -136,7 +136,7 @@
             実際にどのようなコードを書くのか紹介します。
           </div>
 
-          <div class="min-item">
+          <div id="basics-4-1" class="min-item">
             <h3>4-1. <code style="font-weight: var(--bold)">for</code>文</h3>
             for文は、セミコロン (;)
             で区切られた3つの式で繰り返し処理を行う回数を制御します。<br />
@@ -182,17 +182,18 @@
           <div class="min-item">
             上記のコードでは<code>line()</code>のx座標の値を10ずつ増やす処理を10回行なっている、10ずつずれた線が10本描かれています。
           </div>
-          <h3>
-            4-2. <code style="font-weight: var(--bold)">setup()</code>と<code
-              style="font-weight: var(--bold)"
-              >draw()</code
-            >
-          </h3>
-          <div class=""></div>
-          Processingでは<code>setup()</code>、<code>draw()</code>という関数を使うことでアニメーションを作成することができます。
-          実際の使い方は以下の通りです。
-          <div class="code-box">
-            <pre>
+          <div id="basics-4-2">
+            <h3>
+              4-2. <code style="font-weight: var(--bold)">setup()</code>と<code
+                style="font-weight: var(--bold)"
+                >draw()</code
+              >
+            </h3>
+            <div class=""></div>
+            Processingでは<code>setup()</code>、<code>draw()</code>という関数を使うことでアニメーションを作成することができます。
+            実際の使い方は以下の通りです。
+            <div class="code-box">
+              <pre>
 <code>
   void setup() {
     <span class="small">//最初に一度だけ実行したい処理を記述</span>
@@ -202,12 +203,13 @@
   }
 </code>
 </pre>
+            </div>
+            上記のように、<code>setup()</code>内に書かれた処理は実行直後に一度だけ実行され、<code>draw()</code>は、毎フレーム(1フレーム
+            =
+            1/60秒)実行されます。そのため、繰り返し実行したい処理は<code>draw()</code>の中に書く必要があります。
           </div>
-          上記のように、<code>setup()</code>内に書かれた処理は実行直後に一度だけ実行され、<code>draw()</code>は、毎フレーム(1フレーム
-          =
-          1/60秒)実行されます。そのため、繰り返し実行したい処理は<code>draw()</code>の中に書く必要があります。
         </div>
-        <div class="item">
+        <div id="basics-5" class="item">
           <h2>5. 条件分岐処理</h2>
           プログラミングにおける条件分岐処理では、<code>if</code>文と呼ばれる構文を使用します。<br />
           つまり、「もし ◯◯◯ だったら ×××する」という処理が実装できます。
