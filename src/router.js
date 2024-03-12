@@ -18,7 +18,7 @@ import basics from "./views/ProgrammingQuestions/ProcessingBasicsView.vue";
 import { store } from "./vuex/index.js";
 
 const PASSWORD =
-  "	1ff2739722dea85e4e7b5fbd291e40ababdd42b841ce64fa9b2ae08a94899284";
+  "1ff2739722dea85e4e7b5fbd291e40ababdd42b841ce64fa9b2ae08a94899284";
 
 export const router = createRouter({
   history: createWebHistory(),
